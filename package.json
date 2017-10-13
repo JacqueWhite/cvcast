@@ -1,0 +1,27 @@
+{
+  "name": "show-and-tell",
+  "version": "1.0.0",
+  "description": "This is a web application that showcases developer projects.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/isai-solis/Show-and-Tell.git"
+  },
+  "author": "Jayme Howard, Lisa Newhouse, Audrey Fletcher, John Torrence, Isai Solis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/isai-solis/Show-and-Tell/issues"
+  },
+  "homepage": "https://github.com/isai-solis/Show-and-Tell#readme",
+  "dependencies": {
+    "axios": "^0.16.2",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mongoose": "^4.12.1",
+    "react-router-dom": "^4.2.2"
+  }
+}
