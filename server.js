@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
-const routes = require("./routes");
+// const routes = require("./routes");
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 app.use(express.static("client/build"));
 
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
