@@ -1,28 +1,35 @@
 .card {
   background: #fff;
   border-radius: 2px;
-  height: 325px;
+  height: 70%;
   margin: 1rem;
   position: relative;
-  width: 325px;
+  width: 45%;
   box-shadow: 0 3px 6px #999, 0 3px 6px #999;
   text-align: left;
 }
 
 .card > .img-container {
-  height: 60%;
+  height: 40%;
   overflow: hidden;
   text-align: center;
   background:#6CADDC;
 }
 .card > .img-container > img {
-  width: 60%
+  width: 80%
+}
+
+.card > .content-container {
+  height: 60%;
+  overflow: hidden;
+  text-align: left;
+  background:white;
 }
 
 .card > .content {
   padding-left: 1rem;
   padding-right: 1rem;
-  font-size: 15px;
+  font-size: 1em;
 }
 
 .card > .content > ul {
@@ -31,17 +38,4 @@
 
 .card > .content > ul > li {
   margin-top: 18px;
-}
-
-.card > .remove {
-  color: #ff1744;
-  font-size: 48px;
-  position: absolute;
-  top: -20px;
-  right: 5px;
-  cursor: pointer;
-}
-
-.card > .remove:hover {
-  color: #d50000;
 }

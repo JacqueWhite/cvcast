@@ -8,20 +8,20 @@ const PORT = process.env.PORT || 3001;
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 // Serve up static assets
-app.use(express.static("client/build"));
+// app.use(express.static("client/build"));
 // Add routes, both API and view
-app.use(routes);
+// app.use(routes);
 // Set up promises with mongoose
-mongoose.Promise = global.Promise;
+// mongoose.Promise = global.Promise;
 //===========================================================================================
 //Remember to change below.
 // Connect to the Mongo DB
-mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist",
-  {
-    useMongoClient: true
-  }
-);
+// mongoose.connect(
+//   process.env.MONGODB_URI || "mongodb://localhost/reactreadinglist",
+//   {
+//     useMongoClient: true
+//   }
+// );
 //===========================================================================================
 // Start the API server
 app.listen(PORT, function() {
