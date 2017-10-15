@@ -1,36 +1,18 @@
 import React from "react";
+import {Col, Card, CardTitle} from 'react-materialize';
 import "./PortfolioCard.css";
 
 const PortfolioCard = props => (
-  <div className="card">
-    <div className="img-container">
-      <img alt={props.project} src={props.image} />
-    </div>
-     <div className="content-container"> 
-        <div className="content">
-          <ul>
-            <li>
-              <strong>Project:</strong> {props.project}
-            </li>
-            <li>
-              <strong>Description:</strong> {props.description}
-            </li>
-            <li>
-              <strong>Team:</strong> {props.team}
-            </li>
-            <li>
-              <strong>See it Live:</strong> {props.link}
-            </li>
-            <li>
-              <strong>Github:</strong> {props.github}
-            </li>
-          </ul>
-          <div>
-            <strong>Technologies + Keywords:</strong> {props.technologiesKeywords}
-          </div>
-        </div>
-    </div>
-  </div>
+<div>
+  <Col m={6} s={12}>
+  <Card 
+    header={<CardTitle reveal image={props.image} waves='light'/>}
+      title={props.project}
+      reveal={<div><p>{props.description}</p></div>}>
+      <p><a href={props.link}>See it Live</a></p>
+  </Card>
+  </Col>
+</div>
 );
 
 export default PortfolioCard;
