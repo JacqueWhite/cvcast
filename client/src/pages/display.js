@@ -1,9 +1,9 @@
 import React, { Component } from "react";
-import ProjectCard from "./components/ProjectCard";
-import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
-import projects from "./projects.json";
-import "./App.css";
+import ProjectCard from "../components/ProjectCard";
+import Wrapper from "../components/Wrapper";
+import Title from "../components/Title";
+import projects from "../projects.json";
+import "../App.css";
 
 class Display extends Component {
   // Setting this.state.projects to the projects json array
