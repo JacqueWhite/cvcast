@@ -1,34 +1,16 @@
-import React, { Component } from "react";
-import Wrapper from "./components/Wrapper";
-import PortfolioCard from "./components/PortfolioCard";
-import portfoliocards from "./portfoliocards.json";
-import "./App.css";
+import React from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Display from "./pages/display";
 
-class App extends Component {
-  // Setting this.state.friends to the portfoliocards json array
-  state = {
-    portfoliocards
-  };
 
-  render() {
-    return (
-      <Wrapper>
-        {this.state.portfoliocards.map(portfoliocard => (
-          <PortfolioCard
-            id={portfoliocard.id}
-            key={portfoliocard.id}
-            project={portfoliocard.project}
-            image={portfoliocard.image}
-            description={portfoliocard.description}
-            team={portfoliocard.team}
-            link={portfoliocard.link}
-            github={portfoliocard.github}
-            technologiesKeywords={portfoliocard.technologiesKeywords}
-          />
-        ))}
-      </Wrapper>
-    );
-  }
-}
+
+const App = () =>
+  <Router>
+    <div>
+      <Switch>
+        <Route exact path="/" component={Display} />
+      </Switch>
+    </div>
+  </Router>;
 
 export default App;
