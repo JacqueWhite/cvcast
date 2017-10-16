@@ -2,6 +2,10 @@ img {
   width: 80%;
 }
 
+button {
+  width: 80%;
+}
+
 element.style {
     overflow: hidden;
 }
