@@ -14,8 +14,9 @@ const userSchema = new Schema ({
         type: String,
         require: true
     },
-    projectList: {
-        any:[Schema.Types.Mixed]
+    project_id: {
+        type: String,
+        require: true
     }
 });
 
