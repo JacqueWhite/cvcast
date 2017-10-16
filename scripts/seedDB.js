@@ -33,7 +33,7 @@ const userSeed = [
 const projectSeed = [
   {
     _userId: 1,
-    project: "LocALL",
+    projectName: "LocALL",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/locall.png",
     description: "a place to get recommendations on where to eat, drink, and play in Austin, TX",
     technologiesKeywords: "CSS, javaScript, jQuery, Google Firebase, Bootstrap",
@@ -43,7 +43,7 @@ const projectSeed = [
   },
   {
     _userId: 1,
-    project: "ItsAGO",
+    projectName: "ItsAGO",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/itsago.png",
     description: "Simple event and RSVP manager",
     technologiesKeywords: "CSS, javaScript, Node.js, Materialize, jQuery, MySQL, Sequelize",
@@ -53,7 +53,7 @@ const projectSeed = [
   },
   {
     _userId: 2,
-    project: "AccountabiliBuddy",
+    projectName: "AccountabiliBuddy",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/accountabilibuddy.png",
     description: "A gym-buddy match app that pairs up friends based on schedule and fitness activity preferences.",
     technologiesKeywords: "CSS, javaScript, Materialize, Node.js, jQuery, MySQL, Sequelize",
@@ -63,7 +63,7 @@ const projectSeed = [
   },
   {
     _userId: 2,
-    project: "devScraped",
+    projectName: "devScraped",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/devscrape.png",
     description: "A tool for developers to scrape their favorite resource pages and take notes on them. ",
     technologiesKeywords: "CSS, javaScript, Materialize, jQuery, MySQL, Sequelize",
@@ -73,7 +73,7 @@ const projectSeed = [
   },
   {
     _userId: 3,
-    project: "oneReq",
+    projectName: "oneReq",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/accountabilibuddy.png",
     description: "Recruiting platform for Software Developer recruiters.",
     technologiesKeywords: "CSS, javaScript, Bootstrap, React, MongoDB, mongoose",

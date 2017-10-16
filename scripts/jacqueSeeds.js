@@ -14,19 +14,22 @@ const userSeed = [
     _id: 1,
     firstName: "Jacqueline",
     lastName: "White",
-    email: "jacquecwhite@gmail.com"
+    email: "jacquecwhite@gmail.com",
+    projects: []
     },
     {
     _id: 2,
     firstName: "Isai",
     lastName: "Solis",
-    email: "bob@gmail.com"
+    email: "bob@gmail.com",
+    projects: []
     },
     {
     _id: 3,
     firstName: "Audrey",
     lastName: "Fletcher",
-    email: "auddddd@gmail.com"
+    email: "auddddd@gmail.com",
+    projects: []
     }
 ]
 
