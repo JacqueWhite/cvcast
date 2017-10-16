@@ -4,8 +4,12 @@
   "description": "This is a web application that showcases developer projects.",
   "main": "server.js",
   "scripts": {
+    "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "client": "node scripts/start-client.js",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
+    "seed": "node scripts/seedDB.js",
+    "build": "node scripts/build.js"
   },
   "repository": {
     "type": "git",
@@ -25,5 +29,9 @@
     "react-flipcard": "^0.2.1",
     "react-materialize": "^1.0.16",
     "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0",
+    "nodemon": "^1.12.1"
   }
 }
