@@ -1,15 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Display from "./pages/display";
-
+import Wrapper from "./components/Wrapper";
+import Title from "./components/Title";
 
 
 const App = () =>
   <Router>
     <div>
-      <Switch>
-        <Route exact path="/" component={Display} />
-      </Switch>
+    	<Title />
+    	<Wrapper>
+	      <Switch>
+	        <Route exact path="/" component={Display} />
+	      </Switch>
+	    </Wrapper>
     </div>
   </Router>;
 

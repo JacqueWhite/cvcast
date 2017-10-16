@@ -1,42 +1,38 @@
 import React, { Component } from "react";
-import ProjectCard from "../components/ProjectCard";
-import Wrapper from "../components/Wrapper";
-import Title from "../components/Title";
-import projects from "../projects.json";
+import {Row} from 'react-materialize';
+import PortfolioCard from "../components/PortfolioCard";
+import portfoliocards from "../portfoliocards.json";
 import "../App.css";
 
 class Display extends Component {
-  // Setting this.state.projects to the projects json array
+
+// Setting this.state.friends to the portfoliocards json array
   state = {
-    projects
+    portfoliocards
   };
 
-  removeProject = id => {
-    // Filter this.state.projects for friends with an id not equal to the id being removed
-    const projects = this.state.projects.filter(project => project.id !== id);
-    // Set this.state.projects equal to the new projects array
-    this.setState({ projects });
-  };
-
-  // Map over this.state.projects and render a ProjectCard component for each project object
   render() {
     return (
-      <Wrapper>
-        <Title>Projects List</Title>
-        {this.state.projects.map(project => (
-          <ProjectCard
-            removeProject={this.removeProject}
-            id={project.id}
-            key={project.id}
-            title={project.title}
-            image={project.image}
-            toplink={project.toplink}
-            tags={project.tags}
+    <div>
+      <Row>
+        {this.state.portfoliocards.map(portfoliocard => (
+          <PortfolioCard
+            id={portfoliocard.id}
+            key={portfoliocard.id}
+            project={portfoliocard.project}
+            image={portfoliocard.image}
+            description={portfoliocard.description}
+            team={portfoliocard.team}
+            link={portfoliocard.link}
+            github={portfoliocard.github}
+            technologiesKeywords={portfoliocard.technologiesKeywords}
           />
         ))}
-      </Wrapper>
+      </Row>
+     </div> 
     );
   }
 }
+
 
 export default Display;
