@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, Card, CardTitle, Button, Modal, Icon} from 'react-materialize';
+import {Button, Modal, Icon} from 'react-materialize';
 import "./Form.css";
 
 

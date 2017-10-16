@@ -1,7 +1,6 @@
 import React, { Component } from "react";
+import {Row} from 'react-materialize';
 import PortfolioCard from "../components/PortfolioCard";
-import Wrapper from "../components/Wrapper";
-import Title from "../components/Title";
 import portfoliocards from "../portfoliocards.json";
 import "../App.css";
 
@@ -14,7 +13,8 @@ class Display extends Component {
 
   render() {
     return (
-      <Wrapper>
+    <div>
+      <Row>
         {this.state.portfoliocards.map(portfoliocard => (
           <PortfolioCard
             id={portfoliocard.id}
@@ -28,7 +28,8 @@ class Display extends Component {
             technologiesKeywords={portfoliocard.technologiesKeywords}
           />
         ))}
-      </Wrapper>
+      </Row>
+     </div> 
     );
   }
 }
