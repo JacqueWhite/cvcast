@@ -96,9 +96,9 @@ db.User
     process.exit(1);
   });
 
-db.Project
+db.Projects
   .remove({})
-  .then(() => db.Project.collection.insertMany(projectSeed))
+  .then(() => db.Projects.collection.insertMany(projectSeed))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);
