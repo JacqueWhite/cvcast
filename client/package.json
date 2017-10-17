@@ -12,7 +12,7 @@
     "react-scripts": "1.0.14"
   },
   "scripts": {
-    "install": "cd client && npm run build && cd ..",
+    "start": "cd client && npm run build && cd ..",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
