@@ -12,14 +12,6 @@ const userSchema = new Schema ({
     },
     email: {
         type: String,
-<<<<<<< HEAD
-        require: true
-    },
-    project_id: {
-        type: String,
-        require: true
-    }
-=======
         require: true,
         unique: true
     },
@@ -27,7 +19,6 @@ const userSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: "Project"
     }]
->>>>>>> jacque
 });
 
 const User = mongoose.model("User", userSchema);
