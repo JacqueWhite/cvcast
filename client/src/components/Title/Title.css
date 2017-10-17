@@ -7,8 +7,12 @@ div.card-image {
   height: 10%;
 }
 
-img {
-  height: 10%;
+img.portfolio-banner {
+  height: 250px;
+}
+
+span.card-title.black-text.email {
+  font-size: 1.1em;
 }
 
 .profile-pic {

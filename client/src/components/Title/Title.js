@@ -9,7 +9,7 @@ const Title = props => (
 	      <div className="col s12">
 	        <div className="card">
 	          <div className="card-image">
-	            <img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/purty_wood_%402X.png" alt="" />
+	            <img className="portfolio-banner" src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/purty_wood_%402X.png" alt="" />
 	          </div>
 	          <div className="card-content">
 	            <div className="row">
@@ -32,6 +32,8 @@ const Title = props => (
 	              </div>
 	            </div>
 	            <span className="card-title black-text">{props.name}</span>
+	            <span className="card-title black-text email"><a href="mailto:{props.email}">{props.email}</a></span>
+	            <span className="black-text">{props.bio}</span>
 	          </div>
 	        </div>
 	      </div>
