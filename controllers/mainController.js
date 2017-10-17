@@ -1,4 +1,3 @@
-console.log("mainController.js");
 
 const db = require("../models");
 
@@ -9,6 +8,8 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
         
-        console.log("find all!!");
+        console.log("controller------------------");
+        console.log(dbModel);
+
     }
 };

@@ -12,6 +12,36 @@ mongoose.connect(
 const userSeed = [
 <<<<<<< HEAD
   {
+<<<<<<< HEAD
+      firstName: "Audrey",
+      lastName: "Fletcher",
+      email: "anfletcher24@gmail.com"
+  },
+    {
+      firstName: "Jacque",
+      lastName: "White",
+      email: "Jacque@gmail.com"
+  },
+    {
+      firstName: "Jayme",
+      lastName: "Howard",
+      email: "Jayme@gmail.com"
+  },
+    {
+      firstName: "Lisa",
+      lastName: "NewHouse",
+      email: "Lisa@gmail.com"
+  },
+    {
+      firstName: "Isai",
+      lastName: "Solis",
+      email: "Isai@gmail.com"
+  },
+    {
+      firstName: "John",
+      lastName: "Torrence",
+      email: "John@gmail.com"
+=======
     id: 1,
     project: "LocALL",
 =======
@@ -106,9 +136,10 @@ const projectSeed = [
     team: "Jacqueline White",
     link: "https://onereq.herokuapp.com/",
     github: "ttps://github.com/JacqueWhite/onereq"  
+>>>>>>> 89092607cda4aeef5472ac2aff3301a2eb9ce119
   }
-
 ];
+
 
 db.User
   .remove({})

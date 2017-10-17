@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
-import PortfolioCardEdit from "../components/PortfolioCard";
-import TitleEdit from "../components/Title";
-import user from "../user.json";
-import "../App.css";
+import PortfolioCardEdit from "../../components/PortfolioCard";
+import TitleEdit from "../../components/Title";
+import user from "../../user.json";
+import "../../App.css";
 
 class EditDisplay extends Component {
 

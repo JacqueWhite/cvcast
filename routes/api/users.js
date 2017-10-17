@@ -6,6 +6,7 @@ const mainController = require("../../controllers/mainController");
 // Matches with "/api/main"
 router.route("/")
   .get(mainController.findAll)
+
 //   .post(mainController.create);
 
 // Matches with "/api/main/:id"
