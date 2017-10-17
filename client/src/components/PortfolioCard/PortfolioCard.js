@@ -11,7 +11,7 @@ const PortfolioCard = props => (
           reveal={<div><p>{props.description}</p></div>}>
           <p><a href={props.link}>See it Live</a></p>
           {props.technologiesKeywords.map(tag => (
-          <Button waves='light' node='a' href='/{tag}'> {tag} </Button>
+          <Button waves='light' node='a' href={tag}> {tag} </Button>
           ))}
       </Card>
   </Col>
@@ -19,3 +19,4 @@ const PortfolioCard = props => (
 );
 
 export default PortfolioCard;
+
