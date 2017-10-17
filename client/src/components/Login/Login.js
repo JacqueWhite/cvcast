@@ -6,7 +6,7 @@ const Login = props => (
   <div className="section"></div>
   <div>
     <center>
-      <img className="responsive-img" src="https://i.imgur.com/ax0NCsK.gif" alt=""/>
+      <img className="responsive-img" src="" alt=""/>
       <div className="section"></div>
 
       <h5 className="indigo-text">Please, login into your account</h5>
@@ -47,7 +47,7 @@ const Login = props => (
           </form>
         </div>
       </div>
-      <a href="#!">Create account</a>
+      <a href="/create">Create account</a>
     </center>
 
     <div className="section"></div>
