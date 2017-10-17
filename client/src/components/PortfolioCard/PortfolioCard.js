@@ -6,7 +6,7 @@ const PortfolioCard = props => (
 <div>
   <Col m={6} s={12}>
   <Card 
-    header={<CardTitle reveal image={props.image} waves='light'/>}
+     header={<CardTitle reveal image={props.image} waves='light'/>} 
       title={props.project}
       reveal={<div><p>{props.description}</p></div>}>
       <p><a href={props.link}>See it Live</a></p>
