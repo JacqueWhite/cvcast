@@ -11,6 +11,15 @@ p {
   color: #26a69a;
 }
 
+/*#index-banner .section {
+    background-image: url("https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg");
+}*/
+
+img {
+  display: block;
+  transform: translate3d(-50%, 176px, 0px);
+}
+
 .parallax-container {
   min-height: 380px;
   line-height: 0;

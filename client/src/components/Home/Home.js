@@ -2,8 +2,8 @@ import React from "react";
 import "./Home.css";
 
 const Home = props => (
-<div>
-  <div id="index-banner" className="parallax-container">
+<div className="container">
+<div id="index-banner" className="parallax-container">
     <div className="section no-pad-bot">
       <div className="container">
         <h3 className="header center teal-text text-lighten-2">Show and Tell</h3>
@@ -11,11 +11,13 @@ const Home = props => (
           <h5 className="header col s12 light">a platform to showcase your projects</h5>
         </div>
         <div className="row center">
-          <a href="/" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">start here</a>
+          <a href="/signup" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">start here</a>
+          <a href="/portfolio" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">portfolio</a>
+          <a href="/edit" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">edit portfolio</a>
         </div>
       </div>
     </div>
-    <div className="parallax"><img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="background"/></div>
+    <div className="parallax"><img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="home"/></div>
   </div>
 
   <div className="container">

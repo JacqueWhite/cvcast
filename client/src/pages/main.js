@@ -7,11 +7,7 @@ class Main extends Component {
 
   render() {
     return (
-    <div>
-      <Row>
-        <Home/>
-      </Row>
-     </div> 
+        <Home/> 
     );
   }
 }
