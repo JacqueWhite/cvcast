@@ -32,7 +32,7 @@ const Title = props => (
 	              </div>
 	            </div>
 	            <span className="card-title black-text">{props.name}</span>
-	            <span className="card-title black-text email"><a { `mailto:${this.props.email}` }>{props.email}</a> | <a href={props.linkedIn} target="_blank">View My LinkedIn</a></span>
+	            <span className="card-title black-text email"><a { `mailto:${props.email}` }>{props.email}</a> | <a href={props.linkedIn} target="_blank">View My LinkedIn</a></span>
 	            <span className="black-text">{props.bio}</span>
 	          </div>
 	        </div>
