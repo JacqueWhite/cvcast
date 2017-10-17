@@ -1,21 +1,59 @@
 import React from "react";
-import {Col, Card, CardTitle, Button} from 'react-materialize';
-import "./PortfolioCard.css";
+import "./Login.css";
 
-const PortfolioCard = props => (
+const Login = props => (
 <div>
-  <Col m={6} s={12}>
-      <Card 
-        header={<CardTitle reveal image={props.image} waves='light'/>}
-          title={props.project}
-          reveal={<div><p>{props.description}</p></div>}>
-          <p><a href={props.link}>See it Live</a></p>
-          {props.technologiesKeywords.map(tag => (
-          <Button waves='light' node='a' href='/{tag}'> {tag} </Button>
-          ))}
-      </Card>
-  </Col>
+  <div className="section"></div>
+  <div>
+    <center>
+      <img className="responsive-img" src="https://i.imgur.com/ax0NCsK.gif" alt=""/>
+      <div className="section"></div>
+
+      <h5 className="indigo-text">Please, login into your account</h5>
+      <div className="section"></div>
+
+      <div className="container">
+        <div className="z-depth-1 grey lighten-4 row">
+
+          <form className="col s12" method="post">
+            <div className='row'>
+              <div className='col s12'>
+              </div>
+            </div>
+
+            <div className='row'>
+              <div className='input-field col s12'>
+                <input className='validate' type='email' name='email' id='email' />
+                <label for='email'>Enter your email</label>
+              </div>
+            </div>
+
+            <div className='row'>
+              <div className='input-field col s12'>
+                <input className='validate' type='password' name='password' id='password' />
+                <label for='password'>Enter your password</label>
+              </div>
+              <label className='forgot'>
+                <a className='pink-text' href='#!'><b>Forgot Password?</b></a>
+              </label>
+            </div>
+
+            <br />
+            <center>
+              <div className='row'>
+                <button type='submit' name='btn_login' className='col s12 btn btn-large waves-effect indigo'>Login</button>
+              </div>
+            </center>
+          </form>
+        </div>
+      </div>
+      <a href="#!">Create account</a>
+    </center>
+
+    <div className="section"></div>
+    <div className="section"></div>
+</div>
 </div>
 );
 
-export default PortfolioCard;
+export default Login;

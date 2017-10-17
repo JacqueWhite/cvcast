@@ -10,7 +10,7 @@ const projectSchema = new Schema({
 	},
 	projectName: {
 		type: String
-	}
+	},
 	image: {
 		type: String
 	},

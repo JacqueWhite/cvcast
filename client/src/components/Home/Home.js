@@ -15,7 +15,7 @@ const Home = props => (
         </div>
       </div>
     </div>
-    <div className="parallax"><img src="./home.jpg" alt="background image" /></div>
+    <div className="parallax"><img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="background"/></div>
   </div>
 
   <div className="container">
@@ -42,7 +42,7 @@ const Home = props => (
           <div className="icon-block">
             <h2 className="center brown-text"><i className="material-icons">settings</i></h2>
             <h5 className="center">Tell</h5>
-            <p className="light">share your projects page</p>
+            <p className="light">share your page</p>
           </div>
         </div>
       </div>
