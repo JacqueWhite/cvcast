@@ -1,20 +1,20 @@
 console.log("routes/api/users.js page");
 
 const router = require("express").Router();
-const mainController = require("../../controllers/mainController");
+const userController = require("../../controllers/userController");
 
 // Matches with "/api/main"
 router
   .route("/")
-  .get(mainController.findAll)
-  .post(mainController.create);
+  .get(userController.findAll)
+  .post(userController.create);
 
 // Matches with "/api/main/:id"
 router
   .route("/:id")
-  .get(mainController.findById)
-  .put(mainController.update)
-  .delete(mainController.remove);
+  .get(userController.findById)
+  .put(userController.update)
+  .delete(userController.remove);
 
 module.exports = router;
 

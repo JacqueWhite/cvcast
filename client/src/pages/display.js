@@ -56,12 +56,10 @@ class Display extends Component {
       <Row>
         {this.state.portfoliocards.map(portfoliocard => (
           <PortfolioCard
-            //id={portfoliocard.id}
-            //key={portfoliocard.id}
             project={portfoliocard.projectName}
             image={portfoliocard.image}
             description={portfoliocard.description}
-            //team={portfoliocard.team}
+            team={portfoliocard.team}
             link={portfoliocard.link}
             github={portfoliocard.github}
             technologiesKeywords={portfoliocard.technologiesKeywords}

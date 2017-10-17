@@ -1,11 +1,11 @@
-console.log("mainController.js");
+console.log("projectController.js");
 
 
 const db = require("../models");
 
 module.exports = {
     findAll: function(req, res){
-        db.Projects
+    db.Project
         .find(req.query)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
@@ -13,25 +13,25 @@ module.exports = {
         console.log("find all!!");
     },
     findById: function(req, res) {
-    db.User
+    db.Project
         .findById(req.params.id)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
-    db.User
+    db.Project
         .create(req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
     update: function(req, res) {
-    db.User
+    db.Project
         .findOneAndUpdate({ _id: req.params.id }, req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
     addkeytag: function(req,res){
-    db.User
+    db.Project
         .findOneAndUpdate({_id: req.params.id}, {$push: {"technologiesKeywords": req.body}})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
@@ -39,7 +39,7 @@ module.exports = {
     // db.places.update({"country": "Morocco"}, {$push: {"majorcities":"Agadir"}})
     
     remove: function(req, res) {
-    db.User
+    db.Project
         .findById({ _id: req.params.id })
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))

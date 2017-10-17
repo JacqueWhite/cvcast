@@ -1,20 +1,20 @@
 console.log("routes/api/projects.js page");
 
 const router = require("express").Router();
-const mainController = require("../../controllers/mainController");
+const projectController = require("../../controllers/projectController");
 
 // Matches with "/api/main"
 router
   .route("/")
-  .get(mainController.findAll)
-  .post(mainController.create);
+  .get(projectController.findAll)
+  .post(projectController.create);
 
 // Matches with "/api/main/:id"
 router
   .route("/:id")
-  .get(mainController.findById)
-  .put(mainController.update)
-  .delete(mainController.remove);
+  .get(projectController.findById)
+  .put(projectController.update)
+  .delete(projectController.remove);
 
 module.exports = router;
 
