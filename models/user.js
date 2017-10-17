@@ -13,7 +13,8 @@ const userSchema = new Schema ({
     email: {
         type: String,
         require: true,
-        unique: true
+        unique: true,
+        match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
     },
     projects: [{
         type: Schema.Types.ObjectId,
