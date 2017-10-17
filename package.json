@@ -25,5 +25,8 @@
     "react-flipcard": "^0.2.1",
     "react-materialize": "^1.0.16",
     "react-router-dom": "^4.2.2"
+  },
+  "devDependencies": {
+    "webpack": "^3.7.1"
   }
 }
