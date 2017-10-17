@@ -2,8 +2,8 @@ import React from "react";
 import "./Home.css";
 
 const Home = props => (
-<div>
-  <div id="index-banner" className="parallax-container">
+<div className="container">
+<div id="index-banner" className="parallax-container">
     <div className="section no-pad-bot">
       <div className="container">
         <h3 className="header center teal-text text-lighten-2">Show and Tell</h3>
@@ -17,7 +17,7 @@ const Home = props => (
         </div>
       </div>
     </div>
-    <div className="parallax"><img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="background"/></div>
+    <div className="parallax"><img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="home"/></div>
   </div>
 
   <div className="container">

@@ -15,9 +15,10 @@ p {
     background-image: url("https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg");
 }*/
 
-/*div.parallax {
-  background-image: url("https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg"); 
-}*/
+img {
+  display: block;
+  transform: translate3d(-50%, 176px, 0px);
+}
 
 .parallax-container {
   min-height: 380px;
