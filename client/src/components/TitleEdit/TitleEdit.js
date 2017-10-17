@@ -1,7 +1,7 @@
 import React from "react";
-import "./Title.css";
+import "./TitleEdit.css";
 
-const Title = props => (
+const TitleEdit = props => (
 <div>
 	<div className="row">
 	  <div className="col l12 m12 s12">
@@ -18,6 +18,7 @@ const Title = props => (
 	              </div>
 	              <div className="col right controls ">
 	                <i className="material-icons" onclick='showMenu()'>more_vert</i>
+	                <button href="" className="edit">EDIT</button>
 	              </div>
 	              <div className="row-menu">
 	                <div className="menu">
@@ -32,7 +33,7 @@ const Title = props => (
 	              </div>
 	            </div>
 	            <span className="card-title black-text">{props.name}</span>
-	            <span className="card-title black-text email"><a href={`mailto:${props.email}`}>{props.email}</a> | <a href={props.linkedIn} target="_blank">View My LinkedIn</a></span>
+	            <span className="card-title black-text email"><<a href={`mailto:${props.email}`}>{props.email}</a> | <a href={props.linkedIn} target="_blank">View My LinkedIn</a></span>
 	            <span className="black-text">{props.bio}</span>
 	          </div>
 	        </div>
@@ -43,4 +44,4 @@ const Title = props => (
 </div>
 );
 
-export default Title;
+export default TitleEdit;

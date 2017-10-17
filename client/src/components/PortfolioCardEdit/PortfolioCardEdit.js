@@ -2,7 +2,7 @@ import React from "react";
 import {Col, Card, CardTitle, Button} from 'react-materialize';
 import "./PortfolioCard.css";
 
-const PortfolioCard = props => (
+const PortfolioCardEdit = props => (
 <div>
   <Col m={6} s={12}>
       <Card 
@@ -13,10 +13,11 @@ const PortfolioCard = props => (
           {props.technologiesKeywords.map(tag => (
           <Button waves='light' node='a' href={tag}> {tag} </Button>
           ))}
+          <Button><a href="">EDIT</a></Button>
       </Card>
   </Col>
 </div>
 );
 
-export default PortfolioCard;
+export default PortfolioCardEdit;
 

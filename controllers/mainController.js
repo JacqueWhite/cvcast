@@ -1,6 +1,5 @@
 console.log("mainController.js");
 
-
 const db = require("../models");
 
 module.exports = {

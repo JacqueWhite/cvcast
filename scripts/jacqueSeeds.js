@@ -10,28 +10,26 @@ mongoose.connect(
 );
 
 const userSeed = [
-<<<<<<< HEAD
-  {
-    id: 1,
-    project: "LocALL",
-=======
     {
     _id: 1,
     firstName: "Jacqueline",
     lastName: "White",
-    email: "jacquecwhite@gmail.com"
+    email: "jacquecwhite@gmail.com",
+    projects: []
     },
     {
     _id: 2,
     firstName: "Isai",
     lastName: "Solis",
-    email: "bob@gmail.com"
+    email: "bob@gmail.com",
+    projects: []
     },
     {
     _id: 3,
     firstName: "Audrey",
     lastName: "Fletcher",
-    email: "auddddd@gmail.com"
+    email: "auddddd@gmail.com",
+    projects: []
     }
 ]
 
@@ -39,7 +37,6 @@ const projectSeed = [
   {
     _userId: 1,
     projectName: "LocALL",
->>>>>>> jacque
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/locall.png",
     description: "a place to get recommendations on where to eat, drink, and play in Austin, TX",
     technologiesKeywords: "CSS, javaScript, jQuery, Google Firebase, Bootstrap",
@@ -48,13 +45,8 @@ const projectSeed = [
     github: "https://github.com/JacqueWhite/LocAll"  
   },
   {
-<<<<<<< HEAD
-    id: 2,
-    project: "ItsAGO",
-=======
     _userId: 1,
     projectName: "ItsAGO",
->>>>>>> jacque
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/itsago.png",
     description: "Simple event and RSVP manager",
     technologiesKeywords: "CSS, javaScript, Node.js, Materialize, jQuery, MySQL, Sequelize",
@@ -63,13 +55,8 @@ const projectSeed = [
     github: "https://github.com/JacqueWhite/Its-a-GO"  
   },
   {
-<<<<<<< HEAD
-    id: 3,
-    project: "AccountabiliBuddy",
-=======
     _userId: 2,
     projectName: "AccountabiliBuddy",
->>>>>>> jacque
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/accountabilibuddy.png",
     description: "A gym-buddy match app that pairs up friends based on schedule and fitness activity preferences.",
     technologiesKeywords: "CSS, javaScript, Materialize, Node.js, jQuery, MySQL, Sequelize",
@@ -78,13 +65,8 @@ const projectSeed = [
     github: "https://github.com/JacqueWhite/AccountabiliBuddy"  
   },
   {
-<<<<<<< HEAD
-    id: 4,
-    project: "devScraped",
-=======
     _userId: 2,
     projectName: "devScraped",
->>>>>>> jacque
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/devscrape.png",
     description: "A tool for developers to scrape their favorite resource pages and take notes on them. ",
     technologiesKeywords: "CSS, javaScript, Materialize, jQuery, MySQL, Sequelize",
@@ -93,13 +75,8 @@ const projectSeed = [
     github: "https://github.com/JacqueWhite/devscraped"  
   },
   {
-<<<<<<< HEAD
-    id: 5,
-    project: "oneReq",
-=======
     _userId: 3,
     projectName: "oneReq",
->>>>>>> jacque
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/accountabilibuddy.png",
     description: "Recruiting platform for Software Developer recruiters.",
     technologiesKeywords: "CSS, javaScript, Bootstrap, React, MongoDB, mongoose",
@@ -120,8 +97,6 @@ db.User
   .catch(err => {
     console.error(err);
     process.exit(1);
-<<<<<<< HEAD
-=======
   });
 
 db.Project
@@ -134,5 +109,4 @@ db.Project
   .catch(err => {
     console.error(err);
     process.exit(1);
->>>>>>> jacque
   });

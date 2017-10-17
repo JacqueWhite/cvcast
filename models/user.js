@@ -12,12 +12,13 @@ const userSchema = new Schema ({
     },
     email: {
         type: String,
-        require: true
+        require: true,
+        unique: true
     },
-    project_id: {
-        type: String,
-        require: true
-    }
+    projects: [{
+        type: Schema.Types.ObjectId,
+        ref: "Project"
+    }]
 });
 
 const User = mongoose.model("User", userSchema);

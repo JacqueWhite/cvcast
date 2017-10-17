@@ -1,18 +1,31 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Display from "./pages/display";
+import Main from "./pages/main";
+import EditDisplay from "./pages/editdisplay";
+import Loginpage from "./pages/loginpage";
+import Signuppage from "./pages/signuppage";
 import Wrapper from "./components/Wrapper";
-import Title from "./components/Title";
-
 
 const App = () =>
   <Router>
     <div>
-    	<Title />
     	<Wrapper>
 	      <Switch>
-	        <Route exact path="/" component={Display} />
+	        <Route exact path="/portfolio" component={Display} />
 	      </Switch>
+        <Switch>
+          <Route exact path="/" component={Main} />
+        </Switch>
+        <Switch>
+          <Route exact path="/login" component={Loginpage} />
+        </Switch>
+        <Switch>
+          <Route exact path="/signup" component={Signuppage} />
+        </Switch>
+        <Switch>
+          <Route exact path="/edit" component={EditDisplay} />
+        </Switch>
 	    </Wrapper>
     </div>
   </Router>;
