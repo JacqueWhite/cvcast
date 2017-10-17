@@ -4,6 +4,7 @@ import PortfolioCard from "../components/PortfolioCard";
 import Title from "../components/Title";
 import portfoliocards from "../portfoliocards.json";
 import "../App.css";
+import Form from "../components/Form";
 
 class Display extends Component {
 
@@ -15,6 +16,7 @@ class Display extends Component {
   render() {
     return (
     <div>
+      <Form />
         <Row>
           <Title 
             name={this.state.portfoliocards.name}
