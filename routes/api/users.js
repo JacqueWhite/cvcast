@@ -4,16 +4,17 @@ const router = require("express").Router();
 const mainController = require("../../controllers/mainController");
 
 // Matches with "/api/main"
-router.route("/")
+router
+  .route("/")
   .get(mainController.findAll)
-//   .post(mainController.create);
+  .post(mainController.create);
 
 // Matches with "/api/main/:id"
-// router
-//   .route("/:id")
-//   .get(mainController.findById)
-//   .put(mainController.update)
-//   .delete(mainController.remove);
+router
+  .route("/:id")
+  .get(mainController.findById)
+  .put(mainController.update)
+  .delete(mainController.remove);
 
 module.exports = router;
 
