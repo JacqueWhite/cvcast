@@ -1,10 +1,10 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Display from "./pages/display";
-import Main from "./pages/main";
-import EditDisplay from "./pages/editdisplay";
-import Loginpage from "./pages/loginpage";
-import Signuppage from "./pages/signuppage";
+import Portfolio from "./pages/Portfolio";
+import Main from "./pages/Main";
+import Edit from "./pages/Edit";
+import Login from "./pages/Login";
+import Signuppage from "./pages/Signuppage";
 import Wrapper from "./components/Wrapper";
 
 const App = () =>
@@ -12,19 +12,19 @@ const App = () =>
     <div>
     	<Wrapper>
 	      <Switch>
-	        <Route exact path="/portfolio" component={Display} />
+	        <Route exact path="/portfolio" component={Portfolio} />
 	      </Switch>
         <Switch>
           <Route exact path="/" component={Main} />
         </Switch>
         <Switch>
-          <Route exact path="/login" component={Loginpage} />
+          <Route exact path="/login" component={Login} />
         </Switch>
         <Switch>
           <Route exact path="/signup" component={Signuppage} />
         </Switch>
         <Switch>
-          <Route exact path="/edit" component={EditDisplay} />
+          <Route exact path="/edit" component={Edit} />
         </Switch>
 	    </Wrapper>
     </div>
