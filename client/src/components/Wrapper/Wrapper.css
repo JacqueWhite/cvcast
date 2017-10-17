@@ -8,4 +8,7 @@
   justify-content: space-around;
   align-content: flex-start;
   overflow: auto;
+  background-image: url("https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg");
+  background-size: cover;
+  background-position: center;
 }
