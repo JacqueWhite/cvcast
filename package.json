@@ -7,13 +7,13 @@
     "npm": "5.5.1"
   },
   "scripts": {
+    "install": "cd client && npm install && npm run build && cd ..",
     "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "node scripts/start-client.js",
-    "start": "npm run client",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "seed": "node scripts/seedDB.js",
-    "build": "node scripts/build.js",
-    "install": "cd client && npm install && npm run build && cd .."
+    "build": "node scripts/build.js"
   },
   "repository": {
     "type": "git",

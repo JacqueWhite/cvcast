@@ -3,19 +3,21 @@ const db = require("../models");
 const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
-
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/showAndTell",
   {
     useMongoClient: true
   }
 );
-
 const userSeed = [
     {
-    firstName: "Jacqueline",
-    lastName: "White",
-    email: "jacquecwhite@gmail.com", 
+      firstName: "Jacque",
+      lastName: "White",
+      email: "jacquecwhite@gmail.com",
+      headshot: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAhqAAAAJDc4ZjkwN2YyLTgyODMtNGQ2Zi1hYmYwLTlmOGNmNjhlYTM3Yg.jpg",
+      linkedIn: "https://www.linkedin.com/in/jacquelinewhite15/",
+      bio: "My name is Jacque White and I am a Junior Full-Stack Developer with a passion for helping people and bringing their ideas to life. I have a wide-range of career experiences ranging from health & wellness to human resources that help me understand the needs of a variety of clients.",
+    
     projects: [{
       type: Schema.Types.ObjectId,
       ref: "projects"
@@ -39,7 +41,6 @@ const userSeed = [
     ]
     }
 ]
-
 const projectSeed = [
   {
     "_id" : ObjectId("59e78c41c1b15d32adfec04c"),
@@ -107,7 +108,6 @@ db.User
     console.error(err);
     process.exit(1);
   });
-
 db.Project
   .remove({})
   .then(() => db.Project.collection.insertMany(projectSeed))
