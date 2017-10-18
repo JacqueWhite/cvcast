@@ -13,8 +13,7 @@
     "client": "node scripts/start-client.js",
     "start": "npm run client",
     "seed": "node scripts/seedDB.js",
-    "build": "node scripts/build.js",
-    "install": "cd client && npm install && npm run build && cd .."
+    "build": "node scripts/build.js"
   },
   "repository": {
     "type": "git",
