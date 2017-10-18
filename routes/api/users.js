@@ -6,7 +6,7 @@ const userController = require("../../controllers/userController");
 // Matches with "/api/main"
 router
   .route("/")
-  .get(userController.findAll)
+  // .get(userController.findAll)
   .post(userController.create);
 
 // Matches with "/api/main/:id"

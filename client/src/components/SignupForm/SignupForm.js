@@ -3,9 +3,23 @@ import "./SignupForm.css";
 
 const SignupForm = props => (
 <div>
-  <form className="col s12" method="post">
+  <form action="/signup" className="col s12" method="post">
     <div className='row'>
       <div className='col s12'>
+      </div>
+    </div>
+
+      <div className='row'>
+      <div className='input-field col s12'>
+        <input className='validate' type='text' name='firstName' id='firstName' />
+        <label for='firstName'>First Name</label>
+      </div>
+    </div>
+
+    <div className='row'>
+      <div className='input-field col s12'>
+        <input className='validate' type='text' name='lastName' id='lastName' />
+        <label for='lastName'>Last Name</label>
       </div>
     </div>
 
@@ -18,22 +32,8 @@ const SignupForm = props => (
 
     <div className='row'>
       <div className='input-field col s12'>
-        <input className='validate' type='password' name='password' id='password' />
-        <label for='password'>Enter a password</label>
-      </div>
-    </div>
-
-    <div className='row'>
-      <div className='input-field col s12'>
-        <input className='validate' type='text' name='firstName' id='firstName' />
-        <label for='firstName'>First Name</label>
-      </div>
-    </div>
-
-    <div className='row'>
-      <div className='input-field col s12'>
-        <input className='validate' type='text' name='lastName' id='lastName' />
-        <label for='lastName'>Last Name</label>
+        <input className='validate' type='text' name='headshot' id='headshot' />
+        <label for='headshot'>Profile Picture Link</label>
       </div>
     </div>
 
@@ -53,10 +53,11 @@ const SignupForm = props => (
 
     <div className='row'>
       <div className='input-field col s12'>
-        <input className='validate' type='text' name='headshot' id='headshot' />
-        <label for='headshot'>Profile Picture Link</label>
+        <input className='validate' type='text' name='bio' id='bio' />
+        <label for='bio'>Bio</label>
       </div>
     </div>
+
 
     <br />
       <div className='row'>
