@@ -8,16 +8,12 @@ import Wrapper from "./components/Wrapper";
 
 const App = () =>
   <Router>
-    <div>
-      <Wrapper>
-  	      <Switch>
-  	        <Route exact path="/portfolio" component={Portfolio} />
-            <Route exact path="/" component={Main} />
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/edit" component={Edit} />
-          </Switch>
-      </Wrapper>
-    </div>
+    <Switch>
+      <Route exact path="/portfolio" component={Portfolio} />
+      <Route exact path="/" component={Main} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/edit" component={Edit} />
+    </Switch>
   </Router>;
 
 export default App;

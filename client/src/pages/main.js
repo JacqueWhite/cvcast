@@ -22,8 +22,7 @@ class Main extends Component {
 	    <div className="parallax"><img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="background"/></div>
 	  </div>
 
-	  <div className="container">
-	    <div className="section">
+	    <div className="section info">
 	      <div className="row">
 	        <div className="col s12 m4">
 	          <div className="icon-block">
@@ -51,8 +50,7 @@ class Main extends Component {
 	        </div>
 	      </div>
 	    </div>
-	  </div>
-	</div> 
+	</div>
     );
   }
 }
