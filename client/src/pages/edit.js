@@ -22,6 +22,7 @@ class Edit extends Component {
             bio={this.state.user.bio}
           />
         </Row>
+        
         <Row>
           {this.state.user.projects.map(portfoliocard => (
             <PortfolioCardEdit
