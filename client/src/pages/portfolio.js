@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
 import PortfolioCard from "../components/PortfolioCard";
+import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
 
@@ -62,7 +63,7 @@ class Portfolio extends Component {
   render() {
     return (
     <div>
-         <Row>
+        <Row>
           <TitleCard
             firstName={this.state.user.firstName}
             lastName={this.state.user.lastName}
