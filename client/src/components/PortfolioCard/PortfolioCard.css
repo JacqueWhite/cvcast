@@ -1,4 +1,9 @@
 img {
+    width: 80%;
+  max-height: 200px;
+}
+
+button {
   width: 80%;
 }
 
@@ -6,8 +11,27 @@ element.style {
     overflow: hidden;
 }
 
-.card {
+.card .card-image {
     position: relative;
+}
+
+.waves-block {
+    display: block;
+}
+
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    transition: .3s ease-out;
 }
 
 .card, .card-panel {

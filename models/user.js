@@ -12,8 +12,14 @@ const userSchema = new Schema ({
     },
     email: {
         type: String,
-        require: true
-    }
+        require: true,
+        unique: true,
+        match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
+    },
+    projects: [{
+        type: Schema.Types.ObjectId,
+        ref: "Project"
+    }]
 });
 
 const User = mongoose.model("User", userSchema);

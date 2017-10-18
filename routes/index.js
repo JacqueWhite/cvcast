@@ -1,5 +1,3 @@
-console.log("routes/index.js");
-
 const path = require("path");
 const router = require("express").Router();
 const apiRoutes = require("./api");

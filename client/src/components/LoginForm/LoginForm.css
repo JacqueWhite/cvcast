@@ -1,0 +1,13 @@
+label.forgot {
+  float: right;
+}
+
+div.z-depth-1 {
+    display: inline-block; 
+    padding: 32px 48px 0px 48px; 
+    border: 1px solid #EEE;
+}
+
+img.responsive-img {
+    width: 250px;
+}
