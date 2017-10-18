@@ -1,6 +1,8 @@
 import React from "react";
-import {Col, Card, CardTitle, Button} from 'react-materialize';
-import "./PortfolioCard.css";
+import {Card, Col, CardTitle, Button} from 'react-materialize';
+import "./PortfolioCardEdit.css";
+import FixedButton from '../FixedButton';
+import EditButton from '../EditButton';
 
 const PortfolioCardEdit = props => (
 <div>
@@ -13,11 +15,11 @@ const PortfolioCardEdit = props => (
           {props.technologiesKeywords.map(tag => (
           <Button waves='light' node='a' href={tag}> {tag} </Button>
           ))}
-          <Button><a href="">EDIT</a></Button>
+        <EditButton/>
       </Card>
-  </Col>
+      <FixedButton/>
+   </Col>
 </div>
 );
-
 export default PortfolioCardEdit;
 

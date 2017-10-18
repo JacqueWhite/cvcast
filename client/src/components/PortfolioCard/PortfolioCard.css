@@ -11,8 +11,27 @@ element.style {
     overflow: hidden;
 }
 
-.card {
+.card .card-image {
     position: relative;
+}
+
+.waves-block {
+    display: block;
+}
+
+.waves-effect {
+    position: relative;
+    cursor: pointer;
+    display: inline-block;
+    overflow: hidden;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+    vertical-align: middle;
+    z-index: 1;
+    transition: .3s ease-out;
 }
 
 .card, .card-panel {
@@ -33,4 +52,3 @@ element.style {
 div {
     display: block;
 }
-
