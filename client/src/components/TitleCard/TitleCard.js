@@ -13,7 +13,7 @@ const TitleCard = props => (
 	        <img className="circle responsive-img" src={props.headshot} alt={props.name} />
 	      </div>
 	      <div className="col right controls ">
-	        <i className="material-icons" onclick='showMenu()'>more_vert</i>
+	        <i className="material-icons">more_vert</i>
 	      </div>
 	      <div className="row-menu">
 	        <div className="menu">

@@ -4,7 +4,7 @@
   "description": "This is a web application that showcases developer projects.",
   "main": "server.js",
   "engines": {
-  "npm": "5.5.1"
+    "npm": "5.5.1"
   },
   "scripts": {
     "install": "cd client && npm install && npm run build && cd ..",
