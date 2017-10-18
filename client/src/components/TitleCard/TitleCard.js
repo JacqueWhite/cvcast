@@ -1,7 +1,7 @@
 import React from "react";
 import "./TitleCard.css";
 
-export const TitleCard = props => (
+const TitleCard = props => (
 <div>
 	<div className="card">
 	  <div className="card-image">
@@ -34,3 +34,4 @@ export const TitleCard = props => (
 	</div>
 </div>
 );
+export default TitleCard;

@@ -1,9 +1,9 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Portfolio from "./pages/Portfolio";
-import Main from "./pages/Main";
-import Edit from "./pages/Edit";
-import Login from "./pages/Login";
+import Portfolio from "./pages/portfolio";
+import Main from "./pages/main";
+import Edit from "./pages/edit";
+import Login from "./pages/login";
 import Wrapper from "./components/Wrapper";
 
 const App = () =>

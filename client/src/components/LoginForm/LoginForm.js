@@ -1,7 +1,7 @@
 import React from "react";
 import "./LoginForm.css";
 
-export const LoginForm = props => (
+const LoginForm = props => (
 <div>
     <form className="col s12" method="post">
         <div className='row'>
@@ -30,3 +30,4 @@ export const LoginForm = props => (
     </form>
   </div>
 );
+export default LoginForm;

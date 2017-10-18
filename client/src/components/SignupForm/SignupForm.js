@@ -1,7 +1,7 @@
 import React from "react";
 import "./SignupForm.css";
 
-export const SignupForm = props => (
+const SignupForm = props => (
 <div>
   <form className="col s12" method="post">
     <div className='row'>
@@ -65,3 +65,5 @@ export const SignupForm = props => (
   </form>
 </div>
 );
+
+export default SignupForm;

@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
-import PortfolioCard from "../../components/PortfolioCard";
-import TitleCard from "../../components/TitleCard";
-import user from "../../user.json";
+import PortfolioCardEdit from "../components/PortfolioCardEdit";
+import TitleCard from "../components/TitleCard";
+import user from "../user.json";
 
-class Portfolio extends Component {
+class Edit extends Component {
 
   state = {
     user
@@ -24,7 +24,7 @@ class Portfolio extends Component {
         </Row>
         <Row>
           {this.state.user.projects.map(portfoliocard => (
-            <PortfolioCard
+            <PortfolioCardEdit
               id={portfoliocard.id}
               key={portfoliocard.id}
               project={portfoliocard.project}
@@ -42,4 +42,4 @@ class Portfolio extends Component {
   }
 }
 
-export default Portfolio;
+export default Edit;
