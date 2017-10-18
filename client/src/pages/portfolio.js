@@ -4,20 +4,31 @@ import PortfolioCard from "../components/PortfolioCard";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
 
+var currentUser = "59e79f0508523d6a9a0bc5a6";
 class Portfolio extends Component {
 
   state = {
-    user: []
+    projects: [],
+    user: "",
   };
 
   componentDidMount() {
     this.loadProjects();
+    this.loadUser();
   }
+
+  loadUser = () => {
+    API.getUser(currentUser)
+      .then(res =>
+        this.setState({ user: res.data})
+      )
+      .catch(err => console.log(err));
+  };
 
   loadProjects = () => {
     API.getProjects()
       .then(res =>
-        this.setState({ user: res.data})
+        this.setState({ projects: res.data})
       )
       .catch(err => console.log(err));
   };
@@ -51,7 +62,7 @@ class Portfolio extends Component {
   render() {
     return (
     <div>
-        <Row>
+         <Row>
           <TitleCard
             name={this.state.user.name}
             linkedIn={this.state.user.linkedIn}
@@ -59,10 +70,11 @@ class Portfolio extends Component {
             email={this.state.user.email}
             bio={this.state.user.bio}
           />
-        </Row>
+        </Row> 
         <Row>
-          {this.state.user.map(portfoliocard => (
+          {this.state.projects.map((portfoliocard, index) => (
             <PortfolioCard
+            key={index}
             project={portfoliocard.projectName}
             image={portfoliocard.image}
             description={portfoliocard.description}

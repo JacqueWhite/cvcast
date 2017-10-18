@@ -84,13 +84,9 @@ const projectSeed = [
     link: "https://onereq.herokuapp.com/",
     github: "ttps://github.com/JacqueWhite/onereq"  
   }
-<<<<<<< HEAD
-];
-=======
 
 ];
 
->>>>>>> a73a8377b65e552a994800addd31c18c4dd58c6e
 db.User
   .remove({})
   .then(() => db.User.collection.insertMany(userSeed))
@@ -102,9 +98,9 @@ db.User
     console.error(err);
     process.exit(1);
   });
-db.Projects
+db.Project
   .remove({})
-  .then(() => db.Projects.collection.insertMany(projectSeed))
+  .then(() => db.Project.collection.insertMany(projectSeed))
   .then(data => {
     console.log(data.insertedIds.length + " records inserted!");
     process.exit(0);
