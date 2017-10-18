@@ -1,25 +1,19 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Display from "./pages/display";
+import Portfolio from "./pages/portfolio";
 import Main from "./pages/main";
-import Loginpage from "./pages/loginpage";
+import Edit from "./pages/edit";
+import Login from "./pages/login";
 import Wrapper from "./components/Wrapper";
 
 const App = () =>
   <Router>
-    <div>
-    	<Wrapper>
-	      <Switch>
-	        <Route exact path="/portfolio" component={Display} />
-	      </Switch>
-        <Switch>
-          <Route exact path="/" component={Main} />
-        </Switch>
-        <Switch>
-          <Route exact path="/login" component={Loginpage} />
-        </Switch>
-	    </Wrapper>
-    </div>
+    <Switch>
+      <Route exact path="/portfolio" component={Portfolio} />
+      <Route exact path="/" component={Main} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/edit" component={Edit} />
+    </Switch>
   </Router>;
 
 export default App;

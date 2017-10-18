@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "This is a web application that showcases developer projects.",
   "main": "server.js",
+  "engines": {
+  "npm": "5.5.1"
+  },
   "scripts": {
     "install": "cd client && npm install && npm run build && cd ..",
     "server": "node server.js",
@@ -10,7 +13,8 @@
     "client": "node scripts/start-client.js",
     "start": "npm run client",
     "seed": "node scripts/seedDB.js",
-    "build": "node scripts/build.js"
+    "build": "node scripts/build.js",
+    "install": "cd client && npm install && npm run build && cd .."
   },
   "repository": {
     "type": "git",
