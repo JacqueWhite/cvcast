@@ -13,7 +13,7 @@ class Main extends Component {
 	          <h5 className="header col s12 light">a platform to showcase your projects</h5>
 	        </div>
 	        <div className="row center">
-	          <a href="/signup" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">start here</a>
+	          <a href="/login" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">start here</a>
 	          <a href="/portfolio" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">portfolio</a>
 	          <a href="/edit" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">edit portfolio</a>
 	        </div>
