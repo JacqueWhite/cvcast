@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
-import PortfolioCardEdit from "../../components/PortfolioCard";
-import TitleEdit from "../../components/Title";
-import user from "../../user.json";
-import "../../App.css";
+import PortfolioCard from "../components/PortfolioCard";
+import TitleCard from "../components/TitleCard";
+import user from "../user.json";
 
-class EditDisplay extends Component {
+class Portfolio extends Component {
 
-// Setting this.state.friends to the portfoliocards json array
   state = {
     user
   };
@@ -16,7 +14,7 @@ class EditDisplay extends Component {
     return (
     <div>
         <Row>
-          <TitleEdit 
+          <TitleCard
             name={this.state.user.name}
             linkedIn={this.state.user.linkedIn}
             headshot={this.state.user.headshot}
@@ -26,7 +24,7 @@ class EditDisplay extends Component {
         </Row>
         <Row>
           {this.state.user.projects.map(portfoliocard => (
-            <PortfolioCardEdit
+            <PortfolioCard
               id={portfoliocard.id}
               key={portfoliocard.id}
               project={portfoliocard.project}
@@ -39,10 +37,9 @@ class EditDisplay extends Component {
             />
           ))}
         </Row>
-     </div> 
+     </div>
     );
   }
 }
 
-
-export default EditDisplay;
+export default Portfolio;

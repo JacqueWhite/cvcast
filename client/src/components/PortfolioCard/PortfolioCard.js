@@ -1,5 +1,5 @@
 import React from "react";
-import {Col, Card, CardTitle, Button} from 'react-materialize';
+import {Card, Col, CardTitle, Button} from 'react-materialize';
 import "./PortfolioCard.css";
 
 const PortfolioCard = props => (
@@ -14,9 +14,8 @@ const PortfolioCard = props => (
           <Button waves='light' node='a' href={tag}> {tag} </Button>
           ))}
       </Card>
-  </Col>
+   </Col>
 </div>
 );
-
 export default PortfolioCard;
 
