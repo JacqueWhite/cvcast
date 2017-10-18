@@ -1,19 +1,18 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
-import Login from "../../components/Login";
-import "../../App.css";
+import LoginForm from "../../components/LoginForm";
 
-class Loginpage extends Component {
+class Login extends Component {
 
   render() {
     return (
     <div>
       <Row>
-        <Login/>
+        <LoginForm/>
       </Row>
      </div> 
     );
   }
 }
 
-export default Loginpage;
+export default Login;

@@ -1,13 +1,11 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
 import PortfolioCard from "../../components/PortfolioCard";
-import Title from "../../components/Title";
+import TitleCard from "../../components/TitleCard";
 import user from "../../user.json";
-import "../../App.css";
 
 class Portfolio extends Component {
 
-// Setting this.state.friends to the portfoliocards json array
   state = {
     user
   };
@@ -16,7 +14,7 @@ class Portfolio extends Component {
     return (
     <div>
         <Row>
-          <Title
+          <TitleCard
             name={this.state.user.name}
             linkedIn={this.state.user.linkedIn}
             headshot={this.state.user.headshot}
@@ -43,6 +41,5 @@ class Portfolio extends Component {
     );
   }
 }
-
 
 export default Portfolio;
