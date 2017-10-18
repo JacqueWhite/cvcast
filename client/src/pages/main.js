@@ -28,7 +28,7 @@ class Main extends Component {
 	          <div className="icon-block">
 	            <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2>
 	            <h5 className="center">Sign Up</h5>
-	            <p className="light">add your basic info</p>
+	            <p className="center light">add your basic info</p>
 	          </div>
 	        </div>
 
@@ -37,7 +37,7 @@ class Main extends Component {
 	            <h2 className="center brown-text"><i className="material-icons">group</i></h2>
 	            <h5 className="center">Show</h5>
 
-	            <p className="light">add your projects</p>
+	            <p className="center light">add your projects</p>
 	          </div>
 	        </div>
 
@@ -45,7 +45,7 @@ class Main extends Component {
 	          <div className="icon-block">
 	            <h2 className="center brown-text"><i className="material-icons">settings</i></h2>
 	            <h5 className="center">Tell</h5>
-	            <p className="light">share your page</p>
+	            <p className="center light">share your page</p>
 	          </div>
 	        </div>
 	      </div>
