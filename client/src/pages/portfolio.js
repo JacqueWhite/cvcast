@@ -54,7 +54,8 @@ class Portfolio extends Component {
     <div>
         <Row>
           <TitleCard
-            name={this.state.user.name}
+            firstName={this.state.user.name}
+            lastName={this.state.user.name}
             linkedIn={this.state.user.linkedIn}
             headshot={this.state.user.headshot}
             email={this.state.user.email}

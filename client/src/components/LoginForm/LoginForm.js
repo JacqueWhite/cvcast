@@ -19,9 +19,6 @@ const LoginForm = props => (
                 <input className='validate' type='password' name='password' id='password' />
                 <label for='password'>Enter your password</label>
             </div>
-            <label className='forgot'>
-                <a className='pink-text' href='#!'><b>Forgot Password?</b></a>
-            </label>
         </div>
         <br />
         <div className='row'>
