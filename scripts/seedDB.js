@@ -12,7 +12,7 @@ mongoose.connect(
 );
 
 const userSeed = [
-    {
+  {
     firstName: "Jacqueline",
     lastName: "White",
     email: "jacquecwhite@gmail.com", 
