@@ -14,7 +14,7 @@ class Main extends Component {
 	        </div>
 	        <div className="row center">
 	          <a href="/signup" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">start here</a>
-	          <a href="/portfolio" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">portfolio</a>
+	          <a href="/login" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">portfolio</a>
 	          <a href="/edit" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">edit portfolio</a>
 	        </div>
 	      </div>

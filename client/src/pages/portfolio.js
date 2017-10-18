@@ -7,7 +7,8 @@ import API from "../utils/api";
 class Portfolio extends Component {
 
   state = {
-    user: []
+    user: "",
+    projects: []
   };
 
   componentDidMount() {
