@@ -4,10 +4,6 @@ const Schema = mongoose.Schema;
 // Create the noteSchema with the schema object
 const projectSchema = new Schema({
   // The headline is the article associate with the note
-	_userId: {
-		type: Schema.Types.ObjectId,
-		ref: "User"
-	},
 	projectName: {
 		type: String
 	},
