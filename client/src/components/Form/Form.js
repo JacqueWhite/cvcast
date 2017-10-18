@@ -1,16 +1,8 @@
 import React, {Component} from "react";
 // import {Button, Modal, Icon} from 'react-materialize';
+import {Toast} from "react-materialize";
 import "./Form.css";
 
-
-// const Form = props => (
-// 	<Modal
-// 	header='Modal Header'
-// 	trigger={<Button waves='light'>OR ME!<Icon right>insert_chart</Icon></Button>}>
-// 	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-// 		incididunt ut labore et dolore magna aliqua.</p>
-// </Modal>	
-// );
 
 class Form extends Component {
   // Setting the component's initial state
@@ -35,8 +27,6 @@ class Form extends Component {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
 
-    // Alert the user their first and last name, clear `this.state.firstName` and `this.state.lastName`, clearing the inputs
-    // alert(`Hello ${this.state.firstName} ${this.state.lastName}`);
     alert(`Add another?`);
 
     this.setState({
@@ -51,6 +41,20 @@ class Form extends Component {
   render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
+
+      //<Card header={<CardTitle reveal image={"img/office.jpg"} waves='light'/>}
+        //title="Card Title"
+        //reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}>
+        //<p><a href="#">This is a link</a></p>
+      //</Card>
+    
+        //<Modal
+        //   header='Modal Header'
+        //   trigger={<Button waves='light'>OR ME!<Icon right>insert_chart</Icon></Button>}>
+        //   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+        //     incididunt ut labore et dolore magna aliqua.</p>
+        // </Modal>   
+
       <div>
         <p>
           Add New Project
@@ -107,7 +111,9 @@ class Form extends Component {
             type="text"
             placeholder="Link to Github"
           />
-          <button>Submit</button>
+          <Toast toast="added!" onClick={this.handleFormSubmit}>
+          Submit
+          </Toast>
         </form>
       </div>
     );

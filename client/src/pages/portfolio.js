@@ -24,9 +24,8 @@ class Portfolio extends Component {
             bio={this.state.user.bio}
           />
         </Row>
-        
-        <Row>
         <Form />
+        <Row>
           {this.state.user.projects.map(portfoliocard => (
             <PortfolioCard
               id={portfoliocard.id}
