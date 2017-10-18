@@ -1,20 +1,28 @@
 import axios from "axios";
 export default {
-  // Gets all users
-  getUsers: function() {
-    return axios.get("/api/users");
+  // Gets all projects
+  getProjects: function() {
+    return axios.get("/api/projects");
   },
-  // Gets the user with the given id
-  getUser: function(id) {
-    return axios.get("/api/users/" + id);
+  // Gets the project with the given id
+  getProject: function(id) {
+    return axios.get("/api/project/" + id);
   },
-  // Deletes the user with the given id
-  deleteUser: function(id) {
-    return axios.delete("/api/users/" + id);
+  // Deletes the project with the given id
+  deleteProject: function(id) {
+    return axios.delete("/api/project/" + id);
+  },
+  // Saves a project to the database
+  saveProject: function(projectData) {
+    return axios.post("/api/project", projectData);
   },
   // Saves a user to the database
   saveUser: function(userData) {
-    return axios.post("/api/users", userData);
+    return axios.post("/api/user", userData);
+  },
+  // Gets the user with the given id
+  getUser: function(id) {
+    return axios.get("/api/user/" + id);
   }
 
 };

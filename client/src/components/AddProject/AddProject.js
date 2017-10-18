@@ -1,14 +1,14 @@
 import React from "react";
 import {Card, Col, CardTitle, Button} from 'react-materialize';
-import "./PortfolioCardEdit.css";
+import "./AddProject.css";
 import FixedButton from '../FixedButton';
 import EditButton from '../EditButton';
 
-const PortfolioCardEdit = props => (
+const AddProject = props => (
 <div>
   <Col m={6} s={12}>
       <Card 
-        header={<CardTitle reveal image={props.image} waves='light'/>}
+        header={<CardTitle reveal image='http://placehold.it/700x400' waves='light'/>}
           title={props.project}
           reveal={<div><p>{props.description}</p></div>}>
           <p><a href={props.link}>See it Live</a></p>
@@ -21,5 +21,4 @@ const PortfolioCardEdit = props => (
    </Col>
 </div>
 );
-export default PortfolioCardEdit;
-
+export default AddProject;

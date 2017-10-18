@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const db = require("../models");
+const Schema = mongoose.Schema;
+
 mongoose.Promise = global.Promise;
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/showAndTell",
@@ -82,7 +84,13 @@ const projectSeed = [
     link: "https://onereq.herokuapp.com/",
     github: "ttps://github.com/JacqueWhite/onereq"  
   }
+<<<<<<< HEAD
 ];
+=======
+
+];
+
+>>>>>>> a73a8377b65e552a994800addd31c18c4dd58c6e
 db.User
   .remove({})
   .then(() => db.User.collection.insertMany(userSeed))
