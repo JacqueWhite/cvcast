@@ -1,8 +1,23 @@
 import React, { Component } from "react";
+import { Navbar, Button } from 'react-bootstrap';
+
 
 class Main extends Component {
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
 
   render() {
+    const { isAuthenticated, userHasScopes } = this.props.auth;
+
     return (
 	<div>
 	  <div id="index-banner" className="parallax-container">
@@ -13,10 +28,40 @@ class Main extends Component {
 	          <h5 className="header col s12 light">a platform to showcase your projects</h5>
 	        </div>
 	        <div className="row center">
-	          <a href="/signup" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">start here</a>
-	          <a href="/portfolio" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">portfolio</a>
-	          <a href="/edit" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">edit portfolio</a>
-	        </div>
+            {
+              !isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.login.bind(this)}
+                  >
+                    Log In
+                  </Button>
+                )
+            }
+            {
+              isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.goTo.bind(this, 'profile')}
+                  >
+                    Profile
+                  </Button>
+                )
+            }
+            {
+              isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.logout.bind(this)}
+                  >
+                    Log Out
+                  </Button>
+                )
+            }
+		        </div>
 	      </div>
 	    </div>
 	    <div className="parallax"><img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="background"/></div>
@@ -50,7 +95,7 @@ class Main extends Component {
 	        </div>
 	      </div>
 	    </div>
-	</div>
+	  </div>
     );
   }
 }
