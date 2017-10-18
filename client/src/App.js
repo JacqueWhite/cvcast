@@ -23,30 +23,26 @@ const handleAuthentication = (nextState, replace) => {
 
 const App = () =>
   <Router>
-    <div>
-      <Wrapper>
-  	      <Switch>
-  	        <Route exact path="/portfolio" component={Portfolio} />
+    <Switch>
+      <Route exact path="/portfolio" component={Portfolio} />
 
-            <Route path="/profile" render={(props) => (
-              !auth.isAuthenticated() ? (
-                <Redirect to="/home"/>
-              ) : (
-                <Profile auth={auth} {...props} />
-              )
-            )} />
+      <Route path="/profile" render={(props) => (
+        !auth.isAuthenticated() ? (
+          <Redirect to="/home"/>
+        ) : (
+          <Profile auth={auth} {...props} />
+        )
+      )} />
 
-            <Route path="/callback" render={(props) => {
-              handleAuthentication(props);
-              return <Callback {...props} />
-            }}/>
-            <Route path="/" render={(props) => <Main auth={auth} {...props} />} />
+      <Route path="/callback" render={(props) => {
+        handleAuthentication(props);
+        return <Callback {...props} />
+      }}/>
+      <Route path="/" render={(props) => <Main auth={auth} {...props} />} />
 
-            <Route exact path="/login" component={Login} />
-            <Route exact path="/edit" component={Edit} />
-          </Switch>
-      </Wrapper>
-    </div>
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/edit" component={Edit} />
+    </Switch>
   </Router>;
 
 export default App;
