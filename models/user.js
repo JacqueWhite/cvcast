@@ -22,6 +22,9 @@ const userSchema = new Schema ({
     linkedIn: {
         type: String
     },
+    gitHubProfile: {
+        type: String
+    },
     bio: {
         type: String
     },
