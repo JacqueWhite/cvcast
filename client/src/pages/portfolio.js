@@ -1,9 +1,10 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
 import PortfolioCard from "../components/PortfolioCard";
-from "../components/Form";
+import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
 import user from "../user.json";
+import "../index.css";
 
 class Portfolio extends Component {
 
@@ -14,7 +15,6 @@ class Portfolio extends Component {
   render() {
     return (
     <div>
-      <Form />
         <Row>
           <TitleCard
             name={this.state.user.name}
@@ -24,7 +24,9 @@ class Portfolio extends Component {
             bio={this.state.user.bio}
           />
         </Row>
+        
         <Row>
+        <Form />
           {this.state.user.projects.map(portfoliocard => (
             <PortfolioCard
               id={portfoliocard.id}
