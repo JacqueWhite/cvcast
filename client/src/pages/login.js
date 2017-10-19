@@ -14,7 +14,7 @@ class Login extends Component {
       </Row>
       <h3 className="login-text">Don't have a login? Sign up below</h3>
       <SignupForm/>
-     </div> 
+     </div>
     );
   }
 }

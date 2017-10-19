@@ -13,6 +13,20 @@ class Portfolio extends Component {
     user: ""
   };
 
+  componentWillMount() {
+    this.setState({ profile: {} });
+
+    const { userProfile, getProfile } = this.props.auth;
+
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
+      });
+    } else {
+      this.setState({ profile: userProfile });
+    }
+  }
+
   componentDidMount() {
     this.loadProjects();
     this.loadUser();
@@ -72,7 +86,7 @@ class Portfolio extends Component {
             email={this.state.user.email}
             bio={this.state.user.bio}
           />
-        </Row> 
+        </Row>
         <Row>
           {this.state.projects.map((portfoliocard, index) => (
             <PortfolioCard
