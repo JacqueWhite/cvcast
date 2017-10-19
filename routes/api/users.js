@@ -3,13 +3,14 @@ console.log("routes/api/users.js page");
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
-// Matches with "/api/main"
+// Matches with "/api/user"
 router
-  .route("/")
-  // .get(userController.findAll)
+  .route("/signup")
   .post(userController.create);
+  
+  // .catch(err => res.status(422).json(err)); //Errors out...
 
-// Matches with "/api/main/:id"
+// Matches with "/api/user/:id"
 router
   .route("/:id")
   .get(userController.findById)
