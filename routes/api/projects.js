@@ -4,7 +4,7 @@ const router = require("express").Router();
 const projectController = require("../../controllers/projectController");
 const mainController = require("../../controllers/mainController");
 
-// Matches with "/api/main"
+// Matches with "/api/projects"
 router
   .route("/seed")
   .get(mainController.seedProjects);
@@ -14,7 +14,7 @@ router
   .get(projectController.findAll)
   .post(projectController.create);
 
-// Matches with "/api/main/:id"
+// Matches with "/api/projects/:id"
 router
   .route("/:id")
   .get(projectController.findById)
@@ -25,4 +25,4 @@ module.exports = router;
 
 
 
-// I left routes commented out until we build out those routes more. They will throw errors. 
+// I left routes commented out until we build out those routes more. They will throw errors.

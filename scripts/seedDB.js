@@ -9,6 +9,7 @@ mongoose.connect(
     useMongoClient: true
   }
 );
+<<<<<<< HEAD
 
 // const userSeed = [
 //     {
@@ -54,7 +55,6 @@ mongoose.connect(
 //     team: "John Torrence, Will Williams, Mariana Perez, Jayme Howard",
 //     link: "https://jacquewhite.github.io/LocAll/",
 //     github: "https://github.com/JacqueWhite/LocAll"  
-
 //   },
 //   {
 //     _id : ObjectId("59e78c41c1b15d32adfec04a"),

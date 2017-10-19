@@ -1,8 +1,23 @@
 import React, { Component } from "react";
+import { Navbar, Button } from 'react-bootstrap';
+// import {Parallax} from "react-materialize";
 
 class Main extends Component {
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login() {
+    this.props.auth.login();
+  }
+
+  logout() {
+    this.props.auth.logout();
+  }
 
   render() {
+    const { isAuthenticated, userHasScopes } = this.props.auth;
+
     return (
 	<div>
 	  <div id="index-banner" className="parallax-container">
@@ -13,10 +28,40 @@ class Main extends Component {
 	          <h5 className="header col s12 light">a platform to showcase your projects</h5>
 	        </div>
 	        <div className="row center">
-	          <a href="/login" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">start here</a>
-	          <a href="/portfolio" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">portfolio</a>
-	          <a href="/edit" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">edit portfolio</a>
-	        </div>
+            {
+              !isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.login.bind(this)}
+                  >
+                    Log In
+                  </Button>
+                )
+            }
+            {
+              isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.goTo.bind(this, 'profile')}
+                  >
+                    Profile
+                  </Button>
+                )
+            }
+            {
+              isAuthenticated() && (
+                  <Button
+                    bsStyle="primary"
+                    className="btn-margin"
+                    onClick={this.logout.bind(this)}
+                  >
+                    Log Out
+                  </Button>
+                )
+            }
+		        </div>
 	      </div>
 	    </div>
 	    <div className="parallax"><img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="background"/></div>
@@ -28,7 +73,7 @@ class Main extends Component {
 	          <div className="icon-block">
 	            <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2>
 	            <h5 className="center">Sign Up</h5>
-	            <p className="light">add your basic info</p>
+	            <p className="center light">add your basic info</p>
 	          </div>
 	        </div>
 
@@ -37,7 +82,7 @@ class Main extends Component {
 	            <h2 className="center brown-text"><i className="material-icons">group</i></h2>
 	            <h5 className="center">Show</h5>
 
-	            <p className="light">add your projects</p>
+	            <p className="center light">add your projects</p>
 	          </div>
 	        </div>
 
@@ -45,12 +90,12 @@ class Main extends Component {
 	          <div className="icon-block">
 	            <h2 className="center brown-text"><i className="material-icons">settings</i></h2>
 	            <h5 className="center">Tell</h5>
-	            <p className="light">share your page</p>
+	            <p className="center light">share your page</p>
 	          </div>
 	        </div>
 	      </div>
 	    </div>
-	</div>
+	  </div>
     );
   }
 }
