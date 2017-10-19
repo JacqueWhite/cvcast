@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+// import {Parallax} from "react-materialize";
+
 
 class Main extends Component {
 
