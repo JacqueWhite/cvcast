@@ -9,11 +9,11 @@ class Login extends Component {
     return (
     <div>
       <Row>
-      <h2>Please Login</h2>
+      <h3 className="login-text">Please Login</h3>
         <LoginForm/>
       </Row>
-      <h2>Don't have a login? Sign up below</h2>
-      <SignupForm />
+      <h3 className="login-text">Don't have a login? Sign up below</h3>
+      <SignupForm/>
      </div>
     );
   }

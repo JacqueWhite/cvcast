@@ -6,7 +6,8 @@ import Portfolio from "./pages/portfolio";
 import Main from "./pages/main";
 import Edit from "./pages/edit";
 import Login from "./pages/login";
-import Wrapper from "./components/Wrapper";
+import "./index.css";
+
 
 // Auth stuff
 import Auth from './components/Auth/Auth';

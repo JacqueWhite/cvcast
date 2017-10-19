@@ -10,8 +10,8 @@ var currentUser = "59e7af7a06a8a57744413baf";
 class Portfolio extends Component {
 
   state = {
-    user: "",
-    projects: []
+    projects: [],
+    user: ""
   };
 
   componentWillMount() {
@@ -37,6 +37,14 @@ class Portfolio extends Component {
     API.getUser(currentUser)
       .then(res =>
         this.setState({ user: res.data})
+      )
+      .catch(err => console.log(err));
+  };
+
+  loadProjects = () => {
+    API.getProjects()
+      .then(res =>
+        this.setState({ projects: res.data})
       )
       .catch(err => console.log(err));
   };
