@@ -18,7 +18,6 @@ export default {
   },
   // Saves a user to the database
   saveUser: function(user) {
-    console.log("saved to db");
     return axios.post("/api/user/signup", user);
   },
   // Gets the user with the given id
