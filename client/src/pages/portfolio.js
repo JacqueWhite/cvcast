@@ -6,56 +6,68 @@ import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
 import Popup from "../components/Modal";
 
+var currentUser = "59e7af7a06a8a57744413baf";
 class Portfolio extends Component {
 
   state = {
-    user: []
+    projects: [],
+    user: "",
   };
 
   componentDidMount() {
     this.loadProjects();
+    this.loadUser();
   }
 
-  loadProjects = () => {
-    API.getProjects()
+  loadUser = () => {
+    API.getUser(currentUser)
       .then(res =>
         this.setState({ user: res.data})
       )
       .catch(err => console.log(err));
   };
 
-  deleteProject = id => {
-    API.deleteProject(id)
-      .then(res => this.loadProjects())
+  loadProjects = () => {
+    API.getProjects()
+      .then(res =>
+        this.setState({ projects: res.data})
+      )
       .catch(err => console.log(err));
   };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+//   deleteProject = id => {
+//     API.deleteProject(id)
+//       .then(res => this.loadProjects())
+//       .catch(err => console.log(err));
+//   };
 
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   if (this.state.title && this.state.author) {
-  //     API.saveBook({
-  //       title: this.state.title,
-  //       author: this.state.author,
-  //       synopsis: this.state.synopsis
-  //     })
-  //       .then(res => this.loadProjects())
-  //       .catch(err => console.log(err));
-  //   }
-  // };
+//   handleInputChange = event => {
+//     const { name, value } = event.target;
+//     this.setState({
+//       [name]: value
+//     });
+//   };
+
+//   // handleFormSubmit = event => {
+//   //   event.preventDefault();
+//   //   if (this.state.title && this.state.author) {
+//   //     API.saveBook({
+//   //       title: this.state.title,
+//   //       author: this.state.author,
+//   //       synopsis: this.state.synopsis
+//   //     })
+//   //       .then(res => this.loadProjects())
+//   //       .catch(err => console.log(err));
+//   //   }
+//   // };
 
   render() {
     return (
     <div>
         <Row>
           <TitleCard
-            name={this.state.user.name}
+            firstName={this.state.user.firstName}
+            lastName={this.state.user.lastName}
             linkedIn={this.state.user.linkedIn}
             headshot={this.state.user.headshot}
             email={this.state.user.email}
@@ -65,8 +77,9 @@ class Portfolio extends Component {
         <Popup />
         <Form />
         <Row>
-          {this.state.user.map(portfoliocard => (
+          {this.state.projects.map((portfoliocard, index) => (
             <PortfolioCard
+            key={index}
             project={portfoliocard.projectName}
             image={portfoliocard.image}
             description={portfoliocard.description}
