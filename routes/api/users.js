@@ -5,9 +5,10 @@ const userController = require("../../controllers/userController");
 
 // Matches with "/api/user"
 router
-  .route("/")
-  .get(userController.findAll)
+  .route("/signup")
   .post(userController.create);
+  
+  // .catch(err => res.status(422).json(err)); //Errors out...
 
 // Matches with "/api/user/:id"
 router

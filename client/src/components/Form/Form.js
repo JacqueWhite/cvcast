@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 // import {Button, Modal, Icon} from 'react-materialize';
-import {Toast} from "react-materialize";
+// import {Toast} from "react-materialize";
 import "./Form.css";
 
 
@@ -37,7 +37,7 @@ class Form extends Component {
     });
   };
       //Hello {this.state.firstName} {this.state.lastName} <-- goes between p tags in return()
-      //<button onClick={this.handleFormSubmit}>Submit</button>
+      
   render() {
     // Notice how each input has a `value`, `name`, and `onChange` prop
     return (
@@ -103,9 +103,10 @@ class Form extends Component {
             type="text"
             placeholder="Link to Github"
           />
-          <Toast toast="added!" onClick={this.handleFormSubmit}>
-          Submit
-          </Toast>
+          <button onClick={this.handleFormSubmit}>Submit</button>
+         
+          
+         
         </form>
       </div>
     );
