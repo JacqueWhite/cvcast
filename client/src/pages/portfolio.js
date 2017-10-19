@@ -1,16 +1,19 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
 import PortfolioCard from "../components/PortfolioCard";
-import Form from "../components/Form";
+// import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
 
-var currentUser = "59e7af7a06a8a57744413baf";
+var currentUser = "59e7c7b6546e4b82a351ec91";
+
+
+
 class Portfolio extends Component {
 
   state = {
     projects: [],
-    user: "",
+    user: ""
   };
 
   componentDidMount() {
@@ -47,18 +50,6 @@ class Portfolio extends Component {
     });
   };
 
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   if (this.state.title && this.state.author) {
-  //     API.saveBook({
-  //       title: this.state.title,
-  //       author: this.state.author,
-  //       synopsis: this.state.synopsis
-  //     })
-  //       .then(res => this.loadProjects())
-  //       .catch(err => console.log(err));
-  //   }
-  // };
 
   render() {
     return (
