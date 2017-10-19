@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
-import LoginForm from "../components/LoginForm";
+// import LoginForm from "../components/LoginForm";
 import SignupForm from "../components/SignupForm";
 
 class Signup extends Component {

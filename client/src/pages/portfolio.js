@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
 import PortfolioCard from "../components/PortfolioCard";
-// import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/API";
 
@@ -77,8 +76,6 @@ class Portfolio extends Component {
             bio={this.state.user.bio}
           />
         </Row>
-        <Popup />
-        <Form />
         <Row>
           {this.state.projects.map((portfoliocard, index) => (
             <PortfolioCard

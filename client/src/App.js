@@ -7,7 +7,7 @@ import Main from "./pages/main";
 import Edit from "./pages/edit";
 import Login from "./pages/login";
 import Signup from "./pages/signup";
-import Wrapper from "./components/Wrapper";
+// import Wrapper from "./components/Wrapper";
 
 import "./index.css";
 
@@ -48,7 +48,7 @@ const App = () =>
         !auth.isAuthenticated() ? (
           <Redirect to="/signup"/>
         ) : (
-          <SignupForm auth={auth} {...props} />
+          <Signup auth={auth} {...props} />
         )
       )} />
 

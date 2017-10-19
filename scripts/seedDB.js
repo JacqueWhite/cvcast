@@ -86,7 +86,7 @@ const projectSeed = [
     team: "Jacqueline White",
     link: "https://devscraped.herokuapp.com/",
     github: "https://github.com/JacqueWhite/devscraped"  
-    _user
+    
   },
   {
     "_id" : ObjectId("59e78c41c1b15d32adfec050"),
