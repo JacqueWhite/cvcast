@@ -16,9 +16,21 @@ const userSchema = new Schema ({
         unique: true,
         match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
     },
+    headshot: {
+        type: String
+    },
+    linkedIn: {
+        type: String
+    },
+    gitHubProfile: {
+        type: String
+    },
+    bio: {
+        type: String
+    },
     projects: [{
         type: Schema.Types.ObjectId,
-        ref: "Project"
+        ref: "project"
     }]
 });
 
