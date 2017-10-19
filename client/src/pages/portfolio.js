@@ -6,7 +6,7 @@ import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
 // import Popup from "../components/Modal";
 
-var currentUser = "59e7af7a06a8a57744413baf";
+var currentUser = "jacquecwhite@gmail.com";
 class Portfolio extends Component {
 
   state = {
@@ -16,9 +16,7 @@ class Portfolio extends Component {
 
   componentWillMount() {
     this.setState({ profile: {} });
-
     const { userProfile, getProfile } = this.props.auth;
-
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
@@ -34,9 +32,12 @@ class Portfolio extends Component {
   }
 
   loadUser = () => {
+    console.log(currentUser);
     API.getUser(currentUser)
-      .then(res =>
+      .then(res => {
+        console.log(res);
         this.setState({ user: res.data})
+      }
       )
       .catch(err => console.log(err));
   };
