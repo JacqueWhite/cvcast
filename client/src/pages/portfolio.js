@@ -4,6 +4,7 @@ import PortfolioCard from "../components/PortfolioCard";
 import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
+import Popup from "../components/Modal";
 
 class Portfolio extends Component {
 
@@ -61,6 +62,7 @@ class Portfolio extends Component {
             bio={this.state.user.bio}
           />
         </Row>
+        <Popup />
         <Form />
         <Row>
           {this.state.user.map(portfoliocard => (
