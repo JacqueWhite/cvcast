@@ -25,6 +25,15 @@ const handleAuthentication = (nextState, replace) => {
 const App = () =>
   <Router>
     <Switch>
+      <Route exact path="/portfolio" component={Portfolio} />
+      
+      {/* <Route path="/signup" render={(props) => (
+        !auth.isAuthenticated() ? (
+          <Redirect to="/signup"/>
+        ) : (
+          <Signup auth={auth} {...props} />
+        )
+      )} /> */}
 
       <Route exact path="/profile" render={(props) => (
         !auth.isAuthenticated() ? (
@@ -48,9 +57,12 @@ const App = () =>
 
       <Route exact path="/" render={(props) => <Main auth={auth} {...props} />} />
 
+
+
       <Route exact path="/login" component={Login} />
       <Route exact path="/edit" component={Edit} />
     </Switch>
+
   </Router>;
 
 export default App;

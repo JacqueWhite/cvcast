@@ -15,6 +15,7 @@ module.exports = {
         console.log("find all called from controllers/userController");
     },
     findById: function(req, res) {
+
     db.User
         .findById(req.params.id)
         .then(dbModel => {
@@ -35,9 +36,14 @@ module.exports = {
         console.log("Calling findbyEmail from controllers/userController");
     },
     create: function(req, res) {
+    console.log("OH NO ROBOTS, THE SEQUEL");
+    console.log(req.body);
     db.User
         .create(req.body)
-        .then(dbModel => res.json(dbModel))
+        .then(function(data){
+            res.json(data);
+        })
+        // .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
     update: function(req, res) {
