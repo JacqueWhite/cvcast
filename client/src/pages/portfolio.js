@@ -5,13 +5,28 @@ import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/API";
 
+
 var currentUser = "59e7af7a06a8a57744413baf";
 class Portfolio extends Component {
 
   state = {
-    projects: [],
     user: "",
+    projects: []
   };
+
+  componentWillMount() {
+    this.setState({ profile: {} });
+
+    const { userProfile, getProfile } = this.props.auth;
+
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
+      });
+    } else {
+      this.setState({ profile: userProfile });
+    }
+  }
 
   componentDidMount() {
     this.loadProjects();
@@ -72,7 +87,9 @@ class Portfolio extends Component {
             email={this.state.user.email}
             bio={this.state.user.bio}
           />
-        </Row> 
+        </Row>
+        <Popup />
+        <Form />
         <Row>
           {this.state.projects.map((portfoliocard, index) => (
             <PortfolioCard
