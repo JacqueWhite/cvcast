@@ -47,14 +47,6 @@ class Form extends Component {
         //reveal={<p>Here is some more information about this product that is only revealed once clicked on.</p>}>
         //<p><a href="#">This is a link</a></p>
       //</Card>
-    
-        //<Modal
-        //   header='Modal Header'
-        //   trigger={<Button waves='light'>OR ME!<Icon right>insert_chart</Icon></Button>}>
-        //   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-        //     incididunt ut labore et dolore magna aliqua.</p>
-        // </Modal>   
-
       <div>
         <p>
           Add New Project
