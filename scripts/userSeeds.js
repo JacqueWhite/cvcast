@@ -20,6 +20,7 @@ module.exports = {
     // create some events
   const users = [
       {
+        _id: "59e79d329de62935d1b7d58b"
         firstName: "Jacque",
         lastName: "White",
         email: "jacquecwhite@gmail.com",
@@ -29,6 +30,7 @@ module.exports = {
         bio: "My name is Jacque White and I am a Junior Full-Stack Developer with a passion for helping people and bringing their ideas to life. I have a wide-range of career experiences ranging from health & wellness to human resources that help me understand the needs of a variety of clients."
       },
       {
+        _id: "59e79d329de62935d1b7d58c",
         firstName: "Isai",
         lastName: "Solis",
         email: "solis_isai@yahoo.com",
@@ -38,6 +40,7 @@ module.exports = {
         bio: "Hey it's Isai! I'm an Aspiring Developer"
       },
       {
+        _id: "59e79d329de62935d1b7d58d",
         firstName: "Audrey",
         lastName: "Fletcher",
         email: "anfletcher24@gmail.com",

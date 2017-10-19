@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const Project = require('../models/project');
 
 const UserSchema = new Schema ({
     firstName: {
@@ -29,7 +30,8 @@ const UserSchema = new Schema ({
         type: String
     },
     projects: [{
-        type: Object,
+        type: Schema.Types.ObjectId,
+        ref: "Project"
     }],
     createdBy: {
         type: Schema.Types.ObjectId,

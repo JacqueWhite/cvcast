@@ -5,7 +5,7 @@ import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
 // import Popup from "../components/Modal";
 
-var currentUser = "jacquecwhite@gmail.com";
+var currentUser = "anfletcher24@gmail.com";
 class Portfolio extends Component {
 
   state = {
@@ -93,20 +93,20 @@ class Portfolio extends Component {
             linkedIn={this.state.user.linkedIn}
             headshot={this.state.user.headshot}
             email={this.state.user.email}
+            gitHubProfile={this.state.user.gitHubProfile}
             bio={this.state.user.bio}
           />
         </Row>
         <Row>
-          {this.state.projects.map((portfoliocard, index) => (
+          {this.state.projects.map((portfoliocard) => (
             <PortfolioCard
-            key={index}
-            project={portfoliocard.projectName}
+            projectName={portfoliocard.projectName}
             image={portfoliocard.image}
             description={portfoliocard.description}
-            team={portfoliocard.team}
-            link={portfoliocard.link}
             github={portfoliocard.github}
             technologiesKeywords={portfoliocard.technologiesKeywords}
+            team={portfoliocard.team}
+            link={portfoliocard.link}
             />
           ))}
         </Row>
