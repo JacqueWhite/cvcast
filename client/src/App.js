@@ -27,13 +27,13 @@ const App = () =>
     <Switch>
       <Route exact path="/portfolio" component={Portfolio} />
       
-      <Route path="/signup" render={(props) => (
+      {/* <Route path="/signup" render={(props) => (
         !auth.isAuthenticated() ? (
           <Redirect to="/signup"/>
         ) : (
           <Signup auth={auth} {...props} />
         )
-      )} />
+      )} /> */}
 
       <Route exact path="/profile" render={(props) => (
         !auth.isAuthenticated() ? (

@@ -34,7 +34,7 @@ class Main extends Component {
               {
                 !isAuthenticated() && (
                     <Button
-                      bsStyle="primary"
+                      
                       className="btn-margin"
                       onClick={this.goTo.bind(this, 'portfolio')}
                     >
@@ -45,7 +45,7 @@ class Main extends Component {
               {
                   !isAuthenticated() && (
                       <Button
-                        bsStyle="primary"
+                      
                         className="btn-margin"
                         onClick={this.login.bind(this)}
                       >
@@ -56,7 +56,7 @@ class Main extends Component {
                 {
                   isAuthenticated() && (
                       <Button
-                        bsStyle="primary"
+                       
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'profile')}
                       >
@@ -67,7 +67,7 @@ class Main extends Component {
                 {
                   isAuthenticated() && (
                       <Button
-                        bsStyle="primary"
+                      
                         className="btn-margin"
                         onClick={this.logout.bind(this)}
                       >
