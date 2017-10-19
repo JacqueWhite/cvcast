@@ -28,7 +28,7 @@ const App = () =>
 
       <Route path="/profile" render={(props) => (
         !auth.isAuthenticated() ? (
-          <Redirect to="/home"/>
+          <Redirect to="/profile"/>
         ) : (
           <Profile auth={auth} {...props} />
         )
