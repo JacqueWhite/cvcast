@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
 import PortfolioCard from "../components/PortfolioCard";
-import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
 // import Popup from "../components/Modal";
@@ -14,17 +13,17 @@ class Portfolio extends Component {
     user: ""
   };
 
-  componentWillMount() {
-    this.setState({ profile: {} });
-    const { userProfile, getProfile } = this.props.auth;
-    if (!userProfile) {
-      getProfile((err, profile) => {
-        this.setState({ profile });
-      });
-    } else {
-      this.setState({ profile: userProfile });
-    }
-  }
+  // componentWillMount() {
+  //   this.setState({ profile: {} });
+  //   const { userProfile, getProfile } = this.props.auth;
+  //   if (!userProfile) {
+  //     getProfile((err, profile) => {
+  //       this.setState({ profile });
+  //     });
+  //   } else {
+  //     this.setState({ profile: userProfile });
+  //   }
+  // }
 
   componentDidMount() {
     this.loadProjects();
@@ -97,7 +96,6 @@ class Portfolio extends Component {
             bio={this.state.user.bio}
           />
         </Row>
-        <Form />
         <Row>
           {this.state.projects.map((portfoliocard, index) => (
             <PortfolioCard

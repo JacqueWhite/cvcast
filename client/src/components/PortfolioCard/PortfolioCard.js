@@ -1,9 +1,9 @@
 import React from "react";
-import {Card, Col, CardTitle, Button} from 'react-materialize';
+import {Card, CardTitle, Button} from 'react-materialize';
 import "./PortfolioCard.css";
 
 const PortfolioCard = props => (
-
+<div>
       <Card 
         header={
           <CardTitle 
@@ -26,6 +26,7 @@ const PortfolioCard = props => (
               {tag} 
             </Button>
             ))}
+        </Card>
 </div>
 );
 export default PortfolioCard;

@@ -35,7 +35,7 @@ const App = () =>
       )} />
       <Route exact path="/portfolio" render={(props) => (
         !auth.isAuthenticated() ? (
-          <Redirect to="/"/>
+          <Portfolio auth={auth} {...props} />
         ) : (
           <Portfolio auth={auth} {...props} />
         )

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Button } from 'react-bootstrap';
+import { Button } from 'react-materialize';
 // import {Parallax} from "react-materialize";
 
 class Main extends Component {
@@ -16,7 +16,7 @@ class Main extends Component {
   }
 
   render() {
-    const { isAuthenticated, userHasScopes } = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
 
     return (
 	<div>
