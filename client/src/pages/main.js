@@ -49,7 +49,7 @@ class Main extends Component {
                         className="btn-margin"
                         onClick={this.login.bind(this)}
                       >
-                        Log In
+                        Log In (MAKE SURE YOU'RE LOGGED IN!!!!)
                       </Button>
                     )
                 }

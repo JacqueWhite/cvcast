@@ -17,7 +17,7 @@ const userSeed = [
       headshot: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAhqAAAAJDc4ZjkwN2YyLTgyODMtNGQ2Zi1hYmYwLTlmOGNmNjhlYTM3Yg.jpg",
       linkedIn: "https://www.linkedin.com/in/jacquelinewhite15/",
       bio: "My name is Jacque White and I am a Junior Full-Stack Developer with a passion for helping people and bringing their ideas to life. I have a wide-range of career experiences ranging from health & wellness to human resources that help me understand the needs of a variety of clients.",
-    
+
     projects: [{
       type: Schema.Types.ObjectId,
       ref: "projects"
@@ -36,7 +36,16 @@ const userSeed = [
     lastName: "Fletcher",
     email: "auddddd@gmail.com",
     projects: [
-    ObjectId("59e78c41c1b15d32adfec04c"), ObjectId("59e78c41c1b15d32adfec04a"), 
+    ObjectId("59e78c41c1b15d32adfec04c"), ObjectId("59e78c41c1b15d32adfec04a"),
+
+    ]
+  },
+    {
+    firstName: "John",
+    lastName: "Torrence",
+    email: "torrencj@gmail.com",
+    projects: [
+    ObjectId("59e78c41c1b15d32adfec04c"), ObjectId("59e78c41c1b15d32adfec04a"),
 
     ]
     }
@@ -50,7 +59,7 @@ const projectSeed = [
     technologiesKeywords: "CSS, javaScript, jQuery, Google Firebase, Bootstrap",
     team: "John Torrence, Will Williams, Mariana Perez, Jayme Howard",
     link: "https://jacquewhite.github.io/LocAll/",
-    github: "https://github.com/JacqueWhite/LocAll"  
+    github: "https://github.com/JacqueWhite/LocAll"
 
   },
   {
@@ -61,7 +70,7 @@ const projectSeed = [
     technologiesKeywords: "CSS, javaScript, Node.js, Materialize, jQuery, MySQL, Sequelize",
     team: "John Torrence, Will Williams, Mariana Perez, Jayme Howard",
     link: "https://itsa-go.herokuapp.com/",
-    github: "https://github.com/JacqueWhite/Its-a-GO"  
+    github: "https://github.com/JacqueWhite/Its-a-GO"
   },
   {
     "_id" : ObjectId("59e78c41c1b15d32adfec04b"),
@@ -71,7 +80,7 @@ const projectSeed = [
     technologiesKeywords: "CSS, javaScript, Materialize, Node.js, jQuery, MySQL, Sequelize",
     team: "Jacqueline White",
     link: "https://accountabili-buddy.herokuapp.com/",
-    github: "https://github.com/JacqueWhite/AccountabiliBuddy"  
+    github: "https://github.com/JacqueWhite/AccountabiliBuddy"
   },
   {
     "_id" : ObjectId("59e78c41c1b15d32adfec04f"),
@@ -81,8 +90,7 @@ const projectSeed = [
     technologiesKeywords: "CSS, javaScript, Materialize, jQuery, MySQL, Sequelize",
     team: "Jacqueline White",
     link: "https://devscraped.herokuapp.com/",
-    github: "https://github.com/JacqueWhite/devscraped"  
-    _user
+    github: "https://github.com/JacqueWhite/devscraped"
   },
   {
     "_id" : ObjectId("59e78c41c1b15d32adfec050"),
@@ -92,7 +100,7 @@ const projectSeed = [
     technologiesKeywords: "CSS, javaScript, Bootstrap, React, MongoDB, mongoose",
     team: "Jacqueline White",
     link: "https://onereq.herokuapp.com/",
-    github: "ttps://github.com/JacqueWhite/onereq"  
+    github: "ttps://github.com/JacqueWhite/onereq"
   }
 
 ];
