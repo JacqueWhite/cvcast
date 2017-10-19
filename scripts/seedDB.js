@@ -37,7 +37,7 @@ const userSeed = [
       _id: "59e79d329de62935d1b7d58d",
       firstName: "Audrey",
       lastName: "Fletcher",
-      email: "auddddd@gmail.com",
+      email: "anfletcher24@gmail.com",
       projects: [
       "59e78c41c1b15d32adfec04c", 
       "59e78c41c1b15d32adfec04a", 
