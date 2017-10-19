@@ -4,6 +4,7 @@ import PortfolioCard from "../components/PortfolioCard";
 // import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
+import Popup from "../components/Modal";
 
 var currentUser = "59e7c7b6546e4b82a351ec91";
 
@@ -12,9 +13,27 @@ var currentUser = "59e7c7b6546e4b82a351ec91";
 class Portfolio extends Component {
 
   state = {
-    projects: [],
-    user: ""
+    user: "",
+    projects:[]
   };
+
+
+
+  
+  
+  componentWillMount() {
+    this.setState({ profile: {} });
+
+    const { userProfile, getProfile } = this.props.auth;
+
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
+      });
+    } else {
+      this.setState({ profile: userProfile });
+    }
+  }
 
   componentDidMount() {
     this.loadProjects();
@@ -37,18 +56,18 @@ class Portfolio extends Component {
       .catch(err => console.log(err));
   };
 
-  deleteProject = id => {
-    API.deleteProject(id)
-      .then(res => this.loadProjects())
-      .catch(err => console.log(err));
-  };
+//   deleteProject = id => {
+//     API.deleteProject(id)
+//       .then(res => this.loadProjects())
+//       .catch(err => console.log(err));
+//   };
 
-  handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({
-      [name]: value
-    });
-  };
+//   handleInputChange = event => {
+//     const { name, value } = event.target;
+//     this.setState({
+//       [name]: value
+//     });
+//   };
 
 
   render() {
@@ -63,7 +82,9 @@ class Portfolio extends Component {
             email={this.state.user.email}
             bio={this.state.user.bio}
           />
-        </Row> 
+        </Row>
+        <Popup />
+        <Form />
         <Row>
           {this.state.projects.map((portfoliocard, index) => (
             <PortfolioCard
