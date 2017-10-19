@@ -17,12 +17,11 @@ export default {
     return axios.post("/api/project", projectData);
   },
   // Saves a user to the database
-  saveUser: function(userData) {
-    return axios.post("/api/user", userData);
+  saveUser: function(user) {
+    return axios.post("/api/user/signup", user);
   },
   // Gets the user with the given id
   getUser: function(id) {
     return axios.get("/api/user/" + id);
   }
-
 };

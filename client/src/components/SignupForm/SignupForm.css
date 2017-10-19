@@ -12,3 +12,7 @@ div.z-depth-1 {
 img.responsive-img {
     width: 250px;
 }
+
+form {
+	background-color: snow;
+}

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Navbar, Button } from 'react-bootstrap';
+import { Button } from 'react-materialize';
 // import {Parallax} from "react-materialize";
 
 class Main extends Component {
@@ -16,7 +16,7 @@ class Main extends Component {
   }
 
   render() {
-    const { isAuthenticated, userHasScopes } = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
 
     return (
 	<div>
@@ -28,39 +28,53 @@ class Main extends Component {
 	          <h5 className="header col s12 light">a platform to showcase your projects</h5>
 	        </div>
 	        <div className="row center">
-            {
-              !isAuthenticated() && (
-                  <Button
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.login.bind(this)}
-                  >
-                    Log In
-                  </Button>
-                )
-            }
-            {
-              isAuthenticated() && (
-                  <Button
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.goTo.bind(this, 'profile')}
-                  >
-                    Profile
-                  </Button>
-                )
-            }
-            {
-              isAuthenticated() && (
-                  <Button
-                    bsStyle="primary"
-                    className="btn-margin"
-                    onClick={this.logout.bind(this)}
-                  >
-                    Log Out
-                  </Button>
-                )
-            }
+            <a href="/login" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">start here</a>
+            <a href="/portfolio" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">portfolio</a>
+            <a href="/edit" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">edit portfolio</a>
+              {
+                !isAuthenticated() && (
+                    <Button
+                      
+                      className="btn-margin"
+                      onClick={this.goTo.bind(this, 'portfolio')}
+                    >
+                      Portfolio
+                    </Button>
+                  )
+              }
+              {
+                  !isAuthenticated() && (
+                      <Button
+                      
+                        className="btn-margin"
+                        onClick={this.login.bind(this)}
+                      >
+                        Log In
+                      </Button>
+                    )
+                }
+                {
+                  isAuthenticated() && (
+                      <Button
+                       
+                        className="btn-margin"
+                        onClick={this.goTo.bind(this, 'profile')}
+                      >
+                        Profile
+                      </Button>
+                    )
+                }
+                {
+                  isAuthenticated() && (
+                      <Button
+                      
+                        className="btn-margin"
+                        onClick={this.logout.bind(this)}
+                      >
+                        Log Out
+                      </Button>
+                    )
+                }
 		        </div>
 	      </div>
 	    </div>

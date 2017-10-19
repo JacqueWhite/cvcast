@@ -2,17 +2,22 @@ console.log("routes/api/users.js page");
 
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
+const mainController = require("../../controllers/mainController");
 
-// Matches with "/api/user"
 router
-  .route("/")
-  .get(userController.findAll)
+  .route("/seed")
+  .get(mainController.seedUsers);
+
+router
+  .route("/signup")
   .post(userController.create);
+  
+  // .catch(err => res.status(422).json(err)); //Errors out...
 
 // Matches with "/api/user/:id"
 router
-  .route("/:id")
-  .get(userController.findById)
+  .route("/:email")
+  .get(userController.findByEmail)
   .put(userController.update)
   .delete(userController.remove);
 

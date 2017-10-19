@@ -2,7 +2,7 @@ import React, {Component} from "react";
 
 
 
-class Modal extends Component {
+class Modal extends React.Component {
 
 	static propTypes = {
 		isModalOpen: React.PropTypes.bool.isRequired,

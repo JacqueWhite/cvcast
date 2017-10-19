@@ -1,32 +1,29 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
 import PortfolioCard from "../components/PortfolioCard";
-import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
-import API from "../utils/api";
-import Popup from "../components/Modal";
+import API from "../utils/API";
+// import Popup from "../components/Modal";
 
-var currentUser = "59e7af7a06a8a57744413baf";
+var currentUser = "anfletcher24@gmail.com";
 class Portfolio extends Component {
 
   state = {
-    user: "",
-    projects: []
+    projects: [],
+    user: ""
   };
 
-  componentWillMount() {
-    this.setState({ profile: {} });
-
-    const { userProfile, getProfile } = this.props.auth;
-
-    if (!userProfile) {
-      getProfile((err, profile) => {
-        this.setState({ profile });
-      });
-    } else {
-      this.setState({ profile: userProfile });
-    }
-  }
+  // componentWillMount() {
+  //   this.setState({ profile: {} });
+  //   const { userProfile, getProfile } = this.props.auth;
+  //   if (!userProfile) {
+  //     getProfile((err, profile) => {
+  //       this.setState({ profile });
+  //     });
+  //   } else {
+  //     this.setState({ profile: userProfile });
+  //   }
+  // }
 
   componentDidMount() {
     this.loadProjects();
@@ -34,9 +31,20 @@ class Portfolio extends Component {
   }
 
   loadUser = () => {
+    console.log(currentUser);
     API.getUser(currentUser)
-      .then(res =>
+      .then(res => {
+        console.log(res);
         this.setState({ user: res.data})
+      }
+      )
+      .catch(err => console.log(err));
+  };
+
+  loadProjects = () => {
+    API.getProjects()
+      .then(res =>
+        this.setState({ projects: res.data})
       )
       .catch(err => console.log(err));
   };
@@ -62,18 +70,6 @@ class Portfolio extends Component {
 //     });
 //   };
 
-//   // handleFormSubmit = event => {
-//   //   event.preventDefault();
-//   //   if (this.state.title && this.state.author) {
-//   //     API.saveBook({
-//   //       title: this.state.title,
-//   //       author: this.state.author,
-//   //       synopsis: this.state.synopsis
-//   //     })
-//   //       .then(res => this.loadProjects())
-//   //       .catch(err => console.log(err));
-//   //   }
-//   // };
 
   render() {
     return (
@@ -85,22 +81,20 @@ class Portfolio extends Component {
             linkedIn={this.state.user.linkedIn}
             headshot={this.state.user.headshot}
             email={this.state.user.email}
+            gitHubProfile={this.state.user.gitHubProfile}
             bio={this.state.user.bio}
           />
         </Row>
-        <Popup />
-        <Form />
         <Row>
-          {this.state.projects.map((portfoliocard, index) => (
+          {this.state.projects.map((portfoliocard) => (
             <PortfolioCard
-            key={index}
-            project={portfoliocard.projectName}
+            projectName={portfoliocard.projectName}
             image={portfoliocard.image}
             description={portfoliocard.description}
-            team={portfoliocard.team}
-            link={portfoliocard.link}
             github={portfoliocard.github}
             technologiesKeywords={portfoliocard.technologiesKeywords}
+            team={portfoliocard.team}
+            link={portfoliocard.link}
             />
           ))}
         </Row>
