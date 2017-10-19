@@ -1,14 +1,25 @@
+const mongoose = require("mongoose");
+const db = require("../models");
+const Schema = mongoose.Schema;
+
+mongoose.Promise = global.Promise;
+mongoose.connect(
+  process.env.MONGODB_URI || "mongodb://localhost/showAndTell",
+  {
+    useMongoClient: true
+  }
+);
+
 const Project = require('../models/project');
 const User = require('../models/user');
 
 module.exports = {
 
   // seed our database
-  seedEvents: (req, res) => {
+  seedProjects: (req, res) => {
     // create some events
   const project = [
     {
-      _id : ObjectId("59e78c41c1b15d32adfec04c"),
       projectName: "LocALL",
       image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/locall.png",
       description: "a place to get recommendations on where to eat, drink, and play in Austin, TX",
@@ -16,10 +27,8 @@ module.exports = {
       team: "John Torrence, Will Williams, Mariana Perez, Jayme Howard",
       link: "https://jacquewhite.github.io/LocAll/",
       github: "https://github.com/JacqueWhite/LocAll"  
-
     },
     {
-      _id : ObjectId("59e78c41c1b15d32adfec04a"),
       projectName: "ItsAGO",
       image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/itsago.png",
       description: "Simple event and RSVP manager",
@@ -29,7 +38,6 @@ module.exports = {
       github: "https://github.com/JacqueWhite/Its-a-GO"  
     },
     {
-      _id : ObjectId("59e78c41c1b15d32adfec04b"),
       projectName: "AccountabiliBuddy",
       image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/accountabilibuddy.png",
       description: "A gym-buddy match app that pairs up friends based on schedule and fitness activity preferences.",
@@ -39,7 +47,6 @@ module.exports = {
       github: "https://github.com/JacqueWhite/AccountabiliBuddy"  
     },
     {
-      _id : ObjectId("59e78c41c1b15d32adfec04f"),
       projectName: "devScraped",
       image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/devscrape.png",
       description: "A tool for developers to scrape their favorite resource pages and take notes on them. ",
@@ -49,7 +56,6 @@ module.exports = {
       github: "https://github.com/JacqueWhite/devscraped"
     },
     {
-      _id : ObjectId("59e78c41c1b15d32adfec050"),
       projectName: "oneReq",
       image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/accountabilibuddy.png",
       description: "Recruiting platform for Software Developer recruiters.",
@@ -61,15 +67,15 @@ module.exports = {
   ]
 
     // use the Event model to insert/save
-    for (Project of Projects) {
-      var newProject = new Project(Project);
+    for (project of projects) {
+      var newProject = new Project(project);
       newProject.save(function(error) {
         if (!error) {
           Project.find({})
               .populate('createdBy')
               .populate('projects.createdBy')
               .exec(function(error, posts) {
-                  console.log(JSON.stringify(posts, null, "\t"))
+                  console.log(JSON.stringify(projects, null, "\t"))
               })
         }
       });
@@ -78,3 +84,6 @@ module.exports = {
     res.send('Database seeded projects!');
     }
   };
+}
+
+seedProjects();

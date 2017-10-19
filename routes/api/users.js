@@ -2,7 +2,11 @@ console.log("routes/api/users.js page");
 
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
+const mainController = require("../../controllers/mainController");
 
+router
+  .route("/seed")
+  .get(mainController.seedUsers);
 // Matches with "/api/main"
 router
   .route("/")

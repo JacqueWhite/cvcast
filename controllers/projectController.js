@@ -1,6 +1,4 @@
 console.log("projectController.js");
-
-
 const db = require("../models");
 
 module.exports = {

@@ -2,8 +2,13 @@ console.log("routes/api/projects.js page");
 
 const router = require("express").Router();
 const projectController = require("../../controllers/projectController");
+const mainController = require("../../controllers/mainController");
 
 // Matches with "/api/main"
+router
+  .route("/seed")
+  .get(mainController.seedProjects);
+
 router
   .route("/")
   .get(projectController.findAll)
