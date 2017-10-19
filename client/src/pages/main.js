@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Navbar, Button } from 'react-bootstrap';
-
+// import {Parallax} from "react-materialize";
 
 class Main extends Component {
   goTo(route) {

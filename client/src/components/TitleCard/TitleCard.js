@@ -13,6 +13,7 @@ const TitleCard = props => (
 	        <img className="circle responsive-img" src={props.headshot} alt={props.name} />
 	      </div>
 	      <div className="col right controls ">
+
 	        <i className="material-icons">more_vert</i>
 	      </div>
 	      <div className="row-menu">
@@ -27,7 +28,7 @@ const TitleCard = props => (
 	        </div>
 	      </div>
 	    </div>
-	    <span className="card-title black-text">{props.name}</span>
+	    <span className="card-title black-text">{props.firstName}{props.lastName}</span>
 	    <span className="card-title black-text email"><a href={`mailto:${props.email}`}>{props.email}</a> | <a href={props.linkedIn} target="_blank">View My LinkedIn</a></span>
 	    <span className="black-text">{props.bio}</span>
 	  </div>
