@@ -26,27 +26,27 @@ const App = () =>
   <Router>
     <Switch>
 
-      <Route path="/profile" render={(props) => (
+      <Route exact path="/profile" render={(props) => (
         !auth.isAuthenticated() ? (
-          <Redirect to="/profile"/>
+          <Redirect to="/"/>
         ) : (
           <Profile auth={auth} {...props} />
         )
       )} />
-      <Route path="/portfolio" render={(props) => (
+      <Route exact path="/portfolio" render={(props) => (
         !auth.isAuthenticated() ? (
-          <Redirect to="/portfolio"/>
+          <Redirect to="/"/>
         ) : (
           <Portfolio auth={auth} {...props} />
         )
       )} />
 
-      <Route path="/callback" render={(props) => {
+      <Route exact path="/callback" render={(props) => {
         handleAuthentication(props);
         return <Callback {...props} />
       }}/>
 
-      <Route path="/" render={(props) => <Main auth={auth} {...props} />} />
+      <Route exact path="/" render={(props) => <Main auth={auth} {...props} />} />
 
       <Route exact path="/login" component={Login} />
       <Route exact path="/edit" component={Edit} />
