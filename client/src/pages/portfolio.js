@@ -4,11 +4,8 @@ import PortfolioCard from "../components/PortfolioCard";
 // import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
-import Popup from "../components/Modal";
 
 var currentUser = "59e7c7b6546e4b82a351ec91";
-
-
 
 class Portfolio extends Component {
 
@@ -17,10 +14,6 @@ class Portfolio extends Component {
     projects:[]
   };
 
-
-
-  
-  
   componentWillMount() {
     this.setState({ profile: {} });
 
