@@ -7,15 +7,33 @@ module.exports = {
     findAll: function(req, res){
         db.User
         .find(req.query)
-        .then(dbModel => res.json(dbModel))
+        .then(dbModel => {
+          console.log(dbModel);
+          res.json(dbModel);
+        })
         .catch(err => res.status(422).json(err));
+        console.log("find all called from controllers/userController");
     },
     findById: function(req, res) {
 
     db.User
         .findById(req.params.id)
-        .then(dbModel => res.json(dbModel))
+        .then(dbModel => {
+                  console.log(dbModel);
+                  res.json(dbModel);
+                })
         .catch(err => res.status(422).json(err));
+        console.log("Calling findById from controllers/userController");
+    },
+    findByEmail: function(req, res) {
+    db.User
+        .findOne({ email: req.params.email })
+        .then(dbModel => {
+                  console.log(dbModel);
+                  res.json(dbModel);
+                })
+        .catch(err => res.status(422).json(err));
+        console.log("Calling findbyEmail from controllers/userController");
     },
     create: function(req, res) {
     console.log("OH NO ROBOTS, THE SEQUEL");
@@ -41,12 +59,12 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     // db.places.update({"country": "Morocco"}, {$push: {"majorcities":"Agadir"}})
-    
+
     remove: function(req, res) {
     db.User
         .findById({ _id: req.params.id })
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-    }    
+    }
 };

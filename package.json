@@ -25,10 +25,12 @@
   },
   "homepage": "https://github.com/isai-solis/Show-and-Tell#readme",
   "dependencies": {
+    "auth0-js": "^8.10.1",
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^4.12.1",
+    "react-bootstrap": "^0.31.3",
     "react-flipcard": "^0.2.1",
     "react-materialize": "^1.0.16",
     "react-router-dom": "^4.2.2"

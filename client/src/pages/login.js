@@ -10,19 +10,13 @@ class Login extends Component {
     return (
     <div>
       <Row>
-
-      <h3 className="login-text">Login here:</h3>
-
-      <h2>Please Login</h2>
-
+      <h3 className="login-text">Please Login</h3>
         <LoginForm/>
         <h3 className="login-text"><a href="/signup">Sign up</a></h3>
       </Row>
-
-     
-    </div> 
-
-
+      <h3 className="login-text">Don't have a login? Sign up below</h3>
+      <SignupForm/>
+     </div>
     );
   }
 }

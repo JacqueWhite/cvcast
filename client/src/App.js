@@ -6,24 +6,7 @@ import Portfolio from "./pages/portfolio";
 import Main from "./pages/main";
 import Edit from "./pages/edit";
 import Login from "./pages/login";
-import Signup from "./pages/signup";
-// import Wrapper from "./components/Wrapper";
-
 import "./index.css";
-
-// const App = () =>
-//   <Router>
-//     <div>
-//       <Wrapper>
-//   	      <Switch>
-//   	        <Route exact path="/portfolio" component={Portfolio} />
-//             <Route exact path="/" component={Main} />
-//             <Route exact path="/login" component={Login} />
-//             <Route exact path="/signup" component={Signup} />
-//             <Route exact path="/edit" component={Edit} />
-//           </Switch>
-//       </Wrapper>
-//     </div>
 
 
 // Auth stuff
@@ -52,19 +35,27 @@ const App = () =>
         )
       )} />
 
-      <Route path="/profile" render={(props) => (
+      <Route exact path="/profile" render={(props) => (
         !auth.isAuthenticated() ? (
-          <Redirect to="/profile"/>
+          <Redirect to="/"/>
         ) : (
           <Profile auth={auth} {...props} />
         )
       )} />
+      <Route exact path="/portfolio" render={(props) => (
+        !auth.isAuthenticated() ? (
+          <Portfolio auth={auth} {...props} />
+        ) : (
+          <Portfolio auth={auth} {...props} />
+        )
+      )} />
 
-      <Route path="/callback" render={(props) => {
+      <Route exact path="/callback" render={(props) => {
         handleAuthentication(props);
         return <Callback {...props} />
       }}/>
-      <Route path="/" render={(props) => <Main auth={auth} {...props} />} />
+
+      <Route exact path="/" render={(props) => <Main auth={auth} {...props} />} />
 
 
 
@@ -75,4 +66,3 @@ const App = () =>
   </Router>;
 
 export default App;
-

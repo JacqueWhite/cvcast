@@ -1,6 +1,4 @@
 console.log("projectController.js");
-
-
 const db = require("../models");
 
 module.exports = {
@@ -9,8 +7,8 @@ module.exports = {
         .find(req.query)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-        
-        console.log("find all!!");
+
+        console.log("find all from controllers/projectController");
     },
     findById: function(req, res) {
     db.Project
@@ -37,12 +35,12 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     // db.places.update({"country": "Morocco"}, {$push: {"majorcities":"Agadir"}})
-    
+
     remove: function(req, res) {
     db.Project
         .findById({ _id: req.params.id })
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-    }    
+    }
 };
