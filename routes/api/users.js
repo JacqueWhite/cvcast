@@ -3,13 +3,13 @@ console.log("routes/api/users.js page");
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
-// Matches with "/api/main"
+// Matches with "/api/user"
 router
   .route("/")
   .get(userController.findAll)
   .post(userController.create);
 
-// Matches with "/api/main/:id"
+// Matches with "/api/user/:id"
 router
   .route("/:id")
   .get(userController.findById)
@@ -20,4 +20,4 @@ module.exports = router;
 
 
 
-// I left routes commented out until we build out those routes more. They will throw errors. 
+// I left routes commented out until we build out those routes more. They will throw errors.

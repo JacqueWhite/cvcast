@@ -18,9 +18,13 @@ const userSeed = [
     headshot: "https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAhqAAAAJDc4ZjkwN2YyLTgyODMtNGQ2Zi1hYmYwLTlmOGNmNjhlYTM3Yg.jpg",
     linkedIn: "https://www.linkedin.com/in/jacquelinewhite15/",
     bio: "My name is Jacque White and I am a Junior Full-Stack Developer with a passion for helping people and bringing their ideas to life. I have a wide-range of career experiences ranging from health & wellness to human resources that help me understand the needs of a variety of clients.",
-    projects: [
-      "59e78c41c1b15d32adfec04c", "59e78c41c1b15d32adfec04a"
-    ]
+    projects: [{
+      type: Schema.Types.ObjectId,
+      ref: "projects"
+    }]
+//  projects: [
+//  "59e78c41c1b15d32adfec04c", "59e78c41c1b15d32adfec04a"
+//   ]
     },
     {
     _id : "59e78c41c1b15d32adfec04a",  
@@ -28,7 +32,7 @@ const userSeed = [
     lastName: "Solis",
     email: "bob@gmail.com",
     projects: [
-    "59e78c41c1b15d32adfec04b"
+    ObjectId("59e78c41c1b15d32adfec04b")
     ]
     },
     {
@@ -37,13 +41,13 @@ const userSeed = [
     lastName: "Fletcher",
     email: "auddddd@gmail.com",
     projects: [
-    "59e78c41c1b15d32adfec04f", "59e78c41c1b15d32adfec050"
+    ObjectId("59e78c41c1b15d32adfec04c"), ObjectId("59e78c41c1b15d32adfec04a"), 
     ]
     }
 ]
 const projectSeed = [
   {
-    _id : "59e78c41c1b15d32adfec04c",
+    "_id" : ObjectId("59e78c41c1b15d32adfec04c"),
     projectName: "LocALL",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/locall.png",
     description: "a place to get recommendations on where to eat, drink, and play in Austin, TX",
@@ -54,7 +58,7 @@ const projectSeed = [
 
   },
   {
-    _id : "59e78c41c1b15d32adfec04a",
+    "_id" : ObjectId("59e78c41c1b15d32adfec04a"),
     projectName: "ItsAGO",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/itsago.png",
     description: "Simple event and RSVP manager",
@@ -64,7 +68,7 @@ const projectSeed = [
     github: "https://github.com/JacqueWhite/Its-a-GO"  
   },
   {
-    _id : "59e78c41c1b15d32adfec04b",
+    "_id" : ObjectId("59e78c41c1b15d32adfec04b"),
     projectName: "AccountabiliBuddy",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/accountabilibuddy.png",
     description: "A gym-buddy match app that pairs up friends based on schedule and fitness activity preferences.",
@@ -74,7 +78,7 @@ const projectSeed = [
     github: "https://github.com/JacqueWhite/AccountabiliBuddy"  
   },
   {
-    _id : "59e78c41c1b15d32adfec04f",
+    "_id" : ObjectId("59e78c41c1b15d32adfec04f"),
     projectName: "devScraped",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/devscrape.png",
     description: "A tool for developers to scrape their favorite resource pages and take notes on them. ",
@@ -82,9 +86,10 @@ const projectSeed = [
     team: "Jacqueline White",
     link: "https://devscraped.herokuapp.com/",
     github: "https://github.com/JacqueWhite/devscraped"  
+    _user
   },
   {
-    _id : "59e78c41c1b15d32adfec050",
+    "_id" : ObjectId("59e78c41c1b15d32adfec050"),
     projectName: "oneReq",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/accountabilibuddy.png",
     description: "Recruiting platform for Software Developer recruiters.",

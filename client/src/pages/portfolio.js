@@ -10,9 +10,23 @@ var currentUser = "59e7af7a06a8a57744413baf";
 class Portfolio extends Component {
 
   state = {
-    projects: [],
     user: "",
+    projects: []
   };
+
+  componentWillMount() {
+    this.setState({ profile: {} });
+
+    const { userProfile, getProfile } = this.props.auth;
+
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
+      });
+    } else {
+      this.setState({ profile: userProfile });
+    }
+  }
 
   componentDidMount() {
     this.loadProjects();
