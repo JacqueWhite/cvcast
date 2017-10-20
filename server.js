@@ -19,7 +19,6 @@ app.use(routes);
 mongoose.Promise = global.Promise;
 
 //===========================================================================================
-//Remember to change below.
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/showAndTell",
