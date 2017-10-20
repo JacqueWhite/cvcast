@@ -22,7 +22,8 @@ const userSchema = new Schema ({
         match: [/.+\@.+\..+/, "Please enter a valid e-mail address"]
     },
     headshot: {
-        img: { data: Buffer, contentType: String }
+        type: String
+        // img: { data: Buffer, contentType: String }
     },
     linkedIn: {
         type: String
@@ -35,7 +36,7 @@ const userSchema = new Schema ({
     },
     projects: [{
         type: Schema.Types.ObjectId,
-        ref: "project"
+        ref: "Project"
     }]
 });
 userSchema.plugin(filePlugin, {
