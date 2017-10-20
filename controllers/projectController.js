@@ -24,10 +24,10 @@ module.exports = {
     db.Project
         .create(req.body)
         .then(dbModel => {
+            console.log("This is the dbModel" + dbModel)
             db.User
-            .findOneAndUpdate({ 'email': req.body.userid }, {$push: {"Project": res._id }})
+            .findOneAndUpdate({ 'email': req.body.userid }, {$push: {"Project": dbModel._id }})
             .then(dbModel => res.json(dbModel))
-            .then(console.log(res._id))
             .catch(err => res.status(422).json(err));
             })
             

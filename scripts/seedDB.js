@@ -54,7 +54,7 @@ const userSeed = [
         linkedIn: "https://www.linkedin.com/in/audrey-fletcher-996612123/",
         gitHubProfile: "https://github.com/afletch24",
         bio: "Currently attending The University of Texas Coding Bootcamp. I am making an exciting career pivot out of the animal industry due to my new found passion for software development!",
-        projects: [
+        Project: [
           "59e78c41c1b15d32adfec04c",
           "59e78c41c1b15d32adfec04a",
           "59e78c41c1b15d32adfec04b",
