@@ -5,34 +5,35 @@ import TitleCard from "../components/TitleCard";
 import API from "../utils/API";
 // import Popup from "../components/Modal";
 
-var currentUser = "jacquecwhite@gmail.com";
 class Portfolio extends Component {
 
   state = {
+    profile: {},
     projects: [],
     user: ""
   };
 
-  // componentWillMount() {
-  //   this.setState({ profile: {} });
-  //   const { userProfile, getProfile } = this.props.auth;
-  //   if (!userProfile) {
-  //     getProfile((err, profile) => {
-  //       this.setState({ profile });
-  //     });
-  //   } else {
-  //     this.setState({ profile: userProfile });
-  //   }
-  // }
+  componentWillMount() {
+    const { userProfile, getProfile } = this.props.auth;
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
 
-  componentDidMount() {
-    this.loadProjects();
-    this.loadUser();
+        this.loadProjects();
+        this.loadUser();
+      });
+    } else {
+      this.setState({ profile: userProfile });
+
+      this.loadProjects();
+      this.loadUser();
+    }
   }
 
   loadUser = () => {
-    console.log(currentUser);
-    API.getUser(currentUser)
+    console.log("This.State:");
+    // console.log(this.state.profile);
+    API.getUser(this.state.profile.name)
       .then(res => {
         console.log("this is the usr");
         console.log(res);
@@ -64,7 +65,6 @@ class Portfolio extends Component {
 //       [name]: value
 //     });
 //   };
-
 
   render() {
     return (

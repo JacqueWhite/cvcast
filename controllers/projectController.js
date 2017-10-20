@@ -22,6 +22,7 @@ module.exports = {
 
     // create a new project 
     create: function(req, res) {
+    console.log(req.body);
     db.Project
         .create(req.body)
         .then(dbModel => res.json(dbModel))

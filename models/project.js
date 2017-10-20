@@ -30,6 +30,9 @@ const ProjectSchema = new Schema({
 	},
 	github: {
 		type: String
+	},
+	owner: {
+		type: String
 	}
 });
 

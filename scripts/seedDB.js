@@ -72,7 +72,7 @@ const projectSeed = [
     technologiesKeywords: ["CSS", "javaScript", "jQuery", "Google Firebase", "Bootstrap"],
     team: "John Torrence, Will Williams, Mariana Perez, Jayme Howard",
     link: "https://jacquewhite.github.io/LocAll/",
-    github: "https://github.com/JacqueWhite/LocAll"  
+    github: "https://github.com/JacqueWhite/LocAll"
   },
   {
     _id : "59e78c41c1b15d32adfec04a",
@@ -112,7 +112,7 @@ const projectSeed = [
     technologiesKeywords: ["CSS", "javaScript", "jQuery", "Google Firebase", "Bootstrap"],
     team: "Jacqueline White",
     link: "https://onereq.herokuapp.com/",
-    github: "ttps://github.com/JacqueWhite/onereq",  
+    github: "ttps://github.com/JacqueWhite/onereq",
   }
 
 ];

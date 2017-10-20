@@ -1,22 +1,31 @@
 import React, { Component } from "react";
-import { Button } from 'react-materialize';
-// import {Parallax} from "react-materialize";
+import { Button } from 'react-bootstrap';
+
 
 class Main extends Component {
+  state = {
+    authenticated: false
+  }
+
   goTo(route) {
     this.props.history.replace(`/${route}`)
   }
 
-  login() {
+  login = () => {
     this.props.auth.login();
   }
 
-  logout() {
+  logout = () => {
     this.props.auth.logout();
+    this.setState({authorized: this.props.auth.isAuthenticated()})
   }
+
+  componentDidMount = () => this.setState({authorized: this.props.auth.isAuthenticated()})
 
   render() {
     const { isAuthenticated } = this.props.auth;
+
+    console.log(this.logout, this.login, isAuthenticated())
 
     return (
 	<div>
@@ -32,7 +41,7 @@ class Main extends Component {
             <a href="/portfolio" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">portfolio</a>
             <a href="/edit" id="download-button" className="btn-large waves-effect waves-light teal lighten-1">edit portfolio</a>
               {
-                !isAuthenticated() && (
+                isAuthenticated() && (
                     <Button
                       
                       className="btn-margin"
@@ -43,24 +52,24 @@ class Main extends Component {
                   )
               }
               {
-                  !isAuthenticated() && (
-                      <Button
-                      
-                        className="btn-margin"
-                        onClick={this.login.bind(this)}
-                      >
-                        Log In
-                      </Button>
-                    )
-                }
-                {
                   isAuthenticated() && (
                       <Button
-                       
+                      
                         className="btn-margin"
                         onClick={this.goTo.bind(this, 'profile')}
                       >
                         Profile
+                      </Button>
+                    )
+                }
+                {
+                  !isAuthenticated() && (
+                      <Button
+                       
+                        className="btn-margin"
+                        onClick={this.login.bind(this)}
+                      >
+                        Log In
                       </Button>
                     )
                 }
