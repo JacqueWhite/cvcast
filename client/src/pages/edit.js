@@ -86,7 +86,6 @@ class Edit extends Component {
             <PortfolioCardEdit
               key={index}
               id={portfoliocard.id}
-              key={portfoliocard.id}
               project={portfoliocard.project}
               image={portfoliocard.image}
               description={portfoliocard.description}
