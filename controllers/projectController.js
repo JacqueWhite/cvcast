@@ -19,11 +19,20 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
-    console.log(req.body);
+    console.log("OH NO ROBOTS, THE SEQUEL");
+    console.log(req.body);    
     db.Project
         .create(req.body)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+        .then(dbModel => {
+            db.User
+            .findOneAndUpdate({ 'email': req.body.userid }, {$push: {"Project": res._id }})
+            .then(dbModel => res.json(dbModel))
+            .then(console.log(res._id))
+            .catch(err => res.status(422).json(err));
+            })
+            
+        // res.json(dbModel))
+        // .catch(err => res.status(422).json(err));
     },
     update: function(req, res) {
     db.Project
