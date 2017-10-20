@@ -30,6 +30,7 @@
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^4.12.1",
+    "mongoose-file": "^0.0.2",
     "path": "^0.12.7",
     "react-bootstrap": "^0.31.3",
     "react-flipcard": "^0.2.1",

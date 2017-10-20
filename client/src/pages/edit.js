@@ -3,7 +3,7 @@ import {Row} from 'react-materialize';
 import PortfolioCardEdit from "../components/PortfolioCardEdit";
 import TitleCard from "../components/TitleCard";
 import ProjectForm from "../components/ProjectForm";
-import API from "../utils/api"
+import API from "../utils/API"
 
 class Edit extends Component {
 
@@ -37,7 +37,8 @@ class Edit extends Component {
       API.getUser(this.state.profile.name)
         .then(res => {
           console.log(res);
-          this.setState({ user: res.data})
+          this.setState({ user: res.data});
+          console.log(this.state.profile.name);
         }
         )
         .catch(err => console.log(err));
@@ -79,7 +80,7 @@ class Edit extends Component {
           />
         </Row>
         <Row>
-          <ProjectForm user={this.state.profile.name}/>
+          <ProjectForm user="isai.solis@gmail.com"/>
         </Row>
         <Row>
           {this.state.projects.map((portfoliocard, index) => (

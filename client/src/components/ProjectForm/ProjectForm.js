@@ -2,9 +2,10 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import "./ProjectForm.css";
 import {Row, Input, Button} from 'react-materialize'; 
-const userid = this.props.user; //the user email
 
 class ProjectForm extends Component {
+  // const userid = this.props.user; //the user email
+  
   state = {
     projectName: "",
     image: "",
@@ -12,8 +13,11 @@ class ProjectForm extends Component {
     technologiesKeywords: "",
     team: "",
     link: "",
-    gitHubProfile: ""
+    github: ""
   }
+
+  
+  
 
   handleInputChange = event => {
     const { name, value } = event.target;
@@ -31,8 +35,8 @@ handleFormSubmit = event => {
         technologiesKeywords: this.state.technologiesKeywords,
         team: this.state.team,
         link: this.state.link,
-		github: this.state.github,
-		userid: userid
+		    github: this.state.github,
+		    userid: this.props.user
       };
       console.log(myProject);
       API.saveProject(myProject)
