@@ -23,7 +23,7 @@ class Main extends Component {
   componentDidMount = () => this.setState({authorized: this.props.auth.isAuthenticated()})
 
   render() {
-    const { isAuthenticated, userHasScopes } = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
 
     console.log(this.logout, this.login, isAuthenticated())
 

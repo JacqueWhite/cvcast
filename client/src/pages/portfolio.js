@@ -78,9 +78,8 @@ class Portfolio extends Component {
           />
         </Row>
         <Row>
-          {this.state.projects.map((portfoliocard, index) => (
+          {this.state.projects.map((portfoliocard) => (
             <PortfolioCard
-            key={index}
             project={portfoliocard.projectName}
             image={portfoliocard.image}
             description={portfoliocard.description}
