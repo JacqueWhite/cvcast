@@ -1,69 +1,113 @@
-import React from "react";
+
+import React, { Component } from "react";
+import API from "../../utils/API";
 import "./SignupForm.css";
+import {Row, Input, Button} from 'react-materialize'; 
 
-const SignupForm = props => (
-<div>
-  <form className="col s12" method="post">
-    <div className='row'>
-      <div className='col s12'>
-      </div>
-    </div>
+class NewUser extends Component {
+  state = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    headshot: "",
+    linkedIn: "",
+    gitHubProfile: "",
+    bio: ""
+  }
 
-    <div className='row'>
-      <div className='input-field col s12'>
-        <input className='validate' type='email' name='email' id='email' />
-        <label for='email'>Enter your email</label>
-      </div>
-    </div>
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({ [name]: value });
+  }
 
-    <div className='row'>
-      <div className='input-field col s12'>
-        <input className='validate' type='password' name='password' id='password' />
-        <label for='password'>Enter a password</label>
-      </div>
-    </div>
+handleFormSubmit = event => {
+    event.preventDefault();
+    console.log("oh no robots!");
+    if (this.state.firstName && this.state.lastName && this.state.email) {
+      var myUser = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        headshot: this.state.headshot,
+        linkedIn: this.state.linkedIn,
+        gitHubProfile: this.state.gitHubProfile,
+        bio: this.state.bio
 
-    <div className='row'>
-      <div className='input-field col s12'>
-        <input className='validate' type='text' name='firstName' id='firstName' />
-        <label for='firstName'>First Name</label>
-      </div>
-    </div>
+      };
+      console.log(myUser);
+      API.saveUser(myUser)
+        .catch(err => console.log(err));
+    }
+  };
 
-    <div className='row'>
-      <div className='input-field col s12'>
-        <input className='validate' type='text' name='lastName' id='lastName' />
-        <label for='lastName'>Last Name</label>
-      </div>
-    </div>
 
-    <div className='row'>
-      <div className='input-field col s12'>
-        <input className='validate' type='text' name='linkedIn' id='linkedIn' />
-        <label for='linkedIn'>LinkedIn Profile Link</label>
-      </div>
-    </div>
 
-    <div className='row'>
-      <div className='input-field col s12'>
-        <input className='validate' type='text' name='gitHub' id='gitHub' />
-        <label for='gitHub'>GitHub Profile Link</label>
-      </div>
-    </div>
+render() {
+    return (
+                      
+            <form>
+            <Row>
+              <Input
+                value={this.state.firstName}
+                onChange={this.handleInputChange}
+                name="firstName"
+                placeholder="First Name(required)"
+                type="text"
+              />
+              <Input
+                value={this.state.lastName}
+                onChange={this.handleInputChange}
+                name="lastName"
+                placeholder="Last Name (required)"
+                type="text"
+              />
+              <Input
+                value={this.state.email}
+                onChange={this.handleInputChange}
+                name="email"
+                placeholder="Email Address (required)"
+                type="text"
+              />
+              <Input
+                value={this.state.headshot}
+                onChange={this.handleInputChange}
+                name="headshot"
+                placeholder=" Add the link to a profile picture."
+                type="text"
+              />
+              <Input
+                value={this.state.linkedIn}
+                onChange={this.handleInputChange}
+                name="linkedIn"
+                placeholder="Add your linkedIn profile link."
+                type="text"
+              />
+              <Input
+                value={this.state.gitHubProfile}
+                onChange={this.handleInputChange}
+                name="gitHubProfile"
+                placeholder="Add your GitHub profile link."
+                type="text"
+              />
+              <Input
+                value={this.state.bio}
+                onChange={this.handleInputChange}
+                name="bio"
+                placeholder=" Tell me about yourself."
+              />
+              <Button
+                // disabled={!(this.state.author && this.state.title)}
+                onClick={this.handleFormSubmit}
+              >
+                Submit
+              </Button>
 
-    <div className='row'>
-      <div className='input-field col s12'>
-        <input className='validate' type='text' name='headshot' id='headshot' />
-        <label for='headshot'>Profile Picture Link</label>
-      </div>
-    </div>
+            </Row>
+            </form> 
+          );
 
-    <br />
-      <div className='row'>
-        <button type='submit' name='btn_login' className='col s12 btn btn-large waves-effect indigo'>Submit</button>
-      </div>
-  </form>
-</div>
-);
+}
 
-export default SignupForm;
+};
+
+export default NewUser;
