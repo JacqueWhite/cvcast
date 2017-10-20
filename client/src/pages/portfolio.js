@@ -3,7 +3,7 @@ import {Row} from 'react-materialize';
 import PortfolioCard from "../components/PortfolioCard";
 import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
-import API from "../utils/api";
+import API from "../utils/API";
 
 class Portfolio extends Component {
 
