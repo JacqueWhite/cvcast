@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import API from "../../utils/Api";
+import API from "../../utils/API";
 import "./ProjectForm.css";
 import {Row, Input, Button} from 'react-materialize';
 

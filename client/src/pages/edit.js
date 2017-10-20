@@ -4,7 +4,7 @@ import Nav from '../components/Nav';
 import PortfolioCardEdit from "../components/PortfolioCardEdit";
 import TitleCard from "../components/TitleCard";
 import ProjectForm from "../components/ProjectForm";
-import API from "../utils/Api"
+import API from "../utils/API"
 
 class Edit extends Component {
 
