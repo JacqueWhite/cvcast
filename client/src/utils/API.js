@@ -21,7 +21,7 @@ export default {
     return axios.post("/api/user/signup", user);
   },
   // Gets the user with the given id
-  getUser: function(id) {
-    return axios.get("/api/user/" + id);
+  getUser: function(email) {
+    return axios.get("/api/user/" + email);
   }
 };

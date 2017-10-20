@@ -5,7 +5,7 @@ import TitleCard from "../components/TitleCard";
 import API from "../utils/API";
 // import Popup from "../components/Modal";
 
-var currentUser = "anfletcher24@gmail.com";
+var currentUser = "jacquecwhite@gmail.com";
 class Portfolio extends Component {
 
   state = {
@@ -34,7 +34,9 @@ class Portfolio extends Component {
     console.log(currentUser);
     API.getUser(currentUser)
       .then(res => {
+        console.log("this is the usr");
         console.log(res);
+        
         this.setState({ user: res.data})
       }
       )
@@ -46,15 +48,8 @@ class Portfolio extends Component {
       .then(res =>
         this.setState({ projects: res.data})
       )
-      .catch(err => console.log(err));
-  };
+      .catch(err => console.log("load projects: " + err));
 
-  loadProjects = () => {
-    API.getProjects()
-      .then(res =>
-        this.setState({ projects: res.data})
-      )
-      .catch(err => console.log(err));
   };
 
 //   deleteProject = id => {

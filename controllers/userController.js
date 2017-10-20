@@ -1,33 +1,13 @@
-console.log("userController.js");
-
-
 const db = require("../models");
 
 module.exports = {
-    findAll: function(req, res){
-        db.User
-        .find(req.query)
-        .then(dbModel => {
-          console.log(dbModel);
-          res.json(dbModel);
-        })
-        .catch(err => res.status(422).json(err));
-        console.log("find all called from controllers/userController");
-    },
-    findById: function(req, res) {
 
-    db.User
-        .findById(req.params.id)
-        .then(dbModel => {
-                  console.log(dbModel);
-                  res.json(dbModel);
-                })
-        .catch(err => res.status(422).json(err));
-        console.log("Calling findById from controllers/userController");
-    },
+    // find user by email
     findByEmail: function(req, res) {
     db.User
-        .findOne({ email: req.params.email })
+        // .findOne({ email: req.params.email })
+        // this needs to be changed back to req.params.email
+        .findOne({ email: req.body})
         .then(dbModel => {
                   console.log(dbModel);
                   res.json(dbModel);
@@ -35,36 +15,22 @@ module.exports = {
         .catch(err => res.status(422).json(err));
         console.log("Calling findbyEmail from controllers/userController");
     },
+
+    // create a new user 
     create: function(req, res) {
-    console.log("OH NO ROBOTS, THE SEQUEL");
-    console.log(req.body);
     db.User
         .create(req.body)
         .then(function(data){
             res.json(data);
         })
-        // .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+
+    // update user profile
     update: function(req, res) {
     db.User
         .findOneAndUpdate({ _id: req.params.id }, req.body)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
-    addkeytag: function(req,res){
-    db.User
-        .findOneAndUpdate({_id: req.params.id}, {$push: {"technologiesKeywords": req.body}})
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    },
-    // db.places.update({"country": "Morocco"}, {$push: {"majorcities":"Agadir"}})
-
-    remove: function(req, res) {
-    db.User
-        .findById({ _id: req.params.id })
-        .then(dbModel => dbModel.remove())
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
-    }
 };

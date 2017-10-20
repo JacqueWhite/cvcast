@@ -1,17 +1,10 @@
-console.log("routes/api/projects.js page");
-
 const router = require("express").Router();
 const projectController = require("../../controllers/projectController");
-const mainController = require("../../controllers/mainController");
 
 // Matches with "/api/projects"
 router
-  .route("/seed")
-  .get(mainController.seedProjects);
-
-router
   .route("/")
-  .get(projectController.findAll)
+  // .get(projectController.findAll)
   .post(projectController.create);
 
 // Matches with "/api/projects/:id"

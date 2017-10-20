@@ -33,11 +33,11 @@ const UserSchema = new Schema ({
         type: Schema.Types.ObjectId,
         ref: "Project"
     }],
-    createdBy: {
-        type: Schema.Types.ObjectId,
-        ref: "Project",
-        index: true
-    }
+    // createdBy: {
+    //     type: Schema.Types.ObjectId,
+    //     ref: "Project",
+    //     index: true
+    // }
 });
 
 const User = mongoose.model("User", UserSchema);
