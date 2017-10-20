@@ -20,7 +20,6 @@ const handleAuthentication = (nextState, replace) => {
   }
 }
 
-<<<<<<< HEAD
 const App = () =>
   <Router>
     <Switch>
@@ -63,49 +62,5 @@ const App = () =>
     </Switch>
 
   </Router>;
-=======
-const App = () => {
-  return (
-    <Router history={history} component={App}>
-        <div>
-          <Route exact path="/" render={(props) => {
-            return <Main auth={auth} {...props} />
-          }} />
-
-          <Route exact path="/profile" render={(props) => (
-            !auth.isAuthenticated() ? (
-              <Redirect to="/"/>
-            ) : (
-              <Profile auth={auth} {...props} />
-            )
-          )} />
-
-          <Route exact path="/portfolio" render={(props) => (
-            !auth.isAuthenticated() ? (
-              <Redirect to="/"/>
-            ) : (
-              <Portfolio auth={auth} {...props} />
-            )
-          )} />
-
-          <Route exact path="/edit" render={(props) => (
-            !auth.isAuthenticated() ? (
-              <Redirect to="/"/>
-            ) : (
-              <Edit auth={auth} {...props} />
-            )
-          )} />
-
-          <Route exact path="/callback" render={(props) => {
-            handleAuthentication(props);
-            return <Callback {...props} />
-          }}/>
-
-          <Route exact path="/login" component={Login} />
-        </div>
-      </Router>
-  )
-}
->>>>>>> test2
 
 export default App;

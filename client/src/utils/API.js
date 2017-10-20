@@ -24,9 +24,4 @@ export default {
   getUser: function(id) {
     return axios.get("/api/user/" + id);
   }
-<<<<<<< HEAD:client/src/utils/API.js
 };
-=======
-
-};
->>>>>>> test2:client/src/utils/api.js

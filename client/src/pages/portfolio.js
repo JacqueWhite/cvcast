@@ -5,10 +5,6 @@ import TitleCard from "../components/TitleCard";
 import API from "../utils/API";
 // import Popup from "../components/Modal";
 
-<<<<<<< HEAD
-var currentUser = "anfletcher24@gmail.com";
-=======
->>>>>>> test2
 class Portfolio extends Component {
 
   state = {
@@ -17,19 +13,6 @@ class Portfolio extends Component {
     user: ""
   };
 
-<<<<<<< HEAD
-  // componentWillMount() {
-  //   this.setState({ profile: {} });
-  //   const { userProfile, getProfile } = this.props.auth;
-  //   if (!userProfile) {
-  //     getProfile((err, profile) => {
-  //       this.setState({ profile });
-  //     });
-  //   } else {
-  //     this.setState({ profile: userProfile });
-  //   }
-  // }
-=======
   componentWillMount() {
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
@@ -41,7 +24,6 @@ class Portfolio extends Component {
       });
     } else {
       this.setState({ profile: userProfile });
->>>>>>> test2
 
       this.loadProjects();
       this.loadUser();
@@ -89,10 +71,6 @@ class Portfolio extends Component {
 //     });
 //   };
 
-<<<<<<< HEAD
-
-=======
->>>>>>> test2
   render() {
     return (
     <div>
