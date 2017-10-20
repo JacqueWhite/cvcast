@@ -24,6 +24,9 @@ const projectSchema = new Schema({
 	},
 	github: {
 		type: String
+	},
+	owner: {
+		type: String
 	}
 
 });

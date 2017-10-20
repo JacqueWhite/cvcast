@@ -5,7 +5,6 @@ import Form from "../components/Form";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/api";
 
-// var currentUser = "torrencj@gmail.com";
 class Portfolio extends Component {
 
   state = {
@@ -15,7 +14,6 @@ class Portfolio extends Component {
   };
 
   componentWillMount() {
-    // this.setState({ profile: {} });
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
       getProfile((err, profile) => {
@@ -32,16 +30,9 @@ class Portfolio extends Component {
     }
   }
 
-  // componentDidMount() {
-  //   this.loadProjects();
-  //   this.loadUser();
-  // }
-
   loadUser = () => {
-    // console.log(currentUser);
     console.log("This.State:");
-    // console.log(this.state.profile.name);
-    // currentUser = this.state.profile.name;
+    // console.log(this.state.profile);
     API.getUser(this.state.profile.name)
       .then(res => {
         console.log(res);
@@ -71,19 +62,6 @@ class Portfolio extends Component {
       [name]: value
     });
   };
-
-  // handleFormSubmit = event => {
-  //   event.preventDefault();
-  //   if (this.state.title && this.state.author) {
-  //     API.saveBook({
-  //       title: this.state.title,
-  //       author: this.state.author,
-  //       synopsis: this.state.synopsis
-  //     })
-  //       .then(res => this.loadProjects())
-  //       .catch(err => console.log(err));
-  //   }
-  // };
 
   render() {
     return (
