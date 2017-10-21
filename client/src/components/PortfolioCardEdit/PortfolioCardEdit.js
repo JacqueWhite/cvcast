@@ -1,16 +1,16 @@
 import React from "react";
 import {Card, Col, CardTitle, Button} from 'react-materialize';
 import "./PortfolioCardEdit.css";
-// import EditButton from '../EditButton';
-
-
-
-
-
+import EditButton from '../EditButton';
 
 const PortfolioCardEdit = props => (
 <div>
   <Col m={6} s={12}>
+      <Card
+        header={<CardTitle reveal image={props.image} waves='light'/>}
+          title={props.project}
+          reveal={<div><p>{props.description}</p></div>}>
+
       <Card 
         header={
           <CardTitle
@@ -33,6 +33,13 @@ const PortfolioCardEdit = props => (
               {tag} 
             </Button>
           ))}
+          <EditButton onClick = {
+              () => props.edit(props.id)
+            }/>
+
+          <span className="remove" onClick = {
+            () => props.remove(props.id)
+            }>𝘅</span>
       </Card>
    </Col>
 </div>
@@ -42,4 +49,3 @@ const PortfolioCardEdit = props => (
 
 
 export default PortfolioCardEdit;
-

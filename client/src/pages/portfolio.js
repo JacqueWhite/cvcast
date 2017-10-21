@@ -3,7 +3,7 @@ import {Row} from 'react-materialize';
 import Nav from '../components/Nav';
 import PortfolioCard from "../components/PortfolioCard";
 import TitleCard from "../components/TitleCard";
-import API from "../utils/Api";
+import API from "../utils/API";
 
 class Portfolio extends Component {
 
