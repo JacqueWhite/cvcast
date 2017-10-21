@@ -59,12 +59,12 @@ class Edit extends Component {
     };
 
     openForEdits = currentProject => {
-      console.log("Hi from openForEdits");
       console.log(currentProject);
       this.setState({
         currentProject: currentProject
       }, () => {
         //This is just for testing. TODO: remove me!
+        console.log("changed parent state");
         console.log(this.state)
       })
     }
@@ -84,6 +84,7 @@ class Edit extends Component {
 
 
   render() {
+    {console.log(this.state.currentProject)}
     return (
     <div>
       <Nav firstName={this.state.user.firstName} />

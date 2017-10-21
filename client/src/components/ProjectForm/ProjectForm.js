@@ -47,36 +47,46 @@ class ProjectForm extends Component {
     }
   };
 
+  componentWillReceiveProps= (nextProps) => {
+    console.log("True");
+    console.log(nextProps);
+}
+
 render() {
-  console.log("Hello from project form:");
-  console.log(this.props);
-  console.log("Bye from project form!");
+  // console.log("Hello from project form:");
+  // console.log("Bye from project form!");
+  // if (shouldComponentUpdate()) {
+  //   console.log("Looks like the component should update...");
+  // } else {
+  //   console.log(shouldComponentUpdate());
+  // }
   return (
   <form>
+    <h2>{this.props.project.description}</h2>
     <Row>
       <Input
-        value={this.props.projectName || "VALUE"}
+        value={this.props.project.project}
         onChange={this.handleInputChange}
         name="projectName"
         placeholder="Project Name (required)"
         type="text"
       />
       <Input
-        value={this.props.image}
+        value={this.props.project.image}
         onChange={this.handleInputChange}
         name="image"
         placeholder="image URL (ex:'https://www.myimage.com')"
         type="text"
       />
       <Input
-        value={this.props.description}
+        value={this.props.project.description}
         onChange={this.handleInputChange}
         name="description"
         placeholder="Project Description / Summary"
         type="text"
       />
       <Input
-        value={this.props.team}
+        value={this.props.project.team}
         onChange={this.handleInputChange}
         name="team"
         placeholder="Example: Tommy, Jill, Bobby"
@@ -105,31 +115,29 @@ render() {
 				<Input type="text" name="technologiesKeywords" onChange={this.handleInputChange}/>
 			</div>
 		</fieldset>
-            <Input
-              value={this.state.link}
-              onChange={this.handleInputChange}
-              name="link"
-              placeholder="Deployed Project Link"
-              type="text"
-            />
-            <Input
-              value={this.state.github}
-              onChange={this.handleInputChange}
-              name="github"
-              placeholder="Project GitHub Link"
-            />
-            <Button
-              // disabled={!(this.state.author && this.state.title)}
-              onClick={this.handleFormSubmit}
-            >
-              Submit
-            </Button>
+      <Input
+        value={this.props.project.link}
+        onChange={this.handleInputChange}
+        name="link"
+        placeholder="Deployed Project Link"
+        type="text"
+      />
+      <Input
+        value={this.props.project.github}
+        onChange={this.handleInputChange}
+        name="github"
+        placeholder="Project GitHub Link"
+      />
+      <Button
+        // disabled={!(this.state.author && this.state.title)}
+        onClick={this.handleFormSubmit}
+      >
+        Submit
+      </Button>
 
-          </Row>
-          </form>
-        );
-
+    </Row>
+    </form>
+   );
 	}
-
 };
 export default ProjectForm;
