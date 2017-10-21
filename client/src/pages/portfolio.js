@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
+import Nav from '../components/Nav';
 import PortfolioCard from "../components/PortfolioCard";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/API";
-// import Popup from "../components/Modal";
 
 class Portfolio extends Component {
 
@@ -74,6 +74,7 @@ class Portfolio extends Component {
   render() {
     return (
     <div>
+      <Nav />
         <Row>
           <TitleCard
             firstName={this.state.user.firstName}

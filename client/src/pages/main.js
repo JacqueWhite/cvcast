@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+// import { Button } from 'react-bootstrap';
 import { Button } from 'react-materialize';
-// import {Parallax} from "react-materialize";
 
 class Main extends Component {
   state = {

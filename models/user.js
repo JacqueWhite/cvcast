@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const userSchema = new Schema ({
+const UserSchema = new Schema ({
     firstName: {
         type: String,
         require: true
@@ -29,12 +29,12 @@ const userSchema = new Schema ({
     bio: {
         type: String
     },
-    projects: [{
+    Project: [{
         type: Schema.Types.ObjectId,
         ref: "Project"
     }]
 });
 
-console.log("i'm in models/user.js");
-const User = mongoose.model("User", userSchema);
+const User = mongoose.model("User", UserSchema);
+
 module.exports = User;
