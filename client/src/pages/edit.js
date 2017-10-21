@@ -11,7 +11,8 @@ class Edit extends Component {
     state = {
       profile: {},
       projects: [],
-      user: ""
+      user: "",
+      currentProject:{}
     };
 
     componentWillMount() {
@@ -19,21 +20,19 @@ class Edit extends Component {
       if (!userProfile) {
         getProfile((err, profile) => {
           this.setState({ profile });
-
           this.loadProjects();
           this.loadUser();
         });
       } else {
         this.setState({ profile: userProfile });
-
         this.loadProjects();
         this.loadUser();
       }
     }
 
     loadUser = () => {
-      console.log("This.State:");
-      console.log(this.state.profile);
+      // console.log("This.State:");
+      // console.log(this.state.profile);
       // currentUser = this.state.profile.name;
       API.getUser(this.state.profile.name)
         .then(res => {
@@ -55,6 +54,23 @@ class Edit extends Component {
 
     deleteProject = id => {
       API.deleteProject(id)
+        .then(res => this.loadProjects())
+        .catch(err => console.log(err));
+    };
+
+    openForEdits = currentProject => {
+      console.log("Hi from openForEdits");
+      console.log(currentProject);
+      this.setState({
+        currentProject: currentProject
+      }, () => {
+        //This is just for testing. TODO: remove me!
+        console.log(this.state)
+      })
+    }
+
+    saveEdit = id => {
+      API.updateProject(id)
         .then(res => this.loadProjects())
         .catch(err => console.log(err));
     };
@@ -85,6 +101,7 @@ class Edit extends Component {
           <ProjectForm
             user={this.state.profile.name}
             update={this.loadProjects}
+            project={this.state.currentProject}
             />
         </Row>
         <Row>
@@ -100,6 +117,7 @@ class Edit extends Component {
               github={portfoliocard.github}
               technologiesKeywords={portfoliocard.technologiesKeywords}
               remove={this.deleteProject}
+              edit={this.openForEdits}
             />
           ))}
         </Row>
