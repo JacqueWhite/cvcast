@@ -15,7 +15,10 @@ const PortfolioCardEdit = props => (
           {props.technologiesKeywords.map(tag => (
           <Button waves='light' node='a' href={tag}> {tag} </Button>
           ))}
-        <EditButton/>
+          <EditButton onClick = {
+              () => props.edit(props.id)
+            }/>
+
           <span className="remove" onClick = {
             () => props.remove(props.id)
             }>𝘅</span>
