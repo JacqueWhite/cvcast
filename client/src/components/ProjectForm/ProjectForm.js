@@ -35,7 +35,7 @@ class ProjectForm extends Component {
         userid: this.props.user
       };
       console.log(myProject);
-      if (this.props.id) {
+      if (this.props.project.id) {
         API.updateProject(myProject)
           .then(this.props.update())
           .catch(err => console.log(err));
@@ -65,7 +65,7 @@ render() {
     <h2>{this.props.project.description}</h2>
     <Row>
       <Input
-        value={this.props.project.project}
+        defaultValue={this.props.project.project || 'BARF'}
         onChange={this.handleInputChange}
         name="projectName"
         placeholder="Project Name (required)"
