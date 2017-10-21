@@ -1,8 +1,8 @@
+
 import React, { Component } from "react";
 import API from "../../utils/API";
 import "./SignupForm.css";
-import {Row, Input, Button} from 'react-materialize'; 
-
+import {Row, Input, Button} from 'react-materialize';
 
 class NewUser extends Component {
   state = {
@@ -14,10 +14,12 @@ class NewUser extends Component {
     gitHubProfile: "",
     bio: ""
   }
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
   }
+
 handleFormSubmit = event => {
     event.preventDefault();
     console.log("oh no robots!");
@@ -30,15 +32,19 @@ handleFormSubmit = event => {
         linkedIn: this.state.linkedIn,
         gitHubProfile: this.state.gitHubProfile,
         bio: this.state.bio
+
       };
       console.log(myUser);
       API.saveUser(myUser)
         .catch(err => console.log(err));
     }
   };
+
+
+
 render() {
     return (
-                      
+
             <form>
             <Row>
               <Input
@@ -96,7 +102,7 @@ render() {
                 Submit
               </Button>
             </Row>
-            </form> 
+            </form>
           );
 }
 };

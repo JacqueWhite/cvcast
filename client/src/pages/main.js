@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Button } from 'react-bootstrap';
-
+// import { Button } from 'react-bootstrap';
+import { Button } from 'react-materialize';
 
 class Main extends Component {
   state = {
@@ -23,7 +23,7 @@ class Main extends Component {
   componentDidMount = () => this.setState({authorized: this.props.auth.isAuthenticated()})
 
   render() {
-    const { isAuthenticated, userHasScopes } = this.props.auth;
+    const { isAuthenticated } = this.props.auth;
 
     console.log(this.logout, this.login, isAuthenticated())
 

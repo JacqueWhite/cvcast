@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
+import Nav from '../components/Nav';
 import PortfolioCardEdit from "../components/PortfolioCardEdit";
 import TitleCard from "../components/TitleCard";
 import ProjectForm from "../components/ProjectForm";
@@ -69,6 +70,7 @@ class Edit extends Component {
   render() {
     return (
     <div>
+      <Nav />
         <Row>
           <TitleCard
             firstName={this.state.user.firstName}
