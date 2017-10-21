@@ -2,13 +2,16 @@ import React from 'react';
 import {Navbar, Icon, NavItem} from 'react-materialize';
 import './Nav.css';
 
+
 const Nav = props => (
 
-	<Navbar brand='logo' fixed='true' right>
-		<NavItem href='get-started.html'><Icon>search</Icon></NavItem>
-		<NavItem href='get-started.html'><Icon>view_module</Icon></NavItem>
-		<NavItem href='get-started.html'><Icon>refresh</Icon></NavItem>
-		<NavItem href='get-started.html'><Icon>more_vert</Icon></NavItem>
+	<Navbar brand='Show and Tell' fixed right>
+		<NavItem href='/'><Icon>search</Icon></NavItem>
+		<NavItem href=''><Icon>view_module</Icon></NavItem>
+		<NavItem href='/edit'><Icon>link</Icon></NavItem>
+		<NavItem href='/portfolio'><Icon>public</Icon></NavItem>
+		<NavItem href='/main'><Icon>portrait</Icon></NavItem>
+		<NavItem>Hello, {props.firstName}!</NavItem>
 	</Navbar>
 );
 
