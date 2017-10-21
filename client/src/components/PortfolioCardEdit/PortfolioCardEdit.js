@@ -6,11 +6,6 @@ import EditButton from '../EditButton';
 const PortfolioCardEdit = props => (
 <div>
   <Col m={6} s={12}>
-      <Card
-        header={<CardTitle reveal image={props.image} waves='light'/>}
-          title={props.project}
-          reveal={<div><p>{props.description}</p></div>}>
-
       <Card 
         header={
           <CardTitle
