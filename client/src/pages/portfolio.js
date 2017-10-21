@@ -73,12 +73,12 @@ class Portfolio extends Component {
             headshot={this.state.user.headshot}
             email={this.state.user.email}
             bio={this.state.user.bio}
+            gitHubProfile={this.state.user.bio}
           />
         </Row>
         <Row>
-          {this.state.projects.map((portfoliocard, index) => (
+          {this.state.projects.map((portfoliocard) => (
             <PortfolioCard
-            key={index}
             project={portfoliocard.projectName}
             image={portfoliocard.image}
             description={portfoliocard.description}

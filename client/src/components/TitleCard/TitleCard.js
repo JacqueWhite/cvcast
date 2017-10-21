@@ -10,7 +10,7 @@ const TitleCard = props => (
 	  <div className="card-content">
 	    <div className="row">
 	      <div className="col s4 profile-pic">
-	        <img className="circle responsive-img" src={props.headshot} alt={props.name} />
+	        <img className="circle responsive-img" src={props.headshot} alt={props.firstName} />
 	      </div>
 	      <div className="col right controls ">
 
@@ -20,7 +20,7 @@ const TitleCard = props => (
 	        <div className="menu">
 	          <div className="row">
 	            <ul className="menu-list">
-	              <li><a href={props.email} target="_blank">Email {props.name}</a></li>
+	              <li><a href={props.email} target="_blank">Email {props.firstName}</a></li>
 	              <li><a href={props.linkedIn} target="_blank">View LinkedIn</a></li>
 	              <li>Get Resume</li>
 	            </ul>
