@@ -45,9 +45,10 @@ class Edit extends Component {
 
     loadProjects = () => {
       API.getProjects()
-        .then(res =>
+        .then(res => {
           this.setState({ projects: res.data})
-        )
+          console.log(this.state.projects);
+        })
         .catch(err => console.log(err));
     };
 
@@ -85,14 +86,15 @@ class Edit extends Component {
           {this.state.projects.map((portfoliocard, index) => (
             <PortfolioCardEdit
               key={index}
-              id={portfoliocard.id}
-              project={portfoliocard.project}
+              id={portfoliocard._id}
+              project={portfoliocard.projectName}
               image={portfoliocard.image}
               description={portfoliocard.description}
               team={portfoliocard.team}
               link={portfoliocard.link}
               github={portfoliocard.github}
               technologiesKeywords={portfoliocard.technologiesKeywords}
+              remove={this.deleteProject}
             />
           ))}
         </Row>
