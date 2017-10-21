@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
+import Nav from '../components/Nav';
 import PortfolioCardEdit from "../components/PortfolioCardEdit";
 import TitleCard from "../components/TitleCard";
 import ProjectForm from "../components/ProjectForm";
@@ -45,9 +46,10 @@ class Edit extends Component {
 
     loadProjects = () => {
       API.getProjects()
-        .then(res =>
+        .then(res => {
           this.setState({ projects: res.data})
-        )
+          console.log(this.state.projects);
+        })
         .catch(err => console.log(err));
     };
 
@@ -68,6 +70,7 @@ class Edit extends Component {
   render() {
     return (
     <div>
+      <Nav />
         <Row>
           <TitleCard
             firstName={this.state.user.firstName}
@@ -79,20 +82,24 @@ class Edit extends Component {
           />
         </Row>
         <Row>
-          <ProjectForm user={this.state.profile.name}/>
+          <ProjectForm
+            user={this.state.profile.name}
+            update={this.loadProjects}
+            />
         </Row>
         <Row>
           {this.state.projects.map((portfoliocard, index) => (
             <PortfolioCardEdit
               key={index}
-              id={portfoliocard.id}
-              project={portfoliocard.project}
+              id={portfoliocard._id}
+              project={portfoliocard.projectName}
               image={portfoliocard.image}
               description={portfoliocard.description}
               team={portfoliocard.team}
               link={portfoliocard.link}
               github={portfoliocard.github}
               technologiesKeywords={portfoliocard.technologiesKeywords}
+              remove={this.deleteProject}
             />
           ))}
         </Row>

@@ -7,7 +7,7 @@ import EditButton from '../EditButton';
 const PortfolioCardEdit = props => (
 <div>
   <Col m={6} s={12}>
-      <Card 
+      <Card
         header={<CardTitle reveal image={props.image} waves='light'/>}
           title={props.project}
           reveal={<div><p>{props.description}</p></div>}>
@@ -15,11 +15,16 @@ const PortfolioCardEdit = props => (
           {props.technologiesKeywords.map(tag => (
           <Button waves='light' node='a' href={tag}> {tag} </Button>
           ))}
-        <EditButton/>
+          <EditButton onClick = {
+              () => props.edit(props.id)
+            }/>
+
+          <span className="remove" onClick = {
+            () => props.remove(props.id)
+            }>𝘅</span>
       </Card>
       <FixedButton/>
    </Col>
 </div>
 );
 export default PortfolioCardEdit;
-

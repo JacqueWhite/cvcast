@@ -7,7 +7,6 @@
     "npm": "5.5.1"
   },
   "scripts": {
-    "install": "cd client && npm install && npm run build && cd ..",
     "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "node scripts/start-client.js",
@@ -26,13 +25,15 @@
   },
   "homepage": "https://github.com/isai-solis/Show-and-Tell#readme",
   "dependencies": {
+    "auth0-js": "^8.10.1",
     "axios": "^0.16.2",
     "body-parser": "^1.18.2",
     "express": "^4.16.2",
     "mongoose": "^4.12.1",
     "react-flipcard": "^0.2.1",
     "react-materialize": "^1.0.16",
-    "react-router-dom": "^4.2.2"
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "^1.0.14"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
