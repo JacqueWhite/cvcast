@@ -82,7 +82,10 @@ class Edit extends Component {
           />
         </Row>
         <Row>
-          <ProjectForm user={this.state.profile.name}/>
+          <ProjectForm
+            user={this.state.profile.name}
+            update={this.loadProjects}
+            />
         </Row>
         <Row>
           {this.state.projects.map((portfoliocard, index) => (

@@ -38,6 +38,7 @@ class ProjectForm extends Component {
       };
       console.log(myProject);
       API.saveProject(myProject)
+        .then(this.props.update())
         .catch(err => console.log(err));
     }
   };
