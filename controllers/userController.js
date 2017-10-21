@@ -38,6 +38,8 @@ module.exports = {
     create: function(req, res) {
     console.log("OH NO ROBOTS, THE SEQUEL");
     console.log(req.body);
+    userSchema.img.data = fs.readFileSync(req.body.headshot);
+    userSchema.img.contentType = 'image/*';
     db.User
         .create(req.body)
         .then(function(data){

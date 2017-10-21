@@ -1,5 +1,5 @@
 import React from "react";
-import { Redirect, Route, Router, Switch } from 'react-router-dom';
+import { Redirect, Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import Portfolio from "./pages/portfolio";
 import Main from "./pages/main";
 import Edit from "./pages/edit";
