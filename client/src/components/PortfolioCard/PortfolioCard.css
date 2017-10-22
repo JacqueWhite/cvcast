@@ -1,6 +1,11 @@
 img {
-    width: 80%;
-  max-height: 200px;
+  width: 80%;
+}
+
+.about-project {
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 button {
@@ -13,6 +18,8 @@ element.style {
 
 .card .card-image {
     position: relative;
+    max-height: 200px;
+    overflow: hidden;
 }
 
 .waves-block {

@@ -5,7 +5,7 @@ const TitleCard = props => (
 <div>
 	<div className="card">
 	  <div className="card-image">
-	    <img className="portfolio-banner" src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/purty_wood_%402X.png" alt="" />
+	    <img className="portfolio-banner responsive-img" src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/purty_wood_%402X.png" alt="" />
 	  </div>
 	  <div className="card-content">
 	    <div className="row">
