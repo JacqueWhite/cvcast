@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import "./SignupForm.css";
-import {Row, Input, Button} from 'react-materialize'; 
+import {Row, Input, Button} from 'react-materialize';
 
 class NewUser extends Component {
   state = {
@@ -44,7 +44,7 @@ handleFormSubmit = event => {
 
 render() {
     return (
-                      
+
             <form>
             <Row>
               <Input
@@ -101,13 +101,9 @@ render() {
               >
                 Submit
               </Button>
-
             </Row>
-            </form> 
+            </form>
           );
-
 }
-
 };
-
 export default NewUser;
