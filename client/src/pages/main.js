@@ -1,6 +1,4 @@
 import React, { Component } from "react";
-// import { Button } from 'react-bootstrap';
-import { Button } from 'react-materialize';
 
 class Main extends Component {
   state = {
@@ -58,15 +56,14 @@ class Main extends Component {
                     )
                 }
               {
-                  // isAuthenticated() && (
-                  //     <Button
-                  //       bsStyle="primary"
-                  //       className="btn-margin"
-                  //       onClick={this.goTo.bind(this, 'profile')}
-                  //     >
-                  //       Profile
-                  //     </Button>
-                  //   )
+                  isAuthenticated() && (
+                      <a
+                        className="waves-effect waves-light btn-large"
+                        onClick={this.goTo.bind(this, 'profile')}
+                      >
+                        Profile
+                      </a>
+                    )
                 }
                 {
                   !isAuthenticated() && (

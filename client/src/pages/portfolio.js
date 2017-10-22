@@ -10,8 +10,7 @@ class Portfolio extends Component {
   state = {
     profile: {},
     projects: [],
-    user: "",
-    authenticated: false
+    user: ""
   }
 
   goTo(route) {
