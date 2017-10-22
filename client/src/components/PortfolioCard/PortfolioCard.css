@@ -2,6 +2,12 @@ img {
   width: 80%;
 }
 
+.about-project {
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
+}
+
 button {
   width: 80%;
 }
