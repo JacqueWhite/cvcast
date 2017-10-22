@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import API from "../../utils/API";
 import "./ProjectForm.css";
 import {Row, Input, Button} from 'react-materialize';
+// import Input from "../Input"
 
 class ProjectForm extends Component {
   state = {
@@ -53,19 +54,12 @@ class ProjectForm extends Component {
 }
 
 render() {
-  // console.log("Hello from project form:");
-  // console.log("Bye from project form!");
-  // if (shouldComponentUpdate()) {
-  //   console.log("Looks like the component should update...");
-  // } else {
-  //   console.log(shouldComponentUpdate());
-  // }
   return (
   <form>
     <h2>{this.props.project.description}</h2>
     <Row>
       <Input
-        defaultValue={this.props.project.project || 'BARF'}
+        defaultValue={this.props.project.project}
         onChange={this.handleInputChange}
         name="projectName"
         placeholder="Project Name (required)"
