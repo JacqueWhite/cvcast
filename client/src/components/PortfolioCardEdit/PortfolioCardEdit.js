@@ -28,8 +28,11 @@ const PortfolioCardEdit = props => (
               {tag} 
             </Button>
           ))}
+
           <EditButton onClick = {
-              () => props.edit(props.id)
+              () => {
+                props.edit(props)
+              }
             }/>
 
           <span className="remove" onClick = {
