@@ -13,7 +13,7 @@ class Edit extends Component {
       projects: [],
       user: "",
       currentProject:{}
-    };
+    }
 
     componentWillMount() {
       const { userProfile, getProfile } = this.props.auth;
@@ -41,7 +41,7 @@ class Edit extends Component {
         }
         )
         .catch(err => console.log(err));
-    };
+    }
 
     loadProjects = () => {
       API.getProjects()
@@ -50,13 +50,13 @@ class Edit extends Component {
           console.log(this.state.projects);
         })
         .catch(err => console.log(err));
-    };
+    }
 
     deleteProject = id => {
       API.deleteProject(id)
         .then(res => this.loadProjects())
         .catch(err => console.log(err));
-    };
+    }
 
     openForEdits = currentProject => {
       console.log(currentProject);
