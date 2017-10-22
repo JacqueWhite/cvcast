@@ -21,7 +21,9 @@ const PortfolioCard = props => (
               </div>
               <div className="card-reveal">
                   <span className="card-title grey-text text-darken-4">{props.project}<i className="material-icons right">close</i></span>
-                  <p>{props.description}</p>
+                  <p>Description:{props.description}</p>
+                  <p>See the code:{props.github}</p>
+                  <p>The team:{props.team}</p>
               </div>
           </div>
       </div>
