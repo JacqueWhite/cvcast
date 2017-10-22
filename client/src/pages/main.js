@@ -46,38 +46,47 @@ class Main extends Component {
                       Portfolio
                   </a>
                 )
+
               }
               {
                   isAuthenticated() && (
-                      <Button
-                        bsStyle="primary"
-                        className="btn-margin"
-                        onClick={this.goTo.bind(this, 'profile')}
+                      <a
+                        className="waves-effect waves-light btn-large"
+                        onClick={this.goTo.bind(this, 'login')}
                       >
-                        Profile
-                      </Button>
+                        Add Your Basic Info
+                      </a>
                     )
+                }
+              {
+                  // isAuthenticated() && (
+                  //     <Button
+                  //       bsStyle="primary"
+                  //       className="btn-margin"
+                  //       onClick={this.goTo.bind(this, 'profile')}
+                  //     >
+                  //       Profile
+                  //     </Button>
+                  //   )
                 }
                 {
                   !isAuthenticated() && (
-                      <Button
-                        bsStyle="primary"
-                        className="btn-margin"
+                      <a
+                        className="waves-effect waves-light btn-large"
                         onClick={this.login.bind(this)}
                       >
                         Log In
-                      </Button>
+                      </a>
                     )
                 }
                 {
                   isAuthenticated() && (
-                      <Button
-                        bsStyle="primary"
-                        className="btn-margin"
+                      <a
+                        className="waves-effect waves-light btn-large"
                         onClick={this.logout.bind(this)}
                       >
                         Log Out
-                      </Button>
+                      </a>
                     )
                 }
 		        </div>

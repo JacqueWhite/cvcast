@@ -87,7 +87,7 @@ class Edit extends Component {
     {console.log(this.state.currentProject)}
     return (
     <div>
-      <Nav firstName={this.state.user.firstName} />
+      <Nav/>
         <Row>
           <TitleCard
             firstName={this.state.user.firstName}
