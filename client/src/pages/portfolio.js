@@ -11,7 +11,7 @@ class Portfolio extends Component {
     profile: {},
     projects: [],
     user: ""
-  };
+  }
 
   componentWillMount() {
     const { userProfile, getProfile } = this.props.auth;
@@ -40,7 +40,7 @@ class Portfolio extends Component {
       }
       )
       .catch(err => console.log(err));
-  };
+  }
 
   loadProjects = () => {
     API.getProjects()
@@ -48,20 +48,20 @@ class Portfolio extends Component {
         this.setState({ projects: res.data})
       )
       .catch(err => console.log(err));
-  };
+  }
 
   deleteProject = id => {
     API.deleteProject(id)
       .then(res => this.loadProjects())
       .catch(err => console.log(err));
-  };
+  }
 
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
-  };
+  }
 
   render() {
     return (

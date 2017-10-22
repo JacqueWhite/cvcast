@@ -1,5 +1,7 @@
-img {
-  width: 80%;
+.about-project {
+    color: black;
+    font-weight: bold;
+    font-size: 1.1rem;
 }
 
 button {
@@ -10,8 +12,15 @@ element.style {
     overflow: hidden;
 }
 
-.card .card-image {
+div.card-image {
     position: relative;
+    height: 200px !important;
+    overflow: hidden;
+}
+
+.card, .portfolio-card{
+    position: relative;
+    height: 500px !important;
 }
 
 .waves-block {
