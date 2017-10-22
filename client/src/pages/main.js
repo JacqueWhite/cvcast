@@ -56,16 +56,7 @@ class Main extends Component {
                       </a>
                     )
                 }
-              {
-                  isAuthenticated() && (
-                      <a
-                        className="waves-effect waves-light btn-large"
-                        onClick={this.goTo.bind(this, 'profile')}
-                      >
-                        Profile
-                      </a>
-                    )
-                }
+
                 {
                   !isAuthenticated() && (
                       <a
