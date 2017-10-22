@@ -81,7 +81,7 @@ class Portfolio extends Component {
 
     return (
     <div>
-      <Nav />
+      <Nav firstName={this.state.user.firstName} />
         <Row>
           <TitleCard
             firstName={this.state.user.firstName}

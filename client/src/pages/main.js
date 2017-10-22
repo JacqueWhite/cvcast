@@ -44,7 +44,6 @@ class Main extends Component {
                       Portfolio
                   </a>
                 )
-
               }
               {
                   isAuthenticated() && (
@@ -56,7 +55,6 @@ class Main extends Component {
                       </a>
                     )
                 }
-
                 {
                   !isAuthenticated() && (
                       <a
