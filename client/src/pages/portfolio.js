@@ -1,9 +1,9 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
+import Nav from '../components/Nav';
 import PortfolioCard from "../components/PortfolioCard";
 import TitleCard from "../components/TitleCard";
 import API from "../utils/API";
-// import Popup from "../components/Modal";
 
 class Portfolio extends Component {
 
@@ -11,7 +11,7 @@ class Portfolio extends Component {
     profile: {},
     projects: [],
     user: ""
-  };
+  }
 
   componentWillMount() {
     const { userProfile, getProfile } = this.props.auth;
@@ -42,33 +42,33 @@ class Portfolio extends Component {
       }
       )
       .catch(err => console.log(err));
-  };
+  }
 
   loadProjects = () => {
     API.getProjects()
       .then(res =>
         this.setState({ projects: res.data})
       )
-      .catch(err => console.log("load projects: " + err));
+      .catch(err => console.log(err));
+  }
 
-  };
+  deleteProject = id => {
+    API.deleteProject(id)
+      .then(res => this.loadProjects())
+      .catch(err => console.log(err));
+  }
 
-//   deleteProject = id => {
-//     API.deleteProject(id)
-//       .then(res => this.loadProjects())
-//       .catch(err => console.log(err));
-//   };
-
-//   handleInputChange = event => {
-//     const { name, value } = event.target;
-//     this.setState({
-//       [name]: value
-//     });
-//   };
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  }
 
   render() {
     return (
     <div>
+      <Nav />
         <Row>
           <TitleCard
             firstName={this.state.user.firstName}
@@ -83,7 +83,7 @@ class Portfolio extends Component {
         <Row>
           {this.state.projects.map((portfoliocard) => (
             <PortfolioCard
-            projectName={portfoliocard.projectName}
+            project={portfoliocard.projectName}
             image={portfoliocard.image}
             description={portfoliocard.description}
             github={portfoliocard.github}

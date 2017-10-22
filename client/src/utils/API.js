@@ -13,8 +13,11 @@ export default {
     return axios.delete("/api/projects/" + id);
   },
   // Saves a project to the database
-  saveProject: function(projectData) {
-    return axios.post("/api/projects", projectData);
+  saveProject: function(myProject) {
+    return axios.post("/api/projects", myProject);
+  },
+  updateProject: function(id) {
+    return axios.put("/api/projects/"+ id);
   },
   // Saves a user to the database
   saveUser: function(user) {

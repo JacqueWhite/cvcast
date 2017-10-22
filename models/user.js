@@ -29,15 +29,10 @@ const UserSchema = new Schema ({
     bio: {
         type: String
     },
-    projects: [{
+    Project: [{
         type: Schema.Types.ObjectId,
         ref: "Project"
-    }],
-    // createdBy: {
-    //     type: Schema.Types.ObjectId,
-    //     ref: "Project",
-    //     index: true
-    // }
+    }]
 });
 
 const User = mongoose.model("User", UserSchema);

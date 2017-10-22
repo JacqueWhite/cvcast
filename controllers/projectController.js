@@ -22,11 +22,20 @@ module.exports = {
 
     // create a new project 
     create: function(req, res) {
-    console.log(req.body);
+    console.log("OH NO ROBOTS, THE SEQUEL");
+    console.log(req.body);    
     db.Project
         .create(req.body)
-        .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+        .then(dbModel => {
+            console.log("This is the dbModel" + dbModel)
+            db.User
+            .findOneAndUpdate({ 'email': req.body.userid }, {$push: {"Project": dbModel._id }})
+            .then(dbModel => res.json(dbModel))
+            .catch(err => res.status(422).json(err));
+            })
+            
+        // res.json(dbModel))
+        // .catch(err => res.status(422).json(err));
     },
 
     // update/edit project by id
