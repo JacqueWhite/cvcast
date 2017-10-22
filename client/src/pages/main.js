@@ -35,15 +35,16 @@ class Main extends Component {
 	          <h5 className="header col s12 light">a platform to showcase your projects</h5>
 	        </div>
 	        <div className="row center">
-              {
+             {
                 isAuthenticated() && (
-                    <a
-                      className="waves-effect waves-light btn-large"
+                  <a
+                    className="waves-effect waves-light btn-large"
                       onClick={this.goTo.bind(this, 'portfolio')}
                     >
                       Portfolio
-                    </a>
-                  )
+                  </a>
+                )
+
               }
               {
                   isAuthenticated() && (
