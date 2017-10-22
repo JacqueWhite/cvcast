@@ -10,7 +10,21 @@ class Portfolio extends Component {
   state = {
     profile: {},
     projects: [],
-    user: ""
+    user: "",
+    authenticated: false
+  }
+
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login = () => {
+    this.props.auth.login();
+  }
+
+  logout = () => {
+    this.props.auth.logout();
+    this.setState({authorized: this.props.auth.isAuthenticated()})
   }
 
   componentWillMount() {
@@ -64,10 +78,22 @@ class Portfolio extends Component {
   }
 
   render() {
+    const { isAuthenticated } = this.props.auth;
+
     return (
     <div>
       <Nav />
         <Row>
+        {
+        isAuthenticated() && (
+            <a
+              className="waves-effect waves-light btn-large"
+              onClick={this.goTo.bind(this, 'edit')}
+            >
+              Hi {this.state.user.firstName}, Click here to edit your page
+            </a>
+          )
+          }
           <TitleCard
             firstName={this.state.user.firstName}
             lastName={this.state.user.lastName}
