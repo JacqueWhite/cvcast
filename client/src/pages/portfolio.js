@@ -83,16 +83,6 @@ class Portfolio extends Component {
     <div>
       <Nav />
         <Row>
-        {
-        isAuthenticated() && (
-            <a
-              className="waves-effect waves-light btn-large"
-              onClick={this.goTo.bind(this, 'edit')}
-            >
-              Hi {this.state.user.firstName}, Click here to edit your page
-            </a>
-          )
-          }
           <TitleCard
             firstName={this.state.user.firstName}
             lastName={this.state.user.lastName}
