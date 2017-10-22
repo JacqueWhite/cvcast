@@ -73,21 +73,21 @@ class Edit extends Component {
       API.updateProject(id)
         .then(res => this.loadProjects())
         .catch(err => console.log(err));
-    };
+    }
 
     handleInputChange = event => {
       const { name, value } = event.target;
       this.setState({
         [name]: value
       });
-    };
+    }
 
 
   render() {
     {console.log(this.state.currentProject)}
     return (
     <div>
-      <Nav firstName={this.state.user.firstName} />
+      <Nav/>
         <Row>
           <TitleCard
             firstName={this.state.user.firstName}
@@ -106,10 +106,8 @@ class Edit extends Component {
             />
         </Row>
         <Row>
-          {this.state.projects.map((portfoliocard, index) => (
+          {this.state.projects.map((portfoliocard) => (
             <PortfolioCardEdit
-              key={index}
-              id={portfoliocard._id}
               project={portfoliocard.projectName}
               image={portfoliocard.image}
               description={portfoliocard.description}

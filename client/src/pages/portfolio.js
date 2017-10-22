@@ -13,6 +13,19 @@ class Portfolio extends Component {
     user: ""
   }
 
+  goTo(route) {
+    this.props.history.replace(`/${route}`)
+  }
+
+  login = () => {
+    this.props.auth.login();
+  }
+
+  logout = () => {
+    this.props.auth.logout();
+    this.setState({authorized: this.props.auth.isAuthenticated()})
+  }
+
   componentWillMount() {
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
@@ -66,6 +79,8 @@ class Portfolio extends Component {
   }
 
   render() {
+    const { isAuthenticated } = this.props.auth;
+
     return (
     <div>
       <Nav />
