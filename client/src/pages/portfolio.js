@@ -18,16 +18,19 @@ class Portfolio extends Component {
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
-
-        this.loadProjects();
-        this.loadUser();
+        //duplicate, moved below
+        // this.loadProjects();
+        // this.loadUser();
+        
       });
     } else {
       this.setState({ profile: userProfile });
-
-      this.loadProjects();
-      this.loadUser();
+      //duplicate, moved below
+      // this.loadProjects();
+      // this.loadUser();
     }
+    this.loadProjects();
+    this.loadUser();
   }
 
   loadUser = () => {
@@ -64,7 +67,7 @@ class Portfolio extends Component {
   }
 
   render() {
-    const { isAuthenticated } = this.props.auth;
+    // const { isAuthenticated } = this.props.auth;
 
     return (
     <div>
