@@ -100,6 +100,7 @@ class Edit extends Component {
         </Row>
         <Row>
           <ProjectForm
+            key={this.state.currentProject.id}
             user={this.state.profile.name}
             update={this.loadProjects}
             project={this.state.currentProject}
