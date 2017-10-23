@@ -6,8 +6,10 @@ module.exports = {
     findByEmail: function(req, res) {
     db.User
         .findOne({ email: req.params.email})
+        
+        
         .then(dbModel => {
-                  console.log(dbModel);
+                  
                   res.json(dbModel);
                 })
         .catch(err => res.status(422).json(err));
@@ -20,8 +22,7 @@ module.exports = {
         
         db.User
         .findOne({_id: req.params.id})
-        // .populate("Project")
-        
+        .populate("Project")
         .then(dbModel => {
             console.log("find all user controller");
             console.log(dbModel)

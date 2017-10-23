@@ -134,7 +134,7 @@ db.User
         console.log(iter)
         // console.log(userData)
         db.User
-          .findOneAndUpdate({ 'email': userData.ops[2].email }, {$push: {"Project": elem._id }})
+          .findOneAndUpdate({ 'email': userData.ops[iter].email }, {$push: {"Project": elem._id }})
           .catch(err => res.status(422).json(err));
       })
       console.log(projectData.insertedIds.length + " records inserted!");

@@ -30,11 +30,12 @@ class Portfolio extends Component {
   }
 
   loadUser = () => {
-    console.log("This.State:");
-    console.log(this.state.profile);
+    console.log("This.State: this is the user email");
+    console.log(this.state.profile.name);
     API.getUser(this.state.profile.name)
       .then(res => {
         this.setState({ user: res.data})
+        console.log("This is res.data in portfoloio page--------------------")
         console.log(res.data);
         this.loadProjects(res.data._id);
       })
@@ -44,15 +45,17 @@ class Portfolio extends Component {
   loadProjects = (id) => {
     console.log("is from load user: " + id);
     API.getProjects(id)
-      .populate("Project.Project") //stackoverflow says that lists.list works....
-      .exec((err, stuff) => {
-        console.log("This is stuff: ");
-        console.log(stuff);
-      })
-  //     .then(res =>{
-  //       console.log(res) 
-  //       this.setState({ projects: res.data.Project})
-  // })
+      // .populate("Project.Project") //stackoverflow says that lists.list works....
+      
+      // .exec((err, stuff) => {
+      //   console.log("This is stuff: ");
+      //   console.log(stuff);
+      // })
+      .then(res =>{
+        console.log("This is res in load projects--------------------")
+        console.log(res.data.Project) 
+        this.setState({ projects: res.data.Project})
+  })
       // .catch(err => console.log(err));
   }
 
