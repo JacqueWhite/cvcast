@@ -39,15 +39,15 @@ class Edit extends Component {
       API.getUser(this.state.profile.name)
         .then(res => {
           this.setState({ user: res.data})
-          this.loadProjects(res.data._id);
+          this.loadProjects();
         })
         .catch(err => console.log(err));
     }
 
-    loadProjects = (id) => {
-      API.getProjects(id)
+    loadProjects = () => {
+      API.getProjects(this.state.user._id)
         .then(res =>{
-          console.log(res)
+          // console.log(res)
           this.setState({ projects: res.data.Project})
     })
         .catch(err => console.log(err));
@@ -89,6 +89,7 @@ class Edit extends Component {
 
 
   render() {
+    console.log(this.state);
     return (
     <div>
       <Nav firstName={this.state.user.firstName} />
