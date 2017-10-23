@@ -79,25 +79,33 @@ render() {
           
           <span className="card-title">
             <div className ="row row-project-form">
-            <div className="input-field col s6">
+            <div className="input-field col s4">
               <input
                 defaultValue={this.props.project.project}
                 onChange={this.handleInputChange}
                 name="projectName"
-                placeholder="My Project"
+                placeholder="Project Name (required)"
                 type="text"/>
-                <label for="projectName">Project Name</label>
             </div>
 
               <div className="input-field col s4">
                   <input           
-                  value={this.props.project.link}
+                  defaultValue={this.props.project.link}
                   onChange={this.handleInputChange}
                   name="link"
-                  placeholder="ex: https://www.myproject.com"
+                  placeholder="Link URL (ex: https://www.myproject.com)"
                   type="text"/>
-                  <label for="link">Project Link</label>
               </div>
+
+              <div className="input-field col s4">
+                <input           
+                  defaultValue={this.props.project.github}
+                  onChange={this.handleInputChange}
+                  name="github"
+                  placeholder="GitHub URL (ex: https://github.com/username/project)"
+                  type="text"/>
+              </div>
+
             </div>
           </span>
 
@@ -105,32 +113,20 @@ render() {
 
               <div className="input-field col s4">
                   <input           
-                  value={this.props.project.image}
+                  defaultValue={this.props.project.image}
                   onChange={this.handleInputChange}
                   name="image"
-                  placeholder="ex: https://www.myimage.com"
+                  placeholder="Image URL (ex: https://www.myimage.com)"
                   type="text"/>
-                  <label for="image">Image URL</label>
               </div>
 
-              <div className="input-field col s4">
+              <div className="input-field col s6">
                   <input           
-                  value={this.props.project.team}
+                  defaultValue={this.props.project.team}
                   onChange={this.handleInputChange}
                   name="team"
-                  placeholder="Example: Tommy, Jill, Bobby"
+                  placeholder="Team (ex: Tommy, Jill, Bobby)"
                   type="text"/>
-                  <label for="team">Team</label>
-              </div>
-
-              <div className="input-field col s4">
-                <input           
-                  value={this.props.project.github}
-                  onChange={this.handleInputChange}
-                  name="github"
-                  placeholder="ex: https://github.com/username/project"
-                  type="text"/>
-                  <label for="github">Project GitHub Link</label>
               </div>
 
           </div>
@@ -138,36 +134,35 @@ render() {
           <div className="row row-project-form">
             <div className="input-field col s12">
               <input           
-              value={this.props.project.description}
+              defaultValue={this.props.project.description}
               onChange={this.handleInputChange}
               name="description"
-              maxlength="150"
+              maxLength="150"
               placeholder="This is a really cool app that solves a problem"
               type="text"/>
-              <label for="description">Project Summary (150 char max)</label>
             </div>
           </div>
 
           <div className="row row-project-form">
               <legend>Technologies used</legend>
                 <div className="input-field col s2">
-                  <input type="checkbox" id="check-1" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
-                  <label for="check-1">HTML</label>
+                  <input type="checkbox" id="check-1" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
+                  <label htmlFor="check-1">HTML</label>
                 </div>
                 <div className="input-field col s2">
-                  <input type="checkbox" id="check-2" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
-                  <label for="check-2">Javascript</label>
+                  <input type="checkbox" id="check-2" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
+                  <label htmlFor="check-2">Javascript</label>
                 </div>
                 <div className="input-field col s2">
-                  <input type="checkbox" id="check-3" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
-                  <label for="check-3">CSS and/or frameworks (Bootstrap)</label>
+                  <input type="checkbox" id="check-3" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
+                  <label htmlFor="check-3">CSS and/or frameworks (Bootstrap)</label>
                 </div>
                 <div className="input-field col s2">
-                  <input type="checkbox" id="check-4" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
-                  <label for="check-4">Database (mySQL, MongoDB, Firebase, etc)</label>
+                  <input type="checkbox" id="check-4" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
+                  <label htmlFor="check-4">Database (mySQL, MongoDB, Firebase, etc)</label>
                 </div>
                 <div className="input-field col s3">
-                  <input type="text" id="other" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords} placeholder="Other"/>
+                  <input type="text" id="other" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords} placeholder="Other"/>
                 </div>
           </div>
 
