@@ -64,7 +64,6 @@ class Portfolio extends Component {
   }
 
   render() {
-    const { isAuthenticated } = this.props.auth;
 
     return (
     <div>
