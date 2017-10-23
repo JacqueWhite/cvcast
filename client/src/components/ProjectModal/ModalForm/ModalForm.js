@@ -62,23 +62,8 @@ const tags_arr = [{title: '-Select Tag-', value: "" },
       {title: 'DB: Mongo', value: 'MongoDB'}, {title: 'DB: Mongoose', value: 'Mongoose'},
     //SQL
     {title: 'DB: SQL', value: 'SQL'},
-      {title: 'DB: MySQL', value: 'MySQL'}, {title: 'DB: Firebase', value: 'Firebase'},
+      {title: 'DB: MySQL', value: 'MySQL'}, {title: 'DB: Firebase', value: 'Firebase'}
       
-
-    {title: 'JS: Express', value: 'Express'},  
-    {title: 'JS: Node', value: 'Node'},
-    {title: 'JS: Express', value: 'Express'},  
-    {title: 'JS: Node', value: 'Node'},
-    {title: 'JS: Express', value: 'Express'},  
-    {title: 'JS: Node', value: 'Node'},
-    {title: 'JS: Express', value: 'Express'},  
-    {title: 'JS: Node', value: 'Node'},
-    {title: 'JS: Express', value: 'Express'},  
-    {title: 'JS: Node', value: 'Node'},
-    {title: 'JS: Express', value: 'Express'},  
-    {title: 'JS: Node', value: 'Node'},
-    {title: 'JS: Express', value: 'Express'},  
-    {title: 'JS: Node', value: 'Node'}
 
     
 
