@@ -20,7 +20,7 @@ class Portfolio extends Component {
         this.setState({ profile });
         // this.loadProjects();
         this.loadUser();
-        
+
       });
     } else {
       this.setState({ profile: userProfile });
@@ -44,16 +44,11 @@ class Portfolio extends Component {
   loadProjects = (id) => {
     console.log("is from load user: " + id);
     API.getProjects(id)
-      .populate("Project.Project") //stackoverflow says that lists.list works....
-      .exec((err, stuff) => {
-        console.log("This is stuff: ");
-        console.log(stuff);
-      })
-  //     .then(res =>{
-  //       console.log(res) 
-  //       this.setState({ projects: res.data.Project})
-  // })
-      // .catch(err => console.log(err));
+      .then(res =>{
+        console.log(res)
+        this.setState({ projects: res.data.Project})
+  })
+      .catch(err => console.log(err));
   }
 
   deleteProject = id => {

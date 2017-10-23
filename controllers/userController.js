@@ -15,25 +15,20 @@ module.exports = {
     },
 
     findAll: function(req, res){
-        
         console.log(req.params);
-        
         db.User
         .findOne({_id: req.params.id})
-        // .populate("Project")
-        
+        .populate("Project")
         .then(dbModel => {
             console.log("find all user controller");
             console.log(dbModel)
             res.json(dbModel)
         })
-        
         .catch(err => res.status(422).json(err));
-        console.log("find all called from controllers/userController");
     },
 
 
-    // create a new user 
+    // create a new user
     create: function(req, res) {
     db.User
         .create(req.body)
