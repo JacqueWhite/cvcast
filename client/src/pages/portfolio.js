@@ -76,6 +76,7 @@ class Portfolio extends Component {
             headshot={this.state.user.headshot}
             email={this.state.user.email}
             bio={this.state.user.bio}
+            gitHubProfile={this.state.user.gitHubProfile}
           />
         </Row>
         <Row>
