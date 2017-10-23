@@ -66,21 +66,21 @@ render() {
         type="text"
       />
       <Input
-        value={this.props.project.image}
+        defaultValue={this.props.project.image}
         onChange={this.handleInputChange}
         name="image"
         placeholder="image URL (ex:'https://www.myimage.com')"
         type="text"
       />
       <Input
-        value={this.props.project.description}
+        defaultValue={this.props.project.description}
         onChange={this.handleInputChange}
         name="description"
         placeholder="Project Description / Summary"
         type="text"
       />
       <Input
-        value={this.props.project.team}
+        defaultValue={this.props.project.team}
         onChange={this.handleInputChange}
         name="team"
         placeholder="Example: Tommy, Jill, Bobby"
@@ -89,19 +89,19 @@ render() {
 		<fieldset>
 		<legend>Technologies used</legend>
 			<div>
-				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
 				<label>HTML</label>
 			</div>
 			<div>
-				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
 				<label>Javascript</label>
 			</div>
 			<div>
-				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
 				<label>CSS and/or frameworks (Bootstrap)</label>
 			</div>
 			<div>
-				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
 				<label>Database (mySQL, MongoDB, Firebase, etc)</label>
 			</div>
 			<div>
@@ -110,14 +110,14 @@ render() {
 			</div>
 		</fieldset>
       <Input
-        value={this.props.project.link}
+        defaultValue={this.props.project.link}
         onChange={this.handleInputChange}
         name="link"
         placeholder="Deployed Project Link"
         type="text"
       />
       <Input
-        value={this.props.project.github}
+        defaultValue={this.props.project.github}
         onChange={this.handleInputChange}
         name="github"
         placeholder="Project GitHub Link"
