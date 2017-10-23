@@ -32,9 +32,6 @@ class Edit extends Component {
     }
 
     loadUser = () => {
-      // console.log("This.State:");
-      // console.log(this.state.profile);
-      // currentUser = this.state.profile.name;
       API.getUser(this.state.profile.name)
         .then(res => {
           console.log(res);
@@ -61,9 +58,7 @@ class Edit extends Component {
 
     toggleEdit = currentProject => {
       if (this.state.editing) {
-        this.setState({
-          editing: false
-        })
+        this.reset();
       } else {
         this.setState({
           currentProject: currentProject,
@@ -72,10 +67,11 @@ class Edit extends Component {
       }
     }
 
-    saveEdit = id => {
-      API.updateProject(id)
-        .then(res => this.loadProjects())
-        .catch(err => console.log(err));
+    reset = () => {
+      this.setState({
+        currentProject: {},
+        editing: false
+      })
     }
 
     handleInputChange = event => {
@@ -87,6 +83,8 @@ class Edit extends Component {
 
 
   render() {
+    console.log("STUFF");
+    console.log(this.state.currentProject);
     return (
     <div>
       <Nav firstName={this.state.user.firstName} />
@@ -102,6 +100,7 @@ class Edit extends Component {
         </Row>
         <Row>
           <ProjectForm
+            reset={this.reset}
             key={this.state.currentProject.id}
             user={this.state.profile.name}
             update={this.loadProjects}

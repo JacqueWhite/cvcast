@@ -21,13 +21,9 @@ class ProjectForm extends Component {
   }
 
   handleFormSubmit = event => {
-    console.log("current state:");
-    console.log(this.state);
-    // console.log(this.props.user);
     event.preventDefault();
     console.log("handleFormSubmit from ProjectForm.js");
     if (this.props.editing) {
-      console.log("yup, we're editing");
       this.setState({
         projectName           : this.state.projectName          || this.props.project.projectName,
         image                 : this.state.image                || this.props.project.image,
@@ -37,35 +33,21 @@ class ProjectForm extends Component {
         link                  : this.state.link                 || this.props.project.link,
         github                : this.state.github               || this.props.project.github
       }, function() {
-        console.log("edited state:");
-        console.log(this.state);
-        this.props.toggleEdit();
+
         API.updateProject(this.props.project.id, this.state)
-          .then(this.props.update())
+          .then(() => {
+            this.props.update();
+            this.props.toggleEdit();
+          })
           .catch(err => console.log(err));
       })
     } else {
 
-    // }
-    // if (this.state.projectName) {
-      var myProject = {
-        projectName: this.state.projectName,
-        image: this.state.image,
-        description: this.state.description,
-        technologiesKeywords: this.state.technologiesKeywords,
-        team: this.state.team,
-        link: this.state.link,
-        github: this.state.github,
-        userid: this.props.user
-      };
-      console.log(myProject);
-      if (this.props.project.id) {
-
-      } else {
-        API.saveProject(myProject)
-          .then(this.props.update())
+        API.saveProject(this.state)
+          .then(() => {
+            this.props.update();
+          })
           .catch(err => console.log(err));
-      }
     }
   };
 
