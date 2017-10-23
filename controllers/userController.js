@@ -5,9 +5,8 @@ module.exports = {
     // find user by email
     findByEmail: function(req, res) {
     db.User
-        // .findOne({ email: req.params.email })
-        // this needs to be changed back to req.params.email
-        .findOne({ email: req.body})
+
+        .findOne({ email: req.params.email})
         .then(dbModel => {
                   console.log(dbModel);
                   res.json(dbModel);

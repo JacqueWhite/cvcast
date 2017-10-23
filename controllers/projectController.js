@@ -3,14 +3,14 @@ const db = require("../models");
 module.exports = {
 
     //  get all projects 
-    // findAll: function(req, res){
-    // db.Project
-    //     .find(req.query)
-    //     .then(dbModel => res.json(dbModel))
-    //     .catch(err => res.status(422).json(err));
+    findAll: function(req, res){
+    db.Project
+        .find(req.query)
+        .then(dbModel => res.json(dbModel))
+        .catch(err => res.status(422).json(err));
 
-    //     console.log("find all from controllers/projectController");
-    // },
+        console.log("find all from controllers/projectController");
+    },
 
     // find specific project by id
     findById: function(req, res) {
