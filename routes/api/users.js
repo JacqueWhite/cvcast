@@ -2,6 +2,10 @@ const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 
+router  
+  .route("/id/:id")
+  .get(userController.findAll);
+
 router
   .route("/signup")
   .post(userController.create);

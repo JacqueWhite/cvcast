@@ -18,37 +18,42 @@ class Portfolio extends Component {
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
-        this.loadProjects();
+        // this.loadProjects();
         this.loadUser();
         
       });
     } else {
       this.setState({ profile: userProfile });
-      this.loadProjects();
+      // this.loadProjects();
       this.loadUser();
     }
   }
 
   loadUser = () => {
     console.log("This.State:");
-    // console.log(this.state.profile);
+    console.log(this.state.profile);
     API.getUser(this.state.profile.name)
       .then(res => {
-        console.log("this is the usr");
-        console.log(res);
-        
         this.setState({ user: res.data})
-      }
-      )
+        console.log(res.data);
+        this.loadProjects(res.data._id);
+      })
       .catch(err => console.log(err));
   }
 
-  loadProjects = () => {
-    API.getProjects()
-      .then(res =>
-        this.setState({ projects: res.data})
-      )
-      .catch(err => console.log(err));
+  loadProjects = (id) => {
+    console.log("is from load user: " + id);
+    API.getProjects(id)
+      .populate("Project.Project") //stackoverflow says that lists.list works....
+      .exec((err, stuff) => {
+        console.log("This is stuff: ");
+        console.log(stuff);
+      })
+  //     .then(res =>{
+  //       console.log(res) 
+  //       this.setState({ projects: res.data.Project})
+  // })
+      // .catch(err => console.log(err));
   }
 
   deleteProject = id => {
