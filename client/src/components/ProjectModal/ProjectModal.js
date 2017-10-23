@@ -56,6 +56,7 @@ class ProjectModal extends Component {
           actions={actions}
           modal={true}
           open={this.state.open}
+          autoScrollBodyContent={true}
         >
           <ModalForm />
         </Dialog>
