@@ -18,13 +18,12 @@ class Portfolio extends Component {
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
-
         this.loadProjects();
         this.loadUser();
+        
       });
     } else {
       this.setState({ profile: userProfile });
-
       this.loadProjects();
       this.loadUser();
     }
@@ -64,7 +63,6 @@ class Portfolio extends Component {
   }
 
   render() {
-
     return (
     <div>
       <Nav firstName={this.state.user.firstName} />

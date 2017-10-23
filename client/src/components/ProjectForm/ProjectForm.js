@@ -70,8 +70,8 @@ class ProjectForm extends Component {
 
 render() {
   return (
-<div>
 
+<div>
   <div className="row">
     <div className="col s12">
       <div className="card #bdbdbd grey darken-1 project-form">
