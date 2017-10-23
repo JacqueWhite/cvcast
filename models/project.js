@@ -24,6 +24,10 @@ const ProjectSchema = new Schema({
 	},
 	github: {
 		type: String
+	},
+	ownerID: {
+		type: Schema.Types.ObjectId,
+		ref: 'User'
 	}
 });
 

@@ -14,6 +14,11 @@ router
   .put(projectController.update)
   .delete(projectController.remove);
 
+  // Matches with "/api/projects/:id"
+  router
+    .route("/:projectId/:userId")
+    .delete(projectController.remove);
+
 module.exports = router;
 
 

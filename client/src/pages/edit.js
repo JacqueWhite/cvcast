@@ -33,12 +33,9 @@ class Edit extends Component {
     }
 
     loadUser = () => {
-      // console.log("This.State:");
-      // console.log(this.state.profile);
-      // currentUser = this.state.profile.name;
       API.getUser(this.state.profile.name)
         .then(res => {
-          console.log(res);
+          console.log(res.data);
           this.setState({ user: res.data})
         }
         )
@@ -48,23 +45,24 @@ class Edit extends Component {
     loadProjects = () => {
       API.getProjects()
         .then(res => {
+          console.log(res.data);
           this.setState({ projects: res.data})
-          console.log(this.state.projects);
         })
         .catch(err => console.log(err));
     }
 
-    deleteProject = id => {
-      API.deleteProject(id)
+    deleteProject = (id, ownerID) => {
+      API.deleteProject(id, ownerID)
         .then(res => this.loadProjects())
         .catch(err => console.log(err));
+      // API.deleteProject(id)
+      //   .then(res => this.loadProjects())
+      //   .catch(err => console.log(err));
     }
 
     toggleEdit = currentProject => {
       if (this.state.editing) {
-        this.setState({
-          editing: false
-        })
+        this.reset();
       } else {
         this.setState({
           currentProject: currentProject,
@@ -73,10 +71,11 @@ class Edit extends Component {
       }
     }
 
-    saveEdit = id => {
-      API.updateProject(id)
-        .then(res => this.loadProjects())
-        .catch(err => console.log(err));
+    reset = () => {
+      this.setState({
+        currentProject: {},
+        editing: false
+      })
     }
 
     handleInputChange = event => {
@@ -102,13 +101,14 @@ class Edit extends Component {
           />
         </Row>
         <Row>
-          <ProjectModal 
+          <ProjectModal
           />
         </Row>
         <Row>
           <ProjectForm
+            reset={this.reset}
             key={this.state.currentProject.id}
-            user={this.state.profile.name}
+            user={this.state.user}
             update={this.loadProjects}
             project={this.state.currentProject}
             editing={this.state.editing}
@@ -128,6 +128,7 @@ class Edit extends Component {
               technologiesKeywords={portfoliocard.technologiesKeywords}
               remove={this.deleteProject}
               edit={this.toggleEdit}
+              user={this.state.user}
             />
           ))}
         </Row>

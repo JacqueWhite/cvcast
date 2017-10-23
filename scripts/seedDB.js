@@ -129,12 +129,8 @@ db.User
       
       // Associate each project with a user
       projectData.ops.forEach((elem, iter) => {
-        console.log(elem)
-        console.log("-----------")
-        console.log(iter)
-        // console.log(userData)
         db.User
-          .findOneAndUpdate({ 'email': userData.ops[iter].email }, {$push: {"Project": elem._id }})
+          .findOneAndUpdate({ 'email': userData.ops[2].email }, {$push: {"Project": elem._id }})
           .catch(err => res.status(422).json(err));
       })
       console.log(projectData.insertedIds.length + " records inserted!");
