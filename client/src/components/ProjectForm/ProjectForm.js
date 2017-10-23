@@ -39,6 +39,7 @@ class ProjectForm extends Component {
       }, function() {
         console.log("edited state:");
         console.log(this.state);
+        this.props.toggleEdit();
         API.updateProject(this.props.project.id, this.state)
           .then(this.props.update())
           .catch(err => console.log(err));

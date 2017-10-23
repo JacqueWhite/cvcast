@@ -59,16 +59,17 @@ class Edit extends Component {
         .catch(err => console.log(err));
     }
 
-    openForEdits = currentProject => {
-      // console.log(currentProject);
-      this.setState({
-        currentProject: currentProject,
-        editing: true
-      }, () => {
-        //This is just for testing. TODO: remove me!
-        console.log("changed parent state");
-        console.log(this.state)
-      })
+    toggleEdit = currentProject => {
+      if (this.state.editing) {
+        this.setState({
+          editing: false
+        })
+      } else {
+        this.setState({
+          currentProject: currentProject,
+          editing: true
+        })
+      }
     }
 
     saveEdit = id => {
@@ -106,6 +107,7 @@ class Edit extends Component {
             update={this.loadProjects}
             project={this.state.currentProject}
             editing={this.state.editing}
+            toggleEdit={this.toggleEdit}
             />
         </Row>
         <Row>
@@ -120,7 +122,7 @@ class Edit extends Component {
               github={portfoliocard.github}
               technologiesKeywords={portfoliocard.technologiesKeywords}
               remove={this.deleteProject}
-              edit={this.openForEdits}
+              edit={this.toggleEdit}
             />
           ))}
         </Row>
