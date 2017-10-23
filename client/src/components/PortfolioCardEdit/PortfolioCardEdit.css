@@ -4,8 +4,15 @@
     font-size: 1.1rem;
 }
 
-button {
-  width: 80%;
+.btn {
+  max-width: 50%;
+  font-size: 12px;
+  text-align: left;
+  vertical-align: center;
+  padding: 5px;
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin: 1px;
 }
 
 element.style {
@@ -59,4 +66,12 @@ div.card-image {
 
 div {
     display: block;
+}
+
+.card {
+    height: 400px;
+}
+
+.tagsDiv {
+    max-height: 100px;
 }

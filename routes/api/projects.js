@@ -1,5 +1,3 @@
-console.log("routes/api/projects.js page");
-
 const router = require("express").Router();
 const projectController = require("../../controllers/projectController");
 

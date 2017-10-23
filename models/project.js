@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const User = require('../models/user');
 
 // Create the noteSchema with the schema object
 const ProjectSchema = new Schema({
-  // The headline is the article associate with the note
 	projectName: {
 		type: String
 	},
@@ -29,7 +29,6 @@ const ProjectSchema = new Schema({
 		type: Schema.Types.ObjectId,
 		ref: 'User'
 	}
-
 });
 
 // Create the Note model using the noteSchema
