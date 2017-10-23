@@ -137,7 +137,7 @@ render() {
               defaultValue={this.props.project.description}
               onChange={this.handleInputChange}
               name="description"
-              maxlength="150"
+              maxLength="150"
               placeholder="This is a really cool app that solves a problem"
               type="text"/>
             </div>
@@ -147,19 +147,19 @@ render() {
               <legend>Technologies used</legend>
                 <div className="input-field col s2">
                   <input type="checkbox" id="check-1" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
-                  <label for="check-1">HTML</label>
+                  <label htmlFor="check-1">HTML</label>
                 </div>
                 <div className="input-field col s2">
                   <input type="checkbox" id="check-2" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
-                  <label for="check-2">Javascript</label>
+                  <label htmlFor="check-2">Javascript</label>
                 </div>
                 <div className="input-field col s2">
                   <input type="checkbox" id="check-3" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
-                  <label for="check-3">CSS and/or frameworks (Bootstrap)</label>
+                  <label htmlFor="check-3">CSS and/or frameworks (Bootstrap)</label>
                 </div>
                 <div className="input-field col s2">
                   <input type="checkbox" id="check-4" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords}/>
-                  <label for="check-4">Database (mySQL, MongoDB, Firebase, etc)</label>
+                  <label htmlFor="check-4">Database (mySQL, MongoDB, Firebase, etc)</label>
                 </div>
                 <div className="input-field col s3">
                   <input type="text" id="other" name="technologiesKeywords" onChange={this.handleInputChange} defaultValue={this.state.technologiesKeywords} placeholder="Other"/>
