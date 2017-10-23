@@ -18,19 +18,15 @@ class Portfolio extends Component {
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
-        //duplicate, moved below
-        // this.loadProjects();
-        // this.loadUser();
+        this.loadProjects();
+        this.loadUser();
         
       });
     } else {
       this.setState({ profile: userProfile });
-      //duplicate, moved below
-      // this.loadProjects();
-      // this.loadUser();
+      this.loadProjects();
+      this.loadUser();
     }
-    this.loadProjects();
-    this.loadUser();
   }
 
   loadUser = () => {
