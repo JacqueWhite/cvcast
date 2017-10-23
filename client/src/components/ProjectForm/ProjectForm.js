@@ -11,7 +11,7 @@ class ProjectForm extends Component {
     team: "",
     link: "",
     github: "",
-    currentUser: this.state.currentUser || this.props.user._id
+    ownerID: this.props.user._id
   }
 
   handleInputChange = event => {
@@ -31,7 +31,7 @@ class ProjectForm extends Component {
         team                  : this.state.team                 || this.props.project.team,
         link                  : this.state.link                 || this.props.project.link,
         github                : this.state.github               || this.props.project.github,
-        ownerID               : this.state.currentUser          || this.props.project.ownerID
+        ownerID               : this.state.ownerID              || this.props.project.ownerID
       }, function() {
 
         API.updateProject(this.props.project.id, this.state)
@@ -42,11 +42,15 @@ class ProjectForm extends Component {
           .catch(err => console.log(err));
       })
     } else {
+      this.setState({ ownerID : this.props.user._id }, () => {
+      console.log("Going to save a new project....");
+      console.log(this.state);
         API.saveProject(this.state)
           .then(() => {
             this.props.update();
           })
           .catch(err => console.log(err));
+      })
     }
   };
 
@@ -170,11 +174,11 @@ render() {
                 </div>
                 <div className="input-field col s3">
                   <input
-                    type="text" 
-                    id="other" 
-                    name="technologiesKeywords" 
-                    onChange={this.handleInputChange} 
-                    defaultValue={this.state.technologiesKeywords} 
+                    type="text"
+                    id="other"
+                    name="technologiesKeywords"
+                    onChange={this.handleInputChange}
+                    defaultValue={this.state.technologiesKeywords}
                     placeholder="Other"/>
                 </div>
           </div>

@@ -17,6 +17,7 @@ app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
+mongoose.set('debug', true);
 
 //===========================================================================================
 //Remember to change below.

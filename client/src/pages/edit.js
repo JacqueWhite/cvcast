@@ -51,10 +51,13 @@ class Edit extends Component {
         .catch(err => console.log(err));
     }
 
-    deleteProject = id => {
-      API.deleteProject(id)
+    deleteProject = (id, ownerID) => {
+      API.deleteProject(id, ownerID)
         .then(res => this.loadProjects())
         .catch(err => console.log(err));
+      // API.deleteProject(id)
+      //   .then(res => this.loadProjects())
+      //   .catch(err => console.log(err));
     }
 
     toggleEdit = currentProject => {
@@ -125,6 +128,7 @@ class Edit extends Component {
               technologiesKeywords={portfoliocard.technologiesKeywords}
               remove={this.deleteProject}
               edit={this.toggleEdit}
+              user={this.state.user}
             />
           ))}
         </Row>
