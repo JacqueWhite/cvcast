@@ -1,11 +1,11 @@
 console.log("routes/api/users.js page");
-
+const multer = require('multer')
 const router = require("express").Router();
 const userController = require("../../controllers/userController");
 
 router
   .route("/signup")
-  .post(userController.create);
+  .post(multer().single('headshot'), userController.create);
   
   // .catch(err => res.status(422).json(err)); //Errors out...
 

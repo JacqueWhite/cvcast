@@ -18,7 +18,10 @@ const UserSchema = new Schema ({
     },
     headshot: { 
         data: Buffer, 
-        contentType: String 
+        contentType: {
+            type: String,
+            match: [/image\//, "Please upload a valid image file type"]
+        }
     },
     linkedIn: {
         type: String

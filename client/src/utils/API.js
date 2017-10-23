@@ -21,7 +21,9 @@ export default {
   },
   // Saves a user to the database
   saveUser: function(user) {
-    return axios.post("/api/user/signup", user);
+    return axios.post("/api/user/signup", user, { headers: {
+      'Content-Type': 'multipart/form-data'
+    }});
   },
   // Gets the user with the given id
   getUser: function(id) {

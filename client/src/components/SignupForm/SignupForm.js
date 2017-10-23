@@ -5,39 +5,70 @@ import "./SignupForm.css";
 import {Row, Input, Button} from 'react-materialize';
 
 class NewUser extends Component {
+  // state = {
+  //   firstName: "",
+  //   lastName: "",
+  //   email: "",
+  //   headshot: {
+  //     data: '',
+  //     contentType: ''
+  //   },
+  //   linkedIn: "",
+  //   gitHubProfile: "",
+  //   bio: ""
+  // }
   state = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    headshot: "",
-    linkedIn: "",
-    gitHubProfile: "",
-    bio: ""
+    firstName: '',
+    lastName: '',
+    email: '',
+    headshot: { file: '', filename: ''},
+    linkedIn: '',
+    gitHubProfile: '',
+    bio: ''
   }
 
   handleInputChange = event => {
-    const { name, value } = event.target;
-    this.setState({ [name]: value });
+    const { name, value, files } = event.target;
+    // // ternary operator if file => get file, else get value
+    this.setState({ [name]: files ? { file: files[0], filename: value } : value });
+    
   }
 
-handleFormSubmit = event => {
+  handleFormSubmit = event => {
     event.preventDefault();
-    console.log("oh no robots!");
-    if (this.state.firstName && this.state.lastName && this.state.email) {
-      var myUser = {
-        firstName: this.state.firstName,
-        lastName: this.state.lastName,
-        email: this.state.email,
-        headshot: this.state.headshot,
-        linkedIn: this.state.linkedIn,
-        gitHubProfile: this.state.gitHubProfile,
-        bio: this.state.bio
+    // console.log("oh no robots!");
+    // if (this.state.firstName && this.state.lastName && this.state.email) {
+    //   var myUser = {
+    //     firstName: this.state.firstName,
+    //     lastName: this.state.lastName,
+    //     email: this.state.email,
+    //     headshot: this.state.headshot,
+    //     linkedIn: this.state.linkedIn,
+    //     gitHubProfile: this.state.gitHubProfile,
+    //     bio: this.state.bio
 
-      };
-      console.log(myUser);
+    //   };
+      const myUser = Object.keys(this.state).reduce((a, x) => {
+        if (x == 'headshot') {
+          a.append(x, this.state[x].file, this.state[x].filename)
+        } else {
+          a.append(x, this.state[x])          
+        }
+        return a
+      }, new FormData())
+
       API.saveUser(myUser)
         .catch(err => console.log(err));
-    }
+
+      this.setState({
+        firstName: '',
+        lastName: '',
+        email: '',
+        headshot: { file: '', filename: ''},
+        linkedIn: '',
+        gitHubProfile: '',
+        bio: ''
+      }) 
   };
 
 
@@ -45,53 +76,47 @@ handleFormSubmit = event => {
 render() {
     return (
 
-            <form>
+            <form onChange={this.handleInputChange}>
             <Row>
               <Input
                 value={this.state.firstName}
-                onChange={this.handleInputChange}
                 name="firstName"
                 placeholder="First Name(required)"
                 type="text"
               />
               <Input
                 value={this.state.lastName}
-                onChange={this.handleInputChange}
                 name="lastName"
                 placeholder="Last Name (required)"
                 type="text"
               />
               <Input
                 value={this.state.email}
-                onChange={this.handleInputChange}
                 name="email"
                 placeholder="Email Address (required)"
                 type="text"
               />
               <Input
-                value={this.state.headshot}
-                onChange={this.handleInputChange}
+                file={this.state.headshot.file}
+                value={this.state.headshot.filename}
                 name="headshot"
                 placeholder=" Add the link to a profile picture."
-                type="text"
+                type="file"
               />
               <Input
                 value={this.state.linkedIn}
-                onChange={this.handleInputChange}
                 name="linkedIn"
                 placeholder="Add your linkedIn profile link."
                 type="text"
               />
               <Input
                 value={this.state.gitHubProfile}
-                onChange={this.handleInputChange}
                 name="gitHubProfile"
                 placeholder="Add your GitHub profile link."
                 type="text"
               />
               <Input
                 value={this.state.bio}
-                onChange={this.handleInputChange}
                 name="bio"
                 placeholder=" Tell me about yourself."
               />

@@ -1,6 +1,6 @@
 console.log("userController.js");
 
-
+var base64Img = require('base64-img');
 const db = require("../models");
 
 module.exports = {
@@ -37,16 +37,19 @@ module.exports = {
     },
     create: function(req, res) {
     console.log("OH NO ROBOTS, THE SEQUEL");
-    console.log(req.body);
-    userSchema.img.data = fs.readFileSync(req.body.headshot);
-    userSchema.img.contentType = 'image/*';
+    console.log(req.file, req.body);//works as of 2:49pm
+    const { buffer: data, mimetype: contentType } = req.file
+    const newUser = Object.assign({ headshot: { data, contentType } }, req.body)
+
     db.User
-        .create(req.body)
+        .create(newUser)
         .then(function(data){
             res.json(data);
         })
-        // .then(dbModel => res.json(dbModel))
-        .catch(err => res.status(422).json(err));
+        .catch(err => {
+            console.log(err)
+            res.status(422).json(err);
+        })
     },
     update: function(req, res) {
     db.User
