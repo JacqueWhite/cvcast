@@ -6,6 +6,10 @@ import Edit from "./pages/edit";
 import Login from "./pages/login";
 import "./index.css";
 
+//Material-ui
+import getMuiTheme from 'material-ui/styles/getMuiTheme';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
+
 // Auth stuff
 import Auth from './components/Auth/Auth';
 import Callback from './components/Callback/Callback';
@@ -22,6 +26,8 @@ const handleAuthentication = (nextState, replace) => {
 
 const App = () => {
   return (
+    <MuiThemeProvider muiTheme={getMuiTheme()}>
+
     <Router history={history} component={App}>
         <div>
           <Route exact path="/" render={(props) => {
@@ -60,6 +66,7 @@ const App = () => {
           <Route exact path="/login" component={Login} />
         </div>
       </Router>
+    </MuiThemeProvider>
   )
 }
 
