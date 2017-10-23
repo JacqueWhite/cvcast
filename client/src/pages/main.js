@@ -44,7 +44,6 @@ class Main extends Component {
                       Portfolio
                   </a>
                 )
-
               }
               {
                   isAuthenticated() && (
@@ -53,16 +52,6 @@ class Main extends Component {
                         onClick={this.goTo.bind(this, 'login')}
                       >
                         Add Your Basic Info
-                      </a>
-                    )
-                }
-              {
-                  isAuthenticated() && (
-                      <a
-                        className="waves-effect waves-light btn-large"
-                        onClick={this.goTo.bind(this, 'profile')}
-                      >
-                        Profile
                       </a>
                     )
                 }
