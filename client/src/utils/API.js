@@ -2,9 +2,7 @@ import axios from "axios";
 export default {
   // Gets all projects
   getProjects: function(id) {
-    console.log("API Utils" + id);
-    return axios.get("/api/user/id/" + id); //this goes to user controller / find all 
-    
+    return axios.get("/api/user/id/" + id);
   },
   // Gets the project with the given id
   getProject: function(id) {
@@ -29,9 +27,4 @@ export default {
   getUser: function(email) {
     return axios.get("/api/user/" + email);
   }
-
-
-
-
-
 };
