@@ -3,16 +3,16 @@ import "./TitleCard.css";
 
 const TitleCard = props => (
 <div>
-	<div className="card">
+	<div className="card card-about">
 	  <div className="card-image">
 	    <img className="portfolio-banner responsive-img" src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/purty_wood_%402X.png" alt="" />
 	  </div>
 	  <div className="card-content">
 	    <div className="row">
 	      <div className="col s4 profile-pic">
-	        <img className="circle responsive-img" src={props.headshot} alt={props.name} />
+	        <img className="circle profile-img responsive-img" src={props.headshot} alt={props.name} />
 	      </div>
-	      <div className="col right controls ">
+	      <div className="col right controls">
 
 	        <i className="material-icons">more_vert</i>
 	      </div>

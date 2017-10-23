@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import "./ProjectForm.css";
-import {Row, Input, Button} from 'react-materialize';
 // import Input from "../Input"
 
 class ProjectForm extends Component {
@@ -55,83 +54,240 @@ class ProjectForm extends Component {
 
 render() {
   return (
-  <form>
-    <h2>{this.props.project.description}</h2>
-    <Row>
-      <Input
-        defaultValue={this.props.project.project}
-        onChange={this.handleInputChange}
-        name="projectName"
-        placeholder="Project Name (required)"
-        type="text"
-      />
-      <Input
-        value={this.props.project.image}
-        onChange={this.handleInputChange}
-        name="image"
-        placeholder="image URL (ex:'https://www.myimage.com')"
-        type="text"
-      />
-      <Input
-        value={this.props.project.description}
-        onChange={this.handleInputChange}
-        name="description"
-        placeholder="Project Description / Summary"
-        type="text"
-      />
-      <Input
-        value={this.props.project.team}
-        onChange={this.handleInputChange}
-        name="team"
-        placeholder="Example: Tommy, Jill, Bobby"
-        type="text"
-      />
-		<fieldset>
-		<legend>Technologies used</legend>
-			<div>
-				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
-				<label>HTML</label>
-			</div>
-			<div>
-				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
-				<label>Javascript</label>
-			</div>
-			<div>
-				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
-				<label>CSS and/or frameworks (Bootstrap)</label>
-			</div>
-			<div>
-				<Input type="checkbox" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
-				<label>Database (mySQL, MongoDB, Firebase, etc)</label>
-			</div>
-			<div>
-			    <label>Other:</label>
-				<Input type="text" name="technologiesKeywords" onChange={this.handleInputChange}/>
-			</div>
-		</fieldset>
-      <Input
-        value={this.props.project.link}
-        onChange={this.handleInputChange}
-        name="link"
-        placeholder="Deployed Project Link"
-        type="text"
-      />
-      <Input
-        value={this.props.project.github}
-        onChange={this.handleInputChange}
-        name="github"
-        placeholder="Project GitHub Link"
-      />
-      <Button
-        // disabled={!(this.state.author && this.state.title)}
-        onClick={this.handleFormSubmit}
-      >
-        Submit
-      </Button>
+<div>
 
-    </Row>
-    </form>
+  <div className="row">
+    <div className="col s12">
+      <div className="card #bdbdbd grey darken-1 project-form">
+        <div className="card-content white-text">
+          
+          <span className="card-title">
+            <div className ="row row-project-form">
+            <div className="input-field col s6">
+              <input
+                defaultValue={this.props.project.project}
+                onChange={this.handleInputChange}
+                name="projectName"
+                placeholder="My Project"
+                type="text"/>
+                <label for="projectName">Project Name</label>
+            </div>
+
+              <div className="input-field col s4">
+                  <input           
+                  value={this.props.project.link}
+                  onChange={this.handleInputChange}
+                  name="link"
+                  placeholder="ex: https://www.myproject.com"
+                  type="text"/>
+                  <label for="link">Project Link</label>
+              </div>
+            </div>
+          </span>
+
+          <div className ="row row-project-form">
+
+              <div className="input-field col s4">
+                  <input           
+                  value={this.props.project.image}
+                  onChange={this.handleInputChange}
+                  name="image"
+                  placeholder="ex: https://www.myimage.com"
+                  type="text"/>
+                  <label for="image">Image URL</label>
+              </div>
+
+              <div className="input-field col s4">
+                  <input           
+                  value={this.props.project.team}
+                  onChange={this.handleInputChange}
+                  name="team"
+                  placeholder="Example: Tommy, Jill, Bobby"
+                  type="text"/>
+                  <label for="team">Team</label>
+              </div>
+
+              <div className="input-field col s4">
+                <input           
+                  value={this.props.project.github}
+                  onChange={this.handleInputChange}
+                  name="github"
+                  placeholder="ex: https://github.com/username/project"
+                  type="text"/>
+                  <label for="github">Project GitHub Link</label>
+              </div>
+
+          </div>
+
+          <div className="row row-project-form">
+            <div className="input-field col s12">
+              <input           
+              value={this.props.project.description}
+              onChange={this.handleInputChange}
+              name="description"
+              maxlength="150"
+              placeholder="This is a really cool app that solves a problem"
+              type="text"/>
+              <label for="description">Project Summary (150 char max)</label>
+            </div>
+          </div>
+
+          <div className="row row-project-form">
+              <legend>Technologies used</legend>
+                <div className="input-field col s2">
+                  <input type="checkbox" id="check-1" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+                  <label for="check-1">HTML</label>
+                </div>
+                <div className="input-field col s2">
+                  <input type="checkbox" id="check-2" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+                  <label for="check-2">Javascript</label>
+                </div>
+                <div className="input-field col s2">
+                  <input type="checkbox" id="check-3" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+                  <label for="check-3">CSS and/or frameworks (Bootstrap)</label>
+                </div>
+                <div className="input-field col s2">
+                  <input type="checkbox" id="check-4" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+                  <label for="check-4">Database (mySQL, MongoDB, Firebase, etc)</label>
+                </div>
+                <div className="input-field col s3">
+                  <input type="text" id="other" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords} placeholder="Other"/>
+                </div>
+          </div>
+
+            <div className="card-action">
+              <button 
+                // disabled={!(this.state.author && this.state.title)} 
+                className="btn waves-effect waves-light project-submit" 
+                type="submit" 
+                onClick={this.handleFormSubmit} 
+                name="action">Submit
+                <i className="material-icons right">send</i>
+                </button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
    );
 	}
 };
 export default ProjectForm;
+
+// <div>
+//   <div className="row">
+//     <form className="col s12">
+//       <div className="row">
+//         <div className="input-field col s6">
+//           <input 
+//           defaultValue={this.props.project.project}
+//           onChange={this.handleInputChange}
+//           name="projectName"
+//           placeholder="My Project"
+//           type="text"/>
+//           <label for="projectName">Project Name (required)</label>
+//         </div>
+//         <div className="input-field col s6">
+//           <input           
+//           value={this.props.project.image}
+//           onChange={this.handleInputChange}
+//           name="image"
+//           placeholder="ex: https://www.myimage.com"
+//           type="text"/>
+//           <label for="image">Image URL</label>
+//         </div>
+//       </div>
+//       <div className="row">
+//         <div className="input-field col s12">
+//           <input           
+//           value={this.props.project.description}
+//           onChange={this.handleInputChange}
+//           name="description"
+//           maxlength="150"
+//           placeholder="This is a really cool app that solves a problem"
+//           type="text"/>
+//           <label for="description">Project Summary (150 char max)</label>
+//         </div>
+//       </div>
+//       <div className="row">
+//         <div className="input-field col s12">
+//           <input           
+//           value={this.props.project.team}
+//           onChange={this.handleInputChange}
+//           name="team"
+//           placeholder="Example: Tommy, Jill, Bobby"
+//           type="text"/>
+//           <label for="team">Team</label>
+//         </div>
+//       </div>
+
+//       <div className="row">
+//         <div className="input-field col s12">
+//           <fieldset>
+//           <legend>Technologies used</legend>
+//             <div>
+//               <input type="checkbox" id="check-1" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+//               <label for="check-1">HTML</label>
+//             </div>
+//             <div>
+//               <input type="checkbox" id="check-2" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+//               <label for="check-2">Javascript</label>
+//             </div>
+//             <div>
+//               <input type="checkbox" id="check-3" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+//               <label for="check-3">CSS and/or frameworks (Bootstrap)</label>
+//             </div>
+//             <div>
+//               <input type="checkbox" id="check-4" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords}/>
+//               <label for="check-4">Database (mySQL, MongoDB, Firebase, etc)</label>
+//             </div>
+//             <div>
+//               <input type="text" id="other" name="technologiesKeywords" onChange={this.handleInputChange} value={this.state.technologiesKeywords} placeholder="Other"/>
+//             </div>
+//           </fieldset>
+//         </div>
+//       </div>
+
+//       <div className="row">
+//         <div className="col s12">
+//             <input           
+//             value={this.props.project.link}
+//             onChange={this.handleInputChange}
+//             name="link"
+//             placeholder="ex: https://www.myproject.com"
+//             type="text"/>
+//             <label for="link">Project Link</label>
+//         </div>
+//       </div>
+
+//       <div className="row">
+//         <div className="col s12">
+//           <div className="input-field col s12">
+//             <input           
+//             value={this.props.project.github}
+//             onChange={this.handleInputChange}
+//             name="github"
+//             placeholder="ex: https://github.com/username/project"/>
+//             <label for="github">Project GitHub Link</label>
+//           </div>
+//         </div>
+//       </div>
+
+//         <button 
+//         // disabled={!(this.state.author && this.state.title)} 
+//         className="btn waves-effect waves-light project-submit" 
+//         type="submit" 
+//         onClick={this.handleFormSubmit} 
+//         name="action">Submit
+//         <i className="material-icons right">send</i>
+//         </button>
+//     </form>
+//   </div>
+// </div>
+
+
+
