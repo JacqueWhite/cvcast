@@ -12,7 +12,8 @@ class Edit extends Component {
       profile: {},
       projects: [],
       user: "",
-      currentProject:{}
+      currentProject:{},
+      editing: false
     }
 
     componentWillMount() {
@@ -59,9 +60,10 @@ class Edit extends Component {
     }
 
     openForEdits = currentProject => {
-      console.log(currentProject);
+      // console.log(currentProject);
       this.setState({
-        currentProject: currentProject
+        currentProject: currentProject,
+        editing: true
       }, () => {
         //This is just for testing. TODO: remove me!
         console.log("changed parent state");
@@ -84,7 +86,6 @@ class Edit extends Component {
 
 
   render() {
-    {console.log(this.state.currentProject)}
     return (
     <div>
       <Nav firstName={this.state.user.firstName} />
@@ -104,6 +105,7 @@ class Edit extends Component {
             user={this.state.profile.name}
             update={this.loadProjects}
             project={this.state.currentProject}
+            editing={this.state.editing}
             />
         </Row>
         <Row>
