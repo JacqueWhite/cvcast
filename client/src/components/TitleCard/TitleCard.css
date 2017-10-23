@@ -1,10 +1,15 @@
-.card {
+.card-about {
   overflow: visible;
-  height: 10%;
+  height: 10% !important;
+}
+
+img.profile-img {
+  max-height: 213.33px;
+  max-width: 213.33px;
 }
 
 div.card-image {
-  height: 10%;
+
 }
 
 img.portfolio-banner {

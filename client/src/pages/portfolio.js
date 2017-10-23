@@ -13,31 +13,17 @@ class Portfolio extends Component {
     user: ""
   }
 
-  goTo(route) {
-    this.props.history.replace(`/${route}`)
-  }
-
-  login = () => {
-    this.props.auth.login();
-  }
-
-  logout = () => {
-    this.props.auth.logout();
-    this.setState({authorized: this.props.auth.isAuthenticated()})
-  }
-
   componentWillMount() {
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
-
         this.loadProjects();
         this.loadUser();
+        
       });
     } else {
       this.setState({ profile: userProfile });
-
       this.loadProjects();
       this.loadUser();
     }
@@ -79,11 +65,9 @@ class Portfolio extends Component {
   }
 
   render() {
-    const { isAuthenticated } = this.props.auth;
-
     return (
     <div>
-      <Nav />
+      <Nav firstName={this.state.user.firstName} />
         <Row>
           <TitleCard
             firstName={this.state.user.firstName}
@@ -93,6 +77,7 @@ class Portfolio extends Component {
             email={this.state.user.email}
             gitHubProfile={this.state.user.gitHubProfile}
             bio={this.state.user.bio}
+            gitHubProfile={this.state.user.gitHubProfile}
           />
         </Row>
         <Row>

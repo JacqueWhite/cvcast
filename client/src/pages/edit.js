@@ -4,7 +4,8 @@ import Nav from '../components/Nav';
 import PortfolioCardEdit from "../components/PortfolioCardEdit";
 import TitleCard from "../components/TitleCard";
 import ProjectForm from "../components/ProjectForm";
-import API from "../utils/API"
+import API from "../utils/API";
+import ProjectModal from '../components/ProjectModal';
 
 class Edit extends Component {
 
@@ -12,7 +13,8 @@ class Edit extends Component {
       profile: {},
       projects: [],
       user: "",
-      currentProject:{}
+      currentProject:{},
+      editing: false
     }
 
     componentWillMount() {
@@ -58,15 +60,17 @@ class Edit extends Component {
         .catch(err => console.log(err));
     }
 
-    openForEdits = currentProject => {
-      console.log(currentProject);
-      this.setState({
-        currentProject: currentProject
-      }, () => {
-        //This is just for testing. TODO: remove me!
-        console.log("changed parent state");
-        console.log(this.state)
-      })
+    toggleEdit = currentProject => {
+      if (this.state.editing) {
+        this.setState({
+          editing: false
+        })
+      } else {
+        this.setState({
+          currentProject: currentProject,
+          editing: true
+        })
+      }
     }
 
     saveEdit = id => {
@@ -84,10 +88,9 @@ class Edit extends Component {
 
 
   render() {
-    {console.log(this.state.currentProject)}
     return (
     <div>
-      <Nav/>
+      <Nav firstName={this.state.user.firstName} />
         <Row>
           <TitleCard
             firstName={this.state.user.firstName}
@@ -99,10 +102,17 @@ class Edit extends Component {
           />
         </Row>
         <Row>
+          <ProjectModal 
+          />
+        </Row>
+        <Row>
           <ProjectForm
+            key={this.state.currentProject.id}
             user={this.state.profile.name}
             update={this.loadProjects}
             project={this.state.currentProject}
+            editing={this.state.editing}
+            toggleEdit={this.toggleEdit}
             />
         </Row>
         <Row>
@@ -117,7 +127,7 @@ class Edit extends Component {
               github={portfoliocard.github}
               technologiesKeywords={portfoliocard.technologiesKeywords}
               remove={this.deleteProject}
-              edit={this.openForEdits}
+              edit={this.toggleEdit}
             />
           ))}
         </Row>

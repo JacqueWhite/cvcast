@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import API from "../../utils/API";
 import "./SignupForm.css";
-import {Row, Input, Button} from 'react-materialize';
+import {Row, Input, Button, Col} from 'react-materialize';
 
 class NewUser extends Component {
   state = {
@@ -44,65 +44,85 @@ handleFormSubmit = event => {
 
 render() {
     return (
+          <Row>
+            <div>
+              <Row>
+              <Col s={6}>
+                <Input
+                  value={this.state.firstName}
+                  onChange={this.handleInputChange}
+                  name="firstName"
+                  placeholder="First Name(required)"
+                  type="text"
+                />
+                </Col>
+                <Col s={6}>
+                <Input
+                  value={this.state.lastName}
+                  onChange={this.handleInputChange}
+                  name="lastName"
+                  placeholder="Last Name (required)"
+                  type="text"
+                />
+                </Col>
+              </Row>
+              <Row>
+                  <Col s={6}>
+                  <Input
+                    value={this.state.email}
+                    onChange={this.handleInputChange}
+                    name="email"
+                    placeholder="Email Address (required)"
+                    type="text"
+                  />
+                  </Col>
+                  <Col s={6}>
+                  <Input
+                    value={this.state.headshot}
+                    onChange={this.handleInputChange}
+                    name="headshot"
+                    placeholder=" Add the link to a profile picture."
+                    type="text"
+                  />
+                  </Col>
+                  <Col s={6}>
+                    <Input
+                      value={this.state.linkedIn}
+                      onChange={this.handleInputChange}
+                      name="linkedIn"
+                      placeholder="Add your linkedIn profile link."
+                      type="text"
+                    />
+                  </Col>
+                  <Col s={6}>
+                    <Input
+                      value={this.state.gitHubProfile}
+                      onChange={this.handleInputChange}
+                      name="gitHubProfile"
+                      placeholder="Add your GitHub profile link."
+                      type="text"
+                    />
+                  </Col>
+              </Row>
 
-            <form>
-            <Row>
-              <Input
-                value={this.state.firstName}
-                onChange={this.handleInputChange}
-                name="firstName"
-                placeholder="First Name(required)"
-                type="text"
-              />
-              <Input
-                value={this.state.lastName}
-                onChange={this.handleInputChange}
-                name="lastName"
-                placeholder="Last Name (required)"
-                type="text"
-              />
-              <Input
-                value={this.state.email}
-                onChange={this.handleInputChange}
-                name="email"
-                placeholder="Email Address (required)"
-                type="text"
-              />
-              <Input
-                value={this.state.headshot}
-                onChange={this.handleInputChange}
-                name="headshot"
-                placeholder=" Add the link to a profile picture."
-                type="text"
-              />
-              <Input
-                value={this.state.linkedIn}
-                onChange={this.handleInputChange}
-                name="linkedIn"
-                placeholder="Add your linkedIn profile link."
-                type="text"
-              />
-              <Input
-                value={this.state.gitHubProfile}
-                onChange={this.handleInputChange}
-                name="gitHubProfile"
-                placeholder="Add your GitHub profile link."
-                type="text"
-              />
-              <Input
-                value={this.state.bio}
-                onChange={this.handleInputChange}
-                name="bio"
-                placeholder=" Tell me about yourself."
-              />
-              <Button
-                // disabled={!(this.state.author && this.state.title)}
-                onClick={this.handleFormSubmit}
-              >
-                Submit
-              </Button>
-            </Row>
-            </form>
+              <Row>
+                <Col s={6}>
+                  <Input
+                    value={this.state.bio}
+                    onChange={this.handleInputChange}
+                    name="bio"
+                    placeholder=" Tell me about yourself."
+                  />
+                </Col>
+              </Row>
+                <Button
+                  // disabled={!(this.state.author && this.state.title)}
+                  onClick={this.handleFormSubmit}
+                >
+                  Submit
+                </Button>
+              </div>
+              </Row>
           );
 }
 };
