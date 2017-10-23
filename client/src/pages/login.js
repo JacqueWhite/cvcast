@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import {Row} from 'react-materialize';
 import Nav from '../components/Nav';
-import SignupForm from "../components/SignupForm";
+import BasicInfoForm from "../components/BasicInfoForm";
 
 class Login extends Component {
 
@@ -10,8 +10,8 @@ class Login extends Component {
     <div>
       <Nav />
       <Row>
-        <h3 className="login-text">Thanks for signing up! Please fill in your basic information:</h3>
-        <SignupForm/>
+        <h4 className="login-text">Thanks for signing up! Please fill in your basic information:</h4>
+        <BasicInfoForm/>
       </Row>
      </div>
     );
