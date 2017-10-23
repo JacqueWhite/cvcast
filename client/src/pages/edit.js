@@ -4,7 +4,8 @@ import Nav from '../components/Nav';
 import PortfolioCardEdit from "../components/PortfolioCardEdit";
 import TitleCard from "../components/TitleCard";
 import ProjectForm from "../components/ProjectForm";
-import API from "../utils/API"
+import API from "../utils/API";
+import ProjectModal from '../components/ProjectModal';
 
 class Edit extends Component {
 
@@ -96,6 +97,10 @@ class Edit extends Component {
             headshot={this.state.user.headshot}
             email={this.state.user.email}
             bio={this.state.user.bio}
+          />
+        </Row>
+        <Row>
+          <ProjectModal 
           />
         </Row>
         <Row>

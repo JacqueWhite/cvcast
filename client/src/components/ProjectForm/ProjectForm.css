@@ -1,1 +1,12 @@
-/*Nothin here.*/
+.card.project-form {
+	height: auto !important;
+}
+
+.project-submit {
+	text-align: center !important;
+	width: 40%;
+}
+
+.row-project-form {
+	margin: 1;
+}
