@@ -35,7 +35,7 @@ class Edit extends Component {
     loadUser = () => {
       API.getUser(this.state.profile.name)
         .then(res => {
-          console.log(res);
+          console.log(res.data);
           this.setState({ user: res.data})
         }
         )
@@ -45,8 +45,8 @@ class Edit extends Component {
     loadProjects = () => {
       API.getProjects()
         .then(res => {
+          console.log(res.data);
           this.setState({ projects: res.data})
-          console.log(this.state.projects);
         })
         .catch(err => console.log(err));
     }
@@ -84,8 +84,6 @@ class Edit extends Component {
 
 
   render() {
-    console.log("STUFF");
-    console.log(this.state.currentProject);
     return (
     <div>
       <Nav firstName={this.state.user.firstName} />
@@ -100,14 +98,14 @@ class Edit extends Component {
           />
         </Row>
         <Row>
-          <ProjectModal 
+          <ProjectModal
           />
         </Row>
         <Row>
           <ProjectForm
             reset={this.reset}
             key={this.state.currentProject.id}
-            user={this.state.profile.name}
+            user={this.state.user}
             update={this.loadProjects}
             project={this.state.currentProject}
             editing={this.state.editing}

@@ -5,52 +5,53 @@ const db = require("../models");
 
 module.exports = {
     findAll: function(req, res){
-    db.Project
+      db.Project
         .find(req.query)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-
         console.log("find all from controllers/projectController");
-    },
+      },
     findById: function(req, res) {
-    db.Project
+      db.Project
         .findById(req.params.id)
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-    },
+      },
     create: function(req, res) {
-    db.Project
+      db.Project
         .create(req.body)
         .then(dbModel => {
-            console.log("This is the dbModel" + dbModel)
-            db.User
-            .findOneAndUpdate({ 'email': req.body.userid }, {$push: {"Project": dbModel._id }})
-            .then(dbModel => res.json(dbModel))
-            .catch(err => res.status(422).json(err));
-            })
-
-    },
+          console.log("This is the dbModel" + dbModel)
+          db.User
+          .findOneAndUpdate({ 'email': req.body.userid }, {$push: {"Project": dbModel._id }})
+          .then(dbModel => res.json(dbModel))
+          .catch(err => res.status(422).json(err));
+          })
+      },
     update: function(req, res) {
-    db.Project
+      db.Project
         .findOneAndUpdate({ _id: req.params.id }, req.body)
         .then(dbModel => {
           console.log(dbModel);
           res.json(dbModel);
         })
         .catch(err => res.status(422).json(err));
-    },
+      },
     addkeytag: function(req,res){
-    db.Project
+      db.Project
         .findOneAndUpdate({_id: req.params.id}, {$push: {"technologiesKeywords": req.body}})
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
-    },
-
+      },
     remove: function(req, res) {
-    db.Project
+      db.Project
         .findById({ _id: req.params.id })
         .then(dbModel => dbModel.remove())
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
+      // db.User
+      //   .findOneAndUpdate({ _id: req.params.id }, /*ID TO REMOVE*/)
+      //   .then(dbModel => res.json(dbModel))
+      //   .catch(err => res.status(422).json(err));
     }
 };
