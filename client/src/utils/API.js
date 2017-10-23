@@ -16,8 +16,8 @@ export default {
   saveProject: function(myProject) {
     return axios.post("/api/projects", myProject);
   },
-  updateProject: function(id) {
-    return axios.put("/api/projects/"+ id);
+  updateProject: function(id, project) {
+    return axios.put("/api/projects/"+ id, project);
   },
   // Saves a user to the database
   saveUser: function(userData) {
