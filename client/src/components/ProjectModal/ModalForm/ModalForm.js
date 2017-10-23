@@ -35,20 +35,41 @@ const styles = {
 
 //Technologies used array
 const tags_arr = [{title: '-Select Tag-', value: "" }, 
+  
+
   {title: 'HTML', value: 'HTML'}, 
+//C++ frameworks
   {title: 'C++', value: 'C++'}, 
   {title: 'CLI', value: 'CLI'},
-  {title: 'JavaScript', value: 'JavaScript'},
-    {title: 'JS: Angular', value: 'Angular'},  
-    {title: 'JS: React', value: 'React'},
-    {title: 'JS: Express', value: 'Express'},  
-    {title: 'JS: Node', value: 'Node'}
+//JavaScript frameworks
+  {title: 'JavaScript', value: 'JavaScript'}, {title: 'JS: Angular', value: 'Angular'},  
+    {title: 'JS: Express', value: 'Express'}, {title: 'JS: jQuery', value: 'jQuery'},
+    {title: 'JS: Node', value: 'Node.js'}, {title: 'JS: React', value: 'React'}, 
+//Perl frameworks
+  {title: 'Perl', value: 'Perl'},
+//PHP frameworks
+  {title: 'PHP', value: 'PHP'},
+    {title: 'PHP: Laravel', value: 'Laravel'},  
+//Python frameworks
+  {title: 'Python', value: 'Python'},
+//Ruby frameworks
+  {title: 'Ruby', value: 'Ruby'}, 
+    {title: 'Ruby: Ruby on Rails', value: 'Ruby on Rails'}, 
+//Database
+  {title: 'Database', value: 'Database'},
+    //NoSQL
+    {title: 'DB: NoSQL', value: 'NoSQL'},      
+      {title: 'DB: Mongo', value: 'MongoDB'}, {title: 'DB: Mongoose', value: 'Mongoose'},
+    //SQL
+    {title: 'DB: SQL', value: 'SQL'},
+      {title: 'DB: MySQL', value: 'MySQL'}, {title: 'DB: Firebase', value: 'Firebase'}
 
-  //  'CSS', 
-  // 'jQuery','MongoDB', 'Mongoose', 'SQL', 'NoSQL', 'MySQL', 
-  // , 'Node.js', 'Bootstrap', 'Materialize', 'Material-ui', 
+    
+    
+
+  // ,Bootstrap', 'Materialize', 'Material-ui', 
   // 'Firebase', s
-  // 'Laravel', 'PHP' , 'Angular', 'Ruby', 'Python' 'C#', 'Swift', 
+  //  'Swift', 
   // 'Vue', 'Java', 'Git', 'Perl', 
   ];
 //Sort array to be displayed alphabetically
