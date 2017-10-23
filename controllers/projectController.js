@@ -19,8 +19,6 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
     create: function(req, res) {
-    console.log("OH NO ROBOTS, THE SEQUEL");
-    console.log(req.body);    
     db.Project
         .create(req.body)
         .then(dbModel => {
@@ -30,14 +28,17 @@ module.exports = {
             .then(dbModel => res.json(dbModel))
             .catch(err => res.status(422).json(err));
             })
-            
+
         // res.json(dbModel))
         // .catch(err => res.status(422).json(err));
     },
     update: function(req, res) {
     db.Project
         .findOneAndUpdate({ _id: req.params.id }, req.body)
-        .then(dbModel => res.json(dbModel))
+        .then(dbModel => {
+          console.log(dbModel);
+          res.json(dbModel);
+        })
         .catch(err => res.status(422).json(err));
     },
     addkeytag: function(req,res){

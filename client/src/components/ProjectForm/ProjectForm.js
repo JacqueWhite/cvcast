@@ -19,10 +19,33 @@ class ProjectForm extends Component {
   }
 
   handleFormSubmit = event => {
-    console.log(this.props.user);
+    console.log("current state:");
+    console.log(this.state);
+    // console.log(this.props.user);
     event.preventDefault();
     console.log("handleFormSubmit from ProjectForm.js");
-    if (this.state.projectName) {
+    if (this.props.editing) {
+      console.log("yup, we're editing");
+      this.setState({
+        projectName           : this.state.projectName          || this.props.project.projectName,
+        image                 : this.state.image                || this.props.project.image,
+        description           : this.state.description          || this.props.project.description,
+        technologiesKeywords  : this.state.technologiesKeywords || this.props.project.technologiesKeywords,
+        team                  : this.state.team                 || this.props.project.team,
+        link                  : this.state.link                 || this.props.project.link,
+        github                : this.state.github               || this.props.project.github
+      }, function() {
+        console.log("edited state:");
+        console.log(this.state);
+        this.props.toggleEdit();
+        API.updateProject(this.props.project.id, this.state)
+          .then(this.props.update())
+          .catch(err => console.log(err));
+      })
+    } else {
+
+    // }
+    // if (this.state.projectName) {
       var myProject = {
         projectName: this.state.projectName,
         image: this.state.image,
@@ -35,9 +58,7 @@ class ProjectForm extends Component {
       };
       console.log(myProject);
       if (this.props.project.id) {
-        API.updateProject(myProject)
-          .then(this.props.update())
-          .catch(err => console.log(err));
+
       } else {
         API.saveProject(myProject)
           .then(this.props.update())
@@ -46,10 +67,6 @@ class ProjectForm extends Component {
     }
   };
 
-  componentWillReceiveProps= (nextProps) => {
-    console.log("True");
-    console.log(nextProps);
-}
 
 render() {
   return (
