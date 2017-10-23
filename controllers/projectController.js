@@ -29,8 +29,6 @@ module.exports = {
             .catch(err => res.status(422).json(err));
             })
 
-        // res.json(dbModel))
-        // .catch(err => res.status(422).json(err));
     },
     update: function(req, res) {
     db.Project
@@ -47,7 +45,6 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
-    // db.places.update({"country": "Morocco"}, {$push: {"majorcities":"Agadir"}})
 
     remove: function(req, res) {
     db.Project
