@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Dialog from 'material-ui/Dialog';
+import {Row} from 'react-materialize';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import {
@@ -7,22 +7,16 @@ import {
   Stepper,
   StepLabel,
 } from 'material-ui/Stepper';
-// import TextField from 'material-ui/TextField';
+
 import Checkbox from 'material-ui/Checkbox';
 import SelectField from 'material-ui/SelectField';
 import MenuItem from 'material-ui/MenuItem';
 
-//Material-ui
-import injectTapEventPlugin from 'react-tap-event-plugin';
-
-// import API from '../../utils/API';
-// import ProjectForm from '../ProjectForm';
-
+// import injectTapEventPlugin from 'react-tap-event-plugin';
 // Needed for onTouchTap
 // Check this repo:
 // https://github.com/zilverline/react-tap-event-plugin
-injectTapEventPlugin();
-
+// injectTapEventPlugin();
 
 const styles = {
   block: {
@@ -32,6 +26,7 @@ const styles = {
     marginBottom: 16,
   },
 };
+
 
 //Technologies used array
 const tags_arr = ['*Select Tag*', 'HTML', 'JavaScript', 'CSS', 'jQuery', 'React', 'MongoDB', 'SQL', 'NoSQL', 'MySQL', 'Express', 'Node.js', 'Bootstrap', 'Materialize', 'Material-ui', 'Firebase', ];
@@ -64,13 +59,15 @@ class TagsDropDown extends Component {
 
 
 
+
 /**
  * Horizontal steppers are ideal when the contents of one step depend on an earlier step.
  * Avoid using long step names in horizontal steppers.
  *
  * Linear steppers require users to complete one step in order to move on to the next.
  */
-class HorizontalLinearStepper extends Component {
+
+class ModalForm extends Component {
 
   state = {
     finished: false,
@@ -98,11 +95,13 @@ class HorizontalLinearStepper extends Component {
         return 'Project Title and Description';
       case 1:
         return (
-          <div>
-            <TagsDropDown />
-            <TagsDropDown />
-            <TagsDropDown />
-          </div>
+          <Row>
+            <TagsDropDown id="tag_1"/>
+            <TagsDropDown id="tag_2"/>
+            <TagsDropDown id="tag_3"/>
+            <TagsDropDown id="tag_4"/>
+            <TagsDropDown id="tag_5"/>
+          </Row>
         );
       case 2:
         return (
@@ -164,7 +163,7 @@ class HorizontalLinearStepper extends Component {
         </Stepper>
         <div style={contentStyle}>
           {finished ? (
-            <p>
+            <div>
               <a
                 href="/edit"
                 onClick={(event) => {
@@ -174,10 +173,10 @@ class HorizontalLinearStepper extends Component {
               >
                 Click here
               </a> to start over.
-            </p>
+            </div>
           ) : (
             <div>
-              <p>{this.getStepContent(stepIndex)}</p>
+              <div>{this.getStepContent(stepIndex)}</div>
               <div style={{marginTop: 12}}>
                 <FlatButton
                   label="Back"
@@ -199,54 +198,5 @@ class HorizontalLinearStepper extends Component {
   }
 }
 
+export default ModalForm;
 
-
-
-/**
- * A modal dialog can only be closed by selecting one of the actions.
- */
-class NewProjectButton extends Component {
-  state = {
-    open: false,
-  };
-
-  handleOpen = () => {
-    this.setState({open: true});
-  };
-
-  handleClose = () => {
-    this.setState({open: false});
-  };
-
-  render() {
-    const actions = [
-      <FlatButton
-        label="Cancel"
-        primary={true}
-        onTouchTap={this.handleClose}
-      />,
-      <FlatButton
-        label="Submit"
-        primary={true}
-        disabled={true}
-        onTouchTap={this.handleClose}
-      />,
-    ];
-
-    return (
-      <div>
-        <RaisedButton label="Add Project" onTouchTap={this.handleOpen} />
-        <Dialog
-          title="Add Project Here"
-          actions={actions}
-          modal={true}
-          open={this.state.open}
-        >
-          <HorizontalLinearStepper />
-        </Dialog>
-      </div>
-    );
-  }
-}
-
-export default NewProjectButton;

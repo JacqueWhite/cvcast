@@ -5,7 +5,7 @@ import PortfolioCardEdit from "../components/PortfolioCardEdit";
 import TitleCard from "../components/TitleCard";
 import ProjectForm from "../components/ProjectForm";
 import API from "../utils/API";
-import NewProjectButton from '../components/NewProjectButton';
+import ProjectModal from '../components/ProjectModal';
 
 class Edit extends Component {
 
@@ -102,7 +102,7 @@ class Edit extends Component {
           />
         </Row>
         <Row>
-          <NewProjectButton 
+          <ProjectModal 
           />
         </Row>
         <Row>
