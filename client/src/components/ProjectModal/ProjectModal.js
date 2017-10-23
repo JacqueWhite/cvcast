@@ -17,10 +17,6 @@ import injectTapEventPlugin from 'react-tap-event-plugin';
 injectTapEventPlugin();
 
 
-
-
-
-
 /**
  * A modal dialog can only be closed by selecting one of the actions.
  */
