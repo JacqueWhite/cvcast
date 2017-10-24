@@ -15,19 +15,21 @@ const PortfolioCardEdit = props => (
                 <h6><a href={props.link} target="_blank">See it Live</a></h6>
             </div>
             <div className="card-action">
+              <div>
                 {props.technologiesKeywords.map(tag => (
                 <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
                 ))}
-                  <div className="edit-icons">
-                    <div className="fixed-action-btn horizontal">
-                        <a className="btn-floating red" onClick = {() => {props.edit(props)}}>
-                        <i className="material-icons">mode_edit</i>
-                        </a>
-                      <ul>
-                        <li><a className="remove btn-floating red" onClick = {() => props.remove(props.id, props.user._id)}><i className="material-icons">delete_forever</i></a></li>
-                      </ul>
-                    </div>
-                  </div>
+              </div>
+              <div className="edit-icons">
+                <div className="fixed-action-btn horizontal">
+                  <a className="btn-floating red" onClick = {() => {props.edit(props)}}>
+                    <i className="material-icons">mode_edit</i>
+                  </a>
+                  <ul>
+                     <li><a className="remove btn-floating red" onClick = {() => props.remove(props.id, props.user._id)}><i className="material-icons">delete_forever</i></a></li>
+                  </ul>
+                </div>
+              </div>
 
              </div>
 

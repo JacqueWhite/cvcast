@@ -1,20 +1,17 @@
-div.edit-icons {
+/*div.edit-icons {
   display: inline-block;
   position: relative; 
-  height: 70px;
-}
-
-/*div.fixed-action-btn.horizontal {
-  position: absolute; 
-  display: inline-block; 
-  right: 24px;
 }*/
+
+div.fixed-action-btn.horizontal {
+  position: relative; 
+  display: inline-block; 
+}
 
 .fixed-action-btn.horizontal ul li {
     display: inline-block;
     margin: 15px 15px 0 0;
-    position: absolute; 
-    right: 24px;
+    position: relative; 
 }
 
 .about-project {
@@ -34,7 +31,7 @@ div.edit-icons {
   margin: 1px;
 }*/
 
-.btn-floating {
+/*.btn-floating {
     display: inline-block;
     color: #fff;
     position: relative;
@@ -50,7 +47,7 @@ div.edit-icons {
     transition: .3s;
     cursor: pointer;
     vertical-align: middle;
-}
+}*/
 
 element.style {
     overflow: hidden;
@@ -101,9 +98,9 @@ div.card-image {
     box-sizing: inherit;
 }
 
-div {
+/*div {
     display: block;
-}
+}*/
 
 .card {
     height: 400px;
