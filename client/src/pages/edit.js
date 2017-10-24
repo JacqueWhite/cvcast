@@ -131,7 +131,7 @@ class Edit extends Component {
             />
           ))}
         </Row>
-     </div>
+      </div>
     );
   }
 }

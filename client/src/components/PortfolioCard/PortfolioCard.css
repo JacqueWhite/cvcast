@@ -23,6 +23,29 @@ div.card-image {
     height: 500px !important;
 }
 
+div.chip {
+    display: inline-block;
+    height: 32px;
+    font-size: 13px;
+    font-weight: 500;
+    color: black !important;
+    text-align: center;
+    line-height: 32px;
+    padding: 0 10px;
+    border-radius: 16px;
+    background-color: #e4e4e4;
+    margin-bottom: 5px;
+    margin-right: 0px !important;
+}
+
+div.chip a{
+    font-size: 13px;
+    text-align: center;
+    font-weight: 500;
+    color: navy !important;
+    margin: 15px !important;
+}
+
 .waves-block {
     display: block;
 }

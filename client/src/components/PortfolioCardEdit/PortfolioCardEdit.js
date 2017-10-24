@@ -4,7 +4,7 @@ import "./PortfolioCardEdit.css";
 
 const PortfolioCardEdit = props => (
 <div>
-    <div className="col s12 m6">
+    <div className="col s12 m6 l4">
         <div className="card portfolio-card">
 
             <div className="card-image waves-effect waves-block waves-light">
@@ -22,7 +22,7 @@ const PortfolioCardEdit = props => (
               </div>
               <div className="edit-icons">
                 <div className="fixed-action-btn horizontal">
-                  <a className="btn-floating red" onClick = {() => {props.edit(props)}}>
+                  <a className="btn-floating red" href="#edit-project" onClick = {() => {props.edit(props)}}>
                     <i className="material-icons">mode_edit</i>
                   </a>
                   <ul>

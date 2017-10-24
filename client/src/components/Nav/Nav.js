@@ -5,11 +5,10 @@ import './Nav.css';
 
 const Nav = props => (
 
-	<Navbar brand='Show and Tell' fixed right>
+	<Navbar href='/' brand='Show and Tell' fixed right>
 		<NavItem href='/edit'><Icon>edit</Icon></NavItem>
 		<NavItem href='/portfolio'><Icon>public</Icon></NavItem>
-		<NavItem href=''><Icon>link</Icon></NavItem>
-		<NavItem href='/main'><Icon>portrait</Icon></NavItem>
+		<NavItem href='#'><Icon>portrait</Icon></NavItem>
 		<NavItem>Hello, {props.firstName}!</NavItem>
 	</Navbar>
 );

@@ -29,11 +29,12 @@ class Main extends Component {
 	<div>
 	  <div id="index-banner" className="parallax-container">
 	    <div className="section no-pad-bot">
-	      <div className="container">
-	        <h3 className="header center teal-text text-lighten-2">Show and Tell</h3>
+	      <div className="container title-main">
 	        <div className="row center">
+            <h1 className="header center teal-text text-lighten-2">Show and Tell</h1>
 	          <h5 className="header col s12 light">a platform to showcase your projects</h5>
 	        </div>
+          <br/><br/>
 	        <div className="row center">
              {
                 isAuthenticated() && (
@@ -78,7 +79,7 @@ class Main extends Component {
 		        </div>
 	      </div>
 	    </div>
-	    <div className="parallax"><img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="background"/></div>
+	    <div className="parallax"><img className="mainphoto" src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="background"/></div>
 	  </div>
 
 	    <div className="section info">

@@ -12,3 +12,8 @@ html, body, #root {
 h3.login-text {
   text-align: center;
 }
+
+.div.container.title-main{
+	background: white !important;
+	opacity: 0.2 !important;
+}

@@ -60,7 +60,7 @@ render() {
   return (
 
 <div>
-  <div className="row">
+  <div className="row" id="edit-project">
     <div className="col s12">
       <div className="card project-form">
         <div className="card-content">
@@ -135,43 +135,43 @@ render() {
               <legend>Technologies used</legend>
                 <div className="input-field col s12 m3 l2">
                   <input
-                    type="checkbox"
+                    type="text"
                     id="check-1"
                     name="technologiesKeywords"
                     onChange={this.handleInputChange}
+                    placeholder="HTML"
                     defaultValue={this.state.technologiesKeywords}
                     />
-                  <label htmlFor="check-1">HTML</label>
                 </div>
                 <div className="input-field col s12 m2 l2">
                   <input
-                    type="checkbox"
+                    type="text"
                     id="check-2"
                     name="technologiesKeywords"
                     onChange={this.handleInputChange}
+                    placeholder="JavaScript"
                     defaultValue={this.state.technologiesKeywords}
                     />
-                  <label htmlFor="check-2">JavaScript</label>
                 </div>
                 <div className="input-field col s12 m3 l2">
                   <input
-                    type="checkbox"
+                    type="text"
                     id="check-3"
                     name="technologiesKeywords"
                     onChange={this.handleInputChange}
+                    placeholder="CSS"
                     defaultValue={this.state.technologiesKeywords}
                     />
-                  <label htmlFor="check-3">CSS</label>
                 </div>
                 <div className="input-field col s12 m3 l2">
                   <input
-                    type="checkbox"
+                    type="text"
                     id="check-4"
                     name="technologiesKeywords"
                     onChange={this.handleInputChange}
+                    placeholder="Database"
                     defaultValue={this.state.technologiesKeywords}
                     />
-                  <label htmlFor="check-4">Database</label>
                 </div>
                 <div className="input-field col s12 m3 l2">
                   <input
@@ -185,14 +185,14 @@ render() {
           </div>
 
             <div className="card-action">
-              <button
-                // disabled={!(this.state.author && this.state.title)}
+              <a
                 className="btn waves-effect waves-light project-submit"
-                type="submit"
                 onClick={this.handleFormSubmit}
-                name="action">Add Project
+                name="action"
+                href="#new-project"
+                >Add Project
                 <i className="material-icons right">send</i>
-                </button>
+                </a>
             </div>
 
           </div>
