@@ -19,7 +19,7 @@ const PortfolioCardEdit = props => (
                 ))}
                 <br/>
             <span><EditButton onClick = {() => {props.edit(props)}}/>
-            <a className="remove btn-floating waves-effect waves-light red" onClick = {() => props.remove(props.id)}><i className="material-icons">delete_forever</i></a></span>
+            <a className="remove btn-floating waves-effect waves-light red" onClick = {() => props.remove(props.id, props.user._id)}><i className="material-icons">delete_forever</i></a></span>
             </div>
             <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4"><a href={props.link} target="_blank">{props.project}</a><i className="material-icons right">close</i></span>

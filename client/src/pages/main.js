@@ -49,7 +49,7 @@ class Main extends Component {
                   isAuthenticated() && (
                       <a
                         className="waves-effect waves-light btn-large"
-                        onClick={this.goTo.bind(this, 'login')}
+                        onClick={this.goTo.bind(this, 'welcome')}
                       >
                         Add Your Basic Info
                       </a>
@@ -85,7 +85,7 @@ class Main extends Component {
 	      <div className="row">
 	        <div className="col s12 m4">
 	          <div className="icon-block">
-	            <h2 className="center brown-text"><i className="material-icons">flash_on</i></h2>
+	            <h2 className="center brown-text"><i className="material-icons">vpn_key</i></h2>
 	            <h5 className="center">Sign Up</h5>
 	            <p className="center light">add your basic info</p>
 	          </div>
@@ -93,7 +93,7 @@ class Main extends Component {
 
 	        <div className="col s12 m4">
 	          <div className="icon-block">
-	            <h2 className="center brown-text"><i className="material-icons">group</i></h2>
+	            <h2 className="center brown-text"><i className="material-icons">add_circle</i></h2>
 	            <h5 className="center">Show</h5>
 
 	            <p className="center light">add your projects</p>
@@ -102,7 +102,7 @@ class Main extends Component {
 
 	        <div className="col s12 m4">
 	          <div className="icon-block">
-	            <h2 className="center brown-text"><i className="material-icons">settings</i></h2>
+	            <h2 className="center brown-text"><i className="material-icons">share</i></h2>
 	            <h5 className="center">Tell</h5>
 	            <p className="center light">share your page</p>
 	          </div>

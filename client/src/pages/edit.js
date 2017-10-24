@@ -21,46 +21,48 @@ class Edit extends Component {
       const { userProfile, getProfile } = this.props.auth;
       if (!userProfile) {
         getProfile((err, profile) => {
-          this.setState({ profile });
-          this.loadProjects();
-          this.loadUser();
+          this.setState({ profile }, () => {
+            // this.loadProjects();
+            this.loadUser();
+          });
         });
       } else {
-        this.setState({ profile: userProfile });
-        this.loadProjects();
-        this.loadUser();
+        this.setState({ profile: userProfile }, () => {
+          // this.loadProjects();
+          this.loadUser();
+        });
       }
     }
 
     loadUser = () => {
       API.getUser(this.state.profile.name)
         .then(res => {
-          console.log(res);
           this.setState({ user: res.data})
         })
         .catch(err => console.log(err));
     }
 
     loadProjects = () => {
-      API.getProjects()
-        .then(res => {
-          this.setState({ projects: res.data})
-          console.log(this.state.projects);
-        })
+      API.getProjects(this.state.user._id)
+        .then(res =>{
+          // console.log(res)
+          this.setState({ projects: res.data.Project})
+    })
         .catch(err => console.log(err));
     }
 
-    deleteProject = id => {
-      API.deleteProject(id)
+    deleteProject = (id, ownerID) => {
+      API.deleteProject(id, ownerID)
         .then(res => this.loadProjects())
         .catch(err => console.log(err));
+      // API.deleteProject(id)
+      //   .then(res => this.loadProjects())
+      //   .catch(err => console.log(err));
     }
 
     toggleEdit = currentProject => {
       if (this.state.editing) {
-        this.setState({
-          editing: false
-        })
+        this.reset();
       } else {
         this.setState({
           currentProject: currentProject,
@@ -69,10 +71,11 @@ class Edit extends Component {
       }
     }
 
-    saveEdit = id => {
-      API.updateProject(id)
-        .then(res => this.loadProjects())
-        .catch(err => console.log(err));
+    reset = () => {
+      this.setState({
+        currentProject: {},
+        editing: false
+      })
     }
 
     handleInputChange = event => {
@@ -84,6 +87,7 @@ class Edit extends Component {
 
 
   render() {
+    console.log(this.state);
     return (
     <div>
       <Nav firstName={this.state.user.firstName} />
@@ -103,8 +107,9 @@ class Edit extends Component {
         </Row>
         <Row>
           <ProjectForm
+            reset={this.reset}
             key={this.state.currentProject.id}
-            user={this.state.profile.name}
+            user={this.state.user}
             update={this.loadProjects}
             project={this.state.currentProject}
             editing={this.state.editing}
@@ -124,6 +129,7 @@ class Edit extends Component {
               technologiesKeywords={portfoliocard.technologiesKeywords}
               remove={this.deleteProject}
               edit={this.toggleEdit}
+              user={this.state.user}
             />
           ))}
         </Row>
