@@ -72,7 +72,6 @@ class Portfolio extends Component {
             email={this.state.user.email}
             gitHubProfile={this.state.user.gitHubProfile}
             bio={this.state.user.bio}
-            gitHubProfile={this.state.user.gitHubProfile}
           />
         </Row>
         <Row>
