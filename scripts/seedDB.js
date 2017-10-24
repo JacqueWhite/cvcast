@@ -112,7 +112,7 @@ const projectSeed = [
     technologiesKeywords: ["CSS", "javaScript", "jQuery", "Google Firebase", "Bootstrap"],
     team: "Jacqueline White",
     link: "https://onereq.herokuapp.com/",
-    github: "ttps://github.com/JacqueWhite/onereq",
+    github: "https://github.com/JacqueWhite/onereq",
   }
 
 ];
