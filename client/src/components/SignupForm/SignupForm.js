@@ -49,7 +49,7 @@ class NewUser extends Component {
 
     //   };
       const myUser = Object.keys(this.state).reduce((a, x) => {
-        if (x == 'headshot') {
+        if (x === 'headshot') {
           a.append(x, this.state[x].file, this.state[x].filename)
         } else {
           a.append(x, this.state[x])          
@@ -73,9 +73,10 @@ class NewUser extends Component {
 
 
 
-render() {
+  render() {
     return (
           <Row>
+            <form onChange={this.handleInputChange}>
             <div>
               <Row>
               <Col s={6}>
@@ -109,11 +110,12 @@ render() {
                   </Col>
                   <Col s={6}>
                   <Input
-                    value={this.state.headshot}
+                    file={this.state.headshot.file}
+                    value={this.state.headshot.filename}
                     onChange={this.handleInputChange}
                     name="headshot"
                     placeholder=" Add the link to a profile picture."
-                    type="text"
+                    type="file"
                   />
                   </Col>
                   <Col s={6}>
@@ -136,8 +138,7 @@ render() {
                   </Col>
               </Row>
 
-<<<<<<< HEAD
-            <form onChange={this.handleInputChange}>
+            {/* <form onChange={this.handleInputChange}>
             <Row>
               <Input
                 value={this.state.firstName}
@@ -188,8 +189,8 @@ render() {
                 Submit
               </Button>
             </Row>
-            </form>
-=======
+            </form> */}
+
               <Row>
                 <Col s={6}>
                   <Input
@@ -207,8 +208,8 @@ render() {
                   Submit
                 </Button>
               </div>
+              </form>
               </Row>
->>>>>>> test2
           );
 }
 };

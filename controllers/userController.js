@@ -1,6 +1,3 @@
-console.log("userController.js");
-
-var base64Img = require('base64-img');
 const db = require("../models");
 
 module.exports = {

@@ -35,7 +35,7 @@ class Edit extends Component {
     loadUser = () => {
       API.getUser(this.state.profile.name)
         .then(res => {
-          console.log(res.data);
+          console.log("this is the loadUser function " + res.data);
           this.setState({ user: res.data})
         }
         )
