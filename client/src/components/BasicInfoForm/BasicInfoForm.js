@@ -172,15 +172,12 @@ class BasicInfoForm extends Component {
             <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
               <div className="row form-row">
                 <div className="col s12">
-                  <RaisedButton
-                    onClick={
-                      this.handleFormSubmit
-                    }
-                    onClick={this.handleTouchTap}
+                  <button
+                    onClick={this.handleFormSubmit}
                     type="submit"
                     >
-                    Submit
-                  </RaisedButton>
+                    Commit Profile
+                  </button>
                   <Snackbar
                     open={this.state.open}
                     message="Successfully Added Basic Info!"
@@ -192,6 +189,8 @@ class BasicInfoForm extends Component {
             </div>
           </div>
           );
+      default:
+        return 'You\'re a long way from home sonny jim!';
     }
   }
 
@@ -212,21 +211,20 @@ class BasicInfoForm extends Component {
             <StepLabel>Bio</StepLabel>
           </Step>
           <Step>
-            <StepLabel>Submit</StepLabel>
+            <StepLabel>Create Profile</StepLabel>
+          </Step>
+          <Step>
+            <StepLabel>Add Projects</StepLabel>
           </Step>
         </Stepper>
         <div style={contentStyle}>
           {finished ? (
             <div>
               <a
-                href="/login"
-                onClick={(event) => {
-                  event.preventDefault();
-                  this.setState({stepIndex: 0, finished: false});
-                }}
-              >
-                Click here
-              </a> to visit your profile.
+                href="/edit"
+                >
+                Thanks for adding a user! Go add projects.
+                </a>
             </div>
           ) : (
             <div>
@@ -240,8 +238,8 @@ class BasicInfoForm extends Component {
                 />
                 <RaisedButton
                   primary={true}
-                  label="Next"
-                  disabled={stepIndex === 3}
+                  label='Next'
+                  disabled={stepIndex === 4}
                   onTouchTap={this.handleNext}
                 />
               </div>
