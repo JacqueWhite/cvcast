@@ -62,8 +62,8 @@ render() {
 <div>
   <div className="row">
     <div className="col s12">
-      <div className="card #bdbdbd grey darken-1 project-form">
-        <div className="card-content white-text">
+      <div className="card project-form">
+        <div className="card-content">
 
           <span className="card-title">
             <div className ="row row-project-form">
@@ -133,7 +133,7 @@ render() {
 
           <div className="row row-project-form">
               <legend>Technologies used</legend>
-                <div className="input-field col s2">
+                <div className="input-field col s12 m3 l2">
                   <input
                     type="checkbox"
                     id="check-1"
@@ -143,7 +143,7 @@ render() {
                     />
                   <label htmlFor="check-1">HTML</label>
                 </div>
-                <div className="input-field col s2">
+                <div className="input-field col s12 m2 l2">
                   <input
                     type="checkbox"
                     id="check-2"
@@ -151,9 +151,9 @@ render() {
                     onChange={this.handleInputChange}
                     defaultValue={this.state.technologiesKeywords}
                     />
-                  <label htmlFor="check-2">Javascript</label>
+                  <label htmlFor="check-2">JavaScript</label>
                 </div>
-                <div className="input-field col s2">
+                <div className="input-field col s12 m3 l2">
                   <input
                     type="checkbox"
                     id="check-3"
@@ -161,9 +161,9 @@ render() {
                     onChange={this.handleInputChange}
                     defaultValue={this.state.technologiesKeywords}
                     />
-                  <label htmlFor="check-3">CSS and/or frameworks (Bootstrap)</label>
+                  <label htmlFor="check-3">CSS</label>
                 </div>
-                <div className="input-field col s2">
+                <div className="input-field col s12 m3 l2">
                   <input
                     type="checkbox"
                     id="check-4"
@@ -171,9 +171,9 @@ render() {
                     onChange={this.handleInputChange}
                     defaultValue={this.state.technologiesKeywords}
                     />
-                  <label htmlFor="check-4">Database (mySQL, MongoDB, Firebase, etc)</label>
+                  <label htmlFor="check-4">Database</label>
                 </div>
-                <div className="input-field col s3">
+                <div className="input-field col s12 m3 l2">
                   <input
                     type="text"
                     id="other"
@@ -190,7 +190,7 @@ render() {
                 className="btn waves-effect waves-light project-submit"
                 type="submit"
                 onClick={this.handleFormSubmit}
-                name="action">Submit
+                name="action">Add Project
                 <i className="material-icons right">send</i>
                 </button>
             </div>

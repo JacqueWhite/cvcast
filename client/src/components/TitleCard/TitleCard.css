@@ -1,6 +1,6 @@
-.card-about {
+.card.card-about {
   overflow: visible;
-  height: 10% !important;
+  height: auto !important;
 }
 
 img.profile-img {
@@ -10,6 +10,11 @@ img.profile-img {
 
 div.card-image {
 
+}
+
+.black-text {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.1rem;
 }
 
 img.portfolio-banner {
@@ -27,7 +32,7 @@ span.card-title.black-text.email {
 }
 
 .profile-pic > img {
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 2px 5px 3px rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
 }
 
 .controls {
