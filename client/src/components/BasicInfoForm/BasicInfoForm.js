@@ -22,6 +22,28 @@ class BasicInfoForm extends Component {
     open: false
   }
 
+  componentWillMount() {
+    const { userProfile, getProfile } = this.props.auth;
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        console.log("!userProfile");
+        this.setState({ email: profile.name });
+      });
+    } else {
+      console.log("userProfile");
+      this.setState({ email: userProfile.name });
+    }
+  }
+
+  loadUser = () => {
+    API.getUser(this.state.profile.name)
+      .then(res => {
+        console.log(res);
+        this.setState({ user: res.data})
+      })
+      .catch(err => console.log(err));
+  }
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
@@ -29,7 +51,6 @@ class BasicInfoForm extends Component {
 
   handleFormSubmit = event => {
       event.preventDefault();
-      console.log("oh no robots!");
       if (this.state.firstName && this.state.lastName && this.state.email) {
         var myUser = {
           firstName: this.state.firstName,
@@ -104,7 +125,6 @@ class BasicInfoForm extends Component {
                 <div className="input-field col s12">
                   <input
                     value={this.state.email}
-                    onChange={this.handleInputChange}
                     name="email"
                     placeholder="Email Address (required)"
                     type="text"
@@ -147,7 +167,7 @@ class BasicInfoForm extends Component {
                   placeholder="Add your GitHub profile link."
                   type="text"
                 />
-            </div> 
+            </div>
           </div>
         </div>
         );

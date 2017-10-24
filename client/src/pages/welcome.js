@@ -3,8 +3,7 @@ import {Row} from 'react-materialize';
 import Nav from '../components/Nav';
 import BasicInfoForm from "../components/BasicInfoForm";
 
-
-class Login extends Component {
+class Welcome extends Component {
 
   render() {
     return (
@@ -12,11 +11,11 @@ class Login extends Component {
       <Nav />
       <Row>
         <h4 className="login-text">Thanks for signing up! Please fill in your basic information:</h4>
-        <BasicInfoForm/>
+        <BasicInfoForm auth={this.props.auth}/>
       </Row>
      </div>
     );
   }
 }
 
-export default Login;
+export default Welcome;
