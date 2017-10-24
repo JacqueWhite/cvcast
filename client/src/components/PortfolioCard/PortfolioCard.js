@@ -3,7 +3,6 @@ import "./PortfolioCard.css";
 
 const PortfolioCard = props => (
 <div>
-
       <div className="col s12 m6">
           <div className="card portfolio-card">
               <div className="card-image waves-effect waves-block waves-light">

@@ -4,7 +4,6 @@ const User = require('../models/user');
 
 // Create the noteSchema with the schema object
 const ProjectSchema = new Schema({
-  // The headline is the article associate with the note
 	projectName: {
 		type: String
 	},

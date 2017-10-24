@@ -1,7 +1,8 @@
-console.log("projectController.js");
 const db = require("../models");
 
 module.exports = {
+
+    //  get all projects 
     findAll: function(req, res){
       db.Project
         .find(req.query)
@@ -69,4 +70,5 @@ module.exports = {
         })
         .catch(err => res.status(422).json(err));
     }
+
 };

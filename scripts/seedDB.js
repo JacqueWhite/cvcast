@@ -12,7 +12,7 @@ mongoose.connect(
 
 const userSeed = [
       {
-        _id: "59e79d329de62935d1b7d58b",
+        //_id: 'ObjectId("59e79d329de62935d1b7d58b")',
         firstName: "Jacque",
         lastName: "White",
         email: "jacquecwhite@gmail.com",
@@ -20,16 +20,16 @@ const userSeed = [
         linkedIn: "https://www.linkedin.com/in/jacquelinewhite15/",
         gitHubProfile: "https://github.com/jacquewhite",
         bio: "My name is Jacque White and I am a Junior Full-Stack Developer with a passion for helping people and bringing their ideas to life. I have a wide-range of career experiences ranging from health & wellness to human resources that help me understand the needs of a variety of clients.",
-        projects: [
-          "59e78c41c1b15d32adfec04c",
-          "59e78c41c1b15d32adfec04a",
-          "59e78c41c1b15d32adfec04b",
-          "59e78c41c1b15d32adfec050",
-          "59e78c41c1b15d32adfec04f"
+        Project: [
+          // 'ObjectId("59e78c41c1b15d32adfec04c")',
+          // 'ObjectId("59e78c41c1b15d32adfec04a")',
+          // 'ObjectId("59e78c41c1b15d32adfec04b")',
+          // 'ObjectId("59e78c41c1b15d32adfec050")',
+          // 'ObjectId("59e78c41c1b15d32adfec04f")'
         ]
       },
       {
-        _id: "59e79d329de62935d1b7d58c",
+        //_id: 'ObjectId("59e79d329de62935d1b7d58c")',
         firstName: "Isai",
         lastName: "Solis",
         email: "solis_isai@yahoo.com",
@@ -37,16 +37,16 @@ const userSeed = [
         linkedIn: "https://www.linkedin.com/in/isai-solis-90532b142/",
         gitHubProfile: "https://github.com/isai-solis",
         bio: "Hey it's Isai! I'm an Aspiring Developer",
-        projects: [
-          "59e78c41c1b15d32adfec04c",
-          "59e78c41c1b15d32adfec04a",
-          "59e78c41c1b15d32adfec04b",
-          "59e78c41c1b15d32adfec050",
-          "59e78c41c1b15d32adfec04f"
+        Project: [
+          // 'ObjectId("59e78c41c1b15d32adfec04c")',
+          // 'ObjectId("59e78c41c1b15d32adfec04a")',
+          // 'ObjectId("59e78c41c1b15d32adfec04b")',
+          // 'ObjectId("59e78c41c1b15d32adfec050")',
+          // 'ObjectId("59e78c41c1b15d32adfec04f")'
         ]
       },
       {
-        _id: "59e79d329de62935d1b7d58d",
+        //_id: 'ObjectId("59e79d329de62935d1b7d58d")',
         firstName: "Audrey",
         lastName: "Fletcher",
         email: "anfletcher24@gmail.com",
@@ -55,17 +55,17 @@ const userSeed = [
         gitHubProfile: "https://github.com/afletch24",
         bio: "Currently attending The University of Texas Coding Bootcamp. I am making an exciting career pivot out of the animal industry due to my new found passion for software development!",
         Project: [
-          "59e78c41c1b15d32adfec04c",
-          "59e78c41c1b15d32adfec04a",
-          "59e78c41c1b15d32adfec04b",
-          "59e78c41c1b15d32adfec050",
-          "59e78c41c1b15d32adfec04f"
+          // 'ObjectId("59e78c41c1b15d32adfec04c")',
+          // 'ObjectId("59e78c41c1b15d32adfec04a")',
+          // 'ObjectId("59e78c41c1b15d32adfec04b")',
+          // 'ObjectId("59e78c41c1b15d32adfec050")',
+          // 'ObjectId("59e78c41c1b15d32adfec04f")'
         ]
       }
 ]
 const projectSeed = [
   {
-    _id : "59e78c41c1b15d32adfec04c",
+   // _id : 'ObjectId("59e78c41c1b15d32adfec04c")',
     projectName: "LocALL",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/locall.png",
     description: "a place to get recommendations on where to eat, drink, and play in Austin, TX",
@@ -75,7 +75,7 @@ const projectSeed = [
     github: "https://github.com/JacqueWhite/LocAll"
   },
   {
-    _id : "59e78c41c1b15d32adfec04a",
+    //_id : 'ObjectId("59e78c41c1b15d32adfec04a")',
     projectName: "ItsAGO",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/itsago.png",
     description: "Simple event and RSVP manager",
@@ -85,7 +85,7 @@ const projectSeed = [
     github: "https://github.com/JacqueWhite/Its-a-GO"
   },
   {
-    _id : "59e78c41c1b15d32adfec04b",
+    //_id : 'ObjectId("59e78c41c1b15d32adfec04b")',
     projectName: "AccountabiliBuddy",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/accountabilibuddy.png",
     description: "A gym-buddy match app that pairs up friends based on schedule and fitness activity preferences.",
@@ -95,7 +95,7 @@ const projectSeed = [
     github: "https://github.com/JacqueWhite/AccountabiliBuddy"
   },
   {
-    _id : "59e78c41c1b15d32adfec04f",
+    //_id : 'ObjectId("59e78c41c1b15d32adfec04f")',
     projectName: "devScraped",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/devscrape.png",
     description: "A tool for developers to scrape their favorite resource pages and take notes on them. ",
@@ -105,7 +105,7 @@ const projectSeed = [
     github: "https://github.com/JacqueWhite/devscraped"
   },
   {
-    _id : "59e78c41c1b15d32adfec050",
+   // _id : 'ObjectId("59e78c41c1b15d32adfec050")',
     projectName: "oneReq",
     image: "https://s3.us-east-2.amazonaws.com/jacqueportfolio/accountabilibuddy.png",
     description: "Recruiting platform for Software Developer recruiters.",
@@ -120,22 +120,36 @@ const projectSeed = [
 db.User
   .remove({})
   .then(() => db.User.collection.insertMany(userSeed))
-  .then(data => {
-    console.log(data.insertedIds.length + " records inserted!");
-    process.exit(0);
+  .then(userData => {
+  
+    db.Project
+    .remove({})
+    .then(() => db.Project.collection.insertMany(projectSeed))
+    .then(projectData => {
+      
+      // Associate each project with a user
+      projectData.ops.forEach((elem, iter) => {
+        db.User
+          .findOneAndUpdate({ 'email': userData.ops[2].email }, {$push: {"Project": elem._id }})
+          .catch(err => res.status(422).json(err));
+      })
+      console.log(projectData.insertedIds.length + " records inserted!");
+      // process.exit(0);
+    })
+    .catch(err => {
+      console.error(err);
+      process.exit(1);
+    });
+      
+
+    console.log(userData.insertedIds.length + " records inserted!");
+    // process.exit(0);
   })
   .catch(err => {
     console.error(err);
     process.exit(1);
   });
-db.Project
-  .remove({})
-  .then(() => db.Project.collection.insertMany(projectSeed))
-  .then(data => {
-    console.log(data.insertedIds.length + " records inserted!");
-    process.exit(0);
-  })
-  .catch(err => {
-    console.error(err);
-    process.exit(1);
-  });
+<<<<<<< HEAD
+=======
+
+>>>>>>> test2
