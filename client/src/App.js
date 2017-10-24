@@ -43,11 +43,11 @@ const App = () => {
           )} />
 
           <Route exact path="/portfolio" render={(props) => (
-            !auth.isAuthenticated() ? (
+             !auth.isAuthenticated() ? (
               <Redirect to="/"/>
             ) : (
               <Portfolio auth={auth} {...props} />
-            )
+            ) 
           )} />
 
           <Route exact path="/edit" render={(props) => (

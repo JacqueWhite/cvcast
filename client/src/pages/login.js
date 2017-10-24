@@ -3,6 +3,7 @@ import {Row} from 'react-materialize';
 import Nav from '../components/Nav';
 import BasicInfoForm from "../components/BasicInfoForm";
 
+
 class Login extends Component {
 
   render() {

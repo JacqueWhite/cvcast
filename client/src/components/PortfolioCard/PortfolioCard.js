@@ -33,4 +33,3 @@ const PortfolioCard = props => (
 </div>
 );
 export default PortfolioCard;
-
