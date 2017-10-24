@@ -48,6 +48,7 @@ class ProjectForm extends Component {
         API.saveProject(this.state)
           .then(() => {
             this.props.update();
+            this.loadProjects();
           })
           .catch(err => console.log(err));
       })
