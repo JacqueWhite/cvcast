@@ -1,7 +1,9 @@
 import React from "react";
 import "./TitleCard.css";
 
+
 const TitleCard = props => (
+
 <div>
 	<div className="card card-about">
 	  <div className="card-image">
@@ -25,3 +27,15 @@ const TitleCard = props => (
 </div>
 );
 export default TitleCard;
+
+// <script type="text/javascript">
+//       function showMenu() {
+//         if ($('.menu').css("display") != "none") {
+//           $('.menu').css("display", "none");
+//         }
+//         else{
+//           $('.menu').css("display", "block");
+//           $('.menu').addClass('animated bounceIn');
+//         }
+//       }
+//     </script> 

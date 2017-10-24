@@ -18,34 +18,31 @@ class Portfolio extends Component {
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
-        this.loadProjects();
         this.loadUser();
-        
+
       });
     } else {
       this.setState({ profile: userProfile });
-      this.loadProjects();
       this.loadUser();
     }
   }
 
   loadUser = () => {
-    console.log("This.State:");
-    // console.log(this.state.profile);
+    console.log(this.state.profile.name);
     API.getUser(this.state.profile.name)
       .then(res => {
-        console.log(res);
         this.setState({ user: res.data})
-      }
-      )
+        this.loadProjects(res.data._id);
+      })
       .catch(err => console.log(err));
   }
 
-  loadProjects = () => {
-    API.getProjects()
-      .then(res =>
-        this.setState({ projects: res.data})
-      )
+  loadProjects = (id) => {
+    API.getProjects(id)
+      .then(res =>{
+        console.log(res)
+        this.setState({ projects: res.data.Project})
+  })
       .catch(err => console.log(err));
   }
 
@@ -73,6 +70,7 @@ class Portfolio extends Component {
             linkedIn={this.state.user.linkedIn}
             headshot={this.state.user.headshot}
             email={this.state.user.email}
+            gitHubProfile={this.state.user.gitHubProfile}
             bio={this.state.user.bio}
             gitHubProfile={this.state.user.gitHubProfile}
           />
@@ -83,10 +81,10 @@ class Portfolio extends Component {
             project={portfoliocard.projectName}
             image={portfoliocard.image}
             description={portfoliocard.description}
-            team={portfoliocard.team}
-            link={portfoliocard.link}
             github={portfoliocard.github}
             technologiesKeywords={portfoliocard.technologiesKeywords}
+            team={portfoliocard.team}
+            link={portfoliocard.link}
             />
           ))}
         </Row>

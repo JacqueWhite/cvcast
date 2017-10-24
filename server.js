@@ -17,9 +17,9 @@ app.use(routes);
 
 // Set up promises with mongoose
 mongoose.Promise = global.Promise;
+mongoose.set('debug', true);
 
 //===========================================================================================
-//Remember to change below.
 // Connect to the Mongo DB
 mongoose.connect(
   process.env.MONGODB_URI || "mongodb://localhost/showAndTell",

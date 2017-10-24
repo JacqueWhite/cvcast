@@ -1,5 +1,3 @@
-console.log("routes/api/projects.js page");
-
 const router = require("express").Router();
 const projectController = require("../../controllers/projectController");
 
@@ -15,6 +13,11 @@ router
   .get(projectController.findById)
   .put(projectController.update)
   .delete(projectController.remove);
+
+  // Matches with "/api/projects/:id"
+  router
+    .route("/:projectId/:userId")
+    .delete(projectController.remove);
 
 module.exports = router;
 
