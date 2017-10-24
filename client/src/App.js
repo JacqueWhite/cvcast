@@ -3,7 +3,7 @@ import { Redirect, Route, Router } from 'react-router-dom';
 import Portfolio from "./pages/portfolio";
 import Main from "./pages/main";
 import Edit from "./pages/edit";
-import Login from "./pages/login";
+import Welcome from "./pages/welcome";
 import "./index.css";
 
 //Material-ui
@@ -63,7 +63,14 @@ const App = () => {
             return <Callback {...props} />
           }}/>
 
-          <Route exact path="/login" component={Login} />
+        <Route exact path="/welcome" render={(props) => (
+            !auth.isAuthenticated() ? (
+              <Redirect to="/"/>
+            ) : (
+              <Welcome auth={auth} {...props} />
+            )
+          )} />
+
         </div>
       </Router>
     </MuiThemeProvider>

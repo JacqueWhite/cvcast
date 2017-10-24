@@ -33,15 +33,11 @@ class Edit extends Component {
     }
 
     loadUser = () => {
-      // console.log("This.State:");
-      // console.log(this.state.profile);
-      // currentUser = this.state.profile.name;
       API.getUser(this.state.profile.name)
         .then(res => {
           console.log(res);
           this.setState({ user: res.data})
-        }
-        )
+        })
         .catch(err => console.log(err));
     }
 
@@ -102,7 +98,7 @@ class Edit extends Component {
           />
         </Row>
         <Row>
-          <ProjectModal 
+          <ProjectModal
           />
         </Row>
         <Row>
