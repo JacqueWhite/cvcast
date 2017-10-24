@@ -3,6 +3,7 @@ import {Row} from 'react-materialize';
 import Nav from '../components/Nav';
 import PortfolioCard from "../components/PortfolioCard";
 import TitleCard from "../components/TitleCard";
+import Welcome from "./welcome";
 import API from "../utils/API";
 
 class Portfolio extends Component {
@@ -31,8 +32,11 @@ class Portfolio extends Component {
     console.log(this.state.profile.name);
     API.getUser(this.state.profile.name)
       .then(res => {
-        this.setState({ user: res.data})
-        this.loadProjects(res.data._id);
+        if (res) {
+          this.setState({ user: res.data})
+          this.loadProjects(res.data._id);
+        }
+
       })
       .catch(err => console.log(err));
   }
@@ -59,37 +63,45 @@ class Portfolio extends Component {
     });
   }
 
+
+
   render() {
-    return (
-    <div>
-      <Nav firstName={this.state.user.firstName} />
-        <Row>
-          <TitleCard
-            firstName={this.state.user.firstName}
-            lastName={this.state.user.lastName}
-            linkedIn={this.state.user.linkedIn}
-            headshot={this.state.user.headshot}
-            email={this.state.user.email}
-            gitHubProfile={this.state.user.gitHubProfile}
-            bio={this.state.user.bio}
-            gitHubProfile={this.state.user.gitHubProfile}
-          />
-        </Row>
-        <Row>
-          {this.state.projects.map((portfoliocard) => (
-            <PortfolioCard
-            project={portfoliocard.projectName}
-            image={portfoliocard.image}
-            description={portfoliocard.description}
-            github={portfoliocard.github}
-            technologiesKeywords={portfoliocard.technologiesKeywords}
-            team={portfoliocard.team}
-            link={portfoliocard.link}
+    if (this.state.user) {
+      return (
+      <div>
+        <Nav firstName={this.state.user.firstName} />
+          <Row>
+            <TitleCard
+              firstName={this.state.user.firstName}
+              lastName={this.state.user.lastName}
+              linkedIn={this.state.user.linkedIn}
+              headshot={this.state.user.headshot}
+              email={this.state.user.email}
+              gitHubProfile={this.state.user.gitHubProfile}
+              bio={this.state.user.bio}
+              gitHubProfile={this.state.user.gitHubProfile}
             />
-          ))}
-        </Row>
-     </div>
-    );
+          </Row>
+          <Row>
+            {this.state.projects.map((portfoliocard) => (
+              <PortfolioCard
+              project={portfoliocard.projectName}
+              image={portfoliocard.image}
+              description={portfoliocard.description}
+              github={portfoliocard.github}
+              technologiesKeywords={portfoliocard.technologiesKeywords}
+              team={portfoliocard.team}
+              link={portfoliocard.link}
+              />
+            ))}
+          </Row>
+       </div>
+      );
+    } else {
+      return (
+        <Welcome auth={this.props.auth} />
+      )
+    }
   }
 }
 
