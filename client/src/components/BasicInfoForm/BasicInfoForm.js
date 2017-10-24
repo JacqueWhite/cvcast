@@ -50,7 +50,9 @@ class BasicInfoForm extends Component {
   }
 
   handleFormSubmit = event => {
+    console.log(this.state.email);
       event.preventDefault();
+
       if (this.state.firstName && this.state.lastName && this.state.email) {
         var myUser = {
           firstName: this.state.firstName,
