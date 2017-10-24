@@ -5,7 +5,7 @@ import PortfolioCardEdit from "../components/PortfolioCardEdit";
 import TitleCard from "../components/TitleCard";
 import ProjectForm from "../components/ProjectForm";
 import API from "../utils/API";
-import ProjectModal from '../components/ProjectModal';
+// import ProjectModal from '../components/ProjectModal';
 
 class Edit extends Component {
 
@@ -55,9 +55,6 @@ class Edit extends Component {
       API.deleteProject(id, ownerID)
         .then(res => this.loadProjects())
         .catch(err => console.log(err));
-      // API.deleteProject(id)
-      //   .then(res => this.loadProjects())
-      //   .catch(err => console.log(err));
     }
 
     toggleEdit = currentProject => {
@@ -101,10 +98,10 @@ class Edit extends Component {
             bio={this.state.user.bio}
           />
         </Row>
-        <Row>
+        {/*<Row>
           <ProjectModal
           />
-        </Row>
+        </Row> */}
         <Row>
           <ProjectForm
             reset={this.reset}
