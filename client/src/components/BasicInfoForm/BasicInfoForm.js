@@ -50,7 +50,7 @@ class BasicInfoForm extends Component {
   }
 
   handleFormSubmit = event => {
-    console.log(this.state.email);
+    // console.log(this.state.email);
       event.preventDefault();
 
       if (this.state.firstName && this.state.lastName && this.state.email) {
@@ -127,6 +127,7 @@ class BasicInfoForm extends Component {
                 <div className="input-field col s12">
                   <input
                     value={this.state.email}
+                    onChange={this.handleInputChange}
                     name="email"
                     placeholder="Email Address (required)"
                     type="text"
