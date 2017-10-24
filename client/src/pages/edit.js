@@ -21,33 +21,35 @@ class Edit extends Component {
       const { userProfile, getProfile } = this.props.auth;
       if (!userProfile) {
         getProfile((err, profile) => {
-          this.setState({ profile });
-          this.loadProjects();
-          this.loadUser();
+          this.setState({ profile }, () => {
+            // this.loadProjects();
+            this.loadUser();
+          });
         });
       } else {
-        this.setState({ profile: userProfile });
-        this.loadProjects();
-        this.loadUser();
+        this.setState({ profile: userProfile }, () => {
+          // this.loadProjects();
+          this.loadUser();
+        });
       }
     }
 
     loadUser = () => {
+      console.log(this.state.profile.name);
       API.getUser(this.state.profile.name)
         .then(res => {
-          console.log(res.data);
           this.setState({ user: res.data})
-        }
-        )
+          this.loadProjects();
+        })
         .catch(err => console.log(err));
     }
 
     loadProjects = () => {
-      API.getProjects()
-        .then(res => {
-          console.log(res.data);
-          this.setState({ projects: res.data})
-        })
+      API.getProjects(this.state.user._id)
+        .then(res =>{
+          // console.log(res)
+          this.setState({ projects: res.data.Project})
+    })
         .catch(err => console.log(err));
     }
 
@@ -87,6 +89,7 @@ class Edit extends Component {
 
 
   render() {
+    console.log(this.state);
     return (
     <div>
       <Nav firstName={this.state.user.firstName} />
