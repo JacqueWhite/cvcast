@@ -7,7 +7,7 @@ router
   .get(userController.findAll);
 
 router
-  .route("/signup")
+  .route("/welcome")
   .post(userController.create);
   
   // .catch(err => res.status(422).json(err)); //Errors out...

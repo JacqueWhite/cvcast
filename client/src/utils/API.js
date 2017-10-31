@@ -21,7 +21,7 @@ export default {
   },
   // Saves a user to the database
   saveUser: function(user) {
-    return axios.post("/api/user/signup", user);
+    return axios.post("/api/user/welcome", user);
   },
   // Gets the user with the given id
   getUser: function(email) {
