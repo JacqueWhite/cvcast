@@ -4,7 +4,7 @@ const Schema = mongoose.Schema;
 
 mongoose.Promise = global.Promise;
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/showAndTell",
+  process.env.MONGODB_URI || "mongodb://localhost/cvcast",
   {
     useMongoClient: true
   }

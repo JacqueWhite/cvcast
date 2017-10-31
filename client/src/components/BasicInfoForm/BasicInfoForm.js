@@ -22,7 +22,7 @@ class BasicInfoForm extends Component {
     open: false
   }
 
-  componentWillMount() {
+  componentWillMount = () => {
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
       getProfile((err, profile) => {
@@ -256,14 +256,14 @@ class BasicInfoForm extends Component {
                 <FlatButton
                   label="Back"
                   disabled={stepIndex === 0}
-                  onTouchTap={this.handlePrev}
+                  onClick={this.handlePrev}
                   style={{marginRight: 12}}
                 />
                 <RaisedButton
                   primary={true}
                   label='Next'
                   disabled={stepIndex === 4}
-                  onTouchTap={this.handleNext}
+                  onClick={this.handleNext}
                 />
               </div>
             </div>

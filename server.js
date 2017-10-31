@@ -22,7 +22,7 @@ mongoose.set('debug', true);
 //===========================================================================================
 // Connect to the Mongo DB
 mongoose.connect(
-  process.env.MONGODB_URI || "mongodb://localhost/showAndTell",
+  process.env.MONGODB_URI || "mongodb://localhost/cvcast",
   {
     useMongoClient: true
   }

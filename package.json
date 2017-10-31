@@ -1,5 +1,5 @@
 {
-  "name": "show-and-tell",
+  "name": "cvcast",
   "version": "1.0.0",
   "description": "This is a web application that showcases developer projects.",
   "main": "server.js",
@@ -11,20 +11,21 @@
     "server": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "client": "node scripts/start-client.js",
-    "start": "node server.js && npm run client",
+    "startp": "node server.js && npm run client",
+    "start": "concurrently \"nodemon server.js\" \"npm run client\"",
     "seed": "node scripts/seedDB.js",
     "build": "node scripts/build.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/isai-solis/Show-and-Tell.git"
+    "url": "git+https://github.com/JacqueWhite/cvcast.git"
   },
   "author": "Jayme Howard, Lisa Newhouse, Audrey Fletcher, John Torrence, Isai Solis",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/isai-solis/Show-and-Tell/issues"
+    "url": "https://github.com/JacqueWhite/cvcast/issues"
   },
-  "homepage": "https://github.com/isai-solis/Show-and-Tell#readme",
+  "homepage": "https://github.com/JacqueWhite/cvcast#readme",
   "dependencies": {
     "auth0-js": "^8.10.1",
     "axios": "^0.16.2",
@@ -36,7 +37,8 @@
     "react-flipcard": "^0.2.1",
     "react-materialize": "^1.0.16",
     "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.0.14"
+    "react-scripts": "^1.0.14",
+    "react-tap-event-plugin": "^3.0.2"
   },
   "devDependencies": {
     "concurrently": "^3.5.0",
