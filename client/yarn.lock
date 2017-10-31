@@ -3855,6 +3855,10 @@ jest@20.0.4:
   dependencies:
     jest-cli "^20.0.4"
 
+jquery@^3.2.1:
+  version "3.2.1"
+  resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.2.1.tgz#5c4d9de652af6cd0a770154a631bba12b015c787"
+
 js-base64@^2.1.9:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/js-base64/-/js-base64-2.3.2.tgz#a79a923666372b580f8e27f51845c6f7e8fbfbaf"
@@ -4203,6 +4207,10 @@ material-ui@^0.19.4:
     recompose "^0.26.0"
     simple-assign "^0.1.0"
     warning "^3.0.0"
+
+materialize-stepper@^2.1.4:
+  version "2.1.4"
+  resolved "https://registry.yarnpkg.com/materialize-stepper/-/materialize-stepper-2.1.4.tgz#aaf0ab64b81948539dc70c12ba7650cd7a8e98b0"
 
 math-expression-evaluator@^1.2.14:
   version "1.2.17"
