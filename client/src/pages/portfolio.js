@@ -29,7 +29,6 @@ class Portfolio extends Component {
   }
 
   loadUser = () => {
-    console.log(this.state.profile.name);
     API.getUser(this.state.profile.name)
       .then(res => {
         if (res) {

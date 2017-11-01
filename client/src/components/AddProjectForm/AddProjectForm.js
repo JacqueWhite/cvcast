@@ -54,6 +54,41 @@ class AddProjectForm extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
+    console.log("handleFormSubmit from ProjectForm.js");
+    if (this.props.editing) {
+      this.setState({
+        projectName           : this.state.projectName          || this.props.project.projectName,
+        image                 : this.state.image                || this.props.project.image,
+        description           : this.state.description          || this.props.project.description,
+        technologiesKeywords  : this.state.technologiesKeywords || this.props.project.technologiesKeywords,
+        team                  : this.state.team                 || this.props.project.team,
+        link                  : this.state.link                 || this.props.project.link,
+        github                : this.state.github               || this.props.project.github,
+        ownerID               : this.state.ownerID              || this.props.project.ownerID
+      }, function() {
+
+        API.updateProject(this.props.project.id, this.state)
+          .then(() => {
+            this.props.update();
+            this.props.toggleEdit();
+          })
+          .catch(err => console.log(err));
+      })
+    } else {
+      this.setState({ ownerID : this.props.user._id }, () => {
+      console.log("Going to save a new project....");
+      console.log(this.state);
+        API.saveProject(this.state)
+          .then(() => {
+            this.props.update();
+          })
+          .catch(err => console.log(err));
+      })
+    }
+  };
+
+  handleFormSubmito = event => {
+    event.preventDefault();
     console.log("adding yo project");
     if (this.state.projectName && this.state.image && this.state.description) {
       var myProject = {
@@ -66,9 +101,9 @@ class AddProjectForm extends Component {
         github                : this.state.github,
         ownerID               : this.state.ownerID
       }
-    this.setState({ ownerID : this.props.user._id }, () => {
+    this.setState({ ownerID : this.props.user._id}, () => {
       console.log("Going to save a new project....");
-      console.log(this.state);
+      console.log(this.state.ownerID);
         API.saveProject(myProject)
           .then(() => {
             this.props.update();

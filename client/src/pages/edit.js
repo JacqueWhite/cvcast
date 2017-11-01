@@ -21,10 +21,8 @@ class Edit extends Component {
       const { userProfile, getProfile } = this.props.auth;
       if (!userProfile) {
         getProfile((err, profile) => {
-          this.setState({ profile }, () => {
-            // this.loadProjects();
-            this.loadUser();
-          });
+          this.setState({ profile });
+          this.loadUser();
         });
       } else {
         this.setState({ profile: userProfile });
@@ -41,10 +39,10 @@ class Edit extends Component {
         .catch(err => console.log(err));
     }
 
-    loadProjects = () => {
+    loadProjects = (id) => {
       API.getProjects(this.state.user._id)
         .then(res =>{
-          // console.log(res)
+          console.log(res)
           this.setState({ projects: res.data.Project})
     })
         .catch(err => console.log(err));
