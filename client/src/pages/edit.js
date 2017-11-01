@@ -5,8 +5,7 @@ import PortfolioCardEdit from "../components/PortfolioCardEdit";
 import TitleCard from "../components/TitleCard";
 import ProjectForm from "../components/ProjectForm";
 import API from "../utils/API";
-import ProjectModal from '../components/ProjectModal';
-import StepAdd from '../components/AddProjectForm';
+import AddProjectForm from '../components/AddProjectForm';
 
 class Edit extends Component {
 
@@ -103,12 +102,17 @@ class Edit extends Component {
           />
         </Row>
         <Row>
-          <ProjectModal
-          />
+          <AddProjectForm
+            reset={this.reset}
+            key={this.state.currentProject.id}
+            user={this.state.user}
+            update={this.loadProjects}
+            project={this.state.currentProject}
+            editing={this.state.editing}
+            toggleEdit={this.toggleEdit}
+            />
         </Row>
-        <Row>
-        <StepAdd/>
-        </Row>
+        {/*
         <Row>
           <ProjectForm
             reset={this.reset}
@@ -120,6 +124,7 @@ class Edit extends Component {
             toggleEdit={this.toggleEdit}
             />
         </Row>
+        */}
         <Row>
           {this.state.projects.map((portfoliocard) => (
             <PortfolioCardEdit

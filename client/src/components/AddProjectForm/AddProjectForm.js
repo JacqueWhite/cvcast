@@ -11,78 +11,6 @@ import RaisedButton from 'material-ui/RaisedButton';
 // import TextField from 'material-ui/TextField';
 import Snackbar from 'material-ui/Snackbar';
 
-// const styles = {
-//   block: {
-//     maxWidth: 250,
-//   },
-//   checkbox: {
-//     marginBottom: 16,
-//   },
-//   customWidth: {
-//     width: 50,
-//   },
-// };
-
-//Technologies used array
-// const tags_arr = [
-// {title: '-Select Tag-', value: "" }, 
-// {title: 'HTML', value: 'HTML'}, 
-// //C++ frameworks
-// {title: 'C++', value: 'C++'}, 
-// {title: 'CLI', value: 'CLI'},
-// //JavaScript frameworks
-// {title: 'JavaScript', value: 'JavaScript'}, {title: 'JS: Angular', value: 'Angular'},  
-// {title: 'JS: Express', value: 'Express'}, {title: 'JS: jQuery', value: 'jQuery'},
-// {title: 'JS: Node', value: 'Node.js'}, {title: 'JS: React', value: 'React'}, 
-// //Perl frameworks
-// {title: 'Perl', value: 'Perl'},
-// //PHP frameworks
-// {title: 'PHP', value: 'PHP'},
-// {title: 'PHP: Laravel', value: 'Laravel'},  
-// //Python frameworks
-// {title: 'Python', value: 'Python'},
-// //Ruby frameworks
-// {title: 'Ruby', value: 'Ruby'}, 
-// {title: 'Ruby: Ruby on Rails', value: 'Ruby on Rails'}, 
-// //Database
-// {title: 'Database', value: 'Database'},
-// //NoSQL
-// {title: 'DB: NoSQL', value: 'NoSQL'},      
-// {title: 'DB: Mongo', value: 'MongoDB'}, {title: 'DB: Mongoose', value: 'Mongoose'},
-// //SQL
-// {title: 'DB: SQL', value: 'SQL'},
-// {title: 'DB: MySQL', value: 'MySQL'}, {title: 'DB: Firebase', value: 'Firebase'}
-// ];
-//Sort array to be displayed alphabetically
-// tags_arr.title.sort();
-//MenuItem(s) array
-// const items = [];
-// // const tags_arr = <MenuItem primaryText="HTML" />;
-// for (let i = 0; i < tags_arr.length; i++) {
-//   items.push(<MenuItem value={tags_arr[i].value} key={i} primaryText={`${tags_arr[i].title}`} />);
-// };
-
-// class TagsDropDown extends Component {
-
-//   constructor(props) {
-//     super(props);
-//     this.state = { value: 0 };
-//   }
-
-//   handleInputChange = event => {
-//     const { name, value } = event.target;
-//     this.setState({ [name]: value });
-//   }
-
-//   render() {
-//     return (
-//       <SelectField maxHeight={300} value={this.state.value} onChange={this.handleChange}>
-//           {items}
-//       </SelectField>
-//     );
-//   }
-// }
-
 class AddProjectForm extends Component {
   state = {
     projectName: "",
@@ -339,22 +267,25 @@ class AddProjectForm extends Component {
                 </div>
           </div>
 
-          <div>
-            <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
-              <div className="row form-row">
-                <div className="col s12">
-                  <button
-                    onClick={this.handleFormSubmit}
-                    type="submit"
-                    >
-                    Commit Profile
-                  </button>
-                  <Snackbar
-                    open={this.state.open}
-                    message="Successfully Added Basic Info!"
-                    autoHideDuration={4000}
-                    onRequestClose={this.handleRequestClose}
-                  />
+          <div className="row row-project-form">
+            <div>
+              <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
+                <div className="row form-row">
+                  <div className="col s12">
+                    <button
+                      onClick={this.handleFormSubmit}
+                      type="submit"
+                      >
+                      <i className="material-icons right">send</i>
+                      Submit
+                    </button>
+                    <Snackbar
+                      open={this.state.open}
+                      message="Successfully Added Basic Info!"
+                      autoHideDuration={4000}
+                      onRequestClose={this.handleRequestClose}
+                    />
+                  </div>
                 </div>
               </div>
             </div>

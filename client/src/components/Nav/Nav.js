@@ -5,7 +5,7 @@ import './Nav.css';
 
 const Nav = props => (
 
-	<Navbar brand='Show and Tell' fixed right>
+	<Navbar brand='cvcast' fixed right>
 		<NavItem href='/edit'><Icon>edit</Icon></NavItem>
 		<NavItem href='/portfolio'><Icon>public</Icon></NavItem>
 		<NavItem href=''><Icon>link</Icon></NavItem>
