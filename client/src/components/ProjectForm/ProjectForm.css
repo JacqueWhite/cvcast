@@ -1,5 +1,7 @@
-.card.project-form {
-	height: auto !important;
+
+
+.card.card-content {
+	height: auto;
 }
 
 .project-submit {
@@ -9,4 +11,10 @@
 
 .row-project-form {
 	margin: 1;
+}
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 10px; 
 }

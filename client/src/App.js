@@ -3,6 +3,7 @@ import { Redirect, Route, Router } from 'react-router-dom';
 import Portfolio from "./pages/portfolio";
 import Main from "./pages/main";
 import Edit from "./pages/edit";
+import Edit2 from "./pages/edit2";
 import Welcome from "./pages/welcome";
 import "./index.css";
 
@@ -55,6 +56,14 @@ const App = () => {
               <Redirect to="/"/>
             ) : (
               <Edit auth={auth} {...props} />
+            )
+          )} />
+
+          <Route exact path="/edit2" render={(props) => (
+            !auth.isAuthenticated() ? (
+              <Redirect to="/"/>
+            ) : (
+              <Edit2 auth={auth} {...props} />
             )
           )} />
 
