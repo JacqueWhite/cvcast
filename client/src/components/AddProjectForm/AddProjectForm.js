@@ -78,32 +78,32 @@ class AddProjectForm extends Component {
   }
 }
 
-  // handleFormEdit = event => {
-  //   event.preventDefault();
-  //   console.log("editing your project");
-  //   if (this.props.editing) {
-  //     this.setState({
-  //       projectName           : this.props.project.projectName,
-  //       image                 : this.props.project.image,
-  //       description           : this.props.project.description,
-  //       technologiesKeywords  : this.props.project.technologiesKeywords,
-  //       team                  : this.props.project.team,
-  //       link                  : this.props.project.link,
-  //       github                : this.props.project.github,
-  //       ownerID               : this.props.project.ownerID
-  //     }, function() {
+  handleFormEdit = event => {
+    event.preventDefault();
+    console.log("editing your project");
+    if (this.props.editing) {
+      this.setState({
+        projectName           : this.props.project.projectName,
+        image                 : this.props.project.image,
+        description           : this.props.project.description,
+        technologiesKeywords  : this.props.project.technologiesKeywords,
+        team                  : this.props.project.team,
+        link                  : this.props.project.link,
+        github                : this.props.project.github,
+        ownerID               : this.props.project.ownerID
+      }, function() {
 
-  //       API.updateProject(this.props.project.id, this.state)
-  //         .then(() => {
-  //           this.props.update();
-  //           this.props.toggleEdit();
-  //         })
-  //         .catch(err => console.log(err));
-  //     })
-  //   } else {
-  //     alert("Add a new project at the top.")
-  //   }
-  // }
+        API.updateProject(this.props.project.id, this.state)
+          .then(() => {
+            this.props.update();
+            this.props.toggleEdit();
+          })
+          .catch(err => console.log(err));
+      })
+    } else {
+      alert("Add a new project at the top.")
+    }
+  }
 
   handleTouchTap = () => {
     this.setState({

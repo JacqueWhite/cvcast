@@ -3,7 +3,7 @@ import {Row} from 'react-materialize';
 import Nav from '../components/Nav';
 import PortfolioCardEdit from "../components/PortfolioCardEdit";
 import TitleCard from "../components/TitleCard";
-import ProjectForm from "../components/ProjectForm";
+// import ProjectForm from "../components/ProjectForm";
 import API from "../utils/API";
 import AddProjectForm from '../components/AddProjectForm';
 
@@ -27,10 +27,8 @@ class Edit extends Component {
           });
         });
       } else {
-        this.setState({ profile: userProfile }, () => {
-          // this.loadProjects();
-          this.loadUser();
-        });
+        this.setState({ profile: userProfile });
+        this.loadUser();
       }
     }
 
