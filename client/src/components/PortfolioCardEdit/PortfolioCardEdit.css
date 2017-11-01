@@ -28,6 +28,9 @@ div.card-image {
 .card, .portfolio-card{
     position: relative;
     height: 500px !important;
+    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
+    background-repeat: no-repeat cover;
+    overflow: hidden;
 }
 
 .waves-block {
@@ -49,11 +52,14 @@ div.card-image {
     transition: .3s ease-out;
 }
 
-.card, .card-panel {
+div.card, div.card-panel {
     transition: box-shadow .25s;
     margin: .5rem 0 1rem;
     border-radius: 2px;
-    background-color: #fff;
+    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
 }
 
 .btn, .btn-floating, .btn-large, .card, .card-panel, .collapsible, .dropdown-content, .side-nav, .toast, .z-depth-1, nav {
@@ -70,6 +76,16 @@ div {
 
 .card {
     height: 400px;
+    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+}
+
+div.card-action, div.card-reveal {
+    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
+    background-repeat: no-repeat;
+    overflow: hidden;
+    background-size: cover;
 }
 
 .tagsDiv {

@@ -38,6 +38,7 @@ class Edit extends Component {
       API.getUser(this.state.profile.name)
         .then(res => {
           this.setState({ user: res.data})
+          this.loadProjects(res.data._id);
         })
         .catch(err => console.log(err));
     }

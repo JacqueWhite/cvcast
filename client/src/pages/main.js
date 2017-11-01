@@ -30,9 +30,9 @@ class Main extends Component {
 	  <div id="index-banner" className="parallax-container">
 	    <div className="section no-pad-bot">
 	      <div className="container">
-	        <h3 className="header center teal-text text-lighten-2">Show and Tell</h3>
+	        <h3 className="header center white-text text-lighten-2">cvcast</h3>
 	        <div className="row center">
-	          <h5 className="header col s12 light">a platform to showcase your projects</h5>
+	          <h4 className="header col s12 light white-text">a platform to showcase your projects</h4>
 	        </div>
 	        <div className="row center">
              {
@@ -78,38 +78,51 @@ class Main extends Component {
 		        </div>
 	      </div>
 	    </div>
-	    <div className="parallax"><img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/home.jpg" alt="background"/></div>
-	  </div>
+	    <div className="parallax">
+        <div className="homepage-hero-module">
+            <div className="video-container">
+                <div className="filter"></div>
+                <video autoPlay loop className="fillWidth">
+                    <source src="https://s3.us-east-2.amazonaws.com/cvcast/Very-Open-Space.mp4" type="video/mp4" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                    <source src="https://s3.us-east-2.amazonaws.com/cvcast/Very-Open-Space.webm" type="video/webm" />Your browser does not support the video tag. I suggest you upgrade your browser.
+                </video>
+                <div className="poster hidden">
+                    <img src="https://s3.us-east-2.amazonaws.com/cvcast/Very-Open-Space.jpg" alt=""/>
+                </div>
+            </div>
+  	    </div>
+      </div>
 
 	    <div className="section info">
 	      <div className="row">
 	        <div className="col s12 m4">
 	          <div className="icon-block">
-	            <h2 className="center brown-text"><i className="material-icons">vpn_key</i></h2>
+	            <h2 className="center white-text"><i className="material-icons flow-text">vpn_key</i></h2>
 	            <h5 className="center">Sign Up</h5>
-	            <p className="center light">add your basic info</p>
+	            <p className="center light white-text flow-text">add your basic info</p>
 	          </div>
 	        </div>
 
 	        <div className="col s12 m4">
 	          <div className="icon-block">
-	            <h2 className="center brown-text"><i className="material-icons">add_circle</i></h2>
+	            <h2 className="center white-text"><i className="material-icons">add_circle</i></h2>
 	            <h5 className="center">Show</h5>
 
-	            <p className="center light">add your projects</p>
+	            <p className="center light white-text flow-text">add your projects</p>
 	          </div>
 	        </div>
 
 	        <div className="col s12 m4">
 	          <div className="icon-block">
-	            <h2 className="center brown-text"><i className="material-icons">share</i></h2>
+	            <h2 className="center white-text"><i className="material-icons">share</i></h2>
 	            <h5 className="center">Tell</h5>
-	            <p className="center light">share your page</p>
+	            <p className="center light white-text flow-text">share your page</p>
 	          </div>
 	        </div>
 	      </div>
 	    </div>
 	  </div>
+  </div>
     );
   }
 }
