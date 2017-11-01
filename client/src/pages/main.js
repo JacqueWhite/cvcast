@@ -27,7 +27,7 @@ class Main extends Component {
 
     return (
 	<div>
-	  <div id="index-banner" className="parallax-container">
+	  <div id="index-banner">
 	    <div className="section no-pad-bot">
 	      <div className="container">
 	        <h3 className="header center white-text text-lighten-2">cvcast</h3>
@@ -93,36 +93,36 @@ class Main extends Component {
   	    </div>
       </div>
 
-	    <div className="section info">
-	      <div className="row">
-	        <div className="col s12 m4">
+	      <div className="row about">
+	        <div className="col s12 m4 l4">
 	          <div className="icon-block">
-	            <h2 className="center white-text"><i className="material-icons flow-text">vpn_key</i></h2>
+	            <h2 className="center black-text"><i className="material-icons flow-text">vpn_key</i></h2>
 	            <h5 className="center">Sign Up</h5>
-	            <p className="center light white-text flow-text">add your basic info</p>
+	            <p className="center light black-text flow-text">add your basic info</p>
 	          </div>
 	        </div>
 
-	        <div className="col s12 m4">
+	        <div className="col s12 m4 l4">
 	          <div className="icon-block">
-	            <h2 className="center white-text"><i className="material-icons">add_circle</i></h2>
+	            <h2 className="center black-text"><i className="material-icons">add_circle</i></h2>
 	            <h5 className="center">Show</h5>
 
-	            <p className="center light white-text flow-text">add your projects</p>
+	            <p className="center light black-text flow-text">add your projects</p>
 	          </div>
 	        </div>
 
-	        <div className="col s12 m4">
+	        <div className="col s12 m4 l4">
 	          <div className="icon-block">
-	            <h2 className="center white-text"><i className="material-icons">share</i></h2>
-	            <h5 className="center">Tell</h5>
-	            <p className="center light white-text flow-text">share your page</p>
+	            <h2 className="center black-text"><i className="material-icons">share</i></h2>
+	            <h5 className="center">Cast</h5>
+	            <p className="center light black-text flow-text">share your cv</p>
 	          </div>
 	        </div>
 	      </div>
+
 	    </div>
 	  </div>
-  </div>
+
     );
   }
 }

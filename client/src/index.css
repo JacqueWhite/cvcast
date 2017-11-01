@@ -1,4 +1,4 @@
-* {
+/** {
   box-sizing: border-box;
   font-family: sans-serif;
 }
@@ -62,4 +62,4 @@ div.nav-wrapper {
 }
 .video-container video.fillWidth {
     width: 100%;
-}
+}*/
