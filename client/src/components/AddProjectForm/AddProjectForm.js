@@ -16,7 +16,7 @@ class AddProjectForm extends Component {
     projectName: "",
     image: "",
     description: "",
-    technologiesKeywords: "",
+    technologiesKeywords: [],
     team: "",
     link: "",
     github: "",
@@ -24,6 +24,13 @@ class AddProjectForm extends Component {
     finished: false,
     stepIndex: 0,
     open: false
+  }
+
+  onChange(event){
+    var newArray = this.state.technologiesKeywords.slice();    
+    newArray.push(event.target.value);   
+    this.setState({technologiesKeywords:newArray})
+    console.log(newArray);
   }
 
   handleInputChange = event => {
@@ -251,54 +258,55 @@ class AddProjectForm extends Component {
         <div>
           <div className="row row-project-form">
               <legend>Technologies used</legend>
-                <div className="input-field col s2">
+                <div className="input-field col s4">
                   <input
                     type="checkbox"
                     id="check-1"
                     name="technologiesKeywords"
-                    onChange={this.handleInputChange}
-                    value={this.state.technologiesKeywords}
+                    onChange={this.onChange.bind(this)}
+                    value="HTML"
                     />
                   <label htmlFor="check-1">HTML</label>
                 </div>
-                <div className="input-field col s2">
+                <div className="input-field col s4">
                   <input
                     type="checkbox"
                     id="check-2"
                     name="technologiesKeywords"
-                    onChange={this.handleInputChange}
-                    value={this.state.technologiesKeywords}
+                    onChange={this.onChange.bind(this)}
+                    value="Javascript"
                     />
                   <label htmlFor="check-2">Javascript</label>
                 </div>
-                <div className="input-field col s2">
+                <div className="input-field col s4">
                   <input
                     type="checkbox"
                     id="check-3"
                     name="technologiesKeywords"
-                    onChange={this.handleInputChange}
-                    value={this.state.technologiesKeywords}
+                    onChange={this.onChange.bind(this)}
+                    value="CSS"
                     />
-                  <label htmlFor="check-3">CSS and/or frameworks (Bootstrap)</label>
+                  <label htmlFor="check-3">CSS</label>
                 </div>
-                <div className="input-field col s2">
+                <div className="input-field col s4">
                   <input
                     type="checkbox"
                     id="check-4"
                     name="technologiesKeywords"
-                    onChange={this.handleInputChange}
-                    value={this.state.technologiesKeywords}
+                    onChange={this.onChange.bind(this)}
+                    value="SQL"
                     />
-                  <label htmlFor="check-4">Database (mySQL, MongoDB, Firebase, etc)</label>
+                  <label htmlFor="check-4">SQL</label>
                 </div>
-                <div className="input-field col s3">
+                <div className="input-field col s4">
                   <input
-                    type="text"
-                    id="other"
+                    type="checkbox"
+                    id="check-5"
                     name="technologiesKeywords"
-                    onChange={this.handleInputChange}
-                    value={this.state.technologiesKeywords}
-                    placeholder="Other"/>
+                    onChange={this.onChange.bind(this)}
+                    value="NoSQL"
+                    />
+                  <label htmlFor="check-5">NoSQL</label>
                 </div>
           </div>
 
