@@ -27,59 +27,82 @@ class Main extends Component {
 
     return (
 	<div>
-	  <div id="index-banner">
-	    <div className="section no-pad-bot">
-	      <div className="container">
-	        <h3 className="header center white-text text-lighten-2">cvcast</h3>
-	        <div className="row center">
-	          <h4 className="header col s12 light white-text">a platform to showcase your projects</h4>
-	        </div>
-	        <div className="row center">
-             {
+
+	 <div className="container">
+   <br/><br/> <br/><br/> 
+	   <div className="row center">
+        <div>
+        <h3 className="center white-text">cvcast</h3>
+        <h4 className="center white-text">a platform to showcase your projects</h4>
+        </div>
+           {
+              isAuthenticated() && (
+                <a
+                  className="waves-effect waves-light btn-large"
+                    onClick={this.goTo.bind(this, 'portfolio')}
+                  >
+                    Portfolio
+                </a>
+              )
+            }
+            {
                 isAuthenticated() && (
-                  <a
-                    className="waves-effect waves-light btn-large"
-                      onClick={this.goTo.bind(this, 'portfolio')}
+                    <a
+                      className="waves-effect waves-light btn-large"
+                      onClick={this.goTo.bind(this, 'welcome')}
                     >
-                      Portfolio
-                  </a>
-                )
+                      Add Your Basic Info
+                    </a>
+                  )
               }
               {
-                  isAuthenticated() && (
-                      <a
-                        className="waves-effect waves-light btn-large"
-                        onClick={this.goTo.bind(this, 'welcome')}
-                      >
-                        Add Your Basic Info
-                      </a>
-                    )
-                }
-                {
-                  !isAuthenticated() && (
-                      <a
-                        className="waves-effect waves-light btn-large"
-                        onClick={this.login.bind(this)}
-                      >
-                        Log In
-                      </a>
-                    )
-                }
-                {
-                  isAuthenticated() && (
-                      <a
-                        className="waves-effect waves-light btn-large"
-                        onClick={this.logout.bind(this)}
-                      >
-                        Log Out
-                      </a>
-                    )
-                }
-		        </div>
-	      </div>
-	    </div>
-	    <div className="parallax">
-        <div className="homepage-hero-module">
+                !isAuthenticated() && (
+                    <a
+                      className="waves-effect waves-light btn-large"
+                      onClick={this.login.bind(this)}
+                    >
+                      Log In
+                    </a>
+                  )
+              }
+              {
+                isAuthenticated() && (
+                    <a
+                      className="waves-effect waves-light btn-large"
+                      onClick={this.logout.bind(this)}
+                    >
+                      Log Out
+                    </a>
+                  )
+              }
+
+          <br/><br/>  
+
+          <div className="row about">
+
+            <div className="col s4 m4 l4">
+                <h2 className="center black-text"><i className="material-icons flow-text">vpn_key</i></h2>
+                <h5 className="center">Sign Up</h5>
+                <p className="center light black-text flow-text">add your basic info</p>
+            </div>
+
+            <div className="col s4 m4 l4">
+                <h2 className="center black-text"><i className="material-icons">add_circle</i></h2>
+                <h5 className="center">Show</h5>
+                <p className="center light black-text flow-text">add your projects</p>
+            </div>
+
+            <div className="col s4 m4 l4">
+                <h2 className="center black-text"><i className="material-icons">share</i></h2>
+                <h5 className="center">Cast</h5>
+                <p className="center light black-text flow-text">share your cv</p>
+            </div>
+          </div>
+
+  		  </div>
+
+	      <div className="parallax homepage-hero-module">
+
             <div className="video-container">
                 <div className="filter"></div>
                 <video autoPlay loop className="fillWidth">
@@ -90,39 +113,12 @@ class Main extends Component {
                     <img src="https://s3.us-east-2.amazonaws.com/cvcast/Very-Open-Space.jpg" alt=""/>
                 </div>
             </div>
-  	    </div>
+
+        </div>
+
       </div>
 
-	      <div className="row about">
-	        <div className="col s12 m4 l4">
-	          <div className="icon-block">
-	            <h2 className="center black-text"><i className="material-icons flow-text">vpn_key</i></h2>
-	            <h5 className="center">Sign Up</h5>
-	            <p className="center light black-text flow-text">add your basic info</p>
-	          </div>
-	        </div>
-
-	        <div className="col s12 m4 l4">
-	          <div className="icon-block">
-	            <h2 className="center black-text"><i className="material-icons">add_circle</i></h2>
-	            <h5 className="center">Show</h5>
-
-	            <p className="center light black-text flow-text">add your projects</p>
-	          </div>
-	        </div>
-
-	        <div className="col s12 m4 l4">
-	          <div className="icon-block">
-	            <h2 className="center black-text"><i className="material-icons">share</i></h2>
-	            <h5 className="center">Cast</h5>
-	            <p className="center light black-text flow-text">share your cv</p>
-	          </div>
-	        </div>
-	      </div>
-
-	    </div>
 	  </div>
-
     );
   }
 }

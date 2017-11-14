@@ -9,7 +9,7 @@ class Signup extends Component {
     return (
     <div>
       <Row>
-      <h3 className="login-text">Not signed up? Sign up below:</h3>
+      <h3 className="login-text">No login? Create an Account:</h3>
         <SignupForm/>
       </Row>
      </div> 

@@ -10,7 +10,7 @@ class Welcome extends Component {
     <div>
       <Nav />
       <Row>
-        <h4 className="login-text">Thanks for signing up! Please fill in your basic information:</h4>
+        <h4 className="login-text center">Basic Information</h4>
         <BasicInfoForm auth={this.props.auth}/>
       </Row>
      </div>

@@ -10,7 +10,7 @@ const Nav = props => (
 		<NavItem href='/portfolio'><Icon>public</Icon></NavItem>
 		<NavItem href=''><Icon>link</Icon></NavItem>
 		<NavItem href='/main'><Icon>portrait</Icon></NavItem>
-		<NavItem>Hello, {props.firstName}!</NavItem>
+		<NavItem>Hello {props.firstName}!</NavItem>
 	</Navbar>
 );
 

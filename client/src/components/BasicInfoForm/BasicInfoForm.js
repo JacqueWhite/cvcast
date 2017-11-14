@@ -222,7 +222,9 @@ class BasicInfoForm extends Component {
     const contentStyle = {margin: '0 16px'};
 
     return (
-      <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
+      <div className="card">
+        <div className="card-content black-text">
+
         <Stepper activeStep={stepIndex}>
           <Step>
             <StepLabel>Basic Info</StepLabel>
@@ -240,6 +242,7 @@ class BasicInfoForm extends Component {
             <StepLabel>Add Projects</StepLabel>
           </Step>
         </Stepper>
+
         <div style={contentStyle}>
           {finished ? (
             <div>
@@ -268,6 +271,8 @@ class BasicInfoForm extends Component {
               </div>
             </div>
           )}
+          </div>
+
         </div>
       </div>
     );

@@ -1,25 +1,7 @@
-/* Custom Stylesheet */
-/**
- * Use this file to override Materialize files so you can update
- * the core Materialize files in the future
- *
- * Made By MaterializeCSS.com
- */
 
 * {
-/*  box-sizing: border-box;*/
+  box-sizing: border-box;
   font-family: sans-serif;
-}
-
-body {
-  background-color: #212E39;
-  margin: 0px 0px 0px 0px !important;
-}
-
-html, body, #root {
-  padding: 0;
-  margin: 0;
-/*  height: 100%;*/
 }
 
 h3.login-text {
@@ -55,7 +37,6 @@ div.nav-wrapper {
     background: #000;
     padding-bottom: 59% !important;
     padding-right: 0% !important;
-
 }
 .video-container .poster img {
     width: 100%;
@@ -74,38 +55,22 @@ div.nav-wrapper {
     bottom: 0;
     opacity: 0.7;
 }
-.video-container video.fillWidth {
-    width: 100%;
-}
 
-/* below is old
-*/
 nav ul a,
 nav .brand-logo {
   color: #444;
 }
 
-p {
-  line-height: 2rem;
-}
-
 .parallax {
     position: absolute;
-    height: fit-content;
+    height: 100% !important;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    margin: 0px;
-    z-index: -2
+    margin: 0;
+    z-index: -2;
 }
-
-/*.info {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-  background: white;
-}*/
 
 .button-collapse {
   color: #26a69a;
@@ -115,38 +80,3 @@ div.about {
   background-color: white;
   opacity: 0.7;
 }
-
-
-
-/*@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
-}
-
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
-  .info {
-    position: static;
-    bottom: 0;
-    width: 100%;
-    background: white;
-  }
-}
-
-.icon-block {
-  padding: 0 15px;
-}
-.icon-block .material-icons {
-  font-size: inherit;
-}
-
-footer.page-footer {
-  margin: 0;
-}
-*/
