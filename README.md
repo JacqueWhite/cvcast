@@ -4,7 +4,9 @@ A web application where developers can easily showcase their projects.  Not ever
 
 <a href="https://cvcast.herokuapp.com/" target="_blank">View cvcast here</a>
 
-<img src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/cvcast.gif" height="450px" alt="main page"/>
+![CV Cast](https://media.giphy.com/media/xT0xevfVNc4z5bcLV6/giphy.gif)
+
+
 
 
 
