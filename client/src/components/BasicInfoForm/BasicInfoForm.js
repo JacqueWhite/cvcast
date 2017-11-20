@@ -7,6 +7,9 @@ import {Step, Stepper, StepLabel} from 'material-ui/Stepper';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Snackbar from 'material-ui/Snackbar';
+import Dropzone from 'react-dropzone';
+import sha1 from 'sha1';
+import superagent from 'superagent';
 
 class BasicInfoForm extends Component {
   state = {
@@ -67,6 +70,50 @@ class BasicInfoForm extends Component {
         API.saveUser(myUser)
           .catch(err => console.log(err));
       }
+    }
+
+  uploadFile(files) {
+    console.log('uploadFile:  ')
+    const image = files[0]
+    const cloudName = 'djjres1vh'
+    const url = 'https://api.cloudinary.com/v1_1/'+cloudName+'/image/upload'
+    const timestamp = Date.now()/1000
+    const uploadPreset = 'znke3mj4'
+
+    const paramsStr = "timestamp="+timestamp+'&upload_preset='+uploadPreset+'SmzbJfKhVTzPjTzyxOWIkRzJu7Q'
+
+    //cloudinarys security for secret key
+    const signature = sha1(paramsStr)
+    const params = {
+      'api_key': '786238863114982',
+      'timestamp': timestamp,
+      'upload_preset': uploadPreset,
+      'signature': signature
+    }
+
+    let uploadRequest = superagent.post(url)
+    uploadRequest.attach('file', image)
+
+    Object.keys(params).forEach((key) => {
+      uploadRequest.field(key, params[key])
+    })
+
+    uploadRequest.end((err, resp) => {
+      if (err){
+        alert(err)
+        return
+      }
+      console.log('UPLOAD COMPLETE: '+JSON.stringify(resp.body))
+      const uploaded = resp.body
+      const photoUrl = resp.body.secure_url
+
+      this.setState({
+        headshot: photoUrl
+      })
+
+      console.log(this.state)
+      })
+
     }
 
   handleTouchTap = () => {
@@ -140,14 +187,13 @@ class BasicInfoForm extends Component {
         return (
           <div>
             <div className="row form-row">
-              <div className="input-field col s12">
-              <input
-                value={this.state.headshot}
-                onChange={this.handleInputChange}
-                name="headshot"
-                placeholder="Add a link to a profile picture."
-                type="text"
-              />
+              <div className="input-field col s6">
+              <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.headshot} onChange={this.handleInputChange} style={{border:'none', marginTop:12}}>
+                <button className="waves-effect waves-light btn">Add Profile Photo</button>
+              </Dropzone>
+              </div>
+              <div className="input-field col s6">
+                <img style={{maxWidth:120, borderRadius: 100}} src={this.state.headshot} alt="" />
               </div>
             </div>
             <div className="row form-row">

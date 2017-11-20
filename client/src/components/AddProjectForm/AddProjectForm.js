@@ -10,6 +10,9 @@ import RaisedButton from 'material-ui/RaisedButton';
 // import MenuItem from 'material-ui/MenuItem';
 // import TextField from 'material-ui/TextField';
 import Snackbar from 'material-ui/Snackbar';
+import Dropzone from 'react-dropzone';
+import sha1 from 'sha1';
+import superagent from 'superagent';
 
 class AddProjectForm extends Component {
   state = {
@@ -92,7 +95,7 @@ class AddProjectForm extends Component {
           .catch(err => console.log(err));
       })
     }
-  };
+  }
 
   handleFormSubmito = event => {
     event.preventDefault();
@@ -119,6 +122,50 @@ class AddProjectForm extends Component {
       })
   }
 }
+
+uploadFile(files) {
+  console.log('uploadFile:  ')
+  const image = files[0]
+  const cloudName = 'djjres1vh'
+  const url = 'https://api.cloudinary.com/v1_1/'+cloudName+'/image/upload'
+  const timestamp = Date.now()/1000
+  const uploadPreset = 'znke3mj4'
+
+  const paramsStr = "timestamp="+timestamp+'&upload_preset='+uploadPreset+'SmzbJfKhVTzPjTzyxOWIkRzJu7Q'
+
+  //cloudinarys security for secret key
+  const signature = sha1(paramsStr)
+  const params = {
+    'api_key': '786238863114982',
+    'timestamp': timestamp,
+    'upload_preset': uploadPreset,
+    'signature': signature
+  }
+
+  let uploadRequest = superagent.post(url)
+  uploadRequest.attach('file', image)
+
+  Object.keys(params).forEach((key) => {
+    uploadRequest.field(key, params[key])
+  })
+
+  uploadRequest.end((err, resp) => {
+    if (err){
+      alert(err)
+      return
+    }
+    console.log('UPLOAD COMPLETE: '+JSON.stringify(resp.body))
+    const uploaded = resp.body
+    const photoUrl = resp.body.secure_url
+
+    this.setState({
+      image: photoUrl
+    })
+
+    console.log(this.state)
+    })
+
+  }
 
   handleFormEdit = event => {
     event.preventDefault();
@@ -215,16 +262,18 @@ class AddProjectForm extends Component {
       case 1:
         return (
           <div>
+
             <div className="row form-row">
-              <div className="input-field col s12">
-                  <input
-                  value={this.state.image}
-                  onChange={this.handleInputChange}
-                  name="image"
-                  placeholder="Image URL (ex: https://www.myimage.com)"
-                  type="text"/>
+                <div className="input-field col s6">
+                  <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.image} onChange={this.handleInputChange} style={{border:'none', marginTop:12}} name="image">
+                    <button className="waves-effect waves-light btn">Add Project Image</button>
+                  </Dropzone>
+                </div>
+                <div className="input-field col s6">
+                    <img style={{maxWidth:120, borderRadius: 100}} src={this.state.image} alt="" />
+                </div>
               </div>
-            </div>
+            
             <div className="row form-row">
               <div className="input-field col s12">
                   <input
@@ -235,7 +284,9 @@ class AddProjectForm extends Component {
                   type="text"/>
               </div>
             </div>
-        </div>
+            
+          </div>
+
         );
       case 2:
         return (

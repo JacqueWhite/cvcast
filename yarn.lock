@@ -306,6 +306,10 @@ asynckit@^0.4.0:
   version "0.4.0"
   resolved "https://registry.yarnpkg.com/asynckit/-/asynckit-0.4.0.tgz#c79ed97f7f34cb8f2ba1bc9790bcc366474b4b79"
 
+attr-accept@^1.0.3:
+  version "1.1.0"
+  resolved "https://registry.yarnpkg.com/attr-accept/-/attr-accept-1.1.0.tgz#b5cd35227f163935a8f1de10ed3eba16941f6be6"
+
 auth0-js@^8.10.1:
   version "8.10.1"
   resolved "https://registry.yarnpkg.com/auth0-js/-/auth0-js-8.10.1.tgz#d69d553c55194042c400afa846e1ed43a5d9da78"
@@ -1421,6 +1425,10 @@ change-emitter@^0.1.2:
   version "0.1.6"
   resolved "https://registry.yarnpkg.com/change-emitter/-/change-emitter-0.1.6.tgz#e8b2fe3d7f1ab7d69a32199aff91ea6931409515"
 
+"charenc@>= 0.0.1":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/charenc/-/charenc-0.0.2.tgz#c0a1d2f3a7092e03774bfa83f14c0fc5790a8667"
+
 chokidar@^1.6.0, chokidar@^1.7.0:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
@@ -1763,6 +1771,10 @@ cross-spawn@5.1.0, cross-spawn@^5.0.1, cross-spawn@^5.1.0:
     lru-cache "^4.0.1"
     shebang-command "^1.2.0"
     which "^1.2.9"
+
+"crypt@>= 0.0.1":
+  version "0.0.2"
+  resolved "https://registry.yarnpkg.com/crypt/-/crypt-0.0.2.tgz#88d7ff7ec0dfb86f713dc87bbb42d044d3e6c41b"
 
 cryptiles@2.x.x:
   version "2.0.5"
@@ -5700,6 +5712,13 @@ react-dom@^15.4.2:
     object-assign "^4.1.0"
     prop-types "^15.5.10"
 
+react-dropzone@^4.2.3:
+  version "4.2.3"
+  resolved "https://registry.yarnpkg.com/react-dropzone/-/react-dropzone-4.2.3.tgz#f7bc92aa5fe4253fdb1fd3792114d2d29b47119a"
+  dependencies:
+    attr-accept "^1.0.3"
+    prop-types "^15.5.7"
+
 react-error-overlay@^2.0.2:
   version "2.0.2"
   resolved "https://registry.yarnpkg.com/react-error-overlay/-/react-error-overlay-2.0.2.tgz#967b091962b17f5aeb4a60b1311b1736e1b6533d"
@@ -6351,6 +6370,13 @@ sha.js@^2.4.0, sha.js@^2.4.8:
     inherits "^2.0.1"
     safe-buffer "^5.0.1"
 
+sha1@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/sha1/-/sha1-1.1.1.tgz#addaa7a93168f393f19eb2b15091618e2700f848"
+  dependencies:
+    charenc ">= 0.0.1"
+    crypt ">= 0.0.1"
+
 shebang-command@^1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/shebang-command/-/shebang-command-1.2.0.tgz#44aac65b695b03398968c39f363fee5deafdf1ea"
@@ -6659,6 +6685,21 @@ style-loader@0.18.2:
 superagent@^3.3.1:
   version "3.7.0"
   resolved "https://registry.yarnpkg.com/superagent/-/superagent-3.7.0.tgz#bd58bfde2cbc5305adb9ccbb6dacba18408629d6"
+  dependencies:
+    component-emitter "^1.2.0"
+    cookiejar "^2.1.0"
+    debug "^3.1.0"
+    extend "^3.0.0"
+    form-data "^2.3.1"
+    formidable "^1.1.1"
+    methods "^1.1.1"
+    mime "^1.4.1"
+    qs "^6.5.1"
+    readable-stream "^2.0.5"
+
+superagent@^3.8.1:
+  version "3.8.1"
+  resolved "https://registry.yarnpkg.com/superagent/-/superagent-3.8.1.tgz#2571fd921f3fcdba43ac68c3b35c91951532701f"
   dependencies:
     component-emitter "^1.2.0"
     cookiejar "^2.1.0"
