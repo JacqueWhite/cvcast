@@ -74,7 +74,8 @@ class AddProjectForm extends Component {
         team                  : this.state.team                 || this.props.project.team,
         link                  : this.state.link                 || this.props.project.link,
         github                : this.state.github               || this.props.project.github,
-        ownerID               : this.state.ownerID              || this.props.project.ownerID
+        ownerID               : this.state.ownerID              || this.props.project.ownerID,
+        open                  : true                 
       }, function() {
 
         API.updateProject(this.props.project.id, this.state)
@@ -109,7 +110,8 @@ class AddProjectForm extends Component {
         team                  : this.state.team,
         link                  : this.state.link,
         github                : this.state.github,
-        ownerID               : this.state.ownerID
+        ownerID               : this.state.ownerID,
+        open                  : true
       }
     this.setState({ ownerID : this.props.user._id}, () => {
       console.log("Going to save a new project....");
@@ -265,7 +267,7 @@ uploadFile(files) {
 
             <div className="row form-row">
                 <div className="input-field col s6">
-                  <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.image} onChange={this.handleInputChange} style={{border:'none', marginTop:12}} name="image">
+                  <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.image} onChange={this.handleInputChange} style={{border:'none'}} name="image">
                     <button className="waves-effect waves-light btn">Add Project Image</button>
                   </Dropzone>
                 </div>
@@ -369,13 +371,14 @@ uploadFile(files) {
                     <button
                       onClick={this.handleFormSubmit}
                       type="submit"
+                      class="waves-effect waves-light btn"
                       >
                       <i className="material-icons right">send</i>
                       Submit
                     </button>
                     <Snackbar
                       open={this.state.open}
-                      message="Successfully Added Basic Info!"
+                      message="Successfully Added Project!"
                       autoHideDuration={4000}
                       onRequestClose={this.handleRequestClose}
                     />
@@ -419,6 +422,7 @@ uploadFile(files) {
             <div>
               <a
                 href="/portfolio"
+                class="waves-effect waves-light btn"
                 >
                 Thanks for adding a project! Go view your public profile.
                 </a>

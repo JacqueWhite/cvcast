@@ -64,7 +64,7 @@ class BasicInfoForm extends Component {
           headshot: this.state.headshot,
           linkedIn: this.state.linkedIn,
           gitHubProfile: this.state.gitHubProfile,
-          bio: this.state.bio
+          bio: this.state.bio,
         }
         console.log(myUser);
         API.saveUser(myUser)
@@ -193,7 +193,7 @@ class BasicInfoForm extends Component {
               </Dropzone>
               </div>
               <div className="input-field col s6">
-                <img style={{maxWidth:120, borderRadius: 100}} src={this.state.headshot} alt="" />
+                <img style={{maxWidth:120, borderRadius: 60}} src={this.state.headshot} alt="" />
               </div>
             </div>
             <div className="row form-row">
@@ -294,6 +294,7 @@ class BasicInfoForm extends Component {
             <div>
               <a
                 href="/edit"
+                class="waves-effect waves-light btn"
                 >
                 Thanks for adding a user! Go add projects.
                 </a>

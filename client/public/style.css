@@ -55,6 +55,17 @@ div.nav-wrapper {
     bottom: 0;
     opacity: 0.7;
 }
+  
+
+.card {
+/*    margin: 5px !important;*/
+/*    margin: .5rem 0 1rem !important;*/
+    margin: 10px !important;
+/*    padding-top: 0px !important;
+    padding-right: 0.75rem !important;
+    padding-bottom: 0px !important;
+    padding-left: 0.75rem !important;*/
+}
 
 nav ul a,
 nav .brand-logo {
