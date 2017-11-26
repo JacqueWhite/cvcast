@@ -21,7 +21,7 @@ const PortfolioCardEdit = props => (
               </div>
               <div className="edit-icons">
                 <div className="fixed-action-btn horizontal">
-                  <a className="btn-floating red" href="#edit-project" onClick = {() => {props.edit(props)}}>
+                  <a className="btn-floating red" href="#edit-project" onClick= {() => {props.edit(props)}}>
                     <i className="material-icons">mode_edit</i>
                   </a>
                   <ul>

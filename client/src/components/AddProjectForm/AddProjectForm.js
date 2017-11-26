@@ -26,7 +26,8 @@ class AddProjectForm extends Component {
     ownerID: this.props.user._id,
     finished: false,
     stepIndex: 0,
-    open: false
+    open: false,
+    currentProject: {}
   }
 
   onChange(event){
@@ -82,6 +83,7 @@ class AddProjectForm extends Component {
           .then(() => {
             this.props.update();
             this.props.toggleEdit();
+            console.log("Going to EDIT this project....");
           })
           .catch(err => console.log(err));
       })
@@ -231,7 +233,7 @@ uploadFile(files) {
               <div className="row form-row">
                 <div className="input-field col s12">
                   <input
-                    value={this.state.projectName}
+                    defaultValue={this.props.project.project}
                     onChange={this.handleInputChange}
                     name="projectName"
                     placeholder="Project Name (required)"
@@ -241,7 +243,8 @@ uploadFile(files) {
               <div className="row form-row">
                 <div className="input-field col s12">
                   <input
-                  value={this.state.link}
+                  defaultValue={this.props.project.link}
+
                   onChange={this.handleInputChange}
                   name="link"
                   placeholder="Link URL (ex: https://www.myproject.com)"
@@ -251,7 +254,8 @@ uploadFile(files) {
               <div className="row form-row">
                 <div className="input-field col s12">
                 <input
-                  value={this.state.github}
+                  defaultValue={this.props.project.github}
+
                   onChange={this.handleInputChange}
                   name="github"
                   placeholder="GitHub URL (ex: https://github.com/username/project)"
@@ -279,7 +283,8 @@ uploadFile(files) {
             <div className="row form-row">
               <div className="input-field col s12">
                   <input
-                  value={this.state.team}
+                  defaultValue={this.props.project.team}
+
                   onChange={this.handleInputChange}
                   name="team"
                   placeholder="Team (ex: Tommy, Jill, Bobby)"
@@ -296,7 +301,8 @@ uploadFile(files) {
               <div className="row form-row">
                 <div className="input-field col s12">
                   <input
-                  value={this.state.description}
+                  defaultValue={this.props.project.description}
+
                   onChange={this.handleInputChange}
                   name="description"
                   maxLength="150"

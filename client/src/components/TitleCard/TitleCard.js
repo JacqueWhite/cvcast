@@ -21,7 +21,7 @@ const TitleCard = props => (
 	    </div>
 	    <span className="card-title black-text">{props.firstName} {props.lastName}</span>
 	    <span className="card-title black-text email"><a href={`mailto:${props.email}`}>{props.email}</a> | <a href={props.linkedIn} target="_blank">View My LinkedIn</a> | <a href={props.gitHubProfile} target="_blank">GitHub</a></span>
-	    <span className="black-text">{props.bio}</span>
+	    <span className="black-text" id="edit-project">{props.bio}</span>
 	  </div>
 	</div>
 </div>
