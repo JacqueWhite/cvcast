@@ -7,7 +7,7 @@ const PortfolioCardEdit = props => (
         <div className="card portfolio-card">
 
             <div className="card-image waves-effect waves-block waves-light">
-                <img className="activator" src={props.image} alt={props.projectName}/>
+                <img className="activator" src={props.image} alt={props.project}/>
             </div>
             <div className="card-content">
                 <span className="card-title activator grey-text text-darken-4">{props.projectName}
@@ -44,6 +44,7 @@ const PortfolioCardEdit = props => (
 
         </div>
     </div>
+    <div id={props.project}></div>
 </div>
 );
 export default PortfolioCardEdit;

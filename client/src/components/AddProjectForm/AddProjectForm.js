@@ -429,6 +429,7 @@ uploadFile(files) {
                 onClick={this.handleFormSubmit}
                 disabled={stepIndex < 4}
                 label='Submit'
+                href={`#${this.state.projectName}`}
                 style={{display: `inline-flex`, width: `40%`}}
                 />
               <Snackbar

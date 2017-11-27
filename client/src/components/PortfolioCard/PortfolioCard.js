@@ -30,6 +30,7 @@ const PortfolioCard = props => (
               </div>
           </div>
       </div>
+      <div id={props.project}></div>
 </div>
 );
 export default PortfolioCard;
