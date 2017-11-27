@@ -3,21 +3,49 @@
   height: 10% !important;
 }
 
-img.profile-img {
-  max-height: 213.33px;
-  max-width: 213.33px;
+.img-circle {
+    border-radius: 50%;
+}
+.img-circle {
+    border-radius: 0;
 }
 
+.ratio {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-bottom: 100%;
+    position: relative;
+    width: 100%;
+}
+
+.img-circle {
+    border-radius: 50%;
+}
+.img-responsive {
+    display: block;
+    height: auto;
+    width: 100%;
+    max-height: 250px;
+    max-width: 250px;
+    min-height: 150px;
+    min-width: 150px;
+}
+
+/*img.profile-img {
+  height: auto;
+  max-width: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+}
+*/
 img.portfolio-banner {
   height: 250px;
 }
 
-.card {
-  margin: 5px;
-}
-
 div.card.card-about {
-  margin: 10px;
+  padding-left: 20px;
+  padding-bottom: 20px;
 }
 
 span.card-title.black-text.email {
@@ -25,9 +53,16 @@ span.card-title.black-text.email {
 }
 
 .profile-pic {
-  margin-top: -6em;
-  z-index: 1;
+  margin-top: -5em;
   position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+div.col.profile-pic {
+  z-index: 998;
+  padding: 0 !important;
+  margin: 0;
 }
 
 .profile-pic > img {
