@@ -371,7 +371,7 @@ uploadFile(files) {
 
           <div className="row row-project-form">
             <div>
-              <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
+              <div style={{width: '100%', margin: '0'}}>
                 <div className="row form-row">
                   <div className="col s12">
                     <button
@@ -403,10 +403,10 @@ uploadFile(files) {
 
   render() {
     const {finished, stepIndex} = this.state;
-    const contentStyle = {margin: '0 16px'};
+    const contentStyle = {margin: '0'};
 
     return (
-      <div className="card">
+      <div className="card add-project-card">
         <div className="card-content black-text">
 
         <Stepper activeStep={stepIndex}>
@@ -436,16 +436,17 @@ uploadFile(files) {
           ) : (
             <div>
               <div>{this.getStepContent(stepIndex)}</div>
-              <div style={{marginTop: 12}}>
+              <div>
                 <FlatButton
                   label="Back"
+                  id="back-button"
                   disabled={stepIndex === 0}
                   onClick={this.handlePrev}
-                  style={{marginRight: 10}}
                 />
                 <RaisedButton
                   primary={true}
                   label='Next'
+                  id="next-button"
                   disabled={stepIndex === 4}
                   onClick={this.handleNext}
                 />

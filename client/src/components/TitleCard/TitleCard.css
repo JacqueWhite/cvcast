@@ -1,22 +1,34 @@
-.card-about {
+/*.card-about {
   overflow: visible;
   height: 10% !important;
-}
+
+}*/
 
 .img-circle {
     border-radius: 50%;
 }
-.img-circle {
-    border-radius: 0;
-}
+
 
 .ratio {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    padding-bottom: 100%;
-    position: relative;
-    width: 100%;
+}
+
+div.title-card {
+  height: auto !important;
+  display: block;
+  padding-left: 0px !important;
+  padding-right: 0px !important;
+}
+
+div.card {
+    clear: both;
+    display: block;
+    line-height: 32px;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
 }
 
 .img-circle {
@@ -24,75 +36,32 @@
 }
 .img-responsive {
     display: block;
-    height: auto;
-    width: 100%;
-    max-height: 250px;
-    max-width: 250px;
-    min-height: 150px;
-    min-width: 150px;
+    height: 200px;
+    width: 200px;
+    overflow: hidden;
 }
 
-/*img.profile-img {
-  height: auto;
-  max-width: 200px;
-  border-radius: 50%;
-  overflow: hidden;
-}
-*/
 img.portfolio-banner {
   height: 250px;
 }
 
-div.card.card-about {
-  padding-left: 20px;
-  padding-bottom: 20px;
-}
 
 span.card-title.black-text.email {
   font-size: 1.1em;
 }
 
 .profile-pic {
-  margin-top: -5em;
-  position: relative;
-  top: 50%;
-  transform: translateY(-50%);
+/*  margin-bottom: -1em;*/
+  bottom: 20%;
+  transform: translateY(12%);
+  z-index: 998;
 }
 
 div.col.profile-pic {
-  z-index: 998;
   padding: 0 !important;
   margin: 0;
 }
 
 .profile-pic > img {
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-
-.controls {
-  cursor: pointer;
-}
-
-.row-menu{
-  position:relative;
-}
-
-.menu {
-  display:none;
-  right: 1em;
-  top: 1.8em;
-  position: absolute;
-  background-color: #fff;
-  padding-left: 0.8em;
-  padding-right: 0.8em;
-  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-}
-
-.menu-list > li {
-  margin-bottom: 1em;
-  cursor: pointer;
-}
-
-.menu-list > li:last-child{
-   margin-bottom: -1em;
 }

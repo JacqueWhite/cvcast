@@ -1,0 +1,18 @@
+div.card.add-project-card {
+	padding: 0px !important;
+	margin: 0px 20px !important;
+	height: auto !important;
+}
+
+input::placeholder {
+  font-size: 0.9rem;
+  color: grey;
+}
+
+.btn, .btn-large, .btn-flat {
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    width: 200px;
+	padding: 0px; 
+}
