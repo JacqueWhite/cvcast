@@ -67,9 +67,60 @@ div.nav-wrapper {
     padding-left: 0.75rem !important;*/
 }
 
+a#portfolio-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out !important;
+    cursor: pointer;
+}
+
+a#login-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #26a69a;
+    text-align: center;
+    letter-spacing: .5px;
+    transition: .2s ease-out !important;
+    cursor: pointer;    
+}
+
+.scale-transition.scale-out {
+    -webkit-transform: scale(0) !important;
+    transform: scale(0) !important;
+    transition: -webkit-transform .2s !important;
+    transition: transform .2s !important;
+    transition: transform .2s, -webkit-transform .2s !important;
+}
+
+a#logout-button {
+    text-decoration: none;
+    color: #fff;
+    background-color: #004d40;
+/*    opacity: 0.9;*/
+    text-align: center;
+    letter-spacing: .5px;
+    cursor: pointer;    
+}
+
+a#logout-button:hover {
+    background-color: #26a69a;
+}
+
+/*.btn:hover, .btn-large:hover {
+    background-color: #2bbbad;
+}*/
+
 nav ul a,
 nav .brand-logo {
   color: #444;
+}
+
+.row {
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .parallax {

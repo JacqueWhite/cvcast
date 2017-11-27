@@ -9,10 +9,47 @@ input::placeholder {
   color: grey;
 }
 
+.dropzone.dz-message.needsclick {
+font-size: 14px; letter-spacing: 0px; text-transform: uppercase; font-weight: 500; margin: 0px;
+    font-family: Roboto, sans-serif;
+}
+
 .btn, .btn-large, .btn-flat {
     border: none;
     border-radius: 2px;
     display: inline-block;
     width: 200px;
 	padding: 0px; 
+}
+
+.input-field {
+    position: relative;
+    margin-top: 0;
+}
+
+div.row-project-form {
+	margin-bottom: 5px;  
+}
+
+[type="checkbox"]+label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+    display: inline-block;
+    height: 25px;
+    line-height: 25px;
+    font-size: 1rem;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -ms-user-select: none;
+}
+
+div.card {
+    clear: both;
+    display: block;
+    line-height: 1.2rem;
+    margin-bottom: 8px;
+    padding-left: 20px;
+    padding-right: 20px;
 }

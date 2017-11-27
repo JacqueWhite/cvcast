@@ -13,6 +13,7 @@ import Snackbar from 'material-ui/Snackbar';
 import Dropzone from 'react-dropzone';
 import sha1 from 'sha1';
 import superagent from 'superagent';
+import ArrowForwardIcon from 'material-ui/svg-icons/navigation/arrow-forward';
 
 class AddProjectForm extends Component {
   state = {
@@ -75,8 +76,7 @@ class AddProjectForm extends Component {
         team                  : this.state.team                 || this.props.project.team,
         link                  : this.state.link                 || this.props.project.link,
         github                : this.state.github               || this.props.project.github,
-        ownerID               : this.state.ownerID              || this.props.project.ownerID,
-        open                  : true                 
+        ownerID               : this.state.ownerID              || this.props.project.ownerID               
       }, function() {
 
         API.updateProject(this.props.project.id, this.state)
@@ -88,7 +88,7 @@ class AddProjectForm extends Component {
           .catch(err => console.log(err));
       })
     } else {
-      this.setState({ ownerID : this.props.user._id }, () => {
+      this.setState({ ownerID : this.props.user._id, open: true}, () => {
       console.log("Going to save a new project....");
       console.log(this.state);
         API.saveProject(this.state)
@@ -269,27 +269,14 @@ uploadFile(files) {
         return (
           <div>
 
-            <div className="row form-row">
-                <div className="input-field col s6">
-                  <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.image} onChange={this.handleInputChange} style={{border:'none'}} name="image">
-                    <button className="waves-effect waves-light btn">Add Project Image</button>
+            <div className="row center">
+                <div className="dropzone col s12 center">
+                  <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.image} onChange={this.handleInputChange} style={{border:'dashed 2px #0087F7', padding: 35, margin: `auto`, height: 150, width: 150, borderRadius: `50%`, textAlign: `center`, backgroundImage: `url(${this.state.image})`, backgroundPosition: `center center`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`}} name="image">
+                  <div className="dropzone dz-message needsclick">Drag or click to upload a Project Image</div>
                   </Dropzone>
-                </div>
-                <div className="input-field col s6">
-                    <img style={{maxWidth:120, borderRadius: 100}} src={this.state.image} alt="" />
-                </div>
-              </div>
-            
-            <div className="row form-row">
-              <div className="input-field col s12">
-                  <input
-                  defaultValue={this.props.project.team}
 
-                  onChange={this.handleInputChange}
-                  name="team"
-                  placeholder="Team (ex: Tommy, Jill, Bobby)"
-                  type="text"/>
-              </div>
+                </div>
+
             </div>
             
           </div>
@@ -309,15 +296,23 @@ uploadFile(files) {
                   placeholder="This is a really cool app that solves a problem"
                   type="text"/>
               </div>
+              <div className="input-field col s12">
+                  <input
+                  defaultValue={this.props.project.team}
+                  onChange={this.handleInputChange}
+                  name="team"
+                  placeholder="Team (ex: Tommy, Jill, Bobby)"
+                  type="text"/>
+              </div>
             </div>
           </div>
           );
       case 3:
         return (
+<div>
         <div>
-          <div className="row row-project-form">
-              <legend>Technologies used</legend>
-                <div className="input-field col s4">
+          <div className="row-project-form">
+                <div className="col s4">
                   <input
                     type="checkbox"
                     id="check-1"
@@ -327,7 +322,7 @@ uploadFile(files) {
                     />
                   <label htmlFor="check-1">HTML</label>
                 </div>
-                <div className="input-field col s4">
+                <div className="col s4">
                   <input
                     type="checkbox"
                     id="check-2"
@@ -337,7 +332,7 @@ uploadFile(files) {
                     />
                   <label htmlFor="check-2">Javascript</label>
                 </div>
-                <div className="input-field col s4">
+                <div className="col s4">
                   <input
                     type="checkbox"
                     id="check-3"
@@ -347,7 +342,7 @@ uploadFile(files) {
                     />
                   <label htmlFor="check-3">CSS</label>
                 </div>
-                <div className="input-field col s4">
+                <div className="col s4">
                   <input
                     type="checkbox"
                     id="check-4"
@@ -357,7 +352,7 @@ uploadFile(files) {
                     />
                   <label htmlFor="check-4">SQL</label>
                 </div>
-                <div className="input-field col s4">
+                <div className="col s4">
                   <input
                     type="checkbox"
                     id="check-5"
@@ -368,36 +363,33 @@ uploadFile(files) {
                   <label htmlFor="check-5">NoSQL</label>
                 </div>
           </div>
-
-          <div className="row row-project-form">
-            <div>
-              <div style={{width: '100%', margin: '0'}}>
-                <div className="row form-row">
-                  <div className="col s12">
-                    <button
-                      onClick={this.handleFormSubmit}
-                      type="submit"
-                      class="waves-effect waves-light btn"
-                      >
-                      <i className="material-icons right">send</i>
-                      Submit
-                    </button>
-                    <Snackbar
-                      open={this.state.open}
-                      message="Successfully Added Project!"
-                      autoHideDuration={4000}
-                      onRequestClose={this.handleRequestClose}
-                    />
-                  </div>
-                </div>
-              </div>
-            </div>
+          <br/>  
           </div>
 
-        </div>
+</div>
           );
+      case 4:
+          return (
+            <div>
+                <a
+                href="/portfolio"
+                class="waves-effect waves-light btn"
+                style={{width: `auto`, paddingRight: 5, paddingLeft: 5}}
+                >
+                View your public profile
+                </a>
+              <br/>
+              <a
+                href="/edit"
+                class="waves-effect waves-light btn"
+                style={{width: `auto`, paddingRight: 5, paddingLeft: 5}}
+                >
+                Add more projects
+                </a>
+            </div>
+            );
       default:
-        return 'You\'re a long way from home sonny jim!';
+        return 'Are you sure you want to submit this project?';
     }
   }
 
@@ -409,39 +401,53 @@ uploadFile(files) {
       <div className="card add-project-card">
         <div className="card-content black-text">
 
-        <Stepper activeStep={stepIndex}>
-          <Step>
-            <StepLabel>Title</StepLabel>
+        <Stepper activeStep={stepIndex} style={{paddingLeft: 0, paddingRight: 0}} connector={null}>
+          <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
+            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Title</StepLabel>
           </Step>
-          <Step>
-            <StepLabel>Links</StepLabel>
+          <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
+            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Links</StepLabel>
           </Step>
-          <Step>
-            <StepLabel>Details</StepLabel>
+          <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
+            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Details</StepLabel>
           </Step>
-          <Step>
-            <StepLabel>Tags</StepLabel>
+          <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
+            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Tags</StepLabel>
           </Step>
         </Stepper>
-        <div style={contentStyle}>
+        <div style={{textAlign: `center`}}>
           {finished ? (
             <div>
-              <a
-                href="/portfolio"
-                class="waves-effect waves-light btn"
-                >
-                Thanks for adding a project! Go view your public profile.
-                </a>
+               <FlatButton
+                  label="Re-Do"
+                  href="/edit"
+                  id="back-button"
+                  style={{marginRight: 10, width: `20%`}}
+                />
+              <RaisedButton
+                primary={true}
+                onClick={this.handleFormSubmit}
+                disabled={stepIndex < 4}
+                label='Submit'
+                style={{display: `inline-flex`, width: `40%`}}
+                />
+              <Snackbar
+                open={this.state.open}
+                message="Successfully Added Project!"
+                autoHideDuration={4000}
+                onRequestClose={this.handleRequestClose}
+              />
             </div>
           ) : (
             <div>
               <div>{this.getStepContent(stepIndex)}</div>
-              <div>
+              <div style={{width: `100%`}}>
                 <FlatButton
                   label="Back"
                   id="back-button"
                   disabled={stepIndex === 0}
                   onClick={this.handlePrev}
+                  style={{marginRight: 10, width: `30%`}}
                 />
                 <RaisedButton
                   primary={true}
@@ -449,6 +455,7 @@ uploadFile(files) {
                   id="next-button"
                   disabled={stepIndex === 4}
                   onClick={this.handleNext}
+                  style={{marginRight: 10, width: `30%`}}
                 />
               </div>
             </div>

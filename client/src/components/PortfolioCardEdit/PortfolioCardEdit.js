@@ -10,27 +10,25 @@ const PortfolioCardEdit = props => (
                 <img className="activator" src={props.image} alt={props.projectName}/>
             </div>
             <div className="card-content">
-                <span className="card-title activator grey-text text-darken-4">{props.projectName}<i className="material-icons right">arrow_forward</i></span>
+                <span className="card-title activator grey-text text-darken-4">{props.projectName}
+                  <div className="fixed-action-btn horizontal">
+                    <a className="btn-floating red" href="#edit-project" onClick= {() => {props.edit(props)}}>
+                      <i className="material-icons">mode_edit</i>
+                    </a>
+                    <ul>
+                       <li><a className="remove btn-floating red" onClick = {() => props.remove(props.id, props.user._id)}><i className="material-icons">delete_forever</i></a></li>
+                    </ul>
+                  </div>
+                </span>
                 <h6><a href={props.link} target="_blank">See it Live</a></h6>
-            </div>
-            <div className="card-action">
+                <hr/>
               <div>
                 {props.technologiesKeywords.map(tag => (
                 <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
                 ))}
               </div>
-              <div className="edit-icons">
-                <div className="fixed-action-btn horizontal">
-                  <a className="btn-floating red" href="#edit-project" onClick= {() => {props.edit(props)}}>
-                    <i className="material-icons">mode_edit</i>
-                  </a>
-                  <ul>
-                     <li><a className="remove btn-floating red" onClick = {() => props.remove(props.id, props.user._id)}><i className="material-icons">delete_forever</i></a></li>
-                  </ul>
-                </div>
-              </div>
-
-             </div>
+              <i className="material-icons right activator">arrow_forward</i>
+            </div>
 
             <div className="card-reveal">
                 <span className="card-title grey-text text-darken-4"><a href={props.link} target="_blank">{props.project}</a><i className="material-icons right">close</i></span>
@@ -43,7 +41,6 @@ const PortfolioCardEdit = props => (
                 <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
                 ))}
            </div>
-
 
         </div>
     </div>

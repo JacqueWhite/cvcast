@@ -45,38 +45,45 @@ class Main extends Component {
                 </a>
               )
             }
-            {
-                isAuthenticated() && (
-                    <a
-                      className="waves-effect waves-light btn-large"
-                      onClick={this.goTo.bind(this, 'welcome')}
-                    >
-                      Add Your Basic Info
-                    </a>
-                  )
-              }
+             { /*
+            //     isAuthenticated() && (
+            //         <a
+            //           className="waves-effect waves-light btn-large"
+            //           onClick={this.goTo.bind(this, 'welcome')}
+            //         >
+            //           Add Your Basic Info
+            //         </a>
+            //       )
+            //   */ }
               {
                 !isAuthenticated() && (
+                  <div>
+                  <br/>
                     <a
                       className="waves-effect waves-light btn-large"
                       onClick={this.login.bind(this)}
                     >
                       Log In
                     </a>
+                  </div>
                   )
               }
               {
                 isAuthenticated() && (
+                  <div>
+                  <br/>
                     <a
                       className="waves-effect waves-light btn-large"
+                      id="logout-button"
                       onClick={this.logout.bind(this)}
                     >
                       Log Out
                     </a>
+                  </div>
                   )
               }
 
-          <br/><br/>  
+          <br/>  
 
           <div className="row about">
 

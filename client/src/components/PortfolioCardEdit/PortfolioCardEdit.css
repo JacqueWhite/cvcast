@@ -10,6 +10,15 @@ div.fixed-action-btn.horizontal {
     margin: 10px 10px 0px;
 }
 
+.fixed-action-btn {
+    position: fixed;
+    right: 23px;
+    bottom: 23px;
+    padding-top: 15px;
+    margin-bottom: 0;
+    z-index: 995 !important;
+}
+
 .fixed-action-btn.horizontal ul li {
     display: inline-block;
     margin: 15px 15px;
@@ -85,10 +94,10 @@ div.card-image {
 
 .card, .portfolio-card{
     position: relative;
-    height: 500px !important;
+    height: 400px !important;
     background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
     background-repeat: no-repeat cover;
-    overflow: hidden;
+    overflow: scroll;
 }
 
 .waves-block {
@@ -144,16 +153,29 @@ div.card-action, div.card-reveal {
     background-repeat: no-repeat;
     overflow: hidden;
     background-size: cover;
+}
+
+.card-action {
+    position: relative;
+    padding: 16px 24px;
     height: -webkit-fill-available;
 }
 
-.card .card-action {
+.card {
+    position: relative;
+    background-color: inherit;
+    border-top: 1px solid rgba(160,160,160,0.2);
+    padding: 16px 24px;
+    height: auto;
+}
+
+/*.card .card-action {
     position: relative;
     background-color: inherit;
     border-top: 1px solid rgba(160,160,160,0.2);
     padding: 16px 24px;
     height: -webkit-fill-available;
-}
+}*/
 
 .tagsDiv {
     max-height: 100px;
