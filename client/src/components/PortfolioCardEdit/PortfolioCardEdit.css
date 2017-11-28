@@ -2,12 +2,34 @@ div.edit-icons {
   position: relative; 
 }
 
+button {
+    background-color: #26a69a;
+}
+
 div.fixed-action-btn.horizontal {
     position: absolute;
     display: inline-block;
     float: right!important;
     bottom: inherit;
     margin: 10px 10px 0px;
+}
+
+.btn-floating {
+    display: inline-block;
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    top: -25px;
+    padding: 0;
+    background-color: #26a69a;
+    border-radius: 50%;
+    transition: .3s;
+    cursor: pointer;
+    vertical-align: middle;
 }
 
 .fixed-action-btn {
@@ -133,19 +155,16 @@ div.card, div.card-panel {
     box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
 }
 
-/**, :after, :before {
-    box-sizing: inherit;
-}*/
-
-/*div {
-    display: block;
-}*/
-
 .card {
     height: 400px;
     background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
     background-repeat: no-repeat;
     overflow: hidden;
+    position: relative;
+    background-color: inherit;
+    border-top: 1px solid rgba(160,160,160,0.2);
+    padding: 16px 24px;
+    height: auto;
 }
 
 div.card-action, div.card-reveal {
@@ -161,212 +180,7 @@ div.card-action, div.card-reveal {
     height: -webkit-fill-available;
 }
 
-.card {
-    position: relative;
-    background-color: inherit;
-    border-top: 1px solid rgba(160,160,160,0.2);
-    padding: 16px 24px;
-    height: auto;
-}
-
-/*.card .card-action {
-    position: relative;
-    background-color: inherit;
-    border-top: 1px solid rgba(160,160,160,0.2);
-    padding: 16px 24px;
-    height: -webkit-fill-available;
-}*/
 
 .tagsDiv {
     max-height: 100px;
 }
-
-
-
-/*.about-project {
-    color: black;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.btn {
-  max-width: 50%;
-  font-size: 12px;
-  text-align: left;
-  vertical-align: center;
-  padding: 5px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin: 1px;
-}
-
-element.style {
-    overflow: hidden;
-}
-
-div.card-image {
-    position: relative;
-    height: 200px !important;
-    overflow: hidden;
-}
-
-.card, .portfolio-card{
-    position: relative;
-    height: 500px !important;
-    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
-    background-repeat: no-repeat cover;
-    overflow: hidden;
-}
-
-.waves-block {
-    display: block;
-}
-
-.waves-effect {
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    overflow: hidden;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    vertical-align: middle;
-    z-index: 1;
-    transition: .3s ease-out;
-}
-
-div.card, div.card-panel {
-    transition: box-shadow .25s;
-    margin: .5rem 0 1rem;
-    border-radius: 2px;
-    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
-    background-repeat: no-repeat;
-    overflow: hidden;
-    background-size: cover;
-}
-
-.btn, .btn-floating, .btn-large, .card, .card-panel, .collapsible, .dropdown-content, .side-nav, .toast, .z-depth-1, nav {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
-}
-
-*, :after, :before {
-    box-sizing: inherit;
-}
-
-div {
-    display: block;
-}
-
-.card {
-    height: 400px;
-    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-
-div.card-action, div.card-reveal {
-    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
-    background-repeat: no-repeat;
-    overflow: hidden;
-    background-size: cover;
-}
-
-.tagsDiv {
-    max-height: 100px;
-}*/
-
-/*.about-project {
-    color: black;
-    font-weight: bold;
-    font-size: 1.1rem;
-}
-
-.btn {
-  max-width: 50%;
-  font-size: 12px;
-  text-align: left;
-  vertical-align: center;
-  padding: 5px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin: 1px;
-}
-
-element.style {
-    overflow: hidden;
-}
-
-div.card-image {
-    position: relative;
-    height: 200px !important;
-    overflow: hidden;
-}
-
-.card, .portfolio-card{
-    position: relative;
-    height: 500px !important;
-    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
-    background-repeat: no-repeat cover;
-    overflow: hidden;
-}
-
-.waves-block {
-    display: block;
-}
-
-.waves-effect {
-    position: relative;
-    cursor: pointer;
-    display: inline-block;
-    overflow: hidden;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    -webkit-tap-highlight-color: transparent;
-    vertical-align: middle;
-    z-index: 1;
-    transition: .3s ease-out;
-}
-
-div.card, div.card-panel {
-    transition: box-shadow .25s;
-    margin: .5rem 0 1rem;
-    border-radius: 2px;
-    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
-    background-repeat: no-repeat;
-    overflow: hidden;
-    background-size: cover;
-}
-
-.btn, .btn-floating, .btn-large, .card, .card-panel, .collapsible, .dropdown-content, .side-nav, .toast, .z-depth-1, nav {
-    box-shadow: 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12), 0 3px 1px -2px rgba(0,0,0,.2);
-}
-
-*, :after, :before {
-    box-sizing: inherit;
-}
-
-div {
-    display: block;
-}
-
-.card {
-    height: 400px;
-    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
-    background-repeat: no-repeat;
-    overflow: hidden;
-}
-
-div.card-action, div.card-reveal {
-    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
-    background-repeat: no-repeat;
-    overflow: hidden;
-    background-size: cover;
-}
-
-.tagsDiv {
-    max-height: 100px;
-}*/

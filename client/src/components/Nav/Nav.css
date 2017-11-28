@@ -2,10 +2,25 @@
 	color: #fff;
 }*/
 
-nav, ul, i, nav, ul#mobile-nav.side-nav, li, .brand-logo {
+ul#mobile-nav.side-nav {
+	background-color: #212E39 !important;
+}
+
+nav, nav, ul#mobile-nav.side-nav, .brand-logo {
 	color: white !important;
 	background-color: #212E39 !important;
-	z-index: 2;
+	z-index: 999;
+}
+
+i.material-icons.nav-icon, li.nav-text > a {
+	color: white !important;
+}
+
+ul.nav-mobile {
+	background-color: #212E39 !important;
+    padding-left: 0 !important;
+    padding-top: 50px !important;
+    list-style-type: none !important;
 }
 
 #sidenav-overlay {
@@ -15,12 +30,13 @@ nav, ul, i, nav, ul#mobile-nav.side-nav, li, .brand-logo {
     right: 0;
     height: 120vh;
     background-color: rgba(0,0,0,0.5);
-    z-index: 2 !important;
+    z-index: 996 !important;
     will-change: opacity;
 }
 
 .side-nav {
     position: fixed;
+    background-color: #212E39 !important;
     width: 200px;
     opacity: 0.8;
     left: 0;

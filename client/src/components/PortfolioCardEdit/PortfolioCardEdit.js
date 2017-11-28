@@ -10,9 +10,9 @@ const PortfolioCardEdit = props => (
                 <img className="activator" src={props.image} alt={props.project}/>
             </div>
             <div className="card-content">
-                <span className="card-title activator grey-text text-darken-4">{props.projectName}
+                <span className="card-title grey-text text-darken-4">{props.projectName}
                   <div className="fixed-action-btn horizontal">
-                    <a className="btn-floating red" href="#edit-project" onClick= {() => {props.edit(props)}}>
+                    <a className="btn-floating edit-button" href="#edit-project" onClick= {() => {props.edit(props)}}>
                       <i className="material-icons">mode_edit</i>
                     </a>
                     <ul>
@@ -27,7 +27,7 @@ const PortfolioCardEdit = props => (
                 <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
                 ))}
               </div>
-              <i className="material-icons right activator">arrow_forward</i>
+              <i className="material-icons right bottom activator">arrow_forward</i>
             </div>
 
             <div className="card-reveal">

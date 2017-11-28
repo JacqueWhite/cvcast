@@ -4,7 +4,21 @@ import './Nav.css';
 
 
 const Nav = props => (
-<div className="navbar-fixed">
+	<div>
+		<Navbar brand='cvcast' fixed right>
+		<NavItem href='/edit'><Icon className="nav-icon">edit</Icon></NavItem>
+		<NavItem href='/portfolio'><Icon className="nav-icon">portrait</Icon></NavItem>
+		<NavItem href='/portfolio'><Icon className="nav-icon">link</Icon></NavItem>
+		<NavItem href='/'><Icon className="nav-icon">home</Icon></NavItem>
+		<NavItem className="nav-text">Hello {props.firstName}!</NavItem>
+	</Navbar>
+	</div>
+
+);
+
+export default Nav;
+
+{/*<div className="navbar-fixed">
   <nav>
     <div className="nav-wrapper">
      <div className="col s12">
@@ -26,42 +40,4 @@ const Nav = props => (
    </div>
   </nav>
 </div>
-
-);
-
-export default Nav;
-
-// <div className="navbar-fixed">
-// 	<nav>
-// 		<div className="nav-wrapper">
-// 			<div className="col s12">
-// 					<a href="/" className="brand-logo">cvcast</a>
-// 					<a className="button-collapse" href="#" data-activates="nav-mobile">
-// 					<i className="material-icons">view_headline</i></a>
-// 				<ul className="right hide-on-med-and-down">
-// 					<li><a href="/edit"><i className="material-icons">edit</i></a></li>
-// 					<li><a href="/portfolio"><i className="material-icons">public</i></a></li>
-// 					<li><a href=""><i className="material-icons">link</i></a></li>
-// 					<li><a href="/main"><i className="material-icons">portrait</i></a></li>
-// 					<li><a href="">Hello Jacque!</a></li>
-// 				</ul>
-
-// 				<ul id="nav-mobile" className="side-nav" style="transform: translateX(0px);">
-// 					<li><a href="/edit"><i className="material-icons">edit</i></a></li>
-// 					<li><a href="/portfolio"><i className="material-icons">public</i></a></li>
-// 					<li><a href=""><i className="material-icons">link</i></a></li>
-// 					<li><a href="/main"><i className="material-icons">portrait</i></a></li>
-// 					<li><a href="">Hello Jacque!</a></li>
-// 				</ul>
-// 			</div>
-// 		</div>
-// 	</nav>
-// </div>
-
-// 	<Navbar brand='cvcast' fixed right>
-// 		<NavItem href='/edit'><Icon>edit</Icon></NavItem>
-// 		<NavItem href='/portfolio'><Icon>public</Icon></NavItem>
-// 		<NavItem href=''><Icon>link</Icon></NavItem>
-// 		<NavItem href='/main'><Icon>portrait</Icon></NavItem>
-// 		<NavItem>Hello {props.firstName}!</NavItem>
-// 	</Navbar>
+*/}
