@@ -100,33 +100,6 @@ class AddProjectForm extends Component {
     }
   }
 
-  handleFormSubmito = event => {
-    event.preventDefault();
-    console.log("adding yo project");
-    if (this.state.projectName && this.state.image && this.state.description) {
-      var myProject = {
-        projectName           : this.state.projectName,
-        image                 : this.state.image,
-        description           : this.state.description,
-        technologiesKeywords  : this.state.technologiesKeywords,
-        team                  : this.state.team,
-        link                  : this.state.link,
-        github                : this.state.github,
-        ownerID               : this.state.ownerID,
-        open                  : true
-      }
-    this.setState({ ownerID : this.props.user._id}, () => {
-      console.log("Going to save a new project....");
-      console.log(this.state.ownerID);
-        API.saveProject(myProject)
-          .then(() => {
-            this.props.update();
-          })
-          .catch(err => console.log(err));
-      })
-  }
-}
-
 uploadFile(files) {
   console.log('uploadFile:  ')
   const image = files[0]

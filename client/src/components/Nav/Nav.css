@@ -35,6 +35,7 @@ ul.nav-mobile {
 }
 
 .side-nav {
+	padding-top: 50px !important;
     position: fixed;
     background-color: #212E39 !important;
     width: 200px;

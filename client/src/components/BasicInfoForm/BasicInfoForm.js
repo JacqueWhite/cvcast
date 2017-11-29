@@ -68,6 +68,9 @@ class BasicInfoForm extends Component {
         }
         console.log(myUser);
         API.saveUser(myUser)
+          .then(() => {
+            this.setState({open:true});
+          })
           .catch(err => console.log(err));
       }
     }
@@ -188,12 +191,9 @@ class BasicInfoForm extends Component {
           <div>
             <div className="row form-row">
               <div className="input-field col s6">
-              <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.headshot} onChange={this.handleInputChange} style={{border:'none', marginTop:12}}>
-                <button className="waves-effect waves-light btn">Add Profile Photo</button>
-              </Dropzone>
-              </div>
-              <div className="input-field col s6">
-                <img style={{maxWidth:120, borderRadius: 60}} src={this.state.headshot} alt="" />
+                 <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.headshot} onChange={this.handleInputChange} style={{border:'dashed 2px #0087F7', padding: 35, margin: `auto`, height: 150, width: 150, borderRadius: `50%`, textAlign: `center`, backgroundImage: `url(${this.state.headshot})`, backgroundPosition: `center center`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`}}>
+                  <div className="dropzone dz-message needsclick">Drag or click to upload a Profile Picture</div>
+                  </Dropzone>
               </div>
             </div>
             <div className="row form-row">
@@ -249,7 +249,7 @@ class BasicInfoForm extends Component {
                   </button>
                   <Snackbar
                     open={this.state.open}
-                    message="Successfully Added Basic Info!"
+                    message="Successfully Added Profile Info!"
                     autoHideDuration={4000}
                     onRequestClose={this.handleRequestClose}
                   />
