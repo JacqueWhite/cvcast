@@ -14,6 +14,7 @@ import Dropzone from 'react-dropzone';
 import sha1 from 'sha1';
 import superagent from 'superagent';
 import ArrowForwardIcon from 'material-ui/svg-icons/navigation/arrow-forward';
+import Loader from './Loader.js'
 
 class AddProjectForm extends Component {
   state = {
@@ -28,7 +29,8 @@ class AddProjectForm extends Component {
     finished: false,
     stepIndex: 0,
     open: false,
-    currentProject: {}
+    currentProject: {},
+    loading: false
   }
 
   onChange(event){
@@ -82,6 +84,7 @@ class AddProjectForm extends Component {
         API.updateProject(this.props.project.id, this.state)
           .then(() => {
             this.props.update();
+            this.setState({open: true});
             this.props.toggleEdit();
             console.log("Going to EDIT this project....");
           })
@@ -198,6 +201,20 @@ uploadFile(files) {
     }
   }
 
+  loadImage = () => {
+    this.setState({
+      loading: true
+    });
+  }
+
+  handleLoading = event => {
+    event.preventDefault();
+    console.log("loading image");
+    if (this.props.loading) {
+
+    }
+  }
+
   getStepContent(stepIndex) {
     switch (stepIndex) {
       case 0:
@@ -206,7 +223,7 @@ uploadFile(files) {
               <div className="row form-row">
                 <div className="input-field col s12">
                   <input
-                    defaultValue={this.props.project.project}
+                    defaultValue={this.props.project.projectName}
                     onChange={this.handleInputChange}
                     name="projectName"
                     placeholder="Project Name (required)"
@@ -244,10 +261,12 @@ uploadFile(files) {
 
             <div className="row center">
                 <div className="dropzone col s12 center">
-                  <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.image} onChange={this.handleInputChange} style={{border:'dashed 2px #0087F7', padding: 35, margin: `auto`, height: 150, width: 150, borderRadius: `50%`, textAlign: `center`, backgroundImage: `url(${this.state.image})`, backgroundPosition: `center center`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`}} name="image">
-                  <div className="dropzone dz-message needsclick">Drag or click to upload a Project Image</div>
-                  </Dropzone>
+                  <Dropzone onDrop={this.uploadFile.bind(this)} onClick={this.loadImage} value={this.state.image} onChange={this.handleInputChange} style={{border:'dashed 2px #0087F7', padding: 35, margin: `auto`, height: 150, width: 150, borderRadius: `50%`, textAlign: `center`, backgroundImage: `url(${this.state.image})`, backgroundPosition: `center center`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`}} name="image">
+                  <div style={{position: `relative`}} className="dropzone dz-message needsclick">Drag or click to upload a Project Image</div>
 
+                  </Dropzone>
+                  <br/>
+                  <p>Please wait for image to load above</p>
                 </div>
 
             </div>
@@ -262,7 +281,6 @@ uploadFile(files) {
                 <div className="input-field col s12">
                   <input
                   defaultValue={this.props.project.description}
-
                   onChange={this.handleInputChange}
                   name="description"
                   maxLength="150"
@@ -392,10 +410,16 @@ uploadFile(files) {
           {finished ? (
             <div>
                <FlatButton
-                  label="Re-Do"
+                  label="Start Over"
                   href="/edit"
                   id="back-button"
-                  style={{marginRight: 10, width: `20%`}}
+                  style={{marginRight: 10, width: `15%`}}
+                />
+              <FlatButton
+                  label="Add Another"
+                  href="/edit"
+                  id="back-button"
+                  style={{marginRight: 10, width: `15%`}}
                 />
               <RaisedButton
                 primary={true}
@@ -403,7 +427,7 @@ uploadFile(files) {
                 disabled={stepIndex < 4}
                 label='Submit'
                 href={`#${this.state.projectName}`}
-                style={{display: `inline-flex`, width: `40%`}}
+                style={{display: `inline-flex`, width: `30%`}}
                 />
               <Snackbar
                 open={this.state.open}

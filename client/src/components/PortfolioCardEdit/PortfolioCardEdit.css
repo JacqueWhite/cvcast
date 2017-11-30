@@ -24,6 +24,7 @@ div.fixed-action-btn.horizontal {
     height: 40px;
     line-height: 40px;
     top: -25px;
+    left: 20px;
     padding: 0;
     background-color: #26a69a;
     border-radius: 50%;
@@ -53,34 +54,6 @@ div.fixed-action-btn.horizontal {
     font-size: 1.1rem;
 }
 
-/*.btn {
-  max-width: 50%;
-  font-size: 12px;
-  text-align: left;
-  vertical-align: center;
-  padding: 5px;
-  padding-top: 0px;
-  padding-bottom: 0px;
-  margin: 1px;
-}*/
-
-/*.btn-floating {
-    display: inline-block;
-    color: #fff;
-    position: relative;
-    overflow: hidden;
-    z-index: 1;
-    width: 40px;
-    height: 40px;
-    line-height: 40px;
-    padding: 0;
-    background-color: #26a69a;
-    border-radius: 50%;
-    -webkit-transition: .3s;
-    transition: .3s;
-    cursor: pointer;
-    vertical-align: middle;
-}*/
 div.chip {
     display: inline-block;
     height: 32px;
