@@ -9,7 +9,7 @@ const PortfolioCard = props => (
                   <img className="activator" src={props.image} alt={props.project}/>
               </div>
               <div className="card-content">
-                  <span className="card-title activator grey-text text-darken-4">{props.project}<i className="material-icons right">arrow_forward</i></span>
+                  <span className="card-title activator grey-text text-darken-4">{props.projectName}<i className="material-icons right">arrow_forward</i></span>
                   <p><a href={props.link} target="_blank">See it Live</a></p>
               </div>
               <div className="card-action">
@@ -30,7 +30,6 @@ const PortfolioCard = props => (
               </div>
           </div>
       </div>
-      <div id={props.project}></div>
 </div>
 );
 export default PortfolioCard;

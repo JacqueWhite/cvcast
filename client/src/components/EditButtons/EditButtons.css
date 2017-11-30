@@ -110,9 +110,8 @@ element.style {
 
 div.card-image {
     position: relative;
-    /* height: 200px !important; */
+    height: 200px !important;
     overflow: hidden;
-    height: 50%;
 }
 
 .card, .portfolio-card{
@@ -121,17 +120,6 @@ div.card-image {
     background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
     background-repeat: no-repeat cover;
     overflow: scroll;
-}
-
-.card {
-    background-image: url(https://s3.us-east-2.amazonaws.com/cvcast/halftone.png);
-    position: relative;
-    background-color: inherit;
-    height: auto;
-    background-repeat: no-repeat;
-    overflow: hidden;
-    border-top: 1px solid rgba(160, 160, 160, 0.2);
-    padding: 0px !important;
 }
 
 .waves-block {

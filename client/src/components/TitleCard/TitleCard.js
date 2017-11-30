@@ -7,7 +7,7 @@ const TitleCard = props => (
 	<div className="row">
 		<div className="col s12">
 			<div className="card title-card">
-			  <div className="card-image">
+			  <div className="card-image cover-photo">
 			    <img className="portfolio-banner responsive-img" src="https://s3.us-east-2.amazonaws.com/jacqueportfolio/purty_wood_%402X.png" alt="" />
 			  <span className="card-title"><div className="profile-pic ratio img-responsive img-circle" style={{backgroundImage: `url(${props.headshot})`}}></div></span>
 			  </div>

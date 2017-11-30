@@ -126,7 +126,7 @@ class Edit extends Component {
           {this.state.projects.map((portfoliocard) => (
             <PortfolioCardEdit
               id={portfoliocard._id}
-              project={portfoliocard.projectName}
+              projectName={portfoliocard.projectName}
               image={portfoliocard.image}
               description={portfoliocard.description}
               team={portfoliocard.team}

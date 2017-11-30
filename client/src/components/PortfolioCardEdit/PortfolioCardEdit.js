@@ -5,7 +5,7 @@ import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Snackbar from 'material-ui/Snackbar';
 
-class EditButtons extends Component {
+class PortfolioCardEdit extends Component {
 
 constructor(props) {
   super(props);
@@ -66,64 +66,112 @@ render() {
           autoHideDuration={4000}
           onRequestClose={this.handleRequestClose}
           />
+          <div className="col s12 m6 l4">
+              <div className="card portfolio-card">
 
+                  <div className="card-image waves-effect waves-block waves-light">
+                      <img className="activator" src={this.props.image} alt={this.props.project}/>
+                  </div>
+                  <div className="card-content">
+                      <span className="card-title grey-text text-darken-4">{this.props.projectName}
+                        <div className="fixed-action-btn horizontal">
+                        <a onClick={this.handleOpen} className="remove btn-floating red"><i className="material-icons">delete_forever</i></a>
+                          <a className="btn-floating edit-button" href="#edit-project" onClick= {() => {this.props.edit(this.props)}}>
+                            <i className="material-icons">mode_edit</i>
+                          </a>
 
-        <div className="fixed-action-btn horizontal">
-        <a onClick={this.handleOpen} className="remove btn-floating red"><i className="material-icons">delete_forever</i></a>
-          <a className="btn-floating edit-button" href="#edit-project" onClick= {() => {this.props.edit(this.props)}}>
-            <i className="material-icons">mode_edit</i>
-          </a>
+                          {/*
+                          <ul>
+                             <li>
+                             <RaisedButton label="Delete" onClick={this.handleOpen} className=""><i className="material-icons">delete_forever</i></RaisedButton>
+                             
+                             <a className="remove btn-floating red" onClick = {() => this.props.remove(this.props.id, this.props.user._id)}><i className="material-icons">delete_forever</i>
+                             </a>
+                             
+
+                             </li>
+                          </ul>
+                          */}
+
+                        </div>
+                      </span>
+                      <h6><a href={this.props.link} target="_blank">See it Live</a></h6>
+                      <hr/>
+                    <div>
+                      {this.props.technologiesKeywords.map(tag => (
+                      <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
+                      ))}
+                    </div>
+                    <i className="material-icons right bottom activator">arrow_forward</i>
+                  </div>
+
+                  <div className="card-reveal">
+                      <span className="card-title grey-text text-darken-4"><a href={this.props.link} target="_blank">{this.props.projectName}</a><i className="material-icons right">close</i></span>
+                      <p><span className="about-project">What is it: </span><br/>{this.props.description}</p>
+                      <p><span className="about-project">See the code on <a href={this.props.github} target="_blank"> GitHub</a></span></p>
+                      <p><span className="about-project">Team: </span>{this.props.team}</p>
+                      <hr/>
+                      <p><span className="about-project">Technologies & Keywords: </span></p>
+                      {this.props.technologiesKeywords.map(tag => (
+                      <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
+                      ))}
+                 </div>
+
+              </div>
+          </div>
+          <div id={this.props.project}></div>
+      </div>
 
     );
   }
+};
 
-const PortfolioCardEdit = props => (
 
-<div>
-    <div className="col s12 m6 l4">
-        <div className="card portfolio-card">
 
-            <div className="card-image waves-effect waves-block waves-light">
-                <img className="activator" src={props.image} alt={props.project}/>
-            </div>
-            <div className="card-content">
-                <span className="card-title grey-text text-darken-4">{props.projectName}
-                  <div className="fixed-action-btn horizontal">
-                    <a className="btn-floating edit-button" href="#edit-project" onClick= {() => {props.edit(props)}}>
-                      <i className="material-icons">mode_edit</i>
-                    </a>
-                    <ul>
-                       <li><a className="remove btn-floating red" onClick = {() => props.remove(props.id, props.user._id)}><i className="material-icons">delete_forever</i></a></li>
-                    </ul>
-                  </div>
-                </span>
-                <h6><a href={props.link} target="_blank">See it Live</a></h6>
-                <hr/>
-              <div>
-                {props.technologiesKeywords.map(tag => (
-                <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
-                ))}
-              </div>
-              <i className="material-icons right bottom activator">arrow_forward</i>
-            </div>
 
-            <div className="card-reveal">
-                <span className="card-title grey-text text-darken-4"><a href={props.link} target="_blank">{props.project}</a><i className="material-icons right">close</i></span>
-                <p><span className="about-project">What is it: </span><br/>{props.description}</p>
-                <p><span className="about-project">See the code on <a href={props.github} target="_blank"> GitHub</a></span></p>
-                <p><span className="about-project">Team: </span>{props.team}</p>
-                <hr/>
-                <p><span className="about-project">Technologies & Keywords: </span></p>
-                {props.technologiesKeywords.map(tag => (
-                <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
-                ))}
-           </div>
+// const PortfolioCardEdit = props => (
 
-        </div>
-    </div>
-    <div id={props.project}></div>
-</div>
-);
+// <div>
+//     <div className="col s12 m6 l4">
+//         <div className="card portfolio-card">
+
+//             <div className="card-image waves-effect waves-block waves-light">
+//                 <img className="activator" src={props.image} alt={props.project}/>
+//             </div>
+//             <div className="card-content">
+//                 <span className="card-title grey-text text-darken-4">{props.projectName}
+//                   <EditButtons
+//                     remove={this.deleteProject}
+//                     edit={this.toggleEdit}
+//                   />
+//                 </span>
+//                 <h6><a href={props.link} target="_blank">See it Live</a></h6>
+//                 <hr/>
+//               <div>
+//                 {props.technologiesKeywords.map(tag => (
+//                 <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
+//                 ))}
+//               </div>
+//               <i className="material-icons right bottom activator">arrow_forward</i>
+//             </div>
+
+//             <div className="card-reveal">
+//                 <span className="card-title grey-text text-darken-4"><a href={props.link} target="_blank">{props.project}</a><i className="material-icons right">close</i></span>
+//                 <p><span className="about-project">What is it: </span><br/>{props.description}</p>
+//                 <p><span className="about-project">See the code on <a href={props.github} target="_blank"> GitHub</a></span></p>
+//                 <p><span className="about-project">Team: </span>{props.team}</p>
+//                 <hr/>
+//                 <p><span className="about-project">Technologies & Keywords: </span></p>
+//                 {props.technologiesKeywords.map(tag => (
+//                 <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
+//                 ))}
+//            </div>
+
+//         </div>
+//     </div>
+//     <div id={props.project}></div>
+// </div>
+// );
 
 export default PortfolioCardEdit;
 
