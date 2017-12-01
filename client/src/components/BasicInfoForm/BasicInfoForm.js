@@ -10,6 +10,9 @@ import Dropzone from 'react-dropzone';
 import sha1 from 'sha1';
 import superagent from 'superagent';
 import Dialog from 'material-ui/Dialog';
+import IconButton from 'material-ui/IconButton';
+import FileCloudDownload from 'material-ui/svg-icons/file/cloud-download';
+import ActionHome from 'material-ui/svg-icons/action/autorenew';
 
 class BasicInfoForm extends Component {
   constructor () {
@@ -26,7 +29,9 @@ class BasicInfoForm extends Component {
       incomplete: true,
       stepIndex: 0,
       open: false,
-      snack: false
+      snack: false,
+      loading: false,
+      choosing: true
     }
   }
 
@@ -55,6 +60,8 @@ class BasicInfoForm extends Component {
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({ [name]: value });
+    this.setState({ choosing: false,
+      loading: true });
   }
 
   handleFormSubmit = event => {
@@ -74,7 +81,7 @@ class BasicInfoForm extends Component {
         console.log(myUser);
         API.saveUser(myUser)
           .then(() => {
-            this.setState({snack:true, incomplete:false});
+            this.setState({snack:true, incomplete:false, open: false});
           })
           .catch(err => console.log(err));
       }
@@ -159,7 +166,57 @@ class BasicInfoForm extends Component {
     }
   }
 
+ chooseImage = () => {
+    this.setState({
+      choosing: false,
+      loading: true
+    });
+  }
+
   getStepContent(stepIndex) {
+
+  const styles = {
+  smallIcon: {
+    width: 36,
+    height: 36,
+  },
+  mediumIcon: {
+    width: 48,
+    height: 48,
+    verticalAlign: `center`,
+    padding: 0,
+    top: 15,
+    zIndex: -2,
+  },
+  loadingIcon: {
+    width: 48,
+    height: 48,
+    verticalAlign: `center`,
+    padding: 0,
+    top: -60,
+    zIndex: -1,
+  },
+  largeIcon: {
+    width: 60,
+    height: 60,
+  },
+  small: {
+    width: 72,
+    height: 72,
+    padding: 16,
+  },
+  medium: {
+    width: 96,
+    height: 96,
+    padding: 24,
+  },
+  large: {
+    width: 120,
+    height: 120,
+    padding: 30,
+  },
+}
+
     switch (stepIndex) {
       case 0:
          return (
@@ -204,8 +261,12 @@ class BasicInfoForm extends Component {
           <div>
             <div className="row form-row">
               <div className="input-field col s12">
-                 <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.headshot} onChange={this.handleInputChange} style={{border:'dashed 2px #0087F7', padding: 35, margin: `auto`, height: 150, width: 150, borderRadius: `50%`, textAlign: `center`, backgroundImage: `url(${this.state.headshot})`, backgroundPosition: `center center`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`}}>
-                  <div className="dropzone dz-message needsclick">Drag or click to upload a Profile Picture</div>
+                <p style={{zIndex: -999}}>Drag or click to upload a Profile Picture</p>
+                 <Dropzone onDrop={this.uploadFile.bind(this)} onClick={this.chooseImage} value={this.state.headshot} onChange={this.handleInputChange} style={{border:'dashed 2px #0087F7', padding: 35, margin: `auto`, height: 150, width: 150, borderRadius: `50%`, textAlign: `center`, backgroundImage: `url(${this.state.headshot})`, backgroundPosition: `center center`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`}}>
+
+                      <IconButton disabled={this.state.choosing} iconStyle={styles.mediumIcon}><FileCloudDownload/></IconButton>
+                      <span><IconButton disabled={this.state.loading} iconStyle={styles.loadingIcon}><ActionHome/></IconButton></span>
+
                   </Dropzone>
                   <br/>
                   <p>Please wait until photo uploads above.</p>
@@ -281,7 +342,7 @@ class BasicInfoForm extends Component {
   render() {
 
     const {finished, stepIndex} = this.state;
-    const contentStyle = {margin: '0 16px'}
+    const contentStyle = {margin: '0px'}
     const actions = [
       <FlatButton
         label="Cancel"
@@ -300,18 +361,18 @@ class BasicInfoForm extends Component {
       <div className="card basic-info-card">
         <div className="card-content black-text">
 
-        <Stepper activeStep={stepIndex}>
-          <Step>
-            <StepLabel>Basic Info</StepLabel>
+        <Stepper activeStep={stepIndex} style={{paddingLeft: 0, paddingRight: 0}} connector={null}>
+          <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
+            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Basic Info</StepLabel>
           </Step>
-          <Step>
-            <StepLabel>Photo</StepLabel>
+          <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
+            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Photo</StepLabel>
           </Step>
-          <Step>
-            <StepLabel>Links</StepLabel>
+          <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
+            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Links</StepLabel>
           </Step>
-          <Step>
-            <StepLabel>Bio</StepLabel>
+          <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
+            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Bio</StepLabel>
           </Step>
         </Stepper>
 
@@ -328,23 +389,23 @@ class BasicInfoForm extends Component {
                 Click "cancel" to go back and edit
               </Dialog>
                <FlatButton
-                  label="Start Over"
+                  label="Re-do"
                   href="/welcome"
                   id="back-button"
-                  style={{marginRight: 10, width: `15%`}}
+                  style={{marginRight: 5, width: `15%`}}
                 />
               <RaisedButton
                 primary={true}
                 onClick={this.handleOpen}
-                disabled={stepIndex < 3}
+                disabled={stepIndex < 3 || !this.state.incomplete}
                 label='Submit'
-                style={{marginRight: 10, width: `30%`}}
+                style={{marginRight: 5, width: `30%`}}
                 />
               <RaisedButton
                 href="/edit"
+                backgroundColor="#f48fb1"
                 disabled={this.state.incomplete}
                 label='Finish'
-                style={{marginRight: 10, width: `30%`, backgroundColor: `#ef9a9a`}}
                 />
               <Snackbar
                 open={this.state.snack}
