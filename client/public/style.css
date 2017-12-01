@@ -118,6 +118,14 @@ nav .brand-logo {
   color: #444;
 }
 
+a.waves-effect.waves-light.btn-large.main-button {
+    border: none;
+    border-radius: 2px;
+    display: inline-block;
+    width: 50%;
+    padding: 0px;
+}
+
 .row {
     margin-left: auto;
     margin-right: auto;
@@ -141,4 +149,35 @@ nav .brand-logo {
 div.about {
   background-color: white;
   opacity: 0.7;
+}
+
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) 
+and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71)
+    {
+    h3.main {
+        font-size: 2.1rem;
+        line-height: 110%;
+        margin: 1rem 0 1.168rem 0;
+    }
+
+    h4.main {
+        font-size: 1.4rem;
+        line-height: 110%;
+        margin: 1.46rem 0 1.168rem 0;
+    }
+
+    h5.main {
+        font-size: 1.3rem;
+        line-height: 110%;
+        margin: 1.46rem 0 1.168rem 0;
+    }
+    .container {
+        margin: auto;
+        max-width: 1280px;
+        width: 90%;
+    }
+    .card .card-content {
+        padding: 9px;
+        border-radius: 0 0 2px 2px;
+    }
 }

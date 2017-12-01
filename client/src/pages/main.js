@@ -32,13 +32,13 @@ class Main extends Component {
    <br/><br/> <br/><br/> 
 	   <div className="row center">
         <div>
-        <h3 className="center white-text">cvcast</h3>
-        <h4 className="center white-text">a platform to showcase your projects</h4>
+        <h3 className="center white-text main">cvcast</h3>
+        <h4 className="center white-text main">a platform to showcase your projects</h4>
         </div>
            {
               isAuthenticated() && (
                 <a
-                  className="waves-effect waves-light btn-large"
+                  className="waves-effect waves-light btn-large main-button"
                     onClick={this.goTo.bind(this, 'portfolio')}
                   >
                     Portfolio
@@ -60,7 +60,7 @@ class Main extends Component {
                   <div>
                   <br/>
                     <a
-                      className="waves-effect waves-light btn-large"
+                      className="waves-effect waves-light btn-large main-button"
                       onClick={this.login.bind(this)}
                     >
                       Log In
@@ -73,7 +73,7 @@ class Main extends Component {
                   <div>
                   <br/>
                     <a
-                      className="waves-effect waves-light btn-large"
+                      className="waves-effect waves-light btn-large main-button"
                       id="logout-button"
                       onClick={this.logout.bind(this)}
                     >
@@ -89,20 +89,20 @@ class Main extends Component {
 
             <div className="col s4 m4 l4">
                 <h2 className="center black-text"><i className="material-icons flow-text">vpn_key</i></h2>
-                <h5 className="center">Sign Up</h5>
-                <p className="center light black-text flow-text">add your basic info</p>
+                <h5 className="center main">Sign Up</h5>
+                <p className="center light black-text">add your basic info</p>
             </div>
 
             <div className="col s4 m4 l4">
                 <h2 className="center black-text"><i className="material-icons">add_circle</i></h2>
-                <h5 className="center">Show</h5>
-                <p className="center light black-text flow-text">add your projects</p>
+                <h5 className="center main">Show</h5>
+                <p className="center light black-text">add your projects</p>
             </div>
 
             <div className="col s4 m4 l4">
                 <h2 className="center black-text"><i className="material-icons">share</i></h2>
-                <h5 className="center">Cast</h5>
-                <p className="center light black-text flow-text">share your cv</p>
+                <h5 className="center main">Cast</h5>
+                <p className="center light black-text">share your cv</p>
             </div>
           </div>
 

@@ -388,16 +388,16 @@ uploadFile(files) {
 
         <Stepper activeStep={stepIndex} style={{paddingLeft: 0, paddingRight: 0}} connector={null}>
           <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
-            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Title</StepLabel>
+            <StepLabel iconContainerStyle={{paddingRight: 5}} style={{paddingLeft: 0, paddingRight: 0}}>Title</StepLabel>
           </Step>
           <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
-            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Links</StepLabel>
+            <StepLabel iconContainerStyle={{paddingRight: 5}} style={{paddingLeft: 0, paddingRight: 0}}>Links</StepLabel>
           </Step>
           <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
-            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Details</StepLabel>
+            <StepLabel iconContainerStyle={{paddingRight: 5}} style={{paddingLeft: 0, paddingRight: 0}}>Details</StepLabel>
           </Step>
           <Step style={{paddingLeft: 0, paddingRight: 0, marginBottom: -10}}>
-            <StepLabel style={{paddingLeft: 0, paddingRight: 0}}>Tags</StepLabel>
+            <StepLabel iconContainerStyle={{paddingRight: 5}} style={{paddingLeft: 0, paddingRight: 0}}>Tags</StepLabel>
           </Step>
         </Stepper>
         <div style={{textAlign: `center`}}>
