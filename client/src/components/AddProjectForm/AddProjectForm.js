@@ -403,17 +403,11 @@ uploadFile(files) {
         <div style={{textAlign: `center`}}>
           {finished ? (
             <div>
-               <FlatButton
-                  label="Start Over"
-                  href="/edit"
-                  id="back-button"
-                  style={{marginRight: 10, width: `15%`}}
-                />
               <FlatButton
                   label="Add Another"
                   href="/edit"
                   id="back-button"
-                  style={{marginRight: 10, width: `15%`}}
+                  style={{marginRight: 10, width: `auto`}}
                 />
               <RaisedButton
                 primary={true}
