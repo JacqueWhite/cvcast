@@ -23,10 +23,10 @@ class BasicInfoForm extends Component {
       gitHubProfile: "",
       bio: "",
       finished: false,
+      incomplete: true,
       stepIndex: 0,
       open: false,
-      snack: false,
-      fireRedirect: false
+      snack: false
     }
   }
 
@@ -69,12 +69,12 @@ class BasicInfoForm extends Component {
           headshot: this.state.headshot,
           linkedIn: this.state.linkedIn,
           gitHubProfile: this.state.gitHubProfile,
-          bio: this.state.bio,
+          bio: this.state.bio
         }
         console.log(myUser);
         API.saveUser(myUser)
           .then(() => {
-            this.setState({snack:true, fireRedirect: true});
+            this.setState({snack:true, incomplete:false});
           })
           .catch(err => console.log(err));
       }
@@ -256,6 +256,23 @@ class BasicInfoForm extends Component {
               </div>
           </div>
           );
+      case 4:
+        return (
+          <div>
+              <div className="row form-row">
+                <div className="col s12">
+              <h3>What next?</h3>
+              <p>Now that you've set up your basic information, let's go add some projects.</p>
+              <RaisedButton
+                primary={true}
+                href="/edit"
+                label='Add Projects'
+                style={{width: `auto`}}
+                />
+                </div>
+              </div>
+          </div>
+          );
       default:
         return 'You\'re a long way from home sonny jim!';
     }
@@ -263,8 +280,6 @@ class BasicInfoForm extends Component {
 
   render() {
 
-    const { from } = this.location.state.fireRedirect || '/portfolio'
-    const { fireRedirect } = this.state.fireRedirect
     const {finished, stepIndex} = this.state;
     const contentStyle = {margin: '0 16px'}
     const actions = [
@@ -310,7 +325,7 @@ class BasicInfoForm extends Component {
                 open={this.state.open}
                 onRequestClose={this.handleClose}
               >
-                Click "" to go back and edit
+                Click "cancel" to go back and edit
               </Dialog>
                <FlatButton
                   label="Start Over"
@@ -323,7 +338,13 @@ class BasicInfoForm extends Component {
                 onClick={this.handleOpen}
                 disabled={stepIndex < 3}
                 label='Submit'
-                style={{display: `inline-flex`, width: `30%`}}
+                style={{marginRight: 10, width: `30%`}}
+                />
+              <RaisedButton
+                href="/edit"
+                disabled={this.state.incomplete}
+                label='Finish'
+                style={{marginRight: 10, width: `30%`, backgroundColor: `#ef9a9a`}}
                 />
               <Snackbar
                 open={this.state.snack}
@@ -331,10 +352,6 @@ class BasicInfoForm extends Component {
                 autoHideDuration={4000}
                 onRequestClose={this.handleRequestClose}
               />
-      
-              {fireRedirect && (
-                <Redirect to={from || '/edit'}/>
-              )}
 
             </div>
           ) : (
@@ -345,14 +362,14 @@ class BasicInfoForm extends Component {
                   label="Back"
                   disabled={stepIndex === 0}
                   onClick={this.handlePrev}
-                  style={{marginRight: 10, display: `inline-flex`, width: `50%`, textAlign: `center`, backgroundColor: `snow`}}
+                  style={{marginRight: 10, width: `40%`, textAlign: `center`, backgroundColor: `snow`}}
                 />
                 <RaisedButton
                   primary={true}
                   label='Next'
                   disabled={stepIndex === 4}
                   onClick={this.handleNext}
-                  style={{marginRight: 10, display: `inline-flex`, width: `50%`}}
+                  style={{marginRight: 10, width: `40%`}}
                 />
               </div>
             </div>
