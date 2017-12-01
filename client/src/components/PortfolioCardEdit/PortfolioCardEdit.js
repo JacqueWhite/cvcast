@@ -79,20 +79,6 @@ render() {
                           <a className="btn-floating edit-button" href="#edit-project" onClick= {() => {this.props.edit(this.props)}}>
                             <i className="material-icons">mode_edit</i>
                           </a>
-
-                          {/*
-                          <ul>
-                             <li>
-                             <RaisedButton label="Delete" onClick={this.handleOpen} className=""><i className="material-icons">delete_forever</i></RaisedButton>
-                             
-                             <a className="remove btn-floating red" onClick = {() => this.props.remove(this.props.id, this.props.user._id)}><i className="material-icons">delete_forever</i>
-                             </a>
-                             
-
-                             </li>
-                          </ul>
-                          */}
-
                         </div>
                       </span>
                       <h6><a href={this.props.link} target="_blank">See it Live</a></h6>

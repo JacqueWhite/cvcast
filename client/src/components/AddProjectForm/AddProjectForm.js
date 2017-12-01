@@ -4,17 +4,11 @@ import "./AddProjectForm.css";
 import {Step, Stepper, StepLabel} from 'material-ui/Stepper';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
-// import Snackbar from 'material-ui/Snackbar';
-// import Checkbox from 'material-ui/Checkbox';
-// import SelectField from 'material-ui/SelectField';
-// import MenuItem from 'material-ui/MenuItem';
-// import TextField from 'material-ui/TextField';
 import Snackbar from 'material-ui/Snackbar';
 import Dropzone from 'react-dropzone';
 import sha1 from 'sha1';
 import superagent from 'superagent';
-import ArrowForwardIcon from 'material-ui/svg-icons/navigation/arrow-forward';
-import Loader from './Loader.js'
+import Loader from './Loader.js';
 
 class AddProjectForm extends Component {
   state = {

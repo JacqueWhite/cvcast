@@ -1,28 +1,33 @@
 import React, { Component } from "react";
+import { Redirect } from 'react-router'
 import API from "../../utils/API";
 import "./BasicInfoForm.css";
 import {Step, Stepper, StepLabel} from 'material-ui/Stepper';
-// import SelectField from 'material-ui/SelectField';
-// import MenuItem from 'material-ui/MenuItem';
 import FlatButton from 'material-ui/FlatButton';
 import RaisedButton from 'material-ui/RaisedButton';
 import Snackbar from 'material-ui/Snackbar';
 import Dropzone from 'react-dropzone';
 import sha1 from 'sha1';
 import superagent from 'superagent';
+import Dialog from 'material-ui/Dialog';
 
 class BasicInfoForm extends Component {
-  state = {
-    firstName: "",
-    lastName: "",
-    email: "",
-    headshot: "",
-    linkedIn: "",
-    gitHubProfile: "",
-    bio: "",
-    finished: false,
-    stepIndex: 0,
-    open: false
+  constructor () {
+    super();
+    this.state = {
+      firstName: "",
+      lastName: "",
+      email: "",
+      headshot: "",
+      linkedIn: "",
+      gitHubProfile: "",
+      bio: "",
+      finished: false,
+      stepIndex: 0,
+      open: false,
+      snack: false,
+      fireRedirect: false
+    }
   }
 
   componentWillMount = () => {
@@ -69,7 +74,7 @@ class BasicInfoForm extends Component {
         console.log(myUser);
         API.saveUser(myUser)
           .then(() => {
-            this.setState({open:true});
+            this.setState({snack:true, fireRedirect: true});
           })
           .catch(err => console.log(err));
       }
@@ -125,9 +130,17 @@ class BasicInfoForm extends Component {
     });
   }
 
+  handleOpen = () => {
+    this.setState({open: true});
+  }
+
+  handleClose = () => {
+    this.setState({open: false});
+  }
+
   handleRequestClose = () => {
     this.setState({
-      open: false,
+      snack: false
     });
   }
 
@@ -190,12 +203,19 @@ class BasicInfoForm extends Component {
         return (
           <div>
             <div className="row form-row">
-              <div className="input-field col s6">
+              <div className="input-field col s12">
                  <Dropzone onDrop={this.uploadFile.bind(this)} value={this.state.headshot} onChange={this.handleInputChange} style={{border:'dashed 2px #0087F7', padding: 35, margin: `auto`, height: 150, width: 150, borderRadius: `50%`, textAlign: `center`, backgroundImage: `url(${this.state.headshot})`, backgroundPosition: `center center`, backgroundRepeat: `no-repeat`, backgroundSize: `cover`}}>
                   <div className="dropzone dz-message needsclick">Drag or click to upload a Profile Picture</div>
                   </Dropzone>
+                  <br/>
+                  <p>Please wait until photo uploads above.</p>
               </div>
             </div>
+          </div>
+          );
+      case 2:
+        return (
+          <div>
             <div className="row form-row">
               <div className="input-field col s12">
                 <input
@@ -220,42 +240,20 @@ class BasicInfoForm extends Component {
           </div>
         </div>
         );
-      case 2:
+      case 3:
         return (
           <div>
               <div className="row form-row">
                 <div className="input-field col s12">
-                  <textarea rows="10" cols="50"
+                  <textarea rows="40" cols="40"
                     value={this.state.bio}
                     onChange={this.handleInputChange}
                     name="bio"
-                    placeholder="Tell us about yourself."
+                    placeholder="Tell us about yourself"
+                    style={{height: `6rem`, width: `70%`, backgroundColor: `transparent`, border: `solid #00bcd4 2px`}}
                   />
                 </div>
               </div>
-          </div>
-          );
-      case 3:
-        return (
-          <div>
-            <div style={{width: '100%', maxWidth: 700, margin: 'auto'}}>
-              <div className="row form-row">
-                <div className="col s12">
-                  <button
-                    onClick={this.handleFormSubmit}
-                    type="submit"
-                    >
-                    Commit Profile
-                  </button>
-                  <Snackbar
-                    open={this.state.open}
-                    message="Successfully Added Profile Info!"
-                    autoHideDuration={4000}
-                    onRequestClose={this.handleRequestClose}
-                  />
-                </div>
-              </div>
-            </div>
           </div>
           );
       default:
@@ -264,11 +262,27 @@ class BasicInfoForm extends Component {
   }
 
   render() {
+
+    const { from } = this.location.state.fireRedirect || '/portfolio'
+    const { fireRedirect } = this.state.fireRedirect
     const {finished, stepIndex} = this.state;
-    const contentStyle = {margin: '0 16px'};
+    const contentStyle = {margin: '0 16px'}
+    const actions = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onClick={this.handleClose}
+      />,
+      <FlatButton
+        label="Save"
+        primary={true}
+        keyboardFocused={true}
+        onClick={this.handleFormSubmit}
+      />,
+    ];
 
     return (
-      <div className="card">
+      <div className="card basic-info-card">
         <div className="card-content black-text">
 
         <Stepper activeStep={stepIndex}>
@@ -276,44 +290,69 @@ class BasicInfoForm extends Component {
             <StepLabel>Basic Info</StepLabel>
           </Step>
           <Step>
+            <StepLabel>Photo</StepLabel>
+          </Step>
+          <Step>
             <StepLabel>Links</StepLabel>
           </Step>
           <Step>
             <StepLabel>Bio</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Create Profile</StepLabel>
-          </Step>
-          <Step>
-            <StepLabel>Add Projects</StepLabel>
           </Step>
         </Stepper>
 
         <div style={contentStyle}>
           {finished ? (
             <div>
-              <a
-                href="/edit"
-                class="waves-effect waves-light btn"
-                >
-                Thanks for adding a user! Go add projects.
-                </a>
+              <Dialog
+                title="Ready to submit your profile?"
+                actions={actions}
+                modal={false}
+                open={this.state.open}
+                onRequestClose={this.handleClose}
+              >
+                Click "" to go back and edit
+              </Dialog>
+               <FlatButton
+                  label="Start Over"
+                  href="/welcome"
+                  id="back-button"
+                  style={{marginRight: 10, width: `15%`}}
+                />
+              <RaisedButton
+                primary={true}
+                onClick={this.handleOpen}
+                disabled={stepIndex < 3}
+                label='Submit'
+                style={{display: `inline-flex`, width: `30%`}}
+                />
+              <Snackbar
+                open={this.state.snack}
+                message="Profile Created"
+                autoHideDuration={4000}
+                onRequestClose={this.handleRequestClose}
+              />
+      
+              {fireRedirect && (
+                <Redirect to={from || '/edit'}/>
+              )}
+
             </div>
           ) : (
             <div>
               <div>{this.getStepContent(stepIndex)}</div>
               <div style={{marginTop: 12}}>
-                <FlatButton
+                <RaisedButton
                   label="Back"
                   disabled={stepIndex === 0}
                   onClick={this.handlePrev}
-                  style={{marginRight: 12}}
+                  style={{marginRight: 10, display: `inline-flex`, width: `50%`, textAlign: `center`, backgroundColor: `snow`}}
                 />
                 <RaisedButton
                   primary={true}
                   label='Next'
                   disabled={stepIndex === 4}
                   onClick={this.handleNext}
+                  style={{marginRight: 10, display: `inline-flex`, width: `50%`}}
                 />
               </div>
             </div>

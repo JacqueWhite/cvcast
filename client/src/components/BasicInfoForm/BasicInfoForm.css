@@ -10,3 +10,6 @@ div.col.input-field {
 	text-align: center;
 }
 
+div.card.basic-info-card {
+	height: auto !important;
+}
