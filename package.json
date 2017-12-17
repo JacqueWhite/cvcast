@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/JacqueWhite/cvcast/issues"
   },
-  "homepage": "https://github.com/JacqueWhite/cvcast#readme",
+  "homepage": "https://cvcast.io",
   "dependencies": {
     "auth0-js": "^8.10.1",
     "axios": "^0.16.2",
