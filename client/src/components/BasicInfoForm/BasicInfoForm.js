@@ -26,7 +26,7 @@ class BasicInfoForm extends Component {
       incomplete: true,
       stepIndex: 0,
       open: false,
-      snack: false
+      snack: false,
     }
   }
 
@@ -35,11 +35,24 @@ class BasicInfoForm extends Component {
     if (!userProfile) {
       getProfile((err, profile) => {
         console.log("!userProfile");
-        this.setState({ email: profile.name });
+        this.setState({ email: '' });
       });
     } else {
       console.log("userProfile");
-      this.setState({ email: userProfile.name });
+      this.setState({ email: userProfile.email });
+    }
+  }
+
+  componentWillMount = () => {
+    const { userProfile, getProfile } = this.props.auth;
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        console.log("no user profile");
+        this.setState({ email: profile.email });
+      });
+    } else {
+      console.log("userProfile");
+      this.setState({ email: userProfile.email });
     }
   }
 
@@ -74,7 +87,7 @@ class BasicInfoForm extends Component {
         console.log(myUser);
         API.saveUser(myUser)
           .then(() => {
-            this.setState({snack:true, incomplete:false, open: false});
+            this.setState({snack:true, incomplete:false, open: false})
           })
           .catch(err => console.log(err));
       }

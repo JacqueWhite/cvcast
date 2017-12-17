@@ -5,6 +5,23 @@ import BasicInfoForm from "../components/BasicInfoForm";
 
 class Welcome extends Component {
 
+  state = {
+    profile: {},
+    projects: [],
+    user: ""
+  }
+
+  componentWillMount() {
+    const { userProfile, getProfile } = this.props.auth;
+    if (!userProfile) {
+      getProfile((err, profile) => {
+        this.setState({ profile });
+      });
+    } else {
+      this.setState({ profile: {} });
+    }
+  }
+
   render() {
     return (
     <div>

@@ -30,7 +30,7 @@ deleteForever = (event) => {
   event.preventDefault();
   console.log("deleting the project");
   this.props.remove(this.props.id, this.props.user._id)
-  this.setState({open: false, snack: true});
+  this.setState({snack: true});
 }
 
 render() {
@@ -111,53 +111,6 @@ render() {
     );
   }
 };
-
-
-
-
-// const PortfolioCardEdit = props => (
-
-// <div>
-//     <div className="col s12 m6 l4">
-//         <div className="card portfolio-card">
-
-//             <div className="card-image waves-effect waves-block waves-light">
-//                 <img className="activator" src={props.image} alt={props.project}/>
-//             </div>
-//             <div className="card-content">
-//                 <span className="card-title grey-text text-darken-4">{props.projectName}
-//                   <EditButtons
-//                     remove={this.deleteProject}
-//                     edit={this.toggleEdit}
-//                   />
-//                 </span>
-//                 <h6><a href={props.link} target="_blank">See it Live</a></h6>
-//                 <hr/>
-//               <div>
-//                 {props.technologiesKeywords.map(tag => (
-//                 <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
-//                 ))}
-//               </div>
-//               <i className="material-icons right bottom activator">arrow_forward</i>
-//             </div>
-
-//             <div className="card-reveal">
-//                 <span className="card-title grey-text text-darken-4"><a href={props.link} target="_blank">{props.project}</a><i className="material-icons right">close</i></span>
-//                 <p><span className="about-project">What is it: </span><br/>{props.description}</p>
-//                 <p><span className="about-project">See the code on <a href={props.github} target="_blank"> GitHub</a></span></p>
-//                 <p><span className="about-project">Team: </span>{props.team}</p>
-//                 <hr/>
-//                 <p><span className="about-project">Technologies & Keywords: </span></p>
-//                 {props.technologiesKeywords.map(tag => (
-//                 <div className="chip"><a href={`/${tag}`} target="_blank">{tag}</a></div>
-//                 ))}
-//            </div>
-
-//         </div>
-//     </div>
-//     <div id={props.project}></div>
-// </div>
-// );
 
 export default PortfolioCardEdit;
 

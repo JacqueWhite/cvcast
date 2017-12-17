@@ -14,7 +14,8 @@ class Edit extends Component {
       projects: [],
       user: "",
       currentProject:{},
-      editing: false
+      editing: false,
+      deleted: false
     }
 
     componentWillMount() {
@@ -31,7 +32,7 @@ class Edit extends Component {
     }
 
     loadUser = () => {
-      API.getUser(this.state.profile.name)
+      API.getUser(this.state.profile.email)
         .then(res => {
           this.setState({ user: res.data})
           this.loadProjects(res.data._id);
@@ -41,7 +42,7 @@ class Edit extends Component {
 
     loadProjects = (id) => {
       API.getProjects(this.state.user._id)
-        .then(res =>{
+        .then(res => {
           console.log(res)
           this.setState({ projects: res.data.Project})
     })
@@ -133,6 +134,7 @@ class Edit extends Component {
               link={portfoliocard.link}
               github={portfoliocard.github}
               technologiesKeywords={portfoliocard.technologiesKeywords}
+              deleted={this.state.deleted}
               remove={this.deleteProject}
               edit={this.toggleEdit}
               user={this.state.user}

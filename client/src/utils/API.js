@@ -1,4 +1,5 @@
 import axios from "axios";
+
 export default {
   // Gets all projects
   getProjects: function(id) {
@@ -16,6 +17,7 @@ export default {
   saveProject: function(myProject) {
     return axios.post("/api/projects", myProject);
   },
+  
   updateProject: function(id, project) {
     return axios.put("/api/projects/"+ id, project);
   },

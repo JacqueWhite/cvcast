@@ -1,0 +1,31 @@
+ORACLE (1977 - 40 YEARS)
+-computer technology corporation - redwood shores CA
+-LARRY ELLISON BOB MINER, ED OATES
+-PRIMARY: database software and tech, cloud engineered systems, enterprise software products
+
+CLOUD - data is accesib
+
+
+
+The Oracle Partner Network ... austin, tx
+
+
+
+ORACLE CLOUD
+	DEVELOP, CREATE, MIGRATE, STORE AND ANALYZE
+
+
+
+BIG DATA
+
+
+
+----
+Cloud computing in very simple terms, is basically where a company uses someone elses computing services (usually over the internet) instead of having to run that software on their own computers.
+
+
+Concrete examples are: in our very small business, we can't afford to have an IT department and people to manage our internal services.  But we still need to use a variety of software, some simple examples are: accounting, file storage, shared calendars, shared contacts, etc.  So we use a range of cloud computing services such as Dropbox, Google Calendar.
+
+
+
+An analogy would be: instead of every house employing their own full time car mechanic, dentist, doctor, plumber, electrician; we were to put all these people in a centralized location, and people shared out their services.  This is much cheaper for individual households, and the people who employ these people are able to offer their services to lots of people.

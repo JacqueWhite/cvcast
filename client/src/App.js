@@ -59,14 +59,6 @@ const App = () => {
             )
           )} />
 
-          <Route exact path="/edit2" render={(props) => (
-            !auth.isAuthenticated() ? (
-              <Redirect to="/"/>
-            ) : (
-              <Edit2 auth={auth} {...props} />
-            )
-          )} />
-
           <Route exact path="/callback" render={(props) => {
             handleAuthentication(props);
             return <Callback {...props} />

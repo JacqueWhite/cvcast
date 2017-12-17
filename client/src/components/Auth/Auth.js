@@ -4,7 +4,7 @@ import history from '../history';
 
 export default class Auth {
   userProfile;
-  requestedScopes = 'openid profile read:messages write:messages';
+  requestedScopes = 'openid profile email read:messages write:messages';
 
   auth0 = new auth0.WebAuth({
     domain: AUTH_CONFIG.domain,

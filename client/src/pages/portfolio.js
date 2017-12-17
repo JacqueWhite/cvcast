@@ -29,7 +29,7 @@ class Portfolio extends Component {
   }
 
   loadUser = () => {
-    API.getUser(this.state.profile.name)
+    API.getUser(this.state.profile.email)
       .then(res => {
         if (res) {
           this.setState({ user: res.data})

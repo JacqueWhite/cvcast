@@ -9,15 +9,11 @@ class Profile extends Component {
     if (!userProfile) {
       getProfile((err, profile) => {
         this.setState({ profile });
+        console.log(this.props.auth);
       });
     } else {
       this.setState({ profile: userProfile });
     }
-  }
-
-  componentDidMount() {
-    const { profile } = this.state;
-    console.log(profile.name);
   }
 
   render() {
@@ -28,7 +24,8 @@ class Profile extends Component {
           <h1>{profile.name}</h1>
             <img src={profile.picture} alt="profile" />
             <div>
-              <h3>{profile.nickname}</h3>
+              <h3>Nickname: {profile.nickname}</h3>
+              <h3>Email: {profile.email}</h3>
             </div>
             <pre>{JSON.stringify(profile, null, 2)}</pre>
         </div>
