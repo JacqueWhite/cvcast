@@ -463,7 +463,7 @@ uploadFile(files) {
                 onClick={this.handleFormSubmit}
                 disabled={stepIndex < 4 || !this.state.submitted}
                 label='View Profile'
-                href={'/profile'}
+                href='/profile'
                 style={{display: `inline-flex`, width: `30%`}}
                 />
               <Snackbar
