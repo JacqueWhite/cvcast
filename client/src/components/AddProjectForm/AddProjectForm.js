@@ -460,7 +460,6 @@ uploadFile(files) {
                 style={{marginRight: 10, display: `inline-flex`, width: `30%`}}
                 />
               <RaisedButton
-                onClick={this.handleFormSubmit}
                 disabled={stepIndex < 4 || !this.state.submitted}
                 label='View Profile'
                 href='/profile'
