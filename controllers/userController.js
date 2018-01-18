@@ -22,7 +22,6 @@ module.exports = {
         .catch(err => res.status(422).json(err));
     },
 
-
     // create a new user
     create: function(req, res) {
     db.User
@@ -40,6 +39,7 @@ module.exports = {
         .then(dbModel => res.json(dbModel))
         .catch(err => res.status(422).json(err));
     },
+
     addkeytag: function(req,res){
     db.User
         .findOneAndUpdate({_id: req.params.id}, {$push: {"technologiesKeywords": req.body}})

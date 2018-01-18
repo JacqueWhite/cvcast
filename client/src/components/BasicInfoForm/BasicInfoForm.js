@@ -25,7 +25,7 @@ class BasicInfoForm extends Component {
       finished: false,
       incomplete: true,
       stepIndex: 0,
-      open: false,
+      confirm: false,
       snack: false,
     }
   }
@@ -47,17 +47,18 @@ class BasicInfoForm extends Component {
     const { userProfile, getProfile } = this.props.auth;
     if (!userProfile) {
       getProfile((err, profile) => {
-        console.log("no user profile");
+        console.log("user signing up");
         this.setState({ email: profile.email });
       });
     } else {
-      console.log("userProfile");
+      console.log("userProfile exists");
       this.setState({ email: userProfile.email });
+      this.loadUser();
     }
   }
 
   loadUser = () => {
-    API.getUser(this.state.profile.name)
+    API.getUser(this.state.profile.email)
       .then(res => {
         console.log(res);
         this.setState({ user: res.data})
@@ -71,27 +72,25 @@ class BasicInfoForm extends Component {
   }
 
   handleFormSubmit = event => {
-    // console.log(this.state.email);
-      event.preventDefault();
-
-      if (this.state.firstName && this.state.lastName && this.state.email) {
-        var myUser = {
-          firstName: this.state.firstName,
-          lastName: this.state.lastName,
-          email: this.state.email,
-          headshot: this.state.headshot,
-          linkedIn: this.state.linkedIn,
-          gitHubProfile: this.state.gitHubProfile,
-          bio: this.state.bio
-        }
-        console.log(myUser);
-        API.saveUser(myUser)
-          .then(() => {
-            this.setState({snack:true, incomplete:false, open: false})
-          })
-          .catch(err => console.log(err));
+    event.preventDefault();
+    if (this.state.firstName && this.state.lastName && this.state.email) {
+      var myUser = {
+        firstName: this.state.firstName,
+        lastName: this.state.lastName,
+        email: this.state.email,
+        headshot: this.state.headshot,
+        linkedIn: this.state.linkedIn,
+        gitHubProfile: this.state.gitHubProfile,
+        bio: this.state.bio
       }
+      console.log(myUser);
+      API.saveUser(myUser)
+        .then(() => {
+          this.setState({snack:true, incomplete:false, confirm: false})
+        })
+        .catch(err => console.log(err));
     }
+  }
 
   uploadFile(files) {
     console.log('uploadFile:  ')
@@ -100,7 +99,6 @@ class BasicInfoForm extends Component {
     const url = 'https://api.cloudinary.com/v1_1/'+cloudName+'/image/upload'
     const timestamp = Date.now()/1000
     const uploadPreset = 'znke3mj4'
-
     const paramsStr = "timestamp="+timestamp+'&upload_preset='+uploadPreset+'SmzbJfKhVTzPjTzyxOWIkRzJu7Q'
 
     //cloudinarys security for secret key
@@ -139,16 +137,16 @@ class BasicInfoForm extends Component {
 
   handleTouchTap = () => {
     this.setState({
-      open: true,
+      confirm: true,
     });
   }
 
   handleOpen = () => {
-    this.setState({open: true});
+    this.setState({confirm: true});
   }
 
   handleClose = () => {
-    this.setState({open: false});
+    this.setState({confirm: false});
   }
 
   handleRequestClose = () => {
@@ -306,7 +304,7 @@ class BasicInfoForm extends Component {
         primary={true}
         keyboardFocused={true}
         onClick={this.handleFormSubmit}
-      />,
+      />
     ];
 
     return (
@@ -335,7 +333,7 @@ class BasicInfoForm extends Component {
                 title="Ready to submit your profile?"
                 actions={actions}
                 modal={false}
-                open={this.state.open}
+                open={this.state.confirm}
                 onRequestClose={this.handleClose}
               >
                 Click "cancel" to go back and edit

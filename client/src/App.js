@@ -5,7 +5,7 @@ import Main from "./pages/main";
 import Edit from "./pages/edit";
 import Edit2 from "./pages/edit2";
 import Welcome from "./pages/welcome";
-import "./index.css";
+// import "./index.css";
 
 //Material-ui
 import getMuiTheme from 'material-ui/styles/getMuiTheme';

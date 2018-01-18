@@ -8,9 +8,9 @@ h3.login-text {
   text-align: center;
 }
 
-div.nav-wrapper {
-  background-color: #212E39 !important;
-}
+/*-------------------------------------------------------------------------*/
+/*BACKGROUND VIDEO*/
+/*-------------------------------------------------------------------------*/
 
 .homepage-hero-module {
     border-right: none;
@@ -55,18 +55,18 @@ div.nav-wrapper {
     bottom: 0;
     opacity: 0.7;
 }
-  
+
+/*-------------------------------------------------------------------------*/
+/*CARDS*/
+/*-------------------------------------------------------------------------*/
 
 .card {
-/*    margin: 5px !important;*/
-/*    margin: .5rem 0 1rem !important;*/
     margin: 10px !important;
-/*    padding-top: 0px !important;
-    padding-right: 0.75rem !important;
-    padding-bottom: 0px !important;
-    padding-left: 0.75rem !important;*/
 }
 
+/*-------------------------------------------------------------------------*/
+/*MAIN PAGE*/
+/*-------------------------------------------------------------------------*/
 a#portfolio-button {
     text-decoration: none;
     color: #fff;
@@ -109,15 +109,6 @@ a#logout-button:hover {
     background-color: #26a69a;
 }
 
-/*.btn:hover, .btn-large:hover {
-    background-color: #2bbbad;
-}*/
-
-nav ul a,
-nav .brand-logo {
-  color: #444;
-}
-
 a.waves-effect.waves-light.btn-large.main-button {
     border: none;
     border-radius: 2px;
@@ -150,6 +141,23 @@ div.about {
   background-color: white;
   opacity: 0.7;
 }
+
+/*-------------------------------------------------------------------------*/
+/*NAVBAR*/
+/*-------------------------------------------------------------------------*/
+
+nav ul a,
+nav .brand-logo {
+  color: #444;
+}
+
+div.nav-wrapper {
+  background-color: #212E39 !important;
+}
+
+/*-------------------------------------------------------------------------*/
+/*MEDIA QUERIES*/
+/*-------------------------------------------------------------------------*/
 
 @media only screen and (min-device-width: 320px) and (max-device-width: 568px) 
 and (-webkit-device-pixel-ratio: 2) and (device-aspect-ratio: 40/71)
