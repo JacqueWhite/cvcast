@@ -462,7 +462,7 @@ uploadFile(files) {
               <RaisedButton
                 disabled={stepIndex < 4 || !this.state.submitted}
                 label='View Profile'
-                href='/profile'
+                href='/portfolio'
                 style={{display: `inline-flex`, width: `30%`}}
                 />
               <Snackbar
